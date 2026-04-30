@@ -55,8 +55,14 @@ services:
       dockerfile: Dockerfile.backend
     container_name: aaa-backend-oss
     restart: unless-stopped
-    # Execute alembic migration before starting the engine module
-    command: /bin/bash -c "python -m alembic upgrade head && python -m core.engine"
+    # 1. Sync default models from the public GitHub Release listed in
+    #    data/models_manifest.json (SHA256-verified, URL-allow-listed,
+    #    size-capped, atomic-write). Always exits 0 — non-blocking.
+    # 2. Apply alembic migrations.
+    # 3. Start the engine. If sync failed, RLStrategy logs CRITICAL and
+    #    LSTMSignalAgent + RLConfidenceAgent fall back to neutral 0.5
+    #    (degraded mode), but the engine still boots.
+    command: /bin/bash -c "python scripts/gcs_sync_on_start.py && python -m alembic upgrade head && python -m core.engine"
     depends_on:
       postgres:
         condition: service_healthy
@@ -83,7 +89,13 @@ services:
     ports:
       - "8001:8001"
     volumes:
-      - ./data/models:/app/app/data/models
+      # Bind-mount the entire data dir to match what the engine actually reads
+      # from. core/strategies/rl_strategy.py resolves DATA_DIR to /app/app/data
+      # (NOT /app/app/data/models) — mounting the subfolder hid the host data
+      # below an unmodified container layer. The full bind also lets the
+      # GitHub-Release sync persist across container restarts and lets
+      # operators drop in their own pre-trained models from the host.
+      - ./data:/app/app/data
       - ./plugins:/app/app/plugins:ro
     networks:
       - aaa-net-oss

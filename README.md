@@ -33,6 +33,38 @@ docker compose -f docker-compose.oss.yml up -d
 > ghcr.io/autonomous-asset-management-agents/bora-frontend:latest
 > ```
 
+### 📦 Default ML Models (Community Baseline)
+
+On first start the backend container reads `data/models_manifest.json` and pulls 6 model files (~25 MB total) from the [`models-v1.0`](https://github.com/Autonomous-Asset-Management-Agents/aaagents-oss/releases/tag/models-v1.0) GitHub Release. SHA256 is verified before each file is written. Without these, two of the nine Round Table voting agents (`LSTMSignalAgent` and `RLConfidenceAgent`, weight 0.40 each) fall back to a neutral 0.5 — the system runs but the ML half is silent.
+
+| File | Purpose |
+|---|---|
+| `lstm_model_v2.pth` | LSTM 5-day-return predictor (input_dim=34, hidden_dim=128, 3 layers, sequence_length=60) |
+| `rl_agent_v5.zip` | RecurrentPPO RL agent (sb3-contrib `MlpLstmPolicy`) |
+| `scaler_x_v2.pkl`, `scaler_y_v2.pkl` | StandardScalers for input features and return target |
+| `model_metadata_v2.json` | Feature list + LSTM hyper-parameters |
+| `rl_stats_v5.pkl` | VecNormalize stats matching the RL training environment |
+
+You can also pre-populate `data/` manually via `bash scripts/setup_oss_models.sh` (same logic, runs before container start). Failures during sync are non-blocking — the engine boots regardless and falls back to neutral voting until model files arrive.
+
+> ⚠️ **No performance guarantee. Read this first.**
+>
+> These default models are a single internal paper-trading snapshot from
+> 2026-Q1, intended as a baseline so the ML voting agents are not silent
+> on first install — **not as a trading recommendation.** Sample is n=1
+> forward run on a single broker (Alpaca paper) over a single market
+> regime; this is **not a backtest**, not a Sharpe-graded result, and not
+> a walk-forward validation. Past performance does not guarantee future
+> results. Models age — re-evaluate every 3 months.
+>
+> Methodology of the reference figure (kept for transparency; do not treat
+> as marketing): 2026-01-14 → 2026-04-30, paper account on Alpaca,
+> portfolio equity rose from $100k to ≈$113.9k while SPY total return in
+> the same window was +3.58% (yfinance close-to-close). For production
+> use, validate against your own walk-forward backtest and/or retrain.
+> See [SECURITY.md](./SECURITY.md) for legal posture (paper-trading,
+> self-hosted personal use; no BaFin licence held).
+
 ---
 
 ## 🧠 What is aaagents-oss?
