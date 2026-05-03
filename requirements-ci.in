@@ -1,0 +1,12 @@
+-r requirements.txt
+pytest
+pytest-cov
+pytest-timeout
+pytest-asyncio
+pytest-bdd<8.0.0
+pytest-anyio
+allure-pytest-bdd
+factory_boy
+requests-mock
+fakeredis
+sb3-contrib

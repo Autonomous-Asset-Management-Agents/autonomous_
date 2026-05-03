@@ -1,0 +1,84 @@
+# docker-compose.migrate.yml
+# Policy §14: Standard-Container für alle Alembic-Migrations und DB-Operationen gegen Cloud SQL.
+#
+# USAGE:
+#   docker compose -f docker-compose.migrate.yml run --rm migrate alembic upgrade head
+#   docker compose -f docker-compose.migrate.yml run --rm migrate alembic current
+#   docker compose -f docker-compose.migrate.yml run --rm migrate alembic downgrade -1
+#
+# REQUIREMENTS:
+#   - Docker + gcloud CLI mit aktiver auth (gcloud auth application-default login)
+#   - PROJECT_ID kann als env var überschrieben werden (default: aaa-cloud-487813)
+
+services:
+
+  # ── Cloud SQL Auth Proxy sidecar ─────────────────────────────────────────────
+  # Öffnet localhost:5432 → Cloud SQL (IAM-Auth via mounted gcloud credentials)
+  cloudsql-proxy:
+    image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2
+    command:
+      - "${GCP_PROJECT_ID:-aaa-cloud-487813}:europe-west3:aaa-postgres"
+      - "--address=0.0.0.0"
+      - "--port=5432"
+      - "--credentials-file=/gcloud/application_default_credentials.json"
+    volumes:
+      - type: bind
+        source: ${APPDATA}/gcloud
+        target: /gcloud
+        read_only: true
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "5432"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+    networks:
+      - migrate-net
+
+  # ── Alembic migration runner ──────────────────────────────────────────────────
+  # Python 3.12-slim — identisch mit Prod-Image
+  migrate:
+    image: python:3.12-slim
+    depends_on:
+      cloudsql-proxy:
+        condition: service_healthy
+    working_dir: /app
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      - type: bind
+        source: ${APPDATA}/gcloud
+        target: /gcloud
+        read_only: true
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /gcloud/application_default_credentials.json
+      # DATABASE_URL wird aus GCP Secret Manager geladen (siehe entrypoint)
+    entrypoint:
+      - bash
+      - -c
+      - |
+        set -e
+        pip install --quiet alembic asyncpg sqlalchemy google-cloud-secret-manager
+
+        # Pull DATABASE_URL from Secret Manager und auf localhost (Proxy) umschreiben
+        export DATABASE_URL=$(python3 -c "
+        from google.cloud import secretmanager
+        c = secretmanager.SecretManagerServiceClient()
+        import os
+        project_id = os.environ.get('GCP_PROJECT_ID', 'aaa-cloud-487813')
+        r = c.access_secret_version(request={'name': f'projects/{project_id}/secrets/database-url/versions/latest'})
+        url = r.payload.data.decode().strip()
+        # Redirect to local proxy
+        import re
+        url = re.sub(r'@[^/]+:', '@cloudsql-proxy:', url)
+        print(url)
+        ")
+        echo "Connecting via Cloud SQL Proxy..."
+        exec "$$@"
+    command: ["alembic", "upgrade", "head"]
+    networks:
+      - migrate-net
+
+networks:
+  migrate-net:
+    driver: bridge

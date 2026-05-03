@@ -1,0 +1,34 @@
+{
+    "displayName": "aaa-backend-uptime-alert",
+    "combiner": "OR",
+    "conditions": [
+        {
+            "displayName": "Uptime check failing",
+            "conditionThreshold": {
+                "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" AND resource.type=\"uptime_url\" AND metric.label.check_id=\"aaa-backend-health-check-Y_J1rax-ND0\"",
+                "comparison": "COMPARISON_LT",
+                "thresholdValue": 1,
+                "duration": "300s",
+                "aggregations": [
+                    {
+                        "alignmentPeriod": "60s",
+                        "perSeriesAligner": "ALIGN_NEXT_OLDER",
+                        "crossSeriesReducer": "REDUCE_COUNT_TRUE",
+                        "groupByFields": [
+                            "resource.label.host"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "alertStrategy": {},
+    "notificationChannels": [
+        "projects/aaagents-oss/notificationChannels/1784271833283671042"
+    ],
+    "severity": "CRITICAL",
+    "documentation": {
+        "content": "## aaa-backend /health check failing\n\nThe Cloud Run service is not responding to health checks from at least one region.\n\n**Check logs:**\n```\ngcloud logging read 'resource.type=cloud_run_revision AND resource.labels.service_name=aaa-backend AND severity>=ERROR' --project=aaagents-oss --limit=50\n```\n\n**Rollback if needed:**\n```\ngcloud run services update-traffic aaa-backend --to-latest --region=europe-west3 --project=aaagents-oss\n```",
+        "mimeType": "text/markdown"
+    }
+}

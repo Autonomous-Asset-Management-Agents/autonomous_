@@ -1,0 +1,318 @@
+{
+  "timestamp": "2026-02-23T09:44:58.206385",
+  "summary": {
+    "total": 51,
+    "pass": 41,
+    "fail": 8,
+    "warn": 2,
+    "skip": 0
+  },
+  "results": [
+    {
+      "id": "TC-02-01",
+      "name": ".env loads without BOM",
+      "status": "PASS",
+      "detail": "Clean UTF-8"
+    },
+    {
+      "id": "TC-02-02",
+      "name": "ALPACA_API_KEY set (26 chars)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-03",
+      "name": "ALPACA_SECRET_KEY set (44 chars)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-04",
+      "name": "POLYGON_API_KEY set (32 chars)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-05",
+      "name": "GEMINI_API_KEY set (39 chars)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-06",
+      "name": "ENGINE_API_KEY set (64 chars)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-07",
+      "name": "config.py imports without error",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-08",
+      "name": "GEMINI_AVAILABLE=True",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-09",
+      "name": "data/lstm_model.pth present (11,885,282B)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-09",
+      "name": "data/scaler_x.pkl present (1,399B)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-09",
+      "name": "data/scaler_y.pkl present (591B)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-09",
+      "name": "data/model_metadata.json present (813B)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-09",
+      "name": "rl_agent_v3_dsr.zip present (7,168,336B)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-02-09",
+      "name": "data/rl_agent_v5.zip present (9,844,538B)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-01-01",
+      "name": "Account reachable (status=ACTIVE)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-01-02",
+      "name": "Account has equity ($102,690.62)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-01-03",
+      "name": "Positions endpoint (4 positions)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-01-04",
+      "name": "Orders endpoint (5 recent orders)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-01-06",
+      "name": "Base URL check",
+      "status": "PASS",
+      "detail": "https://paper-api.alpaca.markets"
+    },
+    {
+      "id": "TC-03-01",
+      "name": "Engine boot",
+      "status": "FAIL",
+      "detail": "4\\Lib\\site-packages\\torch\\__init__.py\", line 263, in _load_dll_libraries\n    raise err\nOSError: [WinError 1114] Eine DLL-Initialisierungsroutine ist fehlgeschlagen. Error loading \"C:\\Users\\andre\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies.\n"
+    },
+    {
+      "id": "TC-11-01",
+      "name": "LSTM model tests",
+      "status": "FAIL",
+      "detail": "_libraries()\n    ~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\andre\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\__init__.py\", line 263, in _load_dll_libraries\n    raise err\nOSError: [WinError 1114] Eine DLL-Initialisierungsroutine ist fehlgeschlagen. Error loading \"C:\\Users\\andre\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies.\n"
+    },
+    {
+      "id": "TC-12-01",
+      "name": "RL Agent tests",
+      "status": "FAIL",
+      "detail": "_libraries()\n    ~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\andre\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\__init__.py\", line 263, in _load_dll_libraries\n    raise err\nOSError: [WinError 1114] Eine DLL-Initialisierungsroutine ist fehlgeschlagen. Error loading \"C:\\Users\\andre\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies.\n"
+    },
+    {
+      "id": "TC-12-04",
+      "name": "RL Agent v5",
+      "status": "FAIL",
+      "detail": "name 'PPO' is not defined"
+    },
+    {
+      "id": "TC-10-01",
+      "name": "No trigger: HOLD, 'No exit trigger'",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-10-02",
+      "name": "Stop-loss: SELL, 'Stop-loss: -8.0% below entry (limit -7.0%)'",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-10-03",
+      "name": "Take-profit: SELL, 'Take-profit: +40.0% (target +27.5%)'",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-10-03b",
+      "name": "Take-profit (no smart): SELL, 'Take-profit: +26.0% (target +25.0%)'",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-10-04",
+      "name": "Trailing stop: SELL, 'Trailing stop: 3.8% down from high (trail 3.0%)'",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-10-05",
+      "name": "Dropped from top-N: SELL, 'Dropped from LSTM top 10 (rank 15) - rebalancing'",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-10-06",
+      "name": "No trail before min hold: HOLD",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-06-01",
+      "name": "RiskManager init (capital=100K)",
+      "status": "PASS",
+      "detail": "risk_pct=0.02"
+    },
+    {
+      "id": "TC-06-02",
+      "name": "Equity 100K: halted=False",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-06-03",
+      "name": "Equity 85K (15% DD): halted=True, reduced=False",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-06-04",
+      "name": "Equity 82.5K (17.5% DD): halted=True",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-07-01",
+      "name": "Valid order: approved=True",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-07-04",
+      "name": "Over max value: approved=False",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-09-00",
+      "name": "TradeIntelligence init (temp file)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-09-01",
+      "name": "record_entry AAPL",
+      "status": "PASS",
+      "detail": "open_positions: 1"
+    },
+    {
+      "id": "TC-09-02",
+      "name": "record_exit AAPL: PnL=6.67%",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-09-08",
+      "name": "Production data: 359 trades, 61 symbols",
+      "status": "PASS",
+      "detail": "File size: 220,311B"
+    },
+    {
+      "id": "TC-17-00",
+      "name": "gcloud OIDC token obtained (848 chars)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-17-01",
+      "name": "Cloud /health: 404",
+      "status": "FAIL",
+      "detail": "{\"detail\":\"Not Found\"}"
+    },
+    {
+      "id": "TC-17-02",
+      "name": "Cloud /strategy: 200",
+      "status": "PASS",
+      "detail": "{\"strategy\": \"RLAgent\"}"
+    },
+    {
+      "id": "TC-17-03",
+      "name": "Cloud /portfolio-summary: positions=0",
+      "status": "PASS",
+      "detail": "No portfolio manager active"
+    },
+    {
+      "id": "TC-17-04",
+      "name": "Cloud /benchmark-equity: 0 points",
+      "status": "WARN",
+      "detail": ""
+    },
+    {
+      "id": "TC-17-06",
+      "name": "Cloud /top-picks: 200",
+      "status": "PASS",
+      "detail": "{\"status\": \"success\", \"picks\": []}"
+    },
+    {
+      "id": "TC-17-08",
+      "name": "Cloud /system-health: CPU=?%, RAM=?%",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TC-04-02",
+      "name": "/start-live without API key: 404",
+      "status": "FAIL",
+      "detail": "{\"detail\":\"Not Found\"}"
+    },
+    {
+      "id": "TC-04-01",
+      "name": "/start-live with API key: 404",
+      "status": "FAIL",
+      "detail": "{\"detail\":\"Not Found\"}"
+    },
+    {
+      "id": "TC-04-03",
+      "name": "Portfolio after start: msg='No portfolio manager active'",
+      "status": "WARN",
+      "detail": "positions=0"
+    },
+    {
+      "id": "TC-04-04",
+      "name": "/stop: 404",
+      "status": "FAIL",
+      "detail": "{\"detail\":\"Not Found\"}"
+    }
+  ]
+}

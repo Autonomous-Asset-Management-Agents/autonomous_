@@ -1,0 +1,30 @@
+{
+    "displayName": "aaa-backend-5xx-error-rate",
+    "combiner": "OR",
+    "conditions": [
+        {
+            "displayName": "5xx error rate > 1% for 5 minutes",
+            "conditionThreshold": {
+                "filter": "metric.type=\"run.googleapis.com/request_count\" AND resource.type=\"cloud_run_revision\" AND resource.label.service_name=\"aaa-backend\" AND metric.label.response_code_class=\"5xx\"",
+                "comparison": "COMPARISON_GT",
+                "thresholdValue": 0.01,
+                "duration": "300s",
+                "aggregations": [
+                    {
+                        "alignmentPeriod": "60s",
+                        "perSeriesAligner": "ALIGN_RATE"
+                    }
+                ]
+            }
+        }
+    ],
+    "alertStrategy": {},
+    "notificationChannels": [
+        "projects/aaagents-oss/notificationChannels/1784271833283671042"
+    ],
+    "severity": "ERROR",
+    "documentation": {
+        "content": "## aaa-backend 5xx Error Rate > 1%\n\nThe Cloud Run service is returning more than 1% 5xx errors over the last 5 minutes.\n\n**Check logs:**\n```\ngcloud logging read 'resource.type=cloud_run_revision AND resource.labels.service_name=aaa-backend AND severity>=ERROR' --project=aaagents-oss --limit=50\n```",
+        "mimeType": "text/markdown"
+    }
+}

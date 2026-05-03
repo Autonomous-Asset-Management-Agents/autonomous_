@@ -1,0 +1,14 @@
+﻿.env
+.git
+.github
+__pycache__
+*.pyc
+.pytest_cache
+tests/
+data/
+venv/
+.ipynb_checkpoints
+*.csv
+*.zip
+*.pth
+*.bak

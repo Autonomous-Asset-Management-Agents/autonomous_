@@ -1,0 +1,56 @@
+services:
+  engine:
+    build: .
+    image: trading-bot-app:latest
+    container_name: trading-bot-engine
+    command: [ "python", "-m", "core.engine" ]
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ENGINE_HOST=0.0.0.0
+      - ENGINE_PORT=8001
+    ports:
+      - "127.0.0.1:8001:8001" # Internal only — not reachable from external IPs
+    restart: always
+    networks:
+      - bot-network
+
+  public-api:
+    image: trading-bot-app:latest
+    container_name: trading-bot-public-api
+    command: [ "python", "serve_public_api.py" ]
+    depends_on:
+      - engine
+    env_file:
+      - .env
+    environment:
+      - ENGINE_URL=http://engine:8001
+      - HOST=0.0.0.0
+      - PORT=8002
+    ports:
+      - "8002:8002"
+    restart: always
+    networks:
+      - bot-network
+
+  web-ui:
+    image: trading-bot-app:latest
+    container_name: trading-bot-web-ui
+    command: [ "python", "serve_web.py" ]
+    volumes:
+      - ./static:/app/static
+    env_file:
+      - .env
+    ports:
+      - "8081:8081"
+    restart: always
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge

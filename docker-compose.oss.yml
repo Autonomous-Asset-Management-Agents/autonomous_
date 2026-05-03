@@ -1,0 +1,165 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: docker.io/library/postgres:15-alpine
+    container_name: aaa-postgres-oss
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-oss}
+      # No default — operator must set POSTGRES_PASSWORD in .env.oss (copy .env.oss.example).
+      # Refusing to start without it prevents shipping `oss/oss` to the public internet.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env.oss (copy .env.oss.example)}
+      POSTGRES_DB: ${POSTGRES_DB:-aaagents}
+    ports:
+      # Loopback only. Previously 0.0.0.0:5432 exposed Postgres to the LAN/public internet.
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # pg_isready returns 0 only when the postmaster is accepting connections.
+      # Used by backend's depends_on: condition: service_healthy below to gate
+      # alembic migration startup (was: backend ran alembic before Postgres was
+      # listening, which TROUBLESHOOTING.md documented as the "wait 10s and
+      # rerun up -d" footgun).
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-oss} -d ${POSTGRES_DB:-aaagents}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    networks:
+      - aaa-net-oss
+
+  redis:
+    image: docker.io/library/redis:7-alpine
+    container_name: aaa-redis-oss
+    restart: always
+    # Bind to loopback only. Previously 0.0.0.0:6379 exposed Redis to the LAN.
+    ports:
+      - "127.0.0.1:6379:6379"
+    # Require auth. Override REDIS_PASSWORD in your .env for non-default.
+    command:
+      [
+        "redis-server",
+        "--requirepass",
+        "${REDIS_PASSWORD:?REDIS_PASSWORD must be set in .env.oss}",
+      ]
+    networks:
+      - aaa-net-oss
+
+  backend:
+    image: ghcr.io/${ORG_LOWER:-autonomous-asset-management-agents}/aaagents-backend:latest
+    pull_policy: always
+    # build: is a convenience fallback for local development without GHCR access.
+    # Regular users should rely on pull_policy: always (image: above).
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: aaa-backend-oss
+    restart: unless-stopped
+    # Sync default models (OSS path: GCS_DATA_BUCKET unset → GitHub Release pull
+    # via data/models_manifest.json), then run alembic, then engine.
+    # gcs_sync_on_start.py always exits 0 (non-blocking); engine boots in
+    # degraded mode (LSTMSignalAgent + RLConfidenceAgent neutral 0.5) if the
+    # sync fails for any reason.
+    command: /bin/bash -c "python scripts/gcs_sync_on_start.py && python -m alembic upgrade head && python -m core.engine"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://localhost:8001/health')\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-oss}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env.oss}@postgres:5432/${POSTGRES_DB:-aaagents}
+      REDIS_URL: redis://:${REDIS_PASSWORD:?REDIS_PASSWORD must be set in .env.oss}@redis:6379/0
+      # Provide dummy keys so the bot boots offline without GCP Secret Manager
+      ALPACA_API_KEY: ${ALPACA_API_KEY:-offline_mode}
+      ALPACA_SECRET_KEY: ${ALPACA_SECRET_KEY:-offline_mode}
+      ALPACA_BASE_URL: ${ALPACA_BASE_URL:-https://paper-api.alpaca.markets}
+      IS_LOCAL_DEV: "true"
+      ENGINE_HOST: "0.0.0.0"
+      ENGINE_PORT: "8001"
+      # CI bypass: when IS_CI=true, shadow_boot.py skips Alpaca+Gemini checks.
+      # Empty in local dev (bypass inactive). Set to 'true' only in CI env.
+      IS_CI: ${IS_CI:-}
+      # Plugin loading is DENY-BY-DEFAULT. To enable third-party plugins from
+      # ./plugins/round_table/, set ALLOW_UNTRUSTED_PLUGINS=true in .env.oss.
+      # See ADR-OSS1: enabling this allows arbitrary code execution on the host.
+      ALLOW_UNTRUSTED_PLUGINS: ${ALLOW_UNTRUSTED_PLUGINS:-false}
+      ROUND_TABLE_PLUGINS_DIR: ${ROUND_TABLE_PLUGINS_DIR:-/app/app/plugins/round_table}
+    ports:
+      - "127.0.0.1:8001:8001"
+    volumes:
+      # Bind-mount the entire data dir (matches the path the engine actually reads
+      # from — config.py DATA_DIR resolves to /app/app/data inside the container,
+      # NOT /app/app/data/models which the engine never reads). Lets the
+      # GitHub-Release sync persist across container restarts and lets
+      # operators drop their own pre-trained models in by hand.
+      - ./data:/app/app/data
+      - ./plugins:/app/app/plugins:ro
+    networks:
+      - aaa-net-oss
+
+  public-api:
+    image: ghcr.io/${ORG_LOWER:-autonomous-asset-management-agents}/aaagents-public-api:latest
+    pull_policy: always
+    # build: is a convenience fallback for local development without GHCR access.
+    # Regular users should rely on pull_policy: always (image: above).
+    build:
+      context: .
+      dockerfile: Dockerfile.public-api
+    container_name: aaa-public-api-oss
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      # CRITICAL: Triggers Pydantic LocalMockAuth in AuthProvider (Disables Firebase)
+      ENABLE_FIREBASE_AUTH: "false"
+      ENGINE_URL: http://backend:8001
+      REDIS_URL: redis://:${REDIS_PASSWORD:?REDIS_PASSWORD must be set in .env.oss}@redis:6379/0
+      IS_LOCAL_DEV: "true"
+      HOST: "0.0.0.0"
+      PORT: "8080"
+      # Required by the fail-fast guard in serve_public_api.py (REQUIRE_SIG).
+      # Set via .env.oss in local dev. In CI, injected from the job environment.
+      PROXY_ENGINE_SHARED_SECRET: ${PROXY_ENGINE_SHARED_SECRET:?Must be set in .env.oss}
+    ports:
+      - "127.0.0.1:8081:8080"
+    networks:
+      - aaa-net-oss
+
+  frontend:
+    # nginx.oss.conf is now baked into the image (Dockerfile.frontend). Do not mount
+    # an alternative config here — the bake is the security boundary that ensures
+    # /api/ always routes via the public-api auth layer. A failed volume-mount used
+    # to silently fall back to the private nginx.conf, bypassing auth.
+    image: ghcr.io/${ORG_LOWER:-autonomous-asset-management-agents}/aaagents-frontend:latest
+    pull_policy: always
+    container_name: aaa-frontend-oss
+    restart: unless-stopped
+    depends_on:
+      public-api:
+        condition: service_started
+    # Bind to loopback only by default. Exposing on 0.0.0.0:80 over plain HTTP
+    # ships Firebase auth tokens, broker API headers, and session cookies in
+    # cleartext to any network the host is on. To expose externally, put
+    # Caddy/Nginx + TLS in front (see docs/oss/TROUBLESHOOTING.md §5).
+    ports:
+      - "127.0.0.1:80:8080"
+    networks:
+      - aaa-net-oss
+
+volumes:
+  pgdata:
+
+networks:
+  aaa-net-oss:
+    driver: bridge
