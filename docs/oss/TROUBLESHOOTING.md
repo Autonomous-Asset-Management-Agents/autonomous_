@@ -7,8 +7,8 @@ This document is for anyone running the AAAgents Community Edition locally via D
 ### Symptom: Backend Container Exits Immediately with "Connection Refused"
 **Cause:** The typical cause is that the `backend` container is trying to run Alembic database migrations before the `postgres` container is actually ready to accept connections.
 **Resolution:**
-1. Check the logs: `docker-compose -f docker-compose.oss.yml logs backend`
-2. If you see `psycopg2.OperationalError: FATAL: the database system is starting up`, simply wait 10 seconds and run `docker-compose -f docker-compose.oss.yml up -d backend` again.
+1. Check the logs: `docker compose --env-file .env.oss -f docker-compose.oss.yml logs backend`
+2. If you see `psycopg2.OperationalError: FATAL: the database system is starting up`, simply wait 10 seconds and run `docker compose --env-file .env.oss -f docker-compose.oss.yml up -d backend` again.
 3. *Note:* The Docker-Compose file includes a `depends_on: condition: service_healthy` check, but some setups resolve this prematurely.
 
 ### Symptom: Alembic "Target database is not up to date" (Out of Sync)
@@ -52,9 +52,9 @@ Check the logs for `ComplianceGuardian` or `RiskManager`. Typical reasons:
 ## 4. Resetting the System (Nuclear Option)
 If everything breaks and you just want to start fresh (deleting all local paper-trading history and state):
 ```bash
-docker-compose -f docker-compose.oss.yml down -v
+docker compose --env-file .env.oss -f docker-compose.oss.yml down -v
 rm -rf data/db
-docker-compose -f docker-compose.oss.yml up -d
+docker compose --env-file .env.oss -f docker-compose.oss.yml up -d
 ```
 *(Warning: The `-v` flag deletes your Postgres docker volumes. Your Alpaca brokerage state remains unaffected).*
 

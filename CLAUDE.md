@@ -35,7 +35,7 @@ All tests belong in `tests/unit/` or `tests/regression/`.
 ### 3.2 Docker-First for Execution & Tests
 The entire stack must run locally via Docker Compose.
 ```bash
-docker compose -f docker-compose.oss.yml up --build
+docker compose --env-file .env.oss -f docker-compose.oss.yml up --build
 ```
 Never connect directly to the database or Redis without going through the Docker network bindings.
 

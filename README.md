@@ -31,8 +31,8 @@ bash setup.sh
 #    ALPACA_API_KEY=...
 #    ALPACA_SECRET_KEY=...
 
-# 4. Start the stack
-docker compose -f docker-compose.oss.yml up -d
+# 4. Start the stack (--env-file is required because docker compose only auto-loads `.env`, not `.env.oss`)
+docker compose --env-file .env.oss -f docker-compose.oss.yml up -d
 ```
 
 🌐 **Dashboard:** `http://localhost` · **First start:** allow 3–5 minutes (image pull + model download + DB migration)

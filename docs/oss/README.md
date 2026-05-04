@@ -10,7 +10,7 @@
 > **AAAgents digitalises the entire operational value chain of an institutional asset manager — from market signal generation through rule-based compliance filtering to deterministic order execution — as a transparent, locally deployable multi-agent system. Compliance is not a layer bolted on afterwards; it is the architectural foundation.**
 
 > [!NOTE]
-> **Docker CLI compatibility:** This document uses `docker compose` (plugin syntax, Docker Desktop ≥ 4.x). Legacy installations using standalone `docker-compose` (V1) also work — replace `docker compose` with `docker-compose` in all commands.
+> **Docker CLI compatibility:** This document uses `docker compose` (plugin syntax, Docker Desktop ≥ 4.x). Legacy installations using standalone `docker-compose` (V1) **≥ 1.25** also work (the `--env-file` flag was added in 1.25, Nov 2019) — replace `docker compose` with `docker-compose` in all commands. Docker Compose V1 itself was deprecated in June 2023; upgrade if possible.
 
 > [!IMPORTANT]
 > **Legal status:** AAAgents Community Edition is research and educational software (Apache 2.0). The system starts in paper-trading mode by default. The maintainers hold no BaFin licence under § 32 KWG / § 15 WpIG. Operating the system for one's own account requires no licence. Anyone managing third-party capital is solely responsible for ensuring the applicable regulatory compliance (KWG, WpIG, MiFID II, DORA). Full disclaimer: [DISCLAIMER.md](../../DISCLAIMER.md).
@@ -114,6 +114,7 @@ make setup
 The script handles everything automatically:
 - Copies `.env.oss.example` → `.env.oss`
 - Generates `POSTGRES_PASSWORD` (cryptographically secure via `secrets.token_hex`)
+- Generates `REDIS_PASSWORD` (cryptographically secure via `secrets.token_hex`)
 - Generates `PROXY_ENGINE_SHARED_SECRET` (HMAC-SHA256 signing key between Public API and Backend Engine)
 - **Prints no secrets to stdout** (intentional)
 
@@ -141,8 +142,11 @@ To activate live paper trading, open the dashboard at `http://localhost` and use
 
 ### Step 3 — Start the stack
 
+> [!IMPORTANT]
+> The `--env-file .env.oss` flag below is **required**. Docker Compose only auto-loads a file literally named `.env`; the bundled compose file references `${POSTGRES_PASSWORD:?…}`, `${PROXY_ENGINE_SHARED_SECRET:?…}` and `${REDIS_PASSWORD:?…}` which would fail interpolation otherwise. The provided `Makefile` (`make start`) sets the flag for you.
+
 ```bash
-docker compose -f docker-compose.oss.yml up -d
+docker compose --env-file .env.oss -f docker-compose.oss.yml up -d
 ```
 
 Docker Compose pulls all three images (approx. 2–5 minutes on first start depending on bandwidth, plus model download) and starts the services in the correct order: PostgreSQL → Redis → Backend → Public API → Frontend.
@@ -162,7 +166,7 @@ Docker Compose pulls all three images (approx. 2–5 minutes on first start depe
 The first start can take **3–5 minutes** depending on bandwidth and hardware (image pull + model download ~21 MB + DB migration). Follow the startup process:
 
 ```bash
-docker compose -f docker-compose.oss.yml logs -f backend
+docker compose --env-file .env.oss -f docker-compose.oss.yml logs -f backend
 ```
 
 A successful start is indicated by:
@@ -186,20 +190,20 @@ Once the stack is fully up, open your browser at:
 The **BORA Control Center** (the AAAgents dashboard) should load. You will see the main overview with simulated portfolio data, the agent voting log, and the kill-switch panel.
 
 > [!IMPORTANT]
-> The frontend dashboard binds exclusively to `127.0.0.1:80` (loopback — no LAN access) for security reasons. This is intentional: the UI transmits session tokens and broker API headers that must not be exposed over unencrypted HTTP across the network. To access the dashboard from another device, see [TROUBLESHOOTING.md §5 — TLS Proxy](./TROUBLESHOOTING.md#5-exposing-the-dashboard-over-the-internet-tls-required).
+> The frontend dashboard binds exclusively to `127.0.0.1:80` (loopback — no LAN access) for security reasons. This is intentional: the UI transmits session tokens and broker API headers that must not be exposed over unencrypted HTTP across the network. To access the dashboard from another device, see [TROUBLESHOOTING.md §5 — TLS Proxy](./TROUBLESHOOTING.md#5-exposing-the-dashboard-over-the-internet-ssh-tunnel-required).
 
 **Service port overview:**
 
 | Service | Host binding | Description |
 |---|---|---|
 | Frontend (BORA Control Center) | `127.0.0.1:80` → Container:8080 | Dashboard — loopback only, no LAN access |
-| Public API | `0.0.0.0:8081` → Container:8080 | Auth proxy in front of the backend engine |
-| Backend Engine | `0.0.0.0:8001` → Container:8001 | FastAPI engine, health endpoint |
+| Public API | `127.0.0.1:8081` → Container:8080 | Auth proxy in front of the backend engine — loopback only |
+| Backend Engine | `127.0.0.1:8001` → Container:8001 | FastAPI engine, health endpoint — loopback only |
 | PostgreSQL | `127.0.0.1:5432` → Container:5432 | Loopback only, no LAN access |
 | Redis | `127.0.0.1:6379` → Container:6379 | Loopback only, no LAN access |
 
-> [!WARNING]
-> **Port 8001 (Backend) and 8081 (Public API) bind to all network interfaces (`0.0.0.0`).** On an exposed server or in a shared network environment (VPS, cloud VM, lab network) these ports are reachable from outside. For non-local deployments: set firewall rules or place the stack behind a TLS reverse proxy. See [TROUBLESHOOTING.md §5](./TROUBLESHOOTING.md#5-exposing-the-dashboard-over-the-internet-tls-required).
+> [!NOTE]
+> **All five service ports bind to `127.0.0.1` only.** No service is reachable from the LAN or the public internet by default. The dashboard transmits session tokens and broker API headers that must not be exposed over unencrypted HTTP across the network. To expose the stack to other devices (e.g. a remote browser, a different machine on your home network), put the frontend behind a TLS reverse proxy (Caddy, Nginx, Traefik) and bind that proxy to `0.0.0.0`. See [TROUBLESHOOTING.md §5 — TLS Proxy](./TROUBLESHOOTING.md#5-exposing-the-dashboard-over-the-internet-ssh-tunnel-required).
 
 ---
 
@@ -220,13 +224,13 @@ lsof -i :80
 ### Check container status
 
 ```bash
-docker compose -f docker-compose.oss.yml ps
+docker compose --env-file .env.oss -f docker-compose.oss.yml ps
 ```
 
 All services should show status `running (healthy)` or `running`. If a service shows `Exit` or `restarting`, the logs will reveal the cause:
 
 ```bash
-docker compose -f docker-compose.oss.yml logs backend
+docker compose --env-file .env.oss -f docker-compose.oss.yml logs backend
 ```
 
 ### Full system reset (nuclear option)
@@ -238,8 +242,8 @@ Removes all local containers, volumes, and paper-trading state. The Alpaca broke
 make reset
 
 # Or manually:
-docker compose -f docker-compose.oss.yml down -v
-docker compose -f docker-compose.oss.yml up -d
+docker compose --env-file .env.oss -f docker-compose.oss.yml down -v
+docker compose --env-file .env.oss -f docker-compose.oss.yml up -d
 ```
 
 > [!IMPORTANT]
@@ -273,7 +277,7 @@ echo "YOUR_GITHUB_PAT" | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password
 
 **Step 3 — Start the stack**
 
-Proceed with `docker compose -f docker-compose.oss.yml up -d` from [Step 3](#step-3--start-the-stack).
+Proceed with `docker compose --env-file .env.oss -f docker-compose.oss.yml up -d` from [Step 3](#step-3--start-the-stack).
 
 ---
 

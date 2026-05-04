@@ -1,11 +1,18 @@
-# setup.ps1 — AAAgents OSS First-Time Setup (Windows PowerShell)
+# setup.ps1 -- AAAgents OSS First-Time Setup (Windows PowerShell)
 #
 # Generates cryptographically secure secrets and creates .env.oss from the
 # bundled template. Run this ONCE before your first `docker compose up`.
 #
 # Usage:
 #   powershell -ExecutionPolicy Bypass -File setup.ps1
-#   (or right-click → "Run with PowerShell")
+#   (or right-click -> "Run with PowerShell")
+#
+# Encoding policy: this file is intentionally ASCII-only. Windows PowerShell
+# 5.1 (the OS default on Win10/Win11) reads .ps1 files as the system ANSI
+# code page (CP1252 on en-US, CP1252 on de-DE) when no UTF-8 BOM is present.
+# Non-ASCII chars (box-drawing, em-dashes, glyphs) get reinterpreted and can
+# corrupt string-literal quoting, producing spurious "MissingEndCurlyBrace"
+# parser errors. Keep this file ASCII to stay portable across PS 5.1 / PS 7.
 
 $ErrorActionPreference = "Stop"
 
@@ -13,104 +20,126 @@ $EnvFile    = ".env.oss"
 $EnvExample = ".env.oss.example"
 
 Write-Host ""
-Write-Host "╔══════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║        AAAgents OSS — First-Time Setup                   ║" -ForegroundColor Cyan
-Write-Host "╚══════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Host "       AAAgents OSS -- First-Time Setup" -ForegroundColor Cyan
+Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host ""
 
-# ── Guard: don't overwrite existing config ─────────────────────────────────────
+# -- Guard: don't overwrite existing config -----------------------------------
 if (Test-Path $EnvFile) {
-    Write-Host "⚠  .env.oss already exists — skipping." -ForegroundColor Yellow
+    Write-Host "[!] .env.oss already exists -- skipping." -ForegroundColor Yellow
     Write-Host ""
-    Write-Host "   Your existing configuration is unchanged."
-    Write-Host "   To regenerate from scratch: Remove-Item .env.oss; .\setup.ps1"
+    Write-Host "    Your existing configuration is unchanged."
+    Write-Host "    To regenerate from scratch: Remove-Item .env.oss; .\setup.ps1"
     Write-Host ""
     exit 0
 }
 
-# ── Pre-flight checks ──────────────────────────────────────────────────────────
+# -- Pre-flight checks --------------------------------------------------------
 if (-not (Test-Path $EnvExample)) {
-    Write-Host "❌ .env.oss.example not found." -ForegroundColor Red
-    Write-Host "   Make sure you are in the aaagents-oss root directory."
+    Write-Host "[X] .env.oss.example not found." -ForegroundColor Red
+    Write-Host "    Make sure you are in the aaagents-oss root directory."
     exit 1
 }
 
-# Resolve Python
+# Resolve a real Python 3.8+ interpreter.
+#
+# Probe each candidate by actually running it. The Microsoft-Store stub at
+# C:\Users\<u>\AppData\Local\Microsoft\WindowsApps\python3.exe satisfies
+# Get-Command but emits "Python wurde nicht gefunden..." (or English equiv)
+# instead of a real "Python 3.x.y" version line, so the regex check rejects
+# it and we fall through to the real `python` interpreter.
 $PythonCmd = $null
 foreach ($cmd in @("python3", "python")) {
     try {
         $ver = & $cmd --version 2>&1
-        if ($ver -match "Python 3") { $PythonCmd = $cmd; break }
+        if ($ver -match "^Python 3\.([0-9]+)") {
+            $minor = [int]$Matches[1]
+            if ($minor -ge 8) { $PythonCmd = $cmd; break }
+        }
     } catch { }
 }
 if (-not $PythonCmd) {
-    Write-Host "❌ Python 3 not found." -ForegroundColor Red
-    Write-Host "   Install Python 3 from https://www.python.org/downloads/ and retry."
+    Write-Host "[X] Python 3.8+ not found." -ForegroundColor Red
+    Write-Host "    Microsoft Store stubs (python3.exe redirector) do not count."
+    Write-Host "    Install Python 3 from https://www.python.org/downloads/ and retry."
     exit 1
 }
 
-# ── Generate secrets ───────────────────────────────────────────────────────────
+# -- Generate secrets ---------------------------------------------------------
 Write-Host "Generating cryptographically secure secrets..."
 
 $PostgresPassword = & $PythonCmd -c "import secrets; print(secrets.token_hex(24))"
 $ProxySecret      = & $PythonCmd -c "import secrets; print(secrets.token_hex(32))"
+$RedisPassword    = & $PythonCmd -c "import secrets; print(secrets.token_hex(24))"
 
-if (-not $PostgresPassword -or -not $ProxySecret) {
-    Write-Host "❌ Secret generation failed — Python output was empty." -ForegroundColor Red
+if (-not $PostgresPassword -or -not $ProxySecret -or -not $RedisPassword) {
+    Write-Host "[X] Secret generation failed -- Python output was empty." -ForegroundColor Red
     exit 1
 }
 
-# ── Write .env.oss ─────────────────────────────────────────────────────────────
-# Read template, replace empty POSTGRES_PASSWORD= line, append PROXY secret.
+# -- Write .env.oss -----------------------------------------------------------
+# Read template, replace empty POSTGRES_PASSWORD= line, append PROXY +
+# REDIS sections.
 $content = Get-Content $EnvExample -Raw -Encoding UTF8
 
 # Replace the empty POSTGRES_PASSWORD= line (handles trailing whitespace/CRLF)
 $content = $content -replace '(?m)^POSTGRES_PASSWORD=[ \t]*(\r?\n)', "POSTGRES_PASSWORD=$PostgresPassword`n"
 
-# Append PROXY_ENGINE_SHARED_SECRET section
-$content = $content.TrimEnd()
-$content += @"
+# Append PROXY_ENGINE_SHARED_SECRET + REDIS_PASSWORD sections.
+# Use a single-quoted here-string + format placeholders so the section text
+# itself has no PowerShell-interpolated tokens (avoid surprises with `$` etc.
+# in future secret formats).
+$tail = @'
 
-`n
 # --- Internal Service Authentication -----------------------------------------
-# Auto-generated by setup.ps1 -- do NOT commit this file or share this value.
+# Auto-generated by setup.ps1 -- do NOT commit this file or share these values.
 # This HMAC secret authenticates requests between the Public API and the
 # Backend Engine. Both services must share the identical value.
-PROXY_ENGINE_SHARED_SECRET=$ProxySecret
-"@
+PROXY_ENGINE_SHARED_SECRET={0}
+
+# --- Redis Auth --------------------------------------------------------------
+# Auto-generated by setup.ps1 -- required by docker-compose.oss.yml
+# (redis-server --requirepass). Both backend and public-api dial Redis with
+# this password embedded in REDIS_URL.
+REDIS_PASSWORD={1}
+'@ -f $ProxySecret, $RedisPassword
+
+$content = $content.TrimEnd() + "`n" + $tail + "`n"
 
 # WriteAllText with UTF8Encoding($false) intentionally writes LF (not CRLF).
 # Docker reads .env files expecting LF line endings regardless of host OS.
-# This is correct behaviour — do not change to Set-Content which adds CRLF.
+# This is correct behaviour -- do not change to Set-Content which adds CRLF.
 [System.IO.File]::WriteAllText((Join-Path (Get-Location) $EnvFile), $content, [System.Text.UTF8Encoding]::new($false))
 
-# ── Create required directories ────────────────────────────────────────────────
+# -- Create required directories ----------------------------------------------
 New-Item -ItemType Directory -Force -Path "data" | Out-Null
 New-Item -ItemType Directory -Force -Path "plugins" | Out-Null
 
-# ── Summary ────────────────────────────────────────────────────────────────────
+# -- Summary ------------------------------------------------------------------
 Write-Host ""
-Write-Host "✅ .env.oss created successfully." -ForegroundColor Green
+Write-Host "[OK] .env.oss created successfully." -ForegroundColor Green
 Write-Host ""
-Write-Host "┌──────────────────────────────────────────────────────────┐"
-Write-Host "│  Auto-generated secrets (stored only in .env.oss):       │"
-Write-Host "│                                                          │"
-Write-Host "│  POSTGRES_PASSWORD            ✓  generated               │"
-Write-Host "│  PROXY_ENGINE_SHARED_SECRET   ✓  generated               │"
-Write-Host "│                                                          │"
-Write-Host "│  These values are NOT printed here intentionally.        │"
-Write-Host "└──────────────────────────────────────────────────────────┘"
+Write-Host "+----------------------------------------------------------+"
+Write-Host "|  Auto-generated secrets (stored only in .env.oss):       |"
+Write-Host "|                                                          |"
+Write-Host "|  POSTGRES_PASSWORD            [v]  generated             |"
+Write-Host "|  PROXY_ENGINE_SHARED_SECRET   [v]  generated             |"
+Write-Host "|  REDIS_PASSWORD               [v]  generated             |"
+Write-Host "|                                                          |"
+Write-Host "|  These values are NOT printed here intentionally.        |"
+Write-Host "+----------------------------------------------------------+"
 Write-Host ""
-Write-Host "⚡ One manual step remaining:" -ForegroundColor Yellow
+Write-Host "[!] One manual step remaining:" -ForegroundColor Yellow
 Write-Host ""
-Write-Host "   Open .env.oss and add your Alpaca Paper-Trading API keys:"
+Write-Host "    Open .env.oss and add your Alpaca Paper-Trading API keys:"
 Write-Host ""
-Write-Host "     ALPACA_API_KEY=your_key_here"    -ForegroundColor Cyan
-Write-Host "     ALPACA_SECRET_KEY=your_secret_here" -ForegroundColor Cyan
+Write-Host "      ALPACA_API_KEY=your_key_here"    -ForegroundColor Cyan
+Write-Host "      ALPACA_SECRET_KEY=your_secret_here" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "   Free Alpaca Paper-Trading account (no real money required):"
-Write-Host "   → https://app.alpaca.markets"
+Write-Host "    Free Alpaca Paper-Trading account (no real money required):"
+Write-Host "    -> https://app.alpaca.markets"
 Write-Host ""
-Write-Host "   Once done, start the system:"
-Write-Host "   → docker compose -f docker-compose.oss.yml up -d" -ForegroundColor Cyan
+Write-Host "    Once done, start the system:"
+Write-Host "    -> docker compose --env-file .env.oss -f docker-compose.oss.yml up -d" -ForegroundColor Cyan
 Write-Host ""

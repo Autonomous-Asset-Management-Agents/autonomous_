@@ -125,12 +125,12 @@ ALLOW_UNTRUSTED_PLUGINS=true
 When you start the BORA Container (or the local Python script), the engine will scan the `plugins/round_table/` folder and automatically load agents that use the `@register_agent` decorator.
 
 ```bash
-docker compose -f docker-compose.oss.yml up -d
+docker compose --env-file .env.oss -f docker-compose.oss.yml up -d
 ```
 
 Check the logs to see your agent in action:
 ```bash
-docker compose -f docker-compose.oss.yml logs -f backend
+docker compose --env-file .env.oss -f docker-compose.oss.yml logs -f backend
 ```
 
 You should see logs like:

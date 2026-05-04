@@ -27,6 +27,13 @@ else
 endif
 
 COMPOSE_FILE := docker-compose.oss.yml
+ENV_FILE     := .env.oss
+
+# Bundle the env-file + compose-file flags into a single COMPOSE handle. The
+# --env-file flag is required because Docker Compose only auto-loads `.env`
+# (not `.env.oss`); without it every ${VAR:?…} guard in the compose file
+# would fail interpolation even though setup.sh has populated .env.oss.
+COMPOSE := docker compose --env-file $(ENV_FILE) -f $(COMPOSE_FILE)
 
 # NOTE: On Windows, run make from Git Bash (not cmd.exe/PowerShell).
 # Git Bash is already required for setup.sh, so this is not an additional constraint.
@@ -36,20 +43,20 @@ setup: ## First-time setup: generate .env.oss with cryptographically secure secr
 
 start: ## Start the AAAgents OSS stack (runs setup first if .env.oss is missing)
 	@python -c "import sys,os; sys.exit(0) if os.path.exists('.env.oss') else sys.exit(1)" || $(MAKE) setup
-	docker compose -f $(COMPOSE_FILE) up -d
+	$(COMPOSE) up -d
 	@echo ""
 	@echo "Stack started. Dashboard: http://localhost"
 	@echo "Follow logs: make logs"
 
 stop: ## Stop all containers (data is preserved)
-	docker compose -f $(COMPOSE_FILE) down
+	$(COMPOSE) down
 
 logs: ## Tail backend engine logs (Ctrl+C to exit)
-	docker compose -f $(COMPOSE_FILE) logs -f backend
+	$(COMPOSE) logs -f backend
 
 reset: ## Nuclear reset: stop containers AND delete all volumes (paper-trading history lost)
 	@echo "⚠  This will delete all local paper-trading data. Continue? [y/N]" && read ans && [ $${ans:-N} = y ]
-	docker compose -f $(COMPOSE_FILE) down -v
+	$(COMPOSE) down -v
 	@echo "✅ Reset complete. Run 'make start' to restart."
 
 # ── Local CI Targets ──────────────────────────────────────────────────────────
