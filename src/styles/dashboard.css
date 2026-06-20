@@ -1,0 +1,420 @@
+/*
+ * dashboard.css — AAAgents Console Dashboard
+ *
+ * Design system mirrors landing-d.css exactly:
+ *   Font:    Inter (system) + JetBrains Mono
+ *   Palette: white bg · black fg · #00c27a accent · #6b6b6b muted
+ *   Borders: #e6e6e6 (light) — no dark-mode toggle in console
+ *
+ * Scoped under .aaa-dashboard to avoid collision with shadcn globals.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Design tokens (match landing-d.css exactly) ──────────────────── */
+.aaa-dashboard {
+  --d-font:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --d-mono:    'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  --d-bg:      #0a0a0a;
+  --d-fg:      #ffffff;
+  --d-muted:   #888888;
+  --d-border:  #222222;
+  --d-surface: #141414;
+  --d-accent:  #00c27a;
+  --d-red:     #ff4d4f;
+  --d-green:   #00c27a;
+  --d-amber:   #f5a623;
+
+  --d-max:     980px;
+  --d-gutter:  clamp(16px, 4vw, 48px);
+
+  font-family: var(--d-font);
+  color: var(--d-fg);
+  background: var(--d-bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.aaa-dashboard * { box-sizing: border-box; }
+
+/* ── Layout ──────────────────────────────────────────────────────── */
+.aaa-dashboard .d-wrap {
+  max-width: var(--d-max);
+  margin: 0 auto;
+  padding: 56px var(--d-gutter) 80px;
+}
+
+.aaa-dashboard .d-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.aaa-dashboard .d-content-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* ── Top nav bar (matches .lb-nav) ───────────────────────────────── */
+.aaa-dashboard .d-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--d-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--d-gutter);
+  height: 56px;
+}
+.aaa-dashboard .d-topbar-logo {
+  font-family: var(--d-mono);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: var(--d-fg);
+  text-decoration: none;
+}
+.aaa-dashboard .d-topbar-logo span { color: var(--d-accent); }
+.aaa-dashboard .d-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.aaa-dashboard .d-topbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid var(--d-border);
+  background: transparent;
+  color: var(--d-muted);
+  font-family: var(--d-font);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.aaa-dashboard .d-topbar-btn:hover {
+  color: var(--d-fg);
+  border-color: #555;
+  background: rgba(255,255,255,0.05);
+}
+.aaa-dashboard .d-topbar-btn.danger {
+  color: var(--d-red);
+  border-color: rgba(255,77,79,0.3);
+}
+.aaa-dashboard .d-topbar-btn.danger:hover {
+  background: rgba(255,77,79,0.05);
+}
+.aaa-dashboard .d-topbar-btn.primary {
+  background: var(--d-fg);
+  color: var(--d-bg);
+  border-color: var(--d-fg);
+}
+.aaa-dashboard .d-topbar-btn.primary:hover {
+  background: #eee;
+  border-color: #eee;
+}
+
+/* ── Page header ─────────────────────────────────────────────────── */
+.aaa-dashboard .d-eyebrow {
+  font-family: var(--d-mono);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--d-muted);
+  margin-bottom: 10px;
+}
+.aaa-dashboard .d-heading {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0 0 32px;
+  color: var(--d-fg);
+}
+
+/* ── Cards (replace surface-card) ───────────────────────────────── */
+.aaa-dashboard .d-card {
+  background: var(--d-surface);
+  border-radius: 16px;
+  border: 1px solid var(--d-border);
+  padding: 24px;
+  transition: border-color 0.15s;
+}
+.aaa-dashboard .d-card:hover { border-color: #444; }
+
+.aaa-dashboard .d-card-label {
+  font-family: var(--d-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--d-muted);
+  margin-bottom: 8px;
+}
+.aaa-dashboard .d-card-value {
+  font-family: var(--d-mono);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--d-fg);
+  line-height: 1.1;
+}
+.aaa-dashboard .d-card-note {
+  font-family: var(--d-mono);
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.aaa-dashboard .d-card-note.up  { color: var(--d-green); }
+.aaa-dashboard .d-card-note.dn  { color: var(--d-red); }
+.aaa-dashboard .d-card-note.neu { color: var(--d-muted); }
+
+/* ── Section heading ─────────────────────────────────────────────── */
+.aaa-dashboard .d-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--d-fg);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.aaa-dashboard .d-section-badge {
+  font-family: var(--d-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--d-muted);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--d-border);
+  background: var(--d-bg);
+}
+.aaa-dashboard .d-section-badge.live {
+  color: var(--d-green);
+  border-color: rgba(0,194,122,0.3);
+  background: rgba(0,194,122,0.06);
+}
+.aaa-dashboard .d-section-badge.offline {
+  color: var(--d-red);
+  border-color: rgba(255,77,61,0.3);
+  background: rgba(255,77,61,0.06);
+}
+
+/* ── Status dot ──────────────────────────────────────────────────── */
+.aaa-dashboard .d-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex: none;
+}
+.aaa-dashboard .d-dot.live    { background: var(--d-green); box-shadow: 0 0 0 3px rgba(0,194,122,0.15); }
+.aaa-dashboard .d-dot.offline { background: var(--d-red); }
+.aaa-dashboard .d-dot.idle    { background: #ccc; }
+
+/* ── Control buttons ─────────────────────────────────────────────── */
+.aaa-dashboard .d-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--d-font);
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  border: 1px solid var(--d-border);
+  background: var(--d-surface);
+  color: var(--d-fg);
+  transition: all 0.15s;
+}
+.aaa-dashboard .d-btn:hover:not(:disabled) {
+  background: #222;
+  border-color: #555;
+}
+.aaa-dashboard .d-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.aaa-dashboard .d-btn.start {
+  color: var(--d-green);
+  border-color: rgba(0,194,122,0.35);
+  background: rgba(0,194,122,0.06);
+}
+.aaa-dashboard .d-btn.start:hover:not(:disabled) {
+  background: rgba(0,194,122,0.12);
+}
+.aaa-dashboard .d-btn.stop {
+  color: var(--d-muted);
+}
+.aaa-dashboard .d-btn.panic {
+  color: var(--d-red);
+  border-color: rgba(255,77,79,0.3);
+  background: rgba(255,77,79,0.05);
+}
+.aaa-dashboard .d-btn.panic:hover:not(:disabled) {
+  background: rgba(255,77,79,0.1);
+}
+.aaa-dashboard .d-btn.save {
+  color: var(--d-amber);
+  border-color: rgba(245,166,35,0.3);
+  background: rgba(245,166,35,0.06);
+}
+
+/* ── Toggle switch (matches landing-d style) ────────────────────── */
+.aaa-dashboard .d-toggle {
+  position: relative;
+  width: 36px; height: 20px;
+  border-radius: 999px;
+  background: var(--d-border);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex: none;
+}
+.aaa-dashboard .d-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 14px; height: 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.aaa-dashboard .d-toggle.on { background: var(--d-accent); }
+.aaa-dashboard .d-toggle.on::after { transform: translateX(16px); }
+
+/* ── Input fields ────────────────────────────────────────────────── */
+.aaa-dashboard .d-input {
+  width: 110px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--d-border);
+  background: var(--d-bg);
+  color: var(--d-fg);
+  font-size: 13px;
+  font-family: var(--d-mono);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.aaa-dashboard .d-input:focus { border-color: #999; }
+
+/* ── Data tables ─────────────────────────────────────────────────── */
+.aaa-dashboard .d-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.aaa-dashboard .d-table th {
+  font-family: var(--d-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--d-muted);
+  padding: 0 0 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--d-border);
+}
+.aaa-dashboard .d-table td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--d-border);
+  color: var(--d-fg);
+  font-size: 13px;
+}
+.aaa-dashboard .d-table td.mono { font-family: var(--d-mono); font-weight: 600; }
+.aaa-dashboard .d-table td.muted { color: var(--d-muted); }
+.aaa-dashboard .d-table td.up  { color: var(--d-green); font-weight: 600; }
+.aaa-dashboard .d-table td.dn  { color: var(--d-red);   font-weight: 600; }
+.aaa-dashboard .d-table .d-side-badge {
+  display: inline-block;
+  font-family: var(--d-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.aaa-dashboard .d-table .d-side-badge.buy {
+  color: var(--d-green);
+  background: rgba(0,194,122,0.1);
+}
+.aaa-dashboard .d-table .d-side-badge.sell {
+  color: var(--d-red);
+  background: rgba(255,77,61,0.1);
+}
+
+/* ── Agent grid cards ────────────────────────────────────────────── */
+.aaa-dashboard .d-agent-card {
+  background: var(--d-surface);
+  border: 1px solid var(--d-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color 0.15s;
+}
+.aaa-dashboard .d-agent-card:hover { border-color: #444; }
+.aaa-dashboard .d-agent-name {
+  font-family: var(--d-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--d-fg);
+  margin-bottom: 3px;
+}
+.aaa-dashboard .d-agent-status {
+  font-size: 10px;
+  font-weight: 500;
+}
+.aaa-dashboard .d-agent-status.active { color: var(--d-green); }
+.aaa-dashboard .d-agent-status.idle   { color: #ccc; }
+.aaa-dashboard .d-agent-signal {
+  font-family: var(--d-mono);
+  font-size: 10px;
+  color: var(--d-muted);
+  margin-top: 2px;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────── */
+.aaa-dashboard .d-divider {
+  border: none;
+  border-top: 1px solid var(--d-border);
+  margin: 0;
+}
+
+/* ── Offline state ───────────────────────────────────────────────── */
+.aaa-dashboard .d-offline-box {
+  background: rgba(255,77,79,0.04);
+  border: 1px solid rgba(255,77,79,0.15);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+.aaa-dashboard .d-offline-box p {
+  font-size: 13px;
+  color: var(--d-muted);
+  line-height: 1.6;
+  margin: 6px 0 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .aaa-dashboard .d-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .aaa-dashboard .d-content-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .aaa-dashboard .d-stats-grid { grid-template-columns: 1fr; }
+  .aaa-dashboard .d-heading { font-size: 28px; }
+  .aaa-dashboard .d-card { padding: 18px; }
+}

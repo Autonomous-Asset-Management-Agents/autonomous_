@@ -1,0 +1,4 @@
+/* App-level styles — layout constraints handled in index.css */
+#root {
+  min-height: 100vh;
+}
