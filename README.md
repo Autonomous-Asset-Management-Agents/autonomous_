@@ -6,87 +6,87 @@
 [![MiFID II Inspired](https://img.shields.io/badge/Compliance-MiFID%20II%20Inspired-orange)](./docs/oss/ARCHITECTURE.md)
 [![Status: Stable](https://img.shields.io/badge/Status-1.0.0-blue)](#)
 
-**Ein dezentrales, quelloffenes Software-Werkzeug zur Automatisierung und Ausführung von Handelsentscheidungen auf eigene Rechnung.**
+**A decentralized, open-source software tool for automating and executing trading decisions on your own account.**
 
-AAAgents bringt eine leistungsstarke, operative Handels- und Ausführungsumgebung direkt auf Ihren PC. Die Software läuft vollständig lokal auf Ihrer eigenen Hardware und verbindet sich direkt mit Ihrer Broker-API. Sie dient als Hilfsmittel für Privatanwender und Unternehmen, die eigene Vermögenswerte in eigenem Ermessen verwalten möchten.
+AAAgents brings a powerful, operational trading and execution environment directly to your PC. The software runs completely locally on your own hardware and connects directly to your broker API. It serves as a tool for private users and companies who want to manage their own assets at their own discretion.
 
-* **100% Dezentral & Privat:** Ihre API-Schlüssel und Portfoliodaten verbleiben in Ihrem lokalen Betriebssystem-Schlüsselbund und Ihrer lokalen SQLite-Datenbank. Es werden keine Daten an uns übertragen.
-* **Operative Ausführung:** Das System führt nach der Konfiguration vollautomatisch echte (oder virtuelle) Kauf- und Verkaufsaufträge direkt über Ihr Broker-Konto aus.
-* **Keine Finanzdienstleistung:** Wir bieten keine Vermögensverwaltung, Anlageberatung oder Broker-Dienste an. Der Betrieb, die Risikoparametrisierung und die Kontrolle der Software liegen vollständig in Ihrer Verantwortung.
-
----
-
-## 🚀 Schnellstart (In 3 Schritten startklar)
-
-Für die Desktop-App benötigen Sie **keine** Programmierkenntnisse, kein Python und kein Docker.
-
-1. **Herunterladen:** Laden Sie den Installer für Windows direkt herunter:
-   * ⬇️ [Download für Windows (autonomous_setup.exe)](https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/latest/download/autonomous_setup.exe)
-   * 🍏 Download für macOS (folgt später)
-2. **Installieren:** Starten Sie das Setup und öffnen Sie die Anwendung **AAAgents**.
-3. **Einrichten:** 
-   * **Paper Trading (Virtuelles Kapital):** Tragen Sie Ihre Alpaca Paper-Trading Keys ein, um das System risikofrei mit virtuellen Orders zu testen.
-   * **Live Trading (Echtes Kapital):** Tragen Sie Ihre Alpaca Live-Trading Keys ein. Ihre Schlüssel werden lokal sicher verschlüsselt im Betriebssystem-Schlüsselbund gespeichert.
-   * **Offline-Modus:** Ohne Schlüssel läuft die Abstimmungs-Engine im reinen Empfehlungsmodus, ohne Orders an einen Broker zu senden.
+* **100% Decentralized & Private:** Your API keys and portfolio data remain in your local operating system keychain and your local SQLite database. No data is transmitted to us.
+* **Operational Execution:** Once configured, the system fully automatically executes real (or virtual) buy and sell orders directly via your broker account.
+* **No Financial Services:** We do not offer asset management, investment advice, or broker services. The operation, risk parameterization, and control of the software are entirely your responsibility.
 
 ---
 
-## 🧠 Lokale Features der Community Edition
+## 🚀 Quick Start (Ready in 3 Steps)
 
-* **Lokale KI (Ollama Integration):** Analysieren Sie Nachrichten und Sentiment vollständig lokal auf Ihrer Grafikkarte (z.B. mit Llama3 oder Mistral) – komplett kostenfrei und ohne Cloud-Drittanbieter.
-* **9-Agenten-Konsensus:** Ein lokaler Rat aus technischen Indikatoren, Sentiment-Analysen, LSTMs und Reinforcement Learning bestimmt die Signale.
-* **Iron Dome Risikokontrolle:** Integrierte, konfigurierbare Schutzregeln gegen Wash-Trades, zu hohe Branchenkonzentration und unkontrolliertes Handelsverhalten.
+You need **no** programming skills, no Python, and no Docker for the Desktop App.
+
+1. **Download:** Download the installer for Windows directly:
+   * ⬇️ [Download for Windows (autonomous_setup.exe)](https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/download/desktop-v0.9-beta/autonomous_setup.exe)
+   * 🍏 Download for macOS (coming later)
+2. **Install:** Start the setup and open the **AAAgents** application.
+3. **Set Up:** 
+   * **Paper Trading (Virtual Capital):** Enter your Alpaca Paper-Trading Keys to test the system risk-free with virtual orders.
+   * **Live Trading (Real Capital):** Enter your Alpaca Live-Trading Keys. Your keys are securely encrypted and stored locally in the operating system keychain.
+   * **Offline Mode:** Without keys, the voting engine runs in pure recommendation mode without sending orders to a broker.
+
+---
+
+## 🧠 Local Features of the Community Edition
+
+* **Local AI (Ollama Integration):** Analyze news and sentiment completely locally on your GPU (e.g., with Llama3 or Mistral) – entirely free of charge and without third-party cloud providers.
+* **9-Agent Consensus:** A local council of technical indicators, sentiment analysis, LSTMs, and reinforcement learning determines the signals.
+* **Iron Dome Risk Control:** Integrated, configurable protection rules against wash trades, excessive sector concentration, and uncontrolled trading behavior.
 
 ---
 
 ## 📊 Community Edition vs. Enterprise
 
-Diese Tabelle definiert den genauen Leistungsumfang der Community Edition im Vergleich zur Enterprise-Version. Detaillierte Vision: [docs/oss/VISION_AND_EDITIONS.md](./docs/oss/VISION_AND_EDITIONS.md).
+This table defines the exact scope of features of the Community Edition compared to the Enterprise version. Detailed vision: [docs/oss/VISION_AND_EDITIONS.md](./docs/oss/VISION_AND_EDITIONS.md).
 
 | Feature | Community Edition (Open-Source) | Enterprise Edition |
 |---|---|---|
-| **Bereitstellung** | Lokal als Desktop-App / Docker Compose | GCP Cloud Run (Managed, Auto-Scaling) |
-| **Authentifizierung** | `LocalMockAuth` (Loopback/Private IP) | Firebase Auth + OIDC |
-| **Datenbank** | SQLite (lokal, dateibasiert) | PostgreSQL / AlloyDB (Cloud SQL) |
-| **Zustandsverwaltung** | `LocalStateClient` (lokal im Arbeitsspeicher) | Redis Memorystore (persistent) |
-| **Geheimnisverwaltung** | OS Keychain via `keyring` / `.env.oss` | GCP Secret Manager |
-| **Mandantenfähigkeit** | Single-Tenant (Einzelnutzer) | Multi-Tenant (Firebase UID Isolation) |
-| **Datenzufuhr** | Alpaca IEX (kostenfreie Echtzeitdaten) | Alpaca SIP (vollständige US-Marktdaten) |
-| **Audit Trail** | `LocalJSONAuditLogger` (lokal, SHA-256) | SenateProtocol (Redis + Cloud SQL) |
-| **MiFID II Export** | Pre-Trade Risikogates (Iron Dome) | Automatisierter RTS 22 Export (Roadmap) |
-| **ML-Modellquelle** | GitHub Releases (Boot-Manifest) | GCS Bucket Sync (Vertex AI) |
-| **HFT / Latenz** | Nicht für HFT ausgelegt (Minuten/Stunden) | Sub-Sekunden-Ausführung (Roadmap Phase 5) |
+| **Deployment** | Local as Desktop App / Docker Compose | GCP Cloud Run (Managed, Auto-Scaling) |
+| **Authentication** | `LocalMockAuth` (Loopback/Private IP) | Firebase Auth + OIDC |
+| **Database** | SQLite (local, file-based) | PostgreSQL / AlloyDB (Cloud SQL) |
+| **State Management** | `LocalStateClient` (local in memory) | Redis Memorystore (persistent) |
+| **Secret Management** | OS Keychain via `keyring` / `.env.oss` | GCP Secret Manager |
+| **Tenancy** | Single-Tenant (Single User) | Multi-Tenant (Firebase UID Isolation) |
+| **Data Feed** | Alpaca IEX (free real-time data) | Alpaca SIP (full US market data) |
+| **Audit Trail** | `LocalJSONAuditLogger` (local, SHA-256) | SenateProtocol (Redis + Cloud SQL) |
+| **MiFID II Export** | Pre-Trade Risk Gates (Iron Dome) | Automated RTS 22 Export (Roadmap) |
+| **ML Model Source** | GitHub Releases (Boot Manifest) | GCS Bucket Sync (Vertex AI) |
+| **HFT / Latency** | Not designed for HFT (Minutes/Hours) | Sub-second execution (Roadmap Phase 5) |
 
 ---
 
-## ⚙️ Betriebsmodi & Erwartungen
+## ⚙️ Operating Modes & Expectations
 
-| Setup | Verhalten |
+| Setup | Behavior |
 |---|---|
-| **Ohne Alpaca-Keys** | **Offline-Modus** — Die Engine startet, die 9 Agenten stimmen ab, aber es werden keine Orders gesendet. Perfekt zum Kennenlernen der Software. |
-| **Alpaca Paper Keys** | **Paper-Trading-Modus** (Standard) — Orders werden risikofrei an die Alpaca Sandbox-Umgebung gesendet. |
-| **Alpaca + POLYGON_API_KEY** | Fügt echte CBOE VIX Volatilitätsdaten hinzu. Ohne Key wird der Marktregime-Index aus der 60-Tage-Historie von SPY geschätzt. |
-| **Alpaca + GEMINI_API_KEY** | **Full Sentiment Mode** — Aktiviert GeminiSentimentAgent und NewsContextAgent. Ohne Key läuft das System im *Degraded Sentiment Mode* (7 von 9 Agenten aktiv). |
+| **Without Alpaca Keys** | **Offline Mode** — The engine starts, the 9 agents vote, but no orders are sent. Perfect for getting to know the software. |
+| **Alpaca Paper Keys** | **Paper-Trading Mode** (Default) — Orders are sent risk-free to the Alpaca Sandbox environment. |
+| **Alpaca + POLYGON_API_KEY** | Adds real CBOE VIX volatility data. Without a key, the market regime index is estimated from the 60-day history of SPY. |
+| **Alpaca + GEMINI_API_KEY** | **Full Sentiment Mode** — Activates GeminiSentimentAgent and NewsContextAgent. Without a key, the system runs in *Degraded Sentiment Mode* (7 out of 9 agents active). |
 
 ---
 
-## 🛠️ `make` Befehle (Docker-Alternative)
+## 🛠️ `make` Commands (Docker Alternative)
 
-Falls Sie die Software lieber über Docker Compose starten möchten:
+If you prefer to start the software via Docker Compose:
 
 ```bash
-make setup   # Erzeugt .env.oss mit sicheren Geheimnissen
-make start   # Führt das Setup aus und startet Docker Compose
-make stop    # Stoppt alle Container (Daten bleiben erhalten)
-make logs    # Zeigt die Backend-Logs an
-make reset   # Löscht alle Container und lokalen Volumes
+make setup   # Generates .env.oss with secure secrets
+make start   # Runs setup and starts Docker Compose
+make stop    # Stops all containers (data is preserved)
+make logs    # Shows the backend logs
+make reset   # Deletes all containers and local volumes
 ```
 
 ---
 
-## 🔌 Eigene Agenten hinzufügen (Plugin-System)
+## 🔌 Add Custom Agents (Plugin System)
 
-Das Abstimmungsgremium kann erweitert werden. Erstellen Sie dazu eine Python-Datei in `plugins/round_table/my_strategy.py`:
+The voting council can be extended. To do this, create a Python file in `plugins/round_table/my_strategy.py`:
 
 ```python
 from core.round_table.base_agent import VotingAgent, VoteResult
@@ -97,17 +97,17 @@ class MyStrategyAgent(VotingAgent):
     default_weight: float = 15.0
 
     async def vote(self, state: "SymbolEvalState") -> VoteResult:
-        # Score von 0.0 (Strong Sell) bis 1.0 (Strong Buy)
+        # Score from 0.0 (Strong Sell) to 1.0 (Strong Buy)
         return VoteResult(
             agent_name=self.__class__.__name__,
             symbol=state["symbol"],
             score=0.6,
             weight=self.weight,
-            reasoning="Beispiel: Neutral-bullisches Signal."
+            reasoning="Example: Neutral-bullish signal."
         )
 ```
 
-Aktivieren Sie Plugins in Ihrer `.env.oss`:
+Activate plugins in your `.env.oss`:
 ```env
 ALLOW_UNTRUSTED_PLUGINS=true
 ROUND_TABLE_PLUGINS_DIR=./plugins/round_table
@@ -115,48 +115,48 @@ ROUND_TABLE_PLUGINS_DIR=./plugins/round_table
 
 ---
 
-## 🛠️ Lokale Entwicklung (Ausführung aus dem Quellcode)
+## 🛠️ Local Development (Running from Source Code)
 
-Wenn Sie den Code modifizieren möchten:
+If you want to modify the code:
 
 ```bash
-# 1. Python-Umgebung erstellen
+# 1. Create Python environment
 python -m venv .venv
-source .venv/bin/activate  # Unter Windows: .\.venv\Scripts\activate
+source .venv/bin/activate  # On Windows: .\.venv\Scripts\activate
 
-# 2. PyTorch (CPU-Version) vorab installieren
+# 2. Pre-install PyTorch (CPU version)
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 
-# 3. Abhängigkeiten installieren
+# 3. Install dependencies
 pip install -r requirements.txt
 pip install ./pandas-ta
 
-# 4. Standard-ML-Modelle laden
+# 4. Load standard ML models
 ./scripts/setup_oss_models.sh
 
-# 5. Desktop-Entwicklungsmodus starten (Frontend + Engine)
+# 5. Start desktop development mode (Frontend + Engine)
 npm install
 npm run desktop:dev
 ```
 
 ---
 
-## 📚 Dokumentation
+## 📚 Documentation
 
-| Dokument | Beschreibung |
+| Document | Description |
 |---|---|
-| [**Setup Guide**](./docs/oss/README.md) | Schritt-für-Schritt Installation, Ports und Fehlerbehebung |
-| [Vision & Editions](./docs/oss/VISION_AND_EDITIONS.md) | Produkt-Roadmap und Unterschiede zwischen den Editionen |
-| [Architecture](./docs/oss/ARCHITECTURE.md) | Bounded Contexts, Authentifizierungsdetails und Systemstart |
-| [Plugin Tutorial](./docs/oss/PLUGIN_TUTORIAL.md) | Programmierung eigener Analyse- und Trading-Agenten |
-| [Disclaimer](./DISCLAIMER.md) | Rechtliche Einordnung, BaFin-Kontext und Haftungsausschluss |
+| [**Setup Guide**](./docs/oss/README.md) | Step-by-step installation, ports, and troubleshooting |
+| [Vision & Editions](./docs/oss/VISION_AND_EDITIONS.md) | Product roadmap and differences between editions |
+| [Architecture](./docs/oss/ARCHITECTURE.md) | Bounded contexts, authentication details, and system startup |
+| [Plugin Tutorial](./docs/oss/PLUGIN_TUTORIAL.md) | Programming custom analysis and trading agents |
+| [Disclaimer](./DISCLAIMER.md) | Legal classification, regulatory context, and disclaimer |
 
 ---
 
-## ⚠️ Wichtiger Risikohinweis (Haftungsausschluss)
+## ⚠️ Important Risk Notice (Disclaimer)
 
-Die Nutzung von automatisierten Handelssystemen birgt erhebliche Risiken. Diese Software wird von den Entwicklern unter der Apache 2.0-Lizenz zur dezentralen Eigennutzung bereitgestellt. Die Ersteller und die Gesellschaft *Autonomous Asset Management Agents UG (haftungsbeschränkt)* übernehmen keinerlei Haftung für finanzielle Verluste. Der Betrieb der Software erfolgt ausschließlich auf eigene Rechnung und eigenes Risiko des Anwenders. Bitte lesen Sie vor Inbetriebnahme die vollständigen Hinweise in [DISCLAIMER.md](./DISCLAIMER.md).
+The use of automated trading systems involves significant risks. This software is provided by the developers under the Apache 2.0 license for decentralized personal use. The creators and the company *Autonomous Asset Management Agents UG (haftungsbeschränkt)* assume no liability for financial losses. The operation of the software is exclusively on the user's own account and at their own risk. Please read the full notice in [DISCLAIMER.md](./DISCLAIMER.md) before commissioning.
 
 ---
 
-*Unterhalten von der AAAgents Community · [aaagents.de](https://aaagents.de) · [Releases](https://github.com/Autonomous-Asset-Management-Agents/Dev-Enviroment/releases)*
+*Maintained by the AAAgents Community · [aaagents.de](https://aaagents.de) · [Releases](https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases)*
