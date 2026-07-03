@@ -1,0 +1,46 @@
+repos:
+  # isort: Import-Sortierung (kompatibel mit Black)
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--line-length", "120"]
+
+  # flake8: PEP-8 Linting (max-line-length = 120, kompatibel mit Black)
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.2.0
+    hooks:
+      - id: flake8
+        args: ["--max-line-length", "120", "--extend-ignore", "E203,W503"]
+        exclude: |
+          (?x)(
+            pandas-ta/|
+            gui/|
+            models/|
+            scripts/|
+            \.venv/|
+            __pycache__
+          )
+
+  # Trailing whitespace / end of file / mixed line endings
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: ["--fix", "lf"]
+
+  # pylint: Logging f-string check (fails wenn noch f-strings im logging auftreten)
+  - repo: local
+    hooks:
+      - id: pylint-logging-fstring
+        name: Pylint Logging f-string Check
+        language: system
+        entry: python -m pylint
+        args:
+          - "--init-hook=import sys; sys.path.append('ai_trading_bot')"
+          - "--disable=all"
+          - "--enable=logging-fstring-interpolation"
+        files: ^ai_trading_bot/core/.*\.py$
+        stages: [pre-commit]

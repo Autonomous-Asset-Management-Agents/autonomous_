@@ -1,0 +1,127 @@
+/* Console styles — vendored from the desktop bundle (G3, #1050).
+ * Tailwind base/components/utilities come from the app's global index.css, so
+ * they're omitted here. The dark base is scoped to `.aaa-console` (applied by
+ * ConsoleApp) so it never affects the cloud landing/marketing pages. Fonts fall
+ * back to system-ui (no @fontsource dependency added for the first slice). */
+
+/* ─ Console base (scoped, never global) ─ */
+.aaa-console {
+  color-scheme: dark;
+  background: #000;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  line-height: 1.47;
+  letter-spacing: -0.005em;
+}
+
+/* All console utility classes are scoped under `.aaa-console` so these generic
+ * names (.surface, .num, .eyebrow, .text-bull, …) can never leak into the
+ * cloud landing/marketing/dashboard pages once the lazy console chunk injects
+ * this stylesheet into <head> (the SPA keeps it for the session). */
+
+/* ─ Console letter-spacing tokens (bundle tailwind: tracking-tight2) ─ */
+.aaa-console .tracking-tight2 { letter-spacing: -0.02em; }
+.aaa-console .tracking-tight3 { letter-spacing: -0.03em; }
+
+/* ─ Eyebrow label ─ */
+.aaa-console .eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.30);
+}
+
+/* ─ Mono numerals ─ */
+.aaa-console .num {
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+  font-feature-settings: "tnum", "zero";
+}
+
+/* ─ Hairlines ─ */
+.aaa-console .hairline { height: 1px; background: rgba(255, 255, 255, 0.06); }
+
+/* ─ Surface card ─ */
+.aaa-console .surface {
+  background: rgba(28, 28, 30, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+.aaa-console .surface-flat {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─ Bull / bear semantic text colors (bundle tailwind tokens) ─ */
+.aaa-console .text-bull { color: #5be584; }
+.aaa-console .text-bear { color: #ff7a72; }
+
+/* ─ Desktop window chrome ─ */
+.aaa-console .window-shell {
+  background: rgba(18, 18, 20, 0.95);
+  overflow: hidden;
+}
+
+/* ─ Live dot (bull-green pulse) ─ */
+.aaa-console .live-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #30d158;
+  box-shadow: 0 0 0 4px rgba(48, 209, 88, 0.15);
+  flex-shrink: 0;
+  animation: live-blink 1.6s ease-in-out infinite;
+}
+@keyframes live-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ─ Scrollbar ─ */
+.aaa-console ::-webkit-scrollbar { width: 6px; height: 6px; }
+.aaa-console ::-webkit-scrollbar-track { background: transparent; }
+.aaa-console ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+.aaa-console ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+.aaa-console ::selection { background: rgba(255, 255, 255, 0.18); }
+
+/* ── Pills, halos + equity grid — ported from the bundle console (UX fidelity, G3b re-port) ── */
+.aaa-console .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.55); padding: 3px 9px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 980px; white-space: nowrap; }
+.aaa-console .pill-bull { color: #5be584; background: rgba(48,209,88,0.06); border-color: rgba(48,209,88,0.18); }
+.aaa-console .pill-bear { color: #ff7a72; background: rgba(255,69,58,0.06); border-color: rgba(255,69,58,0.18); }
+.aaa-console .pill-warn { color: #ffd28a; background: rgba(255,159,10,0.06); border-color: rgba(255,159,10,0.22); }
+.aaa-console .pill-strong { color: rgba(255,255,255,0.92); background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.18); }
+.aaa-console .halo-soft { background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%); }
+.aaa-console .hairline-v { width: 1px; background: rgba(255,255,255,0.06); }
+.aaa-console .equity-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 60px 32px; }
+
+/* ── Boot splash — ported from the bundle (UX fidelity, BootSplash re-port) ── */
+.aaa-console .aaa-boot { position: fixed; inset: 0; z-index: 9999; background: radial-gradient(130% 120% at 50% 42%, #0b0b0b 0%, #000 62%); transition: opacity 0.4s ease; }
+.aaa-console .aaa-boot--out { opacity: 0; pointer-events: none; }
+/* The wordmark is anchored at the exact screen centre and NEVER moves; the
+   variable content (status line, or the error message + retry + logs) hangs in
+   `__below` (absolute, top:100%) so it grows downward without shifting the
+   wordmark — same size + position from boot → error → until the dashboard. */
+.aaa-console .aaa-boot__center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90vw; }
+.aaa-console .aaa-boot__below { position: absolute; top: 100%; left: 0; width: 100%; margin-top: clamp(20px, 3.2vh, 40px); }
+.aaa-console .aaa-boot__logo { font-family: "Inter", system-ui, -apple-system, sans-serif; font-weight: 700; font-size: clamp(40px, 8vw, 92px); letter-spacing: -0.035em; line-height: 1; color: #fff; white-space: nowrap; }
+.aaa-console .aaa-boot__caret { color: #00c27a; animation: aaa-blink 1.05s steps(1) infinite; }
+.aaa-console .aaa-boot__caret--err { color: #ff5a52; }
+.aaa-console .aaa-boot__status { font-family: "JetBrains Mono", "SF Mono", monospace; font-size: clamp(12px, 1.45vw, 15px); color: #5f6f66; letter-spacing: 0.02em; height: 18px; transition: opacity 0.6s ease; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; min-width: 0; }
+.aaa-console .aaa-boot__err { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.aaa-console .aaa-boot__msg { font-family: "JetBrains Mono", "SF Mono", monospace; color: #cfcfd4; font-size: 15px; }
+.aaa-console .aaa-boot__actions { display: flex; gap: 10px; }
+.aaa-console .aaa-boot__btn { font-family: "JetBrains Mono", "SF Mono", monospace; font-size: 13px; color: #000; background: #00c27a; border: 1px solid #00c27a; border-radius: 8px; padding: 7px 16px; cursor: pointer; }
+.aaa-console .aaa-boot__logs { max-width: 560px; max-height: 120px; overflow: auto; font-family: "JetBrains Mono", "SF Mono", monospace; font-size: 11px; color: #6c6c72; text-align: left; background: transparent; border: none; padding: 10px 0 0; }
+@keyframes aaa-blink { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .aaa-console .aaa-boot__caret { animation: none; opacity: 1; } }
+
+/* ── Buttons — ported from the bundle console (UX fidelity, Settings re-port) ── */
+.aaa-console .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 8px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.92); cursor: pointer; transition: all 0.18s cubic-bezier(0.4,0,0.2,1); font-family: inherit; }
+.aaa-console .btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); }
+.aaa-console .btn:active { transform: scale(0.98); }
+.aaa-console .btn:disabled { cursor: not-allowed; }
+.aaa-console .btn-bull { background: linear-gradient(180deg, rgba(48,209,88,0.18), rgba(48,209,88,0.06)); border-color: rgba(48,209,88,0.36); color: #b6f1c5; }
+.aaa-console .btn-bull:hover { background: linear-gradient(180deg, rgba(48,209,88,0.28), rgba(48,209,88,0.10)); }
+.aaa-console .btn-bear { background: linear-gradient(180deg, rgba(255,69,58,0.18), rgba(255,69,58,0.06)); border-color: rgba(255,69,58,0.36); color: #ffc4bf; }
+.aaa-console .btn-bear:hover { background: linear-gradient(180deg, rgba(255,69,58,0.28), rgba(255,69,58,0.10)); }

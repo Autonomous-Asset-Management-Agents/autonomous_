@@ -1,0 +1,67 @@
+name: PyPI Publish (Trusted Publishing)
+
+# Manual, OIDC-based publish for the standalone packages under packages/.
+# No API token: PyPI trusts a pre-configured publisher (this repo + this workflow file +
+# the target environment). Start with repository=testpypi, verify, then repository=pypi.
+# The 'pypi' environment carries a Required-Reviewer human gate before the irreversible upload.
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Package under packages/ to publish
+        type: choice
+        options:
+          - autonomous-audit
+          - autonomous-trading
+        required: true
+      repository:
+        description: Target index (start with testpypi)
+        type: choice
+        options:
+          - testpypi
+          - pypi
+        default: testpypi
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Build sdist + wheel + twine check
+        run: |
+          python -m pip install --upgrade build twine
+          python -m build "packages/${{ inputs.package }}" --outdir dist
+          python -m twine check dist/*
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # 'pypi' / 'testpypi' GitHub Environments. Add Required reviewers to 'pypi' = human gate
+    # before the irreversible upload (mirrors the desktop-release go/no-go).
+    environment: ${{ inputs.repository }}
+    permissions:
+      id-token: write # OIDC — the whole point of Trusted Publishing (no stored token)
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: dist
+          path: dist/
+      - name: Publish via OIDC
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
+        with:
+          packages-dir: dist/
+          repository-url: ${{ inputs.repository == 'testpypi' && 'https://test.pypi.org/legacy/' || 'https://upload.pypi.org/legacy/' }}

@@ -1,0 +1,76 @@
+/* Shared canonical site header (logo + social/menu), extracted 1:1 from the landing
+ * "lb-nav" (src/styles/landing-d.css) and re-scoped from `.landing-d-root` to `.site-header`
+ * so LiveDemo AND the marketing pages render the SAME header instead of per-page copies.
+ * CSS vars from landing-d.css are resolved inline so no landing stylesheet import is needed. */
+.site-header {
+  background: #ffffff;
+  color: #0a0a0a;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.site-header .lb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px clamp(16px, 4vw, 64px);
+}
+.site-header .lb-nav-logo-box {
+  background-color: #ffffff;
+  color: #000000;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-bottom: 3px solid #00c27a;
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 20px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  line-height: 1;
+}
+.site-header .lb-nav-social {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.site-header .lb-nav-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: #555;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, background 0.15s;
+}
+.site-header .lb-nav-social-link:hover {
+  color: #0a0a0a;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark variant — the public header on the dark demo/console page: black bar,
+ * inverted logo (white "a" + green underline) and light menu. Marketing pages
+ * keep the white default; the demo renders <SiteHeader dark />. */
+.site-header--dark {
+  background: #000;
+  color: #f4f4f5;
+}
+.site-header--dark .lb-nav-logo-box {
+  background-color: transparent;
+  color: #ffffff;
+}
+.site-header--dark .lb-nav-social-link {
+  color: #a1a1aa;
+}
+.site-header--dark .lb-nav-social-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-30T14:05:00Z",
+  "status": "live",
+  "disclaimer": "Paper-Trading-Demo — keine Anlageberatung / keine Kauf- oder Verkaufsempfehlung.",
+  "equity": 10847.32,
+  "cash": 1203.55,
+  "day_pl_pct": 0.84,
+  "positions": [
+    { "symbol": "AAPL", "qty": 12, "market_value": 2640.0, "unrealized_pl_pct": 3.2 },
+    { "symbol": "MSFT", "qty": 5, "market_value": 2210.0, "unrealized_pl_pct": 1.7 },
+    { "symbol": "NVDA", "qty": 3, "market_value": 3795.0, "unrealized_pl_pct": -1.1 }
+  ],
+  "decisions": [
+    { "symbol": "AAPL", "action": "buy", "consensus": 0.71, "conviction": 0.64, "summary": "EDGAR-grounded: keine Insider-Verkäufe; solide Fundamentaldaten." },
+    { "symbol": "NVDA", "action": "hold", "consensus": 0.52, "conviction": 0.4, "summary": "Gemischte Form-4-Signale; abwarten." }
+  ],
+  "report": { "symbol": "AAPL", "summary": "Stabiler Cashflow, keine materiellen 8-K-Events in 30 Tagen.", "sentiment": "leicht positiv", "as_of": "2026-06-30" },
+  "equity_curve": [
+    { "date": "2026-06-23", "equity": 10250.0, "benchmark": 10400.0 },
+    { "date": "2026-06-24", "equity": 10410.0, "benchmark": 10470.0 },
+    { "date": "2026-06-25", "equity": 10380.0, "benchmark": 10440.0 },
+    { "date": "2026-06-26", "equity": 10620.0, "benchmark": 10550.0 },
+    { "date": "2026-06-27", "equity": 10705.0, "benchmark": 10580.0 },
+    { "date": "2026-06-30", "equity": 10847.32, "benchmark": 10610.0 }
+  ]
+}
