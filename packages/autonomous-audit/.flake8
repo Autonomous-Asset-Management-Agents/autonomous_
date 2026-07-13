@@ -1,0 +1,6 @@
+[flake8]
+# Standalone package lint gate. Black-compatible; mirrors the repo's 120-col limit but
+# omits the repo's pre-existing style-debt suppressions — this package starts clean.
+max-line-length = 120
+extend-ignore = E203, W503
+exclude = .venv, __pycache__, build, dist, *.egg-info

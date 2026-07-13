@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AAAgents Design System — website design language */
+
+@layer base {
+  :root {
+    /* Pure black background */
+    --background: 0 0% 0%;
+    --foreground: 240 4% 96%;
+
+    /* Surface — rgba(28,28,30) */
+    --card: 240 4% 11%;
+    --card-foreground: 240 4% 96%;
+
+    --popover: 240 4% 7%;
+    --popover-foreground: 240 4% 96%;
+
+    /* Primary — white 85% */
+    --primary: 0 0% 85%;
+    --primary-foreground: 0 0% 0%;
+
+    /* Secondary — subtle grey */
+    --secondary: 240 4% 15%;
+    --secondary-foreground: 0 0% 55%;
+
+    --muted: 240 4% 12%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 240 4% 18%;
+    --accent-foreground: 240 4% 96%;
+
+    /* Red #ff453a */
+    --destructive: 4 100% 61%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border — rgba(255,255,255,.08) */
+    --border: 0 0% 14%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 100%;
+
+    /* Gold accent #d4a853 */
+    --gold: 38 60% 57%;
+
+    /* Status */
+    --success: 142 67% 50%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 100% 52%;
+    --warning-foreground: 0 0% 10%;
+
+    /* Chart */
+    --chart-portfolio: 195 100% 60%;
+    --chart-benchmark: 0 0% 50%;
+    --chart-grid: 0 0% 15%;
+    --chart-background: 0 0% 3%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 240 4% 96%;
+    --sidebar-primary: 0 0% 85%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 240 4% 12%;
+    --sidebar-accent-foreground: 240 4% 96%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 0 0% 100%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 240 4% 96%;
+    --card: 240 4% 11%;
+    --card-foreground: 240 4% 96%;
+    --popover: 240 4% 7%;
+    --popover-foreground: 240 4% 96%;
+    --primary: 0 0% 85%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 240 4% 15%;
+    --secondary-foreground: 0 0% 55%;
+    --muted: 240 4% 12%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 240 4% 18%;
+    --accent-foreground: 240 4% 96%;
+    --destructive: 4 100% 61%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 14%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 17px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    line-height: 1.47;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ═══ GRAIN TEXTURE ═══ */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ═══ GOLD GRADIENT TEXT ═══ */
+.text-gold {
+  background: linear-gradient(135deg, #d4a853 0%, #f0d078 40%, #d4a853 60%, #a8842a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══ SURFACE CARDS — matching website surface colors ═══ */
+.surface-card {
+  background: rgba(28, 28, 30, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.surface-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(44, 44, 46, 0.6);
+}
+
+/* ═══ TOPBAR ═══ */
+.topbar-scrolled {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* ═══ SEPARATOR ═══ */
+.sep {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ═══ STAT CARDS ═══ */
+.stat-value {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ═══ AGENT GRID ═══ */
+.agent-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+.agent-card:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ═══ DATA TABLES ═══ */
+.data-table { width: 100%; border-collapse: collapse; }
+
+.data-table th {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.16);
+  text-align: left;
+  padding: 6px 8px 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.data-table td {
+  font-size: 13px;
+  padding: 8px 8px 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.data-table td.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.data-table td.dim { color: rgba(255, 255, 255, 0.3); }
+.data-table td.up  { color: #30d158; }
+.data-table td.dn  { color: #ff453a; }
+.data-table td.buy { color: #30d158; font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 11px; }
+.data-table td.sell{ color: #ff453a; font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 11px; }
+
+/* ═══ TOGGLE ═══ */
+.aa-toggle {
+  width: 42px;
+  height: 26px;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+}
+
+.aa-toggle.on {
+  background: rgba(212, 168, 83, 0.25);
+}
+
+.aa-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.aa-toggle.on::after {
+  transform: translateX(16px);
+  background: #d4a853;
+}
+
+/* ═══ PILLS ═══ */
+.aa-pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 980px;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+/* ═══ SCROLLBAR ═══ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ═══ SELECTION ═══ */
+::selection { background: rgba(212, 168, 83, 0.12); }
+
+/* ═══ FADE OVERLAY (home page) ═══ */
+.fade-overlay {
+  background: linear-gradient(
+    to top,
+    hsl(var(--background)) 0%,
+    hsl(var(--background) / 0.8) 15%,
+    transparent 40%
+  );
+}
+
+/* ═══ STOCK LIST ═══ */
+.stock-item {
+  @apply flex items-baseline gap-3 text-foreground transition-all duration-300;
+}
+.stock-item:hover { @apply pl-2; }
+
+.stock-item-symbol {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: -0.03em;
+}
+
+.stock-item-value {
+  @apply text-sm text-muted-foreground;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.stock-item-positive { color: #30d158; }
+.stock-item-negative { color: #ff453a; }
+
+/* ═══ MENU ANIMATION ═══ */
+.menu-slide {
+  animation: menuSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes menuSlide {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

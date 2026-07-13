@@ -1,0 +1,27 @@
+# requirements-hotswap-ci.txt
+# Minimal dependencies for the Hot-Swap Infrastructure Gate tests
+# on a native GitHub Actions ubuntu-latest runner (no Docker, no ML deps).
+# Epic 2.3 / I-2 — used in .github/workflows/ci.yml "Hot-Swap Infrastructure Gate"
+
+# Test framework
+pytest>=7.0
+pytest-asyncio>=0.23.0
+anyio[trio]>=4.3.0
+fakeredis>=2.21.0
+
+# Broker / API dependencies (needed for core.agent_registry import chain)
+alpaca-py>=0.29.0
+
+# Redis client (used by core.redis_client and test_redis_locks)
+redis>=4.0.0
+
+# Async HTTP (needed by alpaca-py)
+aiohttp>=3.9.0
+websockets>=12.0
+
+# Gymnasium (needed by RL strategy agent registry tests)
+gymnasium>=0.29.0
+
+# General utils imported by core modules
+pydantic>=2.0.0
+python-dotenv>=1.0.0
