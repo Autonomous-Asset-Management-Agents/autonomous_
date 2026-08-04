@@ -1,0 +1,36 @@
+# Dockerfile.frontend
+
+# --- Stage 1: Build the React Application ---
+FROM public.ecr.aws/docker/library/node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy package.json and lock files
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build the application (Vite)
+RUN npm run build
+
+# --- Stage 2: Serve with Nginx ---
+FROM nginxinc/nginx-unprivileged:alpine
+
+# Copy built assets from Stage 1
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Bake the OSS-safe nginx config as the default. /api/ routes via public-api (auth layer).
+# Private/Enterprise deployments mount their own nginx.conf via docker-compose.yml.
+# Doing this in the image (instead of relying on a runtime volume mount) closes the
+# auth-bypass path that previously opened if the OSS volume mount silently failed.
+COPY --chown=nginx:nginx nginx.oss.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 8080
+EXPOSE 8080
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
