@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.autonomous-asset-management-agents/autonomous-audit-mcp",
+  "description": "Tamper-evident SHA-256 hash-chain decision-audit tools (record/verify/report/anchor) for AI trading agents. Integrity & traceability, not investment advice.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registry_type": "pypi",
+      "registry_base_url": "https://pypi.org",
+      "identifier": "autonomous-audit-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" }
+    }
+  ]
+}

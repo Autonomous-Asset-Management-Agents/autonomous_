@@ -1,0 +1,32 @@
+{
+  "_doc": "Provenance for the RPT-1 (#2000) golden-file fixtures. These are minimal, committed slices of REAL NVDA data so the deterministic FactSet golden test runs self-contained in CI (the source parquets are local-only). Derived once via scratchpad/gen_rpt1_fixtures.py; values are NOT hand-edited.",
+  "as_of": "2026-05-01",
+  "symbol": "NVDA",
+  "fixtures": {
+    "nvda_bars.json": {
+      "shape": "list of [date, close]",
+      "rows": 260,
+      "window": "last 260 trading days <= as_of (>=252 needed to reproduce the 52-week low)",
+      "source": "data/training/bars_cache_ext/NVDA.parquet (Alpaca adj. daily bars)"
+    },
+    "nvda_lstm_series.json": {
+      "shape": "list of [date, score]",
+      "rows": 585,
+      "window": "full NVDA v1-panel history <= as_of",
+      "source": "scratchpad/model-benchmark/v1_pred.parquet, column NVDA"
+    },
+    "nvda_lstm_xsec.json": {
+      "shape": "object {symbol: score}",
+      "symbols": 486,
+      "window": "cross-sectional row on as_of (all non-null universe symbols)",
+      "source": "scratchpad/model-benchmark/v1_pred.parquet, row 2026-05-01"
+    },
+    "nvda_news.json": {
+      "shape": "list of {title, published_utc, publisher, url}",
+      "rows": 4,
+      "window": "curated real NVDA catalysts, all published_utc <= as_of (incl. the earnings-CC)",
+      "source": "data/news_pit_2024_2026/news_pit_2024_2026.parquet (Polygon/Alpaca news, PIT archive)"
+    }
+  },
+  "caveat_v1_panel": "v1_pred.parquet is a session artifact with a random 80/20 split (leakage). The FactSet surfaces this via model_card.leakage_caveat; the fixture is only used to prove the deterministic FACT layer, not model validity."
+}
