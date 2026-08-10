@@ -1,0 +1,54 @@
+[tool.pytest.ini_options]
+minversion = "7.0"
+# Coverage auf die drei Iron-Dome-Module (deterministisch, überleben Epic 1.7)
+# God-Files (engine.py, strategies.py) werden in Epic 1.7 refactored -> kein Coverage-ROI jetzt
+addopts = "-ra -q --strict-markers --cov=core.kill_switch --cov=core.validation --cov=core.risk_manager --cov-report=xml --cov-report=term-missing"
+asyncio_mode = "auto"
+# Force asyncio backend for anyio 4.x — prevents trio from being parametrized.
+# anyio_backends (plural) is the correct key for anyio>=4.0 (was anyio_backend singular in 3.x)
+anyio_backends = ["asyncio"]
+testpaths = [
+    "tests/unit",
+    "tests/integration",
+    "tests/regression",
+    "tests/parity",
+]
+markers = [
+    "unit: mark a test as a unit test.",
+    "integration: mark a test as an integration test.",
+    "iron_dome: mark a test as an Iron Dome test (coverage enforced).",
+]
+pythonpath = [
+    "."
+]
+
+[tool.black]
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | gui
+)/
+'''
+
+[tool.coverage.run]
+# Iron Dome: nur die drei deterministischen Kapitalschutz-Module
+# Weitere Module werden hinzugefügt sobald sie Test-Coverage erhalten
+branch = true
+
+[tool.coverage.report]
+fail_under = 40
+show_missing = true
+skip_empty = true
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["core"]

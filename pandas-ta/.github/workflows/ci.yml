@@ -1,0 +1,480 @@
+name: CI
+
+"on":
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+  # Latest stable Python version - update this when new Python versions are released
+  # This value controls the rolling 5-version support policy (LATEST-4 through LATEST)
+  # Used by generate-matrix job to compute supported Python versions dynamically
+  # Also used for pyproject.toml placeholder replacement: {{LATEST-N}} → actual versions
+  LATEST_PYTHON_VERSION: "3.13"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Job 1: Basic structure validation (fast, runs first)
+  validate-structure:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history needed for setuptools-scm
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.LATEST_PYTHON_VERSION }}
+
+    - name: Display package version from git
+      run: |
+        pip install -e .
+        VERSION=$(python -c "import pandas_ta_classic as ta; print(ta.version)")
+        echo "📦 Package Version: $VERSION"
+        echo "### 📦 Package Version" >> $GITHUB_STEP_SUMMARY
+        echo "**$VERSION**" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+    - name: Validate package structure
+      run: |
+        python validate_structure.py
+
+
+  # Job 2: Code quality checks (linting and formatting)
+  code-quality:
+    runs-on: ubuntu-latest
+    needs: validate-structure
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history needed for setuptools-scm
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.LATEST_PYTHON_VERSION }}
+
+    - name: Install system dependencies for ta-lib
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential git
+        git clone https://github.com/ta-lib/ta-lib.git
+        cd ta-lib
+        if [ ! -f configure ]; then
+          chmod +x autogen.sh
+          ./autogen.sh
+        fi
+        ./configure --prefix=/usr
+        make
+        sudo make install
+        sudo ldconfig
+
+    - name: Install dependencies and quality tools
+      run: |
+        python -m pip install --upgrade pip
+        # Install package with dependencies from pyproject.toml
+        pip install -e .
+        # Install TA-Lib for candlestick patterns
+        pip install TA-Lib
+        # Install code quality tools
+        pip install flake8 black
+
+    - name: Check code formatting with black
+      run: |
+        black --check --diff pandas_ta_classic/
+
+    - name: Run flake8 linting
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 pandas_ta_classic --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings for non-critical issues
+        flake8 pandas_ta_classic --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=pandas_ta_classic/__init__.py
+
+  # Job 3: Generate Python version matrix dynamically
+  # Computes 5 Python versions (LATEST and 4 previous minor versions) from LATEST_PYTHON_VERSION
+  # These versions are used for:
+  #   - test-matrix job: testing across all supported Python versions
+  #   - pypi-publish job: replacing {{LATEST-N}} placeholders in pyproject.toml
+  generate-matrix:
+    runs-on: ubuntu-latest
+    needs: code-quality
+    outputs:
+      python-versions: ${{ steps.versions.outputs.python-versions }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history needed for setuptools-scm
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.LATEST_PYTHON_VERSION }}
+
+    - name: Generate Python version matrix
+      id: versions
+      run: |
+        # Extract minor version from LATEST_PYTHON_VERSION (e.g., "3.13" -> "13")
+        latest="${{ env.LATEST_PYTHON_VERSION }}"
+        minor_version=$(echo "$latest" | cut -d'.' -f2)
+
+        # Generate 5 versions: latest and 4 previous minor versions
+        versions="["
+        for i in {4..0}; do
+          version_num=$((minor_version - i))
+          if [ $i -eq 0 ]; then
+            versions="${versions}\"3.${version_num}\""
+          else
+            versions="${versions}\"3.${version_num}\", "
+          fi
+        done
+        versions="${versions}]"
+
+        echo "python-versions=$versions" >> $GITHUB_OUTPUT
+        echo "Generated Python versions: $versions"
+
+
+  # Job 4: Test matrix - Run tests on all dynamically generated Python versions
+  test-matrix:
+    runs-on: ubuntu-latest
+    needs: [code-quality, generate-matrix]
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ${{ fromJson(needs.generate-matrix.outputs.python-versions) }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history needed for setuptools-scm
+
+    - name: Show Python versions from generate-matrix
+      run: |
+        echo "PYTHON_VERSIONS from generate-matrix: $PYTHON_VERSIONS"
+        echo "Current matrix Python version: ${{ matrix.python-version }}"
+      env:
+        PYTHON_VERSIONS: ${{ needs.generate-matrix.outputs.python-versions }}
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install system dependencies for ta-lib
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential git
+        git clone https://github.com/ta-lib/ta-lib.git
+        cd ta-lib
+        if [ ! -f configure ]; then
+          chmod +x autogen.sh
+          ./autogen.sh
+        fi
+        ./configure --prefix=/usr
+        make
+        sudo make install
+        sudo ldconfig
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Install package with dependencies from pyproject.toml
+        pip install -e .
+        # Install TA-Lib for candlestick patterns
+        pip install TA-Lib
+        # Install pytest
+        pip install pytest
+
+    - name: Run comprehensive tests
+      run: |
+        pytest tests/ -v
+
+    - name: Test package installation and performance
+      run: |
+        python -c "import pandas_ta_classic as ta; print('Package imported successfully on Python ${{ matrix.python-version }}')"
+        pytest tests/test_indicator_performance.py -v
+
+  # Job 5: Documentation - Build and deploy documentation (independent deployment)
+  documentation:
+    runs-on: ubuntu-latest
+    needs: [code-quality, generate-matrix, test-matrix]
+    if: github.event_name == 'push'
+    environment:
+      name: docs-production
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history needed for setuptools-scm
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.LATEST_PYTHON_VERSION }}
+
+    - name: Install system dependencies for ta-lib
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential git
+        git clone https://github.com/ta-lib/ta-lib.git
+        cd ta-lib
+        if [ ! -f configure ]; then
+          chmod +x autogen.sh
+          ./autogen.sh
+        fi
+        ./configure --prefix=/usr
+        make
+        sudo make install
+        sudo ldconfig
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Install package with dependencies from pyproject.toml
+        pip install -e .
+        # Install TA-Lib for candlestick patterns
+        pip install TA-Lib
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Install Sphinx dependencies
+      run: |
+        pip install sphinx sphinx-rtd-theme
+
+    - name: Build Sphinx documentation
+      run: |
+        cd docs
+        make html
+
+    - name: Debug Sphinx build output
+      run: |
+        echo "Sphinx build completed. Checking docs/_build/html directory:"
+        ls -la docs/_build/html/ || echo "No docs/_build/html directory found"
+        if [ -d "docs/_build/html" ]; then
+          echo "Files in docs/_build/html:"
+          find docs/_build/html -type f | head -10
+        fi
+
+    - name: Upload Pages artifact (Sphinx)
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: docs/_build/html
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+    - name: Output deployment URL
+      run: |
+        echo "Deployment completed successfully"
+        echo "Page URL: ${{ steps.deployment.outputs.page_url }}"
+
+  # Job 6: PyPI Publishing - Build and publish to PyPI (on release published with unique version)
+  # This job handles placeholder replacement in pyproject.toml:
+  #   1. Version is automatically determined by setuptools-scm from git tags (no manual replacement needed)
+  #   2. Replaces {{LATEST-N}} placeholders with actual Python versions from matrix
+  #   3. Replaces requires-python = ">=3.{{LATEST-4}}" with actual minimum version
+  #   4. Preserves Development Status :: 5 - Production/Stable and all other classifiers
+  pypi-publish:
+    runs-on: ubuntu-latest
+    needs: [code-quality, generate-matrix, test-matrix]
+    if: github.event_name == 'release' && github.event.action == 'published'
+    environment:
+      name: pypi-production
+      url: https://pypi.org/project/pandas-ta-classic/
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history needed for setuptools-scm
+
+    - name: Validate release version uniqueness
+      run: |
+        # Get the new release version
+        RELEASE_TAG="${{ github.event.release.tag_name }}"
+        NEW_VERSION="${RELEASE_TAG#v}"  # Remove 'v' prefix if present
+
+        echo "New release version: $NEW_VERSION"
+
+        # Get all existing releases
+        EXISTING_RELEASES=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          "https://api.github.com/repos/${{ github.repository }}/releases" | \
+          jq -r '.[].tag_name')
+
+        echo "Existing releases:"
+        echo "$EXISTING_RELEASES"
+
+        # Check if this version already exists (excluding the current release)
+        CURRENT_RELEASE_ID="${{ github.event.release.id }}"
+        DUPLICATE_VERSION=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          "https://api.github.com/repos/${{ github.repository }}/releases" | \
+          jq -r --arg version "$RELEASE_TAG" --arg current_id "$CURRENT_RELEASE_ID" \
+          '.[] | select(.tag_name == $version and (.id | tostring) != $current_id) | .tag_name')
+
+        if [ -n "$DUPLICATE_VERSION" ]; then
+          echo "❌ Error: Version $RELEASE_TAG already exists in another release!"
+          echo "Please use a unique version number."
+          exit 1
+        fi
+
+        # Also check PyPI for existing versions
+        echo "Checking PyPI for existing versions..."
+        PYPI_VERSIONS=$(curl -s "https://pypi.org/pypi/pandas-ta-classic/json" | \
+          jq -r '.releases | keys[]' 2>/dev/null || echo "")
+
+        if echo "$PYPI_VERSIONS" | grep -q "^$NEW_VERSION$"; then
+          echo "❌ Error: Version $NEW_VERSION already exists on PyPI!"
+          echo "Please use a unique version number."
+          exit 1
+        fi
+
+        echo "✅ Version $NEW_VERSION is unique and ready for release!"
+
+    - name: Show Python versions from generate-matrix
+      run: |
+        echo "PYTHON_VERSIONS from generate-matrix: $PYTHON_VERSIONS"
+      env:
+        PYTHON_VERSIONS: ${{ needs.generate-matrix.outputs.python-versions }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.LATEST_PYTHON_VERSION }}
+
+    - name: Install setuptools-scm for version management
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools-scm
+
+        # Verify the version that will be used (from git tag)
+        echo "Version from setuptools-scm:"
+        python -c "from setuptools_scm import get_version; print(get_version())"
+
+    - name: Update pyproject.toml with dynamic Python classifiers
+      # Replaces all {{LATEST-N}} placeholders in pyproject.toml with actual Python versions
+      # This includes:
+      #   - Programming Language :: Python :: {{LATEST-4}} → 3.9
+      #   - Programming Language :: Python :: {{LATEST-3}} → 3.10
+      #   - Programming Language :: Python :: {{LATEST-2}} → 3.11
+      #   - Programming Language :: Python :: {{LATEST-1}} → 3.12
+      #   - Programming Language :: Python :: {{LATEST}} → 3.13
+      #   - requires-python: Updates minimum version if it changes (currently >=3.9)
+      # Preserves all other classifiers including Development Status :: 5 - Production/Stable
+      run: |
+        python << 'EOF'
+        import json
+        import os
+        import re
+
+        # Get the Python versions from environment variable
+        python_versions_str = os.environ.get('PYTHON_VERSIONS', '[]')
+        python_versions = json.loads(python_versions_str)
+
+        print(f"Updating pyproject.toml with Python versions: {python_versions}")
+        print(f"Minimum Python version: {python_versions[0]}")
+
+        # Read pyproject.toml
+        with open('pyproject.toml', 'r') as f:
+            lines = f.readlines()
+
+        # Replace {{LATEST-N}} placeholders with actual versions
+        # Build mapping: {{LATEST-4}} → oldest, {{LATEST}} → newest
+        replacements = {}
+        for i, version in enumerate(python_versions):
+            placeholder_index = len(python_versions) - 1 - i
+            replacements[f'{{{{LATEST-{placeholder_index}}}}}'] = version
+        replacements['{{LATEST}}'] = python_versions[-1]
+
+        print(f"Placeholder mappings: {replacements}")
+
+        # Get minimum version for requires-python
+        min_version = python_versions[0]
+
+        # Process each line and replace placeholders
+        updated_lines = []
+        for line in lines:
+            updated_line = line
+
+            # Replace Python version placeholders in classifiers
+            for placeholder, version in replacements.items():
+                if placeholder in line:
+                    updated_line = updated_line.replace(placeholder, version)
+                    print(f"  Replaced: {placeholder} → {version}")
+
+            # Update requires-python to use minimum version (if it's still at default)
+            if 'requires-python' in line and '>=3.9' in line:
+                # Only update if we're changing to a different minimum version
+                if min_version != '3.9':
+                    updated_line = line.replace('>=3.9', f'>={min_version}')
+                    print(f"  Updated requires-python: >=3.9 → >={min_version}")
+
+            updated_lines.append(updated_line)
+
+        # Write back to pyproject.toml
+        with open('pyproject.toml', 'w') as f:
+            f.writelines(updated_lines)
+
+        print("✅ pyproject.toml Python version placeholders replaced successfully!")
+
+        # Verify the changes - show Python-related lines
+        print("\nVerifying Python classifiers and requires-python:")
+        with open('pyproject.toml', 'r') as f:
+            in_classifiers = False
+            for line_num, line in enumerate(f, 1):
+                if 'classifiers = [' in line:
+                    in_classifiers = True
+                if in_classifiers and 'Programming Language :: Python ::' in line:
+                    print(f"  Line {line_num}: {line.rstrip()}")
+                if 'requires-python' in line:
+                    print(f"  Line {line_num}: {line.rstrip()}")
+                if in_classifiers and ']' in line and 'classifiers = [' not in line:
+                    in_classifiers = False
+        EOF
+      env:
+        PYTHON_VERSIONS: ${{ needs.generate-matrix.outputs.python-versions }}
+
+    - name: Set version environment variable
+      run: |
+        # Extract version from the release tag (remove 'v' prefix if present)
+        RELEASE_TAG="${{ github.event.release.tag_name }}"
+        VERSION="${RELEASE_TAG#v}"
+        echo "SETUPTOOLS_SCM_PRETEND_VERSION=$VERSION" >> $GITHUB_ENV
+        echo "📌 Will build with version: $VERSION"
+
+    - name: Validate package structure
+      run: |
+        python validate_structure.py
+
+    - name: Install build dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine setuptools-scm
+
+    - name: Build package
+      run: python -m build --wheel
+
+    - name: Check package
+      run: twine check dist/*
+
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: twine upload dist/*

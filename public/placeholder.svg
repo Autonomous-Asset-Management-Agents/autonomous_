@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <rect width="1200" height="1200" fill="#0a0a0a"/>
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="0" y1="900" x2="1200" y2="900"/>
+    <line x1="300" y1="0" x2="300" y2="1200"/>
+    <line x1="600" y1="0" x2="600" y2="1200"/>
+    <line x1="900" y1="0" x2="900" y2="1200"/>
+  </g>
+  <g transform="translate(600 600)">
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle"
+          font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+          font-size="120" font-weight="800" letter-spacing="-2"
+          fill="#ffffff">aaagents</text>
+    <text x="455" y="0" text-anchor="middle" dominant-baseline="middle"
+          font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+          font-size="120" font-weight="800"
+          fill="#00c27a">_</text>
+  </g>
+  <g transform="translate(600 760)">
+    <circle cx="0" cy="0" r="5" fill="rgba(255,255,255,0.4)"/>
+    <text x="20" y="0" dominant-baseline="middle"
+          font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+          font-size="22" letter-spacing="3"
+          fill="rgba(255,255,255,0.55)">AUTONOMOUS · AUDITABLE · SAFE</text>
+  </g>
+</svg>
