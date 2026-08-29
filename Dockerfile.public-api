@@ -1,0 +1,34 @@
+FROM mirror.gcr.io/library/python:3.12-slim
+
+WORKDIR /app
+
+# Install deps (minimal — public API proxy only)
+COPY ["requirements-public-api.txt", "."]
+RUN pip install --no-cache-dir uv && \
+    uv pip install --system --no-cache-dir -r requirements-public-api.txt
+
+# Create unprivileged user with fixed UID to avoid volume mount permission issues
+RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser -m appuser
+
+# Give appuser ownership of the working directory so runtime code
+# can create directories (logs, caches) without PermissionError.
+RUN chown appuser:appuser /app
+
+# Copy the entire backend so the public API proxy can access the `core` module
+COPY --chown=appuser:appuser [".", "."]
+
+
+ENV HOST=0.0.0.0
+ENV PORT=8080
+
+EXPOSE 8080
+
+USER appuser
+
+# ARCHON STANDARD: Dry-Run Gate
+# Evaluates module imports, Pydantic/Config schema logic, and basic dependency resolution
+# before the Docker image is finalized and pushed to the registry.
+RUN python -c "from config import *; import serve_public_api; print('\n[ARCHON STANDARD] Dry-Run OK: Core Modules loaded successfully.')"
+
+
+CMD ["python", "-m", "uvicorn", "serve_public_api:app", "--host", "0.0.0.0", "--port", "8080"]
