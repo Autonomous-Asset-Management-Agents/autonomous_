@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "status": "SYNTHETIC EXAMPLE — not a real bundle capture",
+    "purpose": "Demonstrates the golden-fixture format + exercises the parity comparator's loader. Real golden fixtures are captured from the running bundle via the procedure in fixtures/README.md and MUST set bundle_sha + captured_at.",
+    "bundle_sha": null,
+    "bundle_captured_at": null,
+    "symbol": "AAPL",
+    "schema": "SpecialistReport DTO (core/engine/api_routes.py::_serialize_specialist_report)"
+  },
+  "report": {
+    "symbol": "AAPL",
+    "sentiment_score": 64.0,
+    "recommendation": "buy",
+    "confidence": 0.72,
+    "escalate": false,
+    "escalate_reason": "",
+    "reasons": ["insider cluster buy", "positive 8-K", "short interest easing"],
+    "about": "Apple Inc. designs consumer hardware, services and wearables.",
+    "company_summary": "Apple Inc. designs consumer hardware, services and wearables.",
+    "edge_signals": ["insider_cluster_buy", "options_skew_bullish"],
+    "investment_thesis": "Services-mix margin expansion plus an installed-base upgrade cycle support multiple expansion.",
+    "bull_case": "Gross-margin tailwind from services; resilient demand.",
+    "bear_case": "China demand softness and regulatory overhang on the App Store.",
+    "news_summary": "Quarter beat on services; hardware in line.",
+    "headlines": [
+      {"title": "Apple services revenue hits record", "url": "https://example.test/a"},
+      {"title": "Analysts lift AAPL targets", "url": "https://example.test/b"}
+    ],
+    "alternative_signals": "Elevated Wikipedia pageviews; rising WSB mentions.",
+    "insider_trades_count": 3,
+    "political_trades_count": 1,
+    "material_events_count": 2,
+    "reddit_mentions": 41,
+    "wiki_spike": true,
+    "short_interest_pct": 0.7,
+    "updated_at": "2026-06-16T00:00:00+00:00",
+    "ml_direction": "up",
+    "ml_confidence": 0.61,
+    "ml_base_return_pct": 1.4,
+    "ml_bear_return_pct": -2.1,
+    "ml_bull_return_pct": 4.9,
+    "signal_quality": "llm_plus_ml",
+    "walkforward_ic": 0.071,
+    "walkforward_sharpe": 0.42,
+    "ml_attention_features": [
+      {"feature": "rsi_14", "weight": 0.18},
+      {"feature": "vol_20", "weight": 0.12}
+    ]
+  }
+}
