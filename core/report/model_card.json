@@ -1,0 +1,19 @@
+{
+  "_doc": "Static, code-fixed universe reliability constants for the v1 cross-sectional LSTM ranker. NOT recomputed per report — surfaced verbatim in every FactSet (Epic #1998, RPT-1 #2000). The method is described by `split` and `leakage_caveat` below; read those as the ground truth. See ADR-CARD-01 for why this field no longer describes the method itself.",
+  "model": "v1_cross_sectional_lstm",
+  "horizon_days": 5,
+  "cs_ic_mean": 0.067,
+  "cs_ic_tstat": 20.4,
+  "sharpe_topq_gross": 1.53,
+  "sharpe_topq_net_10bps": 0.758,
+  "sharpe_equalweight_gross": 0.97,
+  "sharpe_equalweight_net_10bps": 0.944,
+  "sharpe_buyhold": 1.09,
+  "turnover_daily": 0.50,
+  "cost_bps": 10,
+  "rebalance": "daily",
+  "universe_symbols": 486,
+  "split": "random_80_20",
+  "leakage_caveat": "v1 uses a random 80/20 train/test split; the true point-in-time train cutoff is unknown, so the score may be optimistically biased. Reliability is cross-sectional only (no per-symbol hit-rate). Net-of-cost (10 bps, daily rebalancing) the top-quintile Sharpe (0.758) falls BELOW EqualWeight (0.944).",
+  "provenance": "NOT REPRODUCIBLE FROM THIS REPOSITORY. These numbers come from a session artifact that was never committed: the source files this field used to name exist neither in the working tree nor in any commit in the repo's history (ADR-CARD-01, verified). They can therefore be neither regenerated nor independently checked here. Treat them as unverified until a re-run under core/ml/validation/harness.py replaces them. Report-only, dormant: SPECIALIST_ALPHA_WEIGHT stays 0."
+}
