@@ -1,0 +1,85 @@
+# Dockerfile.backend
+# Python 3.12 slim image for the ai_trading_bot
+FROM public.ecr.aws/docker/library/python:3.12-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies (build tools)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Run Qt in offscreen mode (no display server needed)
+ENV QT_QPA_PLATFORM=offscreen
+# Bind Uvicorn to all interfaces so Docker port mapping works
+ENV ENGINE_HOST=0.0.0.0
+
+# Copy requirements first — enables Docker layer caching for the install steps below.
+# Layer order is intentional: highest change frequency goes last.
+COPY ["./requirements.txt", "./requirements.txt"]
+
+# Layer 1 (stable): PyTorch CPU-only (~2GB) — only rebuilds when torch version changes.
+# Kept separate so that requirements.txt changes don't invalidate this expensive layer.
+# Install uv globally first (used for all subsequent installs).
+# NOTE: torch/torchvision/torchaudio must be on ONE logical line for test_dockerfile_torch_versions.py
+RUN pip install --no-cache-dir --upgrade pip uv && \
+    uv pip install --system --no-cache-dir "torch==2.13.0+cpu" "torchvision==0.28.0+cpu" "torchaudio==2.11.0+cpu" --index-url https://download.pytorch.org/whl/cpu
+
+# Layer 2 (semi-stable): Core requirements — rebuilds when requirements.txt changes.
+RUN uv pip install --system --no-cache-dir -r requirements.txt --index-strategy unsafe-best-match
+
+# Layer 3 (occasional): Official pandas-ta from PyPI
+RUN uv pip install --system --no-cache-dir pandas-ta && \
+    pip list | grep -i pandas
+
+# Create unprivileged user with fixed UID to avoid volume mount permission issues
+RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser -m appuser
+
+# Give appuser ownership of the working directory so runtime code
+# can create directories (logs, caches) without PermissionError.
+RUN chown appuser:appuser /app
+
+# Copy the application code with new user ownership
+COPY --chown=appuser:appuser [".", "./app"]
+# COPY ["src", "./src"]  <-- Removed as unused by engine
+# Note: We need src if there are shared components, but mainly we need the python code.
+# Adjusting copy structure to match import logic in engine.py
+# The engine expects to run from the root where "core" is a module.
+
+# --- OSS Stub Swap ---
+# The repository contains both Enterprise (.py) and OSS (.oss.py) editions.
+# Python imports the .py files, so we overwrite them with the OSS stubs.
+# Enterprise builds (Cloud Run) use their own build pipeline — this only
+# affects images built from this Dockerfile (i.e. docker-compose.oss.yml).
+# Set OSS_BUILD=false to skip (e.g. for local Enterprise testing).
+# Uses dynamic find to auto-discover all .oss.py files — new stubs are
+# picked up without requiring Dockerfile changes (SEC-01).
+ARG OSS_BUILD=true
+RUN if [ "$OSS_BUILD" = "true" ]; then \
+      find app -name "*.oss.py" | while read oss_file; do \
+        py_file="${oss_file%.oss.py}.py"; \
+        cp "$oss_file" "$py_file" && \
+        chown appuser:appuser "$py_file" && \
+        echo "[OSS] Swapped: $oss_file -> $py_file"; \
+      done; \
+    else \
+      echo "[Enterprise] Stub swap skipped (OSS_BUILD=false)"; \
+    fi
+
+WORKDIR /app/app
+
+# Expose port (default 8001)
+EXPOSE 8001
+
+USER appuser
+
+# ARCHON STANDARD: Dry-Run Gate
+# Evaluates module imports, Pydantic/Config schema logic, and basic dependency resolution
+# before the Docker image is finalized and pushed to the registry.
+RUN python -c "from config import *; from core.kill_switch import kill_switch; print('\n[ARCHON STANDARD] Dry-Run OK: Core Modules loaded successfully.')"
+
+# Command to run the engine
+# We use -m core.engine to run it as a module
+CMD ["python", "-m", "core.engine"]
