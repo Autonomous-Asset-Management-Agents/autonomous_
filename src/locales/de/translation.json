@@ -1,0 +1,295 @@
+{
+  "header": {
+    "liveDemo": "DEMO ANSEHEN",
+    "download": "Herunterladen",
+    "language": "Sprache",
+    "downloadAria": "Herunterladen — Edition wählen",
+    "liveDemoAria": "Live-Demo ansehen"
+  },
+  "appliance": {
+    "eyebrow": "autonomous_ tower — limitierte first edition · nur 100 exemplare · lieferung 12·2026",
+    "hero": {
+      "h1": "Autonomous\ntower",
+      "subline": "Lautlos. Verlässlich. Immer an.",
+      "bodyLead": "ist die dedizierte Hardware für das",
+      "bodyMid": "Asset Management System. Auspacken, anschließen, einmalig mit dem Smartphone verbinden — von da an handelt",
+      "bodyTail": "nach Ihrer Trading-Strategie. Ohne Unterbrechung, sieben Tage die Woche. Lautlos und verlässlich. Von Ihrem Zuhause aus.",
+      "imgNote": "Abb. ähnlich",
+      "price": "Price on request",
+      "priceSuffix": "",
+      "ctaJoin": "Jetzt vormerken",
+      "ctaHow": "So funktioniert es",
+      "micro": "Keine Anzahlung erforderlich — wir kontaktieren Sie, sobald Ihr Exemplar bereitsteht."
+    },
+    "story": {
+      "h2": "Immer da. Jeden Tag, jede Stunde, jeden Augenblick.",
+      "silentTitle": "Jeden Tag im Markt",
+      "silentBody": "Der autonomous_ tower ist 24 Stunden aktiv, an sieben Tagen die Woche. Lautlos und still, aber immer da. Damit Ihr Portfolio und der Markt nie unbeobachtet bleiben.",
+      "materialsTitle": "Ihre private Installation",
+      "materialsBody": "Der autonomous_ tower ist optimiert für Ihre eigene, lokale KI. Sie benötigen keine Cloud-Lösung, kein Abo. Ihre Strategie, Ihre Daten und Ihr Broker-Zugang bleiben bei Ihnen zuhause.",
+      "tradesTitle": "Sofort einsatzbereit",
+      "tradesBody": "autonomous_ ist vorinstalliert und vollständig eingerichtet, sodass Sie sofort loslegen können — profitabel, auditierbar und sicher, wie jede autonomous-Installation."
+    },
+    "how": {
+      "h2": "In zwei Minuten einsatzbereit.",
+      "step1Title": "Auspacken und anschließen",
+      "step1Body": "Ein Kabel, mehr braucht es nicht. Der autonomous_ tower startet selbstständig in den Einrichtungsmodus.",
+      "step2Title": "Per Smartphone verbinden",
+      "step2Body": "Der tower öffnet ein eigenes WLAN. Ihr Smartphone führt durch die Einrichtung: Heimnetz und Broker-Zugang.",
+      "step3Title": "Von überall erreichbar",
+      "step3BodyBefore": "Ihr Dashboard ist erreichbar unter",
+      "step3BodyAfter": "— im Büro, unterwegs, weltweit. Ohne Konfiguration."
+    },
+    "specs": {
+      "h2": "Das Datenblatt.",
+      "finish": "Ausführung",
+      "finishV": "Massives Walnussholz · CNC-Aluminium",
+      "acoustics": "Akustik",
+      "acousticsV": "0 dB — lüfterlos, keine beweglichen Teile",
+      "memory": "Speicher",
+      "memoryV": "32 GB · 500 GB NVMe",
+      "connectivity": "Konnektivität",
+      "connectivityV": "WLAN · Gigabit-Ethernet",
+      "software": "Software",
+      "softwareV": "autonomous OSS, vorinstalliert · Updates over the air",
+      "inTheBox": "Lieferumfang",
+      "inTheBoxV": "Gerät · Netzteil · Quick-Start-Karte",
+      "price": "Preis",
+      "priceV": "Price on request",
+      "note": "Die Konfiguration kann sich bis zur Auslieferung ändern."
+    },
+    "wait": {
+      "h2": "Sichern Sie sich Ihr Exemplar.",
+      "lead": "Die First Edition ist auf 100 Exemplare limitiert. Tragen Sie sich ein — bestätigen Sie per E-Mail, dann steht Ihre Position fest.",
+      "emailPlaceholder": "ihre.adresse@beispiel.de",
+      "join": "Jetzt vormerken",
+      "joining": "Wird vorgemerkt…",
+      "pendingHint": "Prüfen Sie Ihr Postfach — bestätigen Sie den Link, dann ist Ihr Platz gesichert.",
+      "error": "Der Eintrag ist fehlgeschlagen — der Wartelisten-Dienst hat nicht geantwortet. Ihr Eintrag wurde nicht gespeichert; bitte versuchen Sie es erneut.",
+      "inviteSuffix": "— jede bestätigte Anmeldung über Ihren Link verbessert Ihre Position",
+      "micro": "Der Eintrag ist kostenlos und stellt keinen Kauf dar. Sie können die Liste jederzeit verlassen."
+    },
+    "faq": {
+      "h2": "Fragen.",
+      "q1": "Wann wird geliefert?",
+      "a1": "Die First Edition ist für Dezember 2026 geplant. Ihr Platz auf der Warteliste bestimmt die Lieferreihenfolge.",
+      "q2": "Zahle ich jetzt bereits?",
+      "a2": "Nein. Die Warteliste ist kostenlos. Wir kontaktieren Sie mit einem Bestell-Link, sobald Ihr Exemplar versandbereit ist.",
+      "q3": "Was wird benötigt?",
+      "a3": "Ein Broker-Konto und Ihr Heim-WLAN. Kein Monitor, keine Tastatur, keine technische Einrichtung.",
+      "q4": "Ist die Software enthalten?",
+      "a4": "Ja. Ihr Gerät wird mit vorinstalliertem autonomous ausgeliefert und erhält Updates over the air."
+    },
+    "footer": {
+      "risk": "autonomous ist ein reines Ausführungswerkzeug (Execution-only). Der Handel mit Finanzinstrumenten ist mit erheblichen Risiken verbunden, bis hin zum Totalverlust. Die Wertentwicklung der Vergangenheit ist kein verlässlicher Indikator für zukünftige Ergebnisse.",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "riskDisclosure": "Risikohinweise",
+      "terms": "AGB"
+    }
+  },
+  "landing": {
+    "hero": {
+      "h1a": "Your digital asset",
+      "h1b": "manager",
+      "sub": "Profitable. Auditable. Safe.",
+      "body": "lets you combine the advantages of deterministic algorithms, quant analytics and machine learning to form an asset management platform specifically designed for you.",
+      "ctaDemo": "LIVE DEMO",
+      "ctaDownload": "DOWNLOAD",
+      "rot1": "executes highly efficient.",
+      "rot2": "On your private infrastructure.",
+      "rot3": "With algorithmic precision.",
+      "flagKicker": "New hardware · price on request",
+      "flagName": "autonomous_ tower"
+    },
+    "profit": {
+      "h2": "Profitabel.",
+      "intro": "definiert Profitabilität neu, indem es Drittanbietergebühren, Verwaltungskosten und emotionales Trading eliminiert. Anstatt Überrenditen hinterherzujagen, sichert es Ihr Vermögen durch kühle, rationale und regelbasierte Ausführung – 24/7 nach Ihren Parametern.",
+      "p1": {
+        "lead": "Keine Strukturkosten.",
+        "text": "Sie behalten 100 % Ihrer Rendite. Es gibt keine Depotgebühren, keine Fondsverwaltungsgebühren und keine versteckten Vertriebsprovisionen, die Ihr Kapital aufzehren."
+      },
+      "p2": {
+        "lead": "Rational, nicht emotional.",
+        "text": "Menschliches Trading wird oft von Angst und Gier getrieben. Das System führt Ihre Strategie mit kühler, mathematischer Präzision aus – ohne Panik bei Kursrückgängen oder das Jagen von Hypes."
+      },
+      "p3": {
+        "lead": "24/7 Portfolio-Überwachung.",
+        "text": "Der Markt schläft nie wirklich, und Ihre Plattform auch nicht. Ihre Anlagen werden kontinuierlich überwacht und streng nach Ihren vordefinierten Parametern angepasst."
+      },
+      "p4": {
+        "lead": "Deterministische Limits.",
+        "text": "Trades werden streng logisch kontrolliert. Die Ausführung erfolgt nur, wenn feste, hartcodierte Kriterien erfüllt sind – keine unscharfen Abweichungen, keine manuellen Eingriffe, nur reine Strategieausführung."
+      }
+    },
+    "audit": {
+      "h2": "Überprüfbar.",
+      "intro": "priorisiert absolute Transparenz gegenüber LLM-Blackboxes. Jede Systemaktion wird unveränderlich geloggt, ist voll nachvollziehbar und erfüllt strikt alle rechtlichen Rahmenbedingungen.",
+      "p1": {
+        "lead": "Unveränderliche Audit-Trails.",
+        "text": "Systementscheidungen werden sicher archiviert. Durch manipulationssichere Speicherebenen wird jede Ausführung strikt revisionssicher protokolliert."
+      },
+      "p2": {
+        "lead": "Keine LLM-Blackbox.",
+        "text": "Im Gegensatz zu Standard-KIs ist die Pipeline komplett einsehbar. Jedes Signal enthält eine klare, schriftliche Begründung, damit Sie jeden Schritt verstehen."
+      },
+      "p3": {
+        "lead": "Regulatorische Durchsetzung.",
+        "text": "Rechtliche Rahmenbedingungen werden auf Software-Ebene strikt durchgesetzt. Komplexe Anti-Marktmissbrauchs- und Compliance-Prüfungen laufen deterministisch ab."
+      },
+      "p4": {
+        "lead": "Ihre nachträgliche Kontrolle.",
+        "text": "Absolute Transparenz bedeutet, Sie tappen nie im Dunkeln. Die detaillierte Logging-Infrastruktur macht jede vergangene Entscheidung glasklar und überprüfbar."
+      }
+    },
+    "safe": {
+      "h2": "Sicher.",
+      "intro": "gewährleistet Sicherheit durch absolute Datenhoheit. Es verbindet sich Peer-to-Peer mit Ihrem Broker und schützt so Ihre persönlichen Finanzdaten vor Dritten.",
+      "p1": {
+        "lead": "Peer-to-Peer Broker-Zugang.",
+        "text": "Ihre Plattform kommuniziert über sichere APIs direkt mit Ihrem Broker. Keine Mittelsmänner, keine Cloud-Zwischenstationen und absolut keine Datenweitergabe an Dritte."
+      },
+      "p2": {
+        "lead": "Strikte Datenhoheit.",
+        "text": "Keine Cloud-KI liest Ihre Strategien mit. Lokale LLMs analysieren die Märkte direkt auf Ihrer Hardware – so bleiben Ihre persönlichen Finanzentscheidungen ein Geheimnis."
+      },
+      "p3": {
+        "lead": "Absolute manuelle Kontrolle.",
+        "text": "Gehärtet gegen externe Manipulation. Sie besitzen einen Master-Kill-Switch, um den gesamten Handel jederzeit in Sekundenschnelle zu stoppen."
+      },
+      "p4": {
+        "lead": "Eingeschränkte API-Rechte.",
+        "text": "Ihr Kapital ist strukturell vor Diebstahl geschützt. Das System besitzt nur Handelsrechte – es ist technisch völlig unfähig, Geld von Ihrem Brokerkonto abzuheben."
+      }
+    },
+    "editions": {
+      "h2": "Editions",
+      "towerKicker": "new · hardware",
+      "towerH3a": "Discover the",
+      "towerNew": "new",
+      "towerH3b": "tower: Always on. Every day.",
+      "learnMore": "Learn More",
+      "inclVat": "+ VAT",
+      "metaDesktop": "· limited first edition · 100 units · ships 12·2026",
+      "metaMobile": "limited first edition · 100 units · ships 12·2026",
+      "foot": "Same trading core. Identical risk engine. Different deployment surface.",
+      "tile1": {
+        "title": "In the market every day",
+        "body": "The autonomous_ tower is active 24 hours a day, seven days a week. Silent and still, but always there. So your portfolio and the market are never unwatched."
+      },
+      "tile2": {
+        "title": "Your private installation",
+        "body": "The autonomous_ tower is optimized for your own local AI. No cloud solution, no subscription. Your strategy, your data and your broker access stay with you at home."
+      },
+      "tile3": {
+        "title": "Ready from day one",
+        "body": "autonomous_ comes pre-installed and fully configured, so you can start right away — profitable, auditable and safe, like every autonomous installation."
+      }
+    },
+    "footer": {
+      "help": "Help",
+      "legal": "Legal",
+      "support": "Support",
+      "imprint": "Imprint",
+      "privacy": "Privacy",
+      "risk": "Risk disclosure",
+      "tagline": "The governance layer for autonomous trading. Profitable, auditable, safe — by design.",
+      "riskNote": "Investing carries risk. The value of your investment may fall or rise; losses of capital invested may occur. Past performance is no guarantee of future results.",
+      "copyright": "© aaagents · Built in Europe"
+    },
+    "about": {
+      "roleGeorg": "Founder, CEO",
+      "roleAndreas": "Co-Founder, AI Architect",
+      "h2": "About",
+      "p1": "stands for our company, autonomous asset management agents. Our core business is developing intelligent software architectures capable of real-time market analysis and autonomous trade execution. We don't just develop theories; we operate them.",
+      "p2": "By managing our own proprietary capital, we validate our models under real-world conditions—independent of third-party funds. We believe in building trust through radical transparency. Follow our journey on LinkedIn to see live insights into our algorithm's sector allocations, macro responses, and performance metrics.",
+      "disclaimer": "Disclaimer: The information shared on this site does not constitute investment advice, financial brokerage, or an offer to buy or sell securities. We are a technology company, not a financial services provider. All content exclusively reflects our own proprietary trading activities and entrepreneurial decisions."
+    },
+    "pricing": {
+      "private": {
+        "junior": {
+          "eyebrow": "Desktop Version",
+          "name": "Private",
+          "tag": "The gateway to sovereign trading. Engineered for individuals seeking to explore advanced AI strategies in a secure, local environment with zero capital exposure.",
+          "price": "0.00 €",
+          "priceSub": "/ forever",
+          "f1": {
+            "title": "Sovereign Simulation",
+            "desc": "Experience high-fidelity paper trading. Master your strategies in a secure environment before deploying capital."
+          },
+          "f2": {
+            "title": "AI on Your Desktop",
+            "desc": "Run 9 specialized AI agents entirely on your PC, combining self-trained models with European LLMs."
+          },
+          "f3": {
+            "title": "Absolute Data Privacy",
+            "desc": "Operate strictly locally with zero telemetry. Your data is never scraped or uploaded."
+          }
+        },
+        "senior": {
+          "eyebrow": "Desktop Version",
+          "name": "Private",
+          "tag": "Elevate your private trading to institutional-grade execution. The Senior edition includes all features of Private Junior, while unlocking live market participation and advanced monitoring.",
+          "price": "0.00 €",
+          "priceSub": "/ month",
+          "priceMeta": "Free during Beta",
+          "f1": {
+            "title": "Live Market Bridge",
+            "desc": "Connect directly to your brokerage for live trading, safeguarded by our Iron Dome framework."
+          },
+          "f2": {
+            "title": "Private Daily Intel",
+            "desc": "Receive automated portfolio summaries directly to private channels (Slack, Teams, Telegram) with zero data sharing."
+          },
+          "f3": {
+            "title": "Priority Engineering Support",
+            "desc": "Access dedicated, fast-response email support to ensure seamless operations during live market execution."
+          }
+        }
+      },
+      "professional": {
+        "eyebrow": "Open Source Version",
+        "name": "Developer",
+        "tag": "Optimized for 24/7 operation on your own infrastructure. Leveraging the BORA framework for containerized deployment, it provides full autonomy without a GUI bottleneck.",
+        "price": "0.00 €",
+        "priceSub": "/ forever",
+        "f1": {
+          "title": "BORA Container Stack",
+          "desc": "Pre-configured Docker setup for seamless deployment on AWS, GCP, or private bare-metal servers."
+        },
+        "f2": {
+          "title": "24/7 Headless Autonomy",
+          "desc": "Operates as a background service with a minimal resource footprint and maximum uptime."
+        },
+        "f3": {
+          "title": "Cloud-Native Logging",
+          "desc": "Integrated streams for audit logs and performance metrics, monitorable via CLI or cloud dashboards."
+        }
+      },
+      "institutional": {
+        "eyebrow": "Cloud Native Version",
+        "name": "Institutional",
+        "tag": "A sovereign infrastructure stack for professional asset management. Designed for maximum scale, absolute auditability, and corporate-grade security.",
+        "price": "Custom",
+        "priceMeta": "Request Quotation",
+        "f1": {
+          "title": "Compliance-Ready Auditing",
+          "desc": "Tamper-proof, hash-chained logging meeting the highest standards for professional transparency."
+        },
+        "f2": {
+          "title": "Strategic Entity Governance",
+          "desc": "Centralized control for complex multi-portfolio management with hardened isolation protocols."
+        },
+        "f3": {
+          "title": "Exclusive Partnership",
+          "desc": "Dedicated account management and 24/7 priority engineering support for your critical operations."
+        }
+      }
+    },
+    "agents": {
+      "h1a": "Nine perspectives.",
+      "h1b": "One sized signal.",
+      "lede": "No single model decides. Nine voting agents each carry a fixed weight, a specialised view, and a written argument per motion. The consensus is the weighted average — never a black box, never a coin flip."
+    }
+  }
+}

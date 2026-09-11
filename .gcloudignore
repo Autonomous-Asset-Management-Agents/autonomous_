@@ -1,0 +1,63 @@
+# .gcloudignore — RADICAL REDUCTION
+.git/
+.github/
+.gitignore
+node_modules/
+**/node_modules/**
+dist/
+**/dist/**
+.venv/
+**/.venv/**
+venv/
+**/venv/**
+env/
+**/env/**
+.env
+__pycache__/
+**/__pycache__/**
+*.pyc
+*.pyo
+*.dll
+*.so
+*.dylib
+# Python venv artifacts (use explicit venv paths to avoid matching app dirs on Windows)
+.venv/Lib/
+.venv/Scripts/
+.venv/include/
+.venv/share/
+venv/Lib/
+venv/Scripts/
+venv/include/
+venv/share/
+
+# DATA KILLERS
+clean_training_data/
+**/clean_training_data/**
+rl_logs/
+**/rl_logs/**
+market_data_cache/
+**/market_data_cache/**
+data/
+**/data/**
+models/*.pth
+models/*.pt
+models/*.onnx
+Historical Data/
+**/Historical Data/**
+tmp/
+**/tmp/**
+logs/
+**/logs/**
+*.log
+*.tgz
+*.tar.gz
+*.zip
+
+# Agent config
+.agent/
+.gemini/
+.cursor/
+*.csv
+*.zip
+*.pth
+*.bak
