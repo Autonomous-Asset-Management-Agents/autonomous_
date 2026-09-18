@@ -1,0 +1,8642 @@
+[
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "2.59875"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "2.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.833333"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "2.75"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "2.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.833333"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "4.59"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "4.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "4.59"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "4.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.333333"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.333333"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.1618"
+ },
+ {
+  "price": 5.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.7425"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "2.59875"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "2.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "2.59875"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "2.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.833333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.833333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "2.75"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "2.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "2.75"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "2.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1.833333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "1.833333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "1.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "4.59"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "4.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "4.59"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "4.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "4.59"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "4.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "4.59"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "4.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "16.065"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "16.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "16.065"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "16.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.333333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "11.333333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "17.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "17.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "17.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "17.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "11.333333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "11.333333"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "11.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1350.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1350.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "199.98"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "199.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1350.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1350.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "199.98"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "199.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1999.8"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1999.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "199.98"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "199.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1999.8"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1999.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "199.98"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "199.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "1999.8"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "1999.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "199.98"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "199.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "1999.8"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "1999.0"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "199.98"
+ },
+ {
+  "price": 5.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "199.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.05"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.129938"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.091667"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.1375"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.091667"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.2295"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.2295"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.566667"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.566667"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.5809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.05809"
+ },
+ {
+  "price": 100.0,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.037125"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.129938"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.129938"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.091667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.091667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.1375"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.1375"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.091667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.091667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.2295"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.2295"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.2295"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.2295"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.80325"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.80325"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.566667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.566667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.85"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.85"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.566667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.566667"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "67.5"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "67.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "9.999"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "9.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "67.5"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "67.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "9.999"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "9.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "99.99"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "99.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "9.999"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "9.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "99.99"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "99.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "9.999"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "9.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "99.99"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "99.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "9.999"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "9.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "99.99"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "99.0"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "9.999"
+ },
+ {
+  "price": 100.0,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "9.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 0.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.016082"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 6.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.041793"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.029483"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.044225"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.029483"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.073816"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.073816"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.182261"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.182261"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.186839"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.018684"
+ },
+ {
+  "price": 310.91,
+  "cash": 59.09,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.011941"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.041793"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.041793"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.029483"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.029483"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.044225"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.044225"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.029483"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.029483"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 55.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.073816"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.073816"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.073816"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.073816"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.258355"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.258355"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.182261"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.182261"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.273391"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.273391"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "0.182261"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "0.182261"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 340.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "0.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "21.710463"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "21.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "3.216043"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "3.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "21.710463"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "21.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "3.216043"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "3.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "32.160432"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "32.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "3.216043"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "3.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "32.160432"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "32.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "3.216043"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 0.5,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "3.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": true,
+  "expected": "32.160432"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 1,
+  "frac": false,
+  "expected": "32.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": true,
+  "expected": "3.216043"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.005,
+  "slots": 10,
+  "frac": false,
+  "expected": "3.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": true,
+  "expected": "32.160432"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 1,
+  "frac": false,
+  "expected": "32.0"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": true,
+  "expected": "3.216043"
+ },
+ {
+  "price": 310.91,
+  "cash": 10000.0,
+  "capital": 100000.0,
+  "conv": 1.0,
+  "atr_pct": 0.03,
+  "slots": 10,
+  "frac": false,
+  "expected": "3.0"
+ }
+]

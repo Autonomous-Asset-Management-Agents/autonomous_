@@ -1,0 +1,40 @@
+{
+  "_comment": "#3145 parity vector. The Overview shows the SAME return twice: the 'autonomous_' KPI card takes it from the engine (perf_metrics.compute_cashflow_adjusted_returns) and the hero/chart computes it in the console (shared/twr.ts chainLink). Both must produce expected_twr_pct for this curve \u2014 the real live shape: a settlement-lagged deposit dated one point early, then normal days. The two money figures differ by design and by exactly funding_costs: the engine excludes a transfer fee from strategy P&L (#3049), the console's hero delta reports the raw market move. The console receives 'effective_cashflows' on the points (api_routes._return_metrics_from_points writes them back), NOT the gross 'cashflows' \u2014 that is what makes the two implementations arrive at the identical percentage.",
+  "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-09-01",
+    "2026-09-02"
+  ],
+  "equity": [
+    6142.65,
+    6143.0,
+    11928.25,
+    11900.1,
+    11855.4,
+    11812.43
+  ],
+  "cashflows": [
+    0.0,
+    5785.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "expected_twr_pct": -0.9653297299,
+  "net_deposits": 5785.6,
+  "expected_market_pnl_engine": -115.47,
+  "expected_market_pnl_console": -115.82,
+  "funding_costs": 0.35,
+  "effective_cashflows": [
+    0.0,
+    5785.6,
+    -0.35,
+    0.0,
+    0.0,
+    0.0
+  ]
+}
