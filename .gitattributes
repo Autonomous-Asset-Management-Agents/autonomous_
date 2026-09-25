@@ -1,0 +1,4 @@
+# #2747/S8: exclude the vendored pandas-ta from 'git archive HEAD:ai_trading_bot'.
+# Installed from an archive it resolves setuptools-scm fallback_version=0.0.0 → breaks rsi/adx;
+# the pinned pandas-ta-classic==0.3.78 wheel (installed by provisioning) is the only supported source.
+pandas-ta/ export-ignore

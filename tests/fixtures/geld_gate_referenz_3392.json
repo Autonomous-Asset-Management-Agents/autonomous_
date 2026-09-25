@@ -1,0 +1,62 @@
+{
+  "boden_verwirft": {
+    "deckel": "null:insufficient_cash",
+    "menge": 0.0,
+    "notional": 0.0,
+    "zielgewicht": 0.1
+  },
+  "cash_knapp": {
+    "deckel": "cash",
+    "menge": 1.999,
+    "notional": 199.9,
+    "zielgewicht": 0.1
+  },
+  "freigegebene_obergrenze": {
+    "deckel": "freigegebene_obergrenze",
+    "menge": 3.0,
+    "notional": 300.0,
+    "zielgewicht": 0.1
+  },
+  "gesamt_exposure": {
+    "deckel": "total_exposure_cap",
+    "menge": 25.0,
+    "notional": 2500.0,
+    "zielgewicht": 0.1
+  },
+  "kelly": {
+    "deckel": "kelly",
+    "menge": 25.0,
+    "notional": 2500.0,
+    "zielgewicht": 0.1
+  },
+  "max_verlust": {
+    "deckel": "max_loss_per_trade",
+    "menge": 25.0,
+    "notional": 2500.0,
+    "zielgewicht": 0.1
+  },
+  "order_deckel": {
+    "deckel": "compliance_order_value",
+    "menge": 99.99,
+    "notional": 9999.0,
+    "zielgewicht": 0.1
+  },
+  "positionsdeckel": {
+    "deckel": "position_cap",
+    "menge": 50.0,
+    "notional": 5000.0,
+    "zielgewicht": 0.25
+  },
+  "regime_drossel": {
+    "deckel": "regime_drossel",
+    "menge": 25.0,
+    "notional": 2500.0,
+    "zielgewicht": 0.1
+  },
+  "zielgewicht_setzt_die_menge": {
+    "deckel": "zielgewicht",
+    "menge": 50.0,
+    "notional": 5000.0,
+    "zielgewicht": 0.1
+  }
+}

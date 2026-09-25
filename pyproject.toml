@@ -1,0 +1,85 @@
+[tool.pytest.ini_options]
+minversion = "7.0"
+# Coverage auf die drei Iron-Dome-Module (deterministisch, überleben Epic 1.7)
+# God-Files (engine.py, strategies.py) werden in Epic 1.7 refactored -> kein Coverage-ROI jetzt
+addopts = "-ra -q --strict-markers --cov=core.kill_switch --cov=core.validation --cov=core.risk_manager --cov-report=xml --cov-report=term-missing"
+asyncio_mode = "auto"
+# Force asyncio backend for anyio 4.x — prevents trio from being parametrized.
+# anyio_backends (plural) is the correct key for anyio>=4.0 (was anyio_backend singular in 3.x)
+anyio_backends = ["asyncio"]
+testpaths = [
+    "tests/unit",
+    "tests/integration",
+    "tests/regression",
+    "tests/parity",
+    "tests/features",
+]
+markers = [
+    "unit: mark a test as a unit test.",
+    "integration: mark a test as an integration test.",
+    "iron_dome: mark a test as an Iron Dome test (coverage enforced).",
+    "mutates_global_state: the test deliberately leaves a global (config module, singleton, env) changed — exempts it from the global_state_canary in tests/conftest.py.",
+    # #3377 (ARC-E1.1): Kettenabnahme entlang der Value Chain. `chain` markiert ein
+    # Szenario, das mehrere Stufen durchläuft; `h2`/`h3` benennen die Übergabe, die es
+    # abnimmt (VC-2→VC-4 bzw. VC-4→VC-3). Ohne Registrierung bricht --strict-markers den
+    # Lauf mit einem Markerfehler ab, statt eine fachliche Aussage zu liefern.
+    "chain: end-to-end scenario across several value-chain stages (CH-1..CH-6).",
+    "evidence: mark a test as an evidence layer test for CH-6.",
+    "editions: tests for BORA-Ports parity between editions (CH-5).",
+    "evidence: acceptance tests for ARC-E5 (CH-6, Determinismus, Enthaltung).",
+    "h2: acceptance for hand-off H2 (VC-2 → VC-4, decision to risk gate).",
+    "h3: acceptance for hand-off H3 (VC-4 → VC-3, risk gate to broker).",
+    # #3384 (ARC-E2.1): H4 ist die Übergabe VC-3 → VC-5 (Broker zurück in die
+    # Wahrheit): Absenden, Bestätigung, Fill, Datensatz. Die Szenarien darunter
+    # sind heute ROT und sollen es sein — sie sind der Maßstab für Epic #3367.
+    "h4: acceptance for hand-off H4 (VC-3 → VC-5, broker back to the record).",
+    # #3396 (ARC-E3): Stufen und restliche Uebergaben der Value Chain. Die Marker sind die
+    # Quelle; das Allure-Label "feature" wird daraus abgeleitet (tests/conftest.py,
+    # tests/stufen.py). vc0 ist der Querschnitt (Plattform).
+    "vc0: value-chain cross-cut VC-0 (platform infrastructure).",
+    "vc1: value-chain stage VC-1 (research & analysis).",
+    "vc2: value-chain stage VC-2 (portfolio construction).",
+    "vc3: value-chain stage VC-3 (trading & execution).",
+    "vc4: value-chain stage VC-4 (risk management & compliance).",
+    "vc5: value-chain stage VC-5 (administration & back-office).",
+    "vc6: value-chain stage VC-6 (reporting & client servicing).",
+    "h1: acceptance for hand-off H1 (VC-1 → VC-2, signal to decision).",
+    "h5: acceptance for hand-off H5 (VC-5 → VC-6, record to report).",
+]
+pythonpath = ["."]
+
+[tool.black]
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | gui
+)/
+'''
+
+[tool.coverage.run]
+# Iron Dome: nur die drei deterministischen Kapitalschutz-Module
+# Weitere Module werden hinzugefügt sobald sie Test-Coverage erhalten
+branch = true
+
+[tool.coverage.report]
+fail_under = 40
+show_missing = true
+skip_empty = true
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["core"]
+
+[dependency-groups]
+dev = [
+    "pathspec>=1.1.1",
+]

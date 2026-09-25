@@ -1,0 +1,90 @@
+# #3394 (ARC-E3) — der eingecheckte Stand der Architekturregeln.
+#
+# Jede Zahl und jede Ausnahme hier darf nur SINKEN. Ein Befund ueber dem Stand schlaegt
+# fehl (im Modus "blockieren"); ein Befund darunter ebenso, bis die Zahl hier mitgesenkt
+# ist — so ist jedes Aufraeumen eine sichtbare, eingecheckte Zeile und kann nicht still
+# zurueckkehren.
+#
+# Geprueft von tests/unit/test_architektur_fitness.py, Logik in tests/architecture/regeln.py.
+# Die Stufengrenzen stehen in tests/architecture/importlinter.ini.
+
+# "warnen": Befunde erscheinen als Warnung, der Pull Request bleibt mergefaehig.
+# "blockieren": Befunde lassen den Lauf scheitern.
+# Umschalten je Regel in einem eigenen PR, nach einem vollstaendigen Durchlauf ohne
+# falschen Befund (Plan #3394, Abschnitt 7.5).
+[modus]
+ratsche = "blockieren"
+stufengrenzen = "blockieren"
+broker_aufrufer = "blockieren"
+editionsweiche = "blockieren"
+uhr_zugriffe = "blockieren"
+getattr_namen = "warnen"
+
+# ── 1. Ratsche: getattr(<config>, "NAME", <default>) ────────────────────────
+# Zaehlmethode (Plan, Abschnitt 3), zeilenweise, Pfade relativ zum Repository:
+#   grep -rnE 'getattr\([^,]*[Cc]onfig[^,]*,\s*"[A-Z_]+"\s*,' ai_trading_bot/core \
+#        --include=*.py | grep -v test
+# Gemessen am 2026-09-18: 165 im Kern, 16 in core/engine/order_executor.py
+# 2026-09-24 (#3604): 164 im Kern — der getattr-Default des alten Minuten-Schalters entfiel.
+# (am 2026-09-16 waren es 155 und 13 — die Zahl steigt ohne Ratsche).
+[ratsche.obergrenzen]
+"core" = 164
+"core/engine/order_executor.py" = 16
+
+# ── 3. Genau ein Broker-Aufrufer ──────────────────────────────────────────
+# Gezaehlt wird jeder Zugriff auf eine mutierende Broker-Methode (submit_order,
+# replace_order_by_id, cancel_order_by_id, cancel_orders, close_position,
+# close_all_positions) unter core/, auch ohne direkten Aufruf
+# (asyncio.to_thread(client.cancel_order_by_id, ...)).
+[broker_aufrufer]
+bereich = "core"
+gateway = ["core/gateway/order_gateway.py"]
+
+# Heute noch am Gateway vorbei, je Datei und Methode gezaehlt (Stand 2026-09-18).
+[broker_aufrufer.ausnahmen]
+# Stornos laufen am Gateway vorbei — kein Datensatz, keine Halt-Pruefung im Tor.
+"core/engine/api_routes.py" = { cancel_order_by_id = 1, cancel_orders = 1 }
+"core/engine/monitor_loop.py" = { cancel_orders = 1 }
+"core/engine/order_executor.py" = { cancel_order_by_id = 2 }
+"core/engine/trading_loop.py" = { cancel_order_by_id = 1 }
+# Simulations-Broker und Simulationspfade.
+"core/engine/simulation_runner.py" = { submit_order = 2 }
+"core/simulation.py" = { submit_order = 1 }
+"core/simulation_adapter.py" = { cancel_orders = 1, close_all_positions = 1, submit_order = 1 }
+# Default-Strategie: Simulationszweig und Methodenverweis vor der Verzweigung.
+"core/strategies/base.py" = { submit_order = 3 }
+
+# ── 4. Keine Editionsweiche ausserhalb der Composition Root ──────────────────
+# Gezaehlt wird jedes Lesen von DEPLOYMENT_MODE (Umgebung oder Konfiguration) und jeder
+# Aufruf von resolve_edition unter core/. Die Composition Root gibt es als Modul noch
+# nicht; heute entscheiden config.py und config.oss.py die Edition, beide liegen
+# ausserhalb von core/.
+[editionsweiche]
+bereich = "core"
+composition_root = ["core/composition/root.py"]
+
+# Stand 2026-09-18. Darf nicht dadurch schrumpfen, dass eine Weiche in eine
+# Konfigurationsdatei wandert (BORA) — sondern nur, indem der Kern sie nicht mehr braucht.
+[editionsweiche.ausnahmen]
+"core/auth.py" = { K_SERVICE = 1 }
+"core/cloud_logger.py" = { K_SERVICE = 1 }
+"core/diagnostics.py" = { K_SERVICE = 1 }
+"core/engine/simulation_runner.py" = { DEPLOYMENT_MODE = 1 }
+"core/ml/quality_gate.py" = { DEPLOYMENT_MODE = 1 }
+"core/round_table/runner.py" = { DEPLOYMENT_MODE = 1 }
+"core/structured_logging.py" = { K_SERVICE = 1 }
+"core/xai/agent_core.py" = { DEPLOYMENT_MODE = 1, resolve_edition = 1 }
+
+
+[uhr_zugriffe.obergrenzen]
+"core" = 199
+"core/engine/order_executor.py" = 0
+
+
+# ── 6. getattr-Namen gegen das Schema (#3627) ───────────────────────
+# Regel 1 zaehlt die Umgehungen; diese prueft, ob der genannte Name ueberhaupt
+# aufloest. Anders als Regel 1 gilt hier jeder Empfaenger, dessen Ausdruck "config",
+# "cfg" oder "settings" enthaelt — Regel 1 bildet grep nach und verfehlt jedes ``cfg``.
+# Geltungsbereich: das ganze Paket ohne Testdateien.
+[getattr_namen]
+bereiche = ["."]

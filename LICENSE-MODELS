@@ -1,0 +1,53 @@
+========================================================================
+MACHINE LEARNING MODEL ARTIFACTS LICENSE & AI ACT FRAMEWORK
+========================================================================
+Product: AAAgents Community Edition — Model Weights & Weights Configuration Artifacts
+Author:  AAAgents Community Edition Contributors / Autonomous Asset Management Agents UG (haftungsbeschränkt)
+
+All included machine learning model artifacts, historical neural network
+weights, and structural configuration files contained within this repository
+(including but not limited to files bearing extensions .pt, .ckpt, .lgb,
+or .json model graphs) are licensed under the terms of the:
+
+Creative Commons Attribution 4.0 International Public License (CC-BY-4.0)
+
+1. CORE PERMISSIONS OF CC-BY-4.0
+------------------------------------------------------------------------
+You are legally free to Share (copy and redistribute the material in any
+medium or format) and Adapt (remix, transform, and build upon the material
+for any purpose, including commercial deployments), provided you maintain
+appropriate Attribution (you must give appropriate credit to the authors:
+"AAAgents Community Edition Contributors", supply a link to the license,
+and explicitly indicate if modifications were introduced). You may review
+the full legal text of the CC-BY-4.0 license at:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+2. EUROPEAN UNION AI ACT SAFE-HARBOR & SUPPLY CHAIN COMPLIANCE CLAUSE
+------------------------------------------------------------------------
+The provided machine learning weights, mathematical structures, and
+algorithmic artifacts are distributed exclusively for research, scientific
+development, evaluation, and non-operational testing purposes under the
+explicit open-source AI exemptions of the European Union AI Act (Regulation
+(EU) 2024/1689), specifically targeting models released under free and
+open-source licenses.
+
+The provided artifacts do NOT constitute a General Purpose AI (GPAI) model
+presenting systemic risks, nor do they feature central deployment blocks.
+Any commercial entity, enterprise operator, or B2B institution that
+integrates, operationalizes, or deploys these weights within a live trading
+or capital-allocation framework assumes sole, unshared liability for
+complete downstream supply chain compliance. This includes executing
+required AI literacy assessments, algorithmic risk evaluations, and ensuring
+absolute adherence to localized artificial intelligence legislation.
+
+3. ABSOLUTE DISCLAIMER OF STRUCTURAL WARRANTIES
+------------------------------------------------------------------------
+UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, THE
+LICENSORS OFFER THE ARTIFACTS AND MODEL WEIGHTS ENTIRELY AS-IS AND MAKE
+NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE MATERIAL,
+EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION,
+WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+THE ABSENCE OF LATENT OR OTHER DEFECTS, STRUCTURAL ACCURACY, OR THE
+PRESENCE OR ABSENCE OF MATHEMATICAL ERRORS, WHETHER OR NOT DISCOVERABLE
+BY MODERN TESTING METHODS.
+========================================================================
