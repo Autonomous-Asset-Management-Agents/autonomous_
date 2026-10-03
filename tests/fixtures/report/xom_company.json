@@ -1,0 +1,26 @@
+{
+  "symbol": "XOM",
+  "source": "polygon v3 /v3/reference/tickers/{ticker}",
+  "fetched_at": "2026-07-17T00:00:00+00:00",
+  "results": {
+    "ticker": "XOM",
+    "name": "ExxonMobil Holdings Corporation",
+    "market": "stocks",
+    "locale": "us",
+    "primary_exchange": "XNYS",
+    "type": "CS",
+    "active": true,
+    "currency_name": "usd",
+    "cik": "0002115436",
+    "composite_figi": "BBG023CY9MM1",
+    "share_class_figi": "BBG023CY9NL0",
+    "market_cap": 598986314380.62,
+    "description": "ExxonMobil is an integrated oil and gas company that explores for, produces, and refines oil worldwide. In 2025, it produced 3.3 million barrels of liquids and 8.4 billion cubic feet of natural gas per day. At the end of 2025, reserves were 19.3 billion barrels of oil equivalent, 69% of which were liquids. The company is one of the world's largest refiners, with a total global refining capacity of 4.1 million barrels of oil per day, and is one of the world's largest manufacturers of commodity and specialty chemicals.",
+    "ticker_root": "XOM",
+    "homepage_url": "https://www.corporate.exxonmobil.com",
+    "total_employees": 57900,
+    "list_date": "1920-03-25",
+    "weighted_shares_outstanding": 4144947162,
+    "round_lot": 100
+  }
+}

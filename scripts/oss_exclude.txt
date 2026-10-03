@@ -1,0 +1,200 @@
+# oss_exclude.txt — Blacklist for oss_make_snapshot.py
+# Lines starting with '#' or empty lines are ignored.
+# Patterns support shell globs (fnmatch). Paths with '/' are matched
+# against the relative path from the source root (ai_trading_bot/).
+
+# ── Plane-2 research tooling — NEVER public (TARGET_ARCHITECTURE §10.3 rule 1) ──
+research                           # parameter-sweep loop + UI (epic #1134); test-pinned in test_research_sweep.py
+tests/unit/test_research_sweep.py  # its tests reference the private package
+tests/unit/test_research_evaluate.py
+tests/unit/test_research_regimes.py
+tests/unit/test_research_ui.py
+research_results                   # sweep artifacts (also gitignored)
+
+# ── Proprietary GCP integrations (no OSS equivalent) ─────────────────────────
+secrets_loader.py
+core/secret_manager_utils.py      # replaced by .oss.py stub at snapshot time
+core/vertex_experiment.py
+core/linkedin_poster.py
+core/portfolio                     # cuFOLIO port — ENTERPRISE-only (#1905), never in OSS/Docker snapshot
+tests/unit/test_portfolio_covariance.py
+tests/unit/test_cvxpy_solver_smoke.py
+tests/unit/test_no_ecos_solver.py  # ecos + Enterprise-only guard runs on the private master, not in OSS
+tests/unit/test_vertex_experiment.py
+tests/unit/test_gcs_export.py
+tests/unit/test_data_cache_gcs.py
+tests/unit/test_round_table_di.py
+tests/e2e/test_external_liveness.py
+tests/integration/test_golden_path.py
+tests/unit/test_databento_cache_normalization.py
+tests/unit/test_latency_watchdog.py
+tests/unit/test_live_monitor_cli.py
+tests/unit/test_oss_dsgvo_network_defaults.py
+tests/unit/test_secrets_loader.py
+tests/unit/test_slack_webhook.py
+tests/unit/test_training_smoke.py
+
+# Interne Dev-Artefakte
+git_status.txt
+tests/unit/test_repo_essential_files.py  # private-repo layout guard; wrong root under the flattened OSS snapshot
+debug_imports.py
+verify_deep_health.py
+check_health.py
+OSS_AUDIT_REPORT.md
+IMPROVEMENTS_PROFITABILITY_AND_TESTING.md
+main.py
+tests/test_dummy.py
+*test_results.json
+monitoring_*.json
+.env.example
+
+# GCP/Cloud-Skripte
+scripts/backup_to_gcs.py
+scripts/backup_to_gcs.sh
+scripts/gcs_compliance_export.py
+scripts/setup_cloudbuild_trigger.py
+scripts/setup_cloudbuild_trigger.sh
+scripts/setup_cloudrun_secrets.py
+scripts/setup_cloudrun_secrets.sh
+scripts/setup_load_balancer.sh
+scripts/setup_load_balancer.ps1
+scripts/setup_monitoring.py
+scripts/setup_monitoring.sh
+scripts/setup_secrets.py
+scripts/setup_secrets.sh
+scripts/upload_models_to_gcs.py
+scripts/upload_models_to_gcs.sh
+scripts/verify_cloud_env.py
+scripts/manual_migrate.py
+scripts/linkedin_weekly_post.py
+scripts/prepare_training_data.py
+scripts/train_lstm.py
+scripts/train_rl.py
+scripts/train_v4_lightgbm.py
+
+# Vertex AI Training Stack
+Dockerfile.train
+requirements-train.txt
+requirements-cloud.txt
+
+# Interne Integration Tests
+tests/integration/test_gcs_sync.py
+tests/integration/test_gcs_worm.py
+tests/integration/test_infra_cloudbuild.py
+tests/integration/test_e2e_cloud.py
+tests/integration/test_e2e_prod_smoke.py
+tests/integration/test_staging_gate.py
+tests/integration/test_round_table_live.py
+
+# Core GCP-Module
+core/data_cache_gcs.py
+
+# ── OSS stub sources are NOT excluded here because oss_make_snapshot.sh needs to copy and rename them ──
+
+# ── Desktop GUI (not for server deployment) ───────────────────────────────────
+gui/
+
+# ── GCP Cloud Build pipelines ────────────────────────────────────────────────
+cloudbuild*.yaml
+cloudbuild-*.yaml
+run_alembic_gcp.py
+train_cloud.py
+train_rl_cloud.py
+test_train_rl_cloud.py
+test_dockerfile_torch_versions.py
+test_workflow_yaml.py
+test_workflow_ci_gates.py
+
+# ── Data & model artifacts (too large / environment-specific) ────────────────
+data/*
+models/*.pkl
+models/*.zip
+rl_stats*.pkl
+rl_logs/
+clean_training_data/
+sentiment_cache.csv
+market_data_cache/
+cloud_fallback_logs/
+allure-results*/
+allure_test/
+
+# ── Dev / CI log files ────────────────────────────────────────────────────────
+*.log
+engine_stdout*.log
+engine_stderr*.log
+sim_out*.log
+sim_err*.log
+out.log
+error.log
+crash.log
+run_log.txt
+compliance_audit.log
+
+# ── Test output artifacts ────────────────────────────────────────────────────
+errors*.txt
+test_output*.txt
+test_failure*.txt
+test_errors*.txt
+failed_logs*.txt
+temp_err*.txt
+pytest_*.txt
+pytest_cov.txt
+
+# ── Build / venv artifacts ───────────────────────────────────────────────────
+*.pyc
+__pycache__/
+.venv/
+venv/
+.pytest_cache/
+build.json
+coverage.xml
+.coverage
+
+# ── Sensitive / local-only configs ────────────────────────────────────────────
+.env
+.env.console
+.env.local
+service.json
+token.txt
+*.pkl
+
+# ── Supabase (deprecated, replaced by Cloud SQL) ──────────────────────────────
+supabase/
+
+# ── Scratch / temp / leaked ────────────────────────────────────────────────────────
+scratch/
+dummy.txt
+dummy_trigger.txt
+static/
+docker-compose.yml
+docker-compose.migrate.yml
+OSS_AUDIT_REPORT.md
+config.py.old
+sim_corpus
+sim_corpus_5y
+ai_trading_bot/core/sim
+
+oss_audit_logs/
+*.csv
+*.log
+.hypothesis/
+.coverage
+*-result.json
+*-container.json
+*-attachment.txt
+# ── Bewusst oeffentlich (#3616) ───────────────────────────────────────────────
+# Gitwildmatch wertet die LETZTE passende Regel aus. Was hier steht, matcht
+# weiter oben eine Sperre, wird vom Snapshot aber absichtlich erzeugt. Jede
+# Zeile nennt ihren Erzeuger — ohne Erzeuger waere es ein stilles Loch in der
+# Sperrliste, und src/test/ossExcludeGate3616.test.ts wuerde es melden.
+#
+# oss_make_snapshot.sh Step 2.4: data/* ist nur wegen der Dateigroesse gesperrt.
+# Das Manifest listet die Modelle des passenden Public Release; ohne es bootet
+# der OSS-Stack degradiert (gcs_sync_on_start.py liest es beim ersten Start).
+!data/models_manifest.json
+#
+# oss_make_snapshot.sh Step 4: entsteht aus .env.oss.example, genau wie
+# README.oss.md -> README.md. Gesperrt ist die PRIVATE .env.example; das Tor
+# prueft deshalb zusaetzlich die Herkunft (verify_oss_snapshot.sh), denn der
+# blosse Dateiname unterscheidet die beiden nicht.
+!.env.example
