@@ -1,0 +1,7 @@
+# AAAgents — security contact (RFC 9116)
+# Report vulnerabilities responsibly. Never include API keys or secrets in a report.
+Contact: mailto:security@aaagents.de
+Expires: 2027-06-24T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://aaagents.de/.well-known/security.txt
+Policy: https://aaagents.de/legal/risk-disclosure

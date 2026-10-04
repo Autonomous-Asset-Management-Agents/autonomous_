@@ -1,0 +1,181 @@
+{
+  "absendung_async_bei_halt": {
+    "budget": 1,
+    "datensatz": [],
+    "ergebnis": true,
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 10.0,
+        "notional": 1000.0,
+        "seite": "buy",
+        "tif": null,
+        "weg": "async"
+      }
+    ]
+  },
+  "absendung_kauf_bei_halt": {
+    "budget": 0,
+    "datensatz": [],
+    "ergebnis": false,
+    "gesendet": []
+  },
+  "absendung_kauf_budget_erschoepft": {
+    "budget": 0,
+    "datensatz": [],
+    "ergebnis": false,
+    "gesendet": []
+  },
+  "absendung_stop_loss_bei_halt": {
+    "budget": 1,
+    "datensatz": [
+      "exit_exempt:halt"
+    ],
+    "ergebnis": true,
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 10.0,
+        "notional": 1000.0,
+        "seite": "sell",
+        "tif": "day",
+        "weg": "MarketOrderRequest"
+      }
+    ]
+  },
+  "lauf_kauf_bei_halt": {
+    "budget": 0,
+    "datensatz": [],
+    "ergebnis": "HOLD",
+    "gesendet": []
+  },
+  "lauf_kauf_kwargs": {
+    "budget": 1,
+    "datensatz": [
+      "approved"
+    ],
+    "ergebnis": "BUY",
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 99.99,
+        "notional": 9999.0,
+        "seite": "buy",
+        "tif": "day",
+        "weg": "kwargs"
+      }
+    ]
+  },
+  "lauf_kauf_limit": {
+    "budget": 1,
+    "datensatz": [
+      "approved"
+    ],
+    "ergebnis": "BUY",
+    "gesendet": [
+      {
+        "limit": 100.1,
+        "menge": 99.99,
+        "notional": 9999.0,
+        "seite": "buy",
+        "tif": "day",
+        "weg": "LimitOrderRequest"
+      }
+    ]
+  },
+  "lauf_kauf_markt": {
+    "budget": 1,
+    "datensatz": [
+      "approved"
+    ],
+    "ergebnis": "BUY",
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 99.99,
+        "notional": 9999.0,
+        "seite": "buy",
+        "tif": "day",
+        "weg": "MarketOrderRequest"
+      }
+    ]
+  },
+  "lauf_kauf_simulation": {
+    "budget": 0,
+    "datensatz": [],
+    "ergebnis": "BUY",
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 99.99,
+        "notional": 9999.0,
+        "seite": "buy",
+        "tif": null,
+        "weg": "simulation"
+      }
+    ]
+  },
+  "lauf_modell_verkauf": {
+    "budget": 1,
+    "datensatz": [
+      "approved"
+    ],
+    "ergebnis": "SELL",
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 10.0,
+        "notional": 1000.0,
+        "seite": "sell",
+        "tif": "day",
+        "weg": "MarketOrderRequest"
+      }
+    ]
+  },
+  "lauf_modell_verkauf_bei_halt": {
+    "budget": 0,
+    "datensatz": [],
+    "ergebnis": "HOLD",
+    "gesendet": []
+  },
+  "lauf_stop_loss": {
+    "budget": 1,
+    "datensatz": [
+      "exit_exempt"
+    ],
+    "ergebnis": "SELL",
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 10.0,
+        "notional": 1000.0,
+        "seite": "sell",
+        "tif": "day",
+        "weg": "MarketOrderRequest"
+      }
+    ]
+  },
+  "lauf_stop_loss_bei_halt": {
+    "budget": 0,
+    "datensatz": [],
+    "ergebnis": "HOLD",
+    "gesendet": []
+  },
+  "lauf_stop_loss_budget_erschoepft": {
+    "budget": 1,
+    "datensatz": [
+      "exit_exempt"
+    ],
+    "ergebnis": "SELL",
+    "gesendet": [
+      {
+        "limit": null,
+        "menge": 10.0,
+        "notional": 1000.0,
+        "seite": "sell",
+        "tif": "day",
+        "weg": "MarketOrderRequest"
+      }
+    ]
+  }
+}
