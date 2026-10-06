@@ -1,0 +1,315 @@
+# #3394 (ARC-E3) — der eingecheckte Stand der Architekturregeln.
+#
+# Jede Zahl und jede Ausnahme hier darf nur SINKEN. Ein Befund ueber dem Stand schlaegt
+# fehl (im Modus "blockieren"); ein Befund darunter ebenso, bis die Zahl hier mitgesenkt
+# ist — so ist jedes Aufraeumen eine sichtbare, eingecheckte Zeile und kann nicht still
+# zurueckkehren.
+#
+# Geprueft von tests/unit/test_architektur_fitness.py, Logik in tests/architecture/regeln.py.
+# Die Stufengrenzen stehen in tests/architecture/importlinter.ini.
+
+# "warnen": Befunde erscheinen als Warnung, der Pull Request bleibt mergefaehig.
+# "blockieren": Befunde lassen den Lauf scheitern.
+# Umschalten je Regel in einem eigenen PR, nach einem vollstaendigen Durchlauf ohne
+# falschen Befund (Plan #3394, Abschnitt 7.5).
+[modus]
+ratsche = "blockieren"
+stufengrenzen = "blockieren"
+broker_aufrufer = "blockieren"
+editionsweiche = "blockieren"
+uhr_zugriffe = "blockieren"
+getattr_namen = "blockieren"
+getattr_widersprueche = "blockieren"
+schatten_importe = "blockieren"
+groessen = "blockieren"  # G-10 (#3839): nach Durchlauf ohne Fehlbefund, Stufe 2.
+doku_groessen = "warnen"  # G-9 (#3837): wie G-0 — neue Regel beginnt mit warnen.
+
+# ── 1. Ratsche: getattr(<config>, "NAME", <default>) ────────────────────────
+# Zaehlmethode (Plan, Abschnitt 3), zeilenweise, Pfade relativ zum Repository:
+#   grep -rnE 'getattr\([^,]*[Cc]onfig[^,]*,\s*"[A-Z_]+"\s*,' ai_trading_bot/core \
+#        --include=*.py | grep -v test
+# Gemessen am 2026-09-18: 165 im Kern, 16 in core/engine/order_executor.py
+# 2026-09-24 (#3604): 164 im Kern — der getattr-Default des alten Minuten-Schalters entfiel.
+# (am 2026-09-16 waren es 155 und 13 — die Zahl steigt ohne Ratsche).
+[ratsche.obergrenzen]
+"core" = 164
+"core/engine/order_executor.py" = 14
+# #3819 (G-1a): zwei Fundstellen zogen mit der Signal-Uebergabe um (PAPER_TRADING,
+# SHADOW_MODE); die Summe ueber beide Dateien bleibt 16.
+"core/engine/signal_uebergabe.py" = 2
+
+# ── 3. Genau ein Broker-Aufrufer ──────────────────────────────────────────
+# Gezaehlt wird jeder Zugriff auf eine mutierende Broker-Methode (submit_order,
+# replace_order_by_id, cancel_order_by_id, cancel_orders, close_position,
+# close_all_positions) unter core/, auch ohne direkten Aufruf
+# (asyncio.to_thread(client.cancel_order_by_id, ...)).
+[broker_aufrufer]
+bereich = "core"
+gateway = ["core/gateway/order_gateway.py"]
+
+# Heute noch am Gateway vorbei, je Datei und Methode gezaehlt (Stand 2026-09-18).
+[broker_aufrufer.ausnahmen]
+# Stornos laufen am Gateway vorbei — kein Datensatz, keine Halt-Pruefung im Tor.
+# #4068 (G-4b): beide Stornos zogen mit cancel_order und panic_sell in den Kapitalpfad-Router.
+"core/engine/monitor_loop.py" = { cancel_orders = 1 }
+"core/engine/order_executor.py" = { cancel_order_by_id = 2 }
+"core/engine/routes/kapitalpfad.py" = { cancel_order_by_id = 1, cancel_orders = 1 }
+"core/engine/trading_loop.py" = { cancel_order_by_id = 1 }
+# Simulations-Broker und Simulationspfade.
+"core/engine/simulation_runner.py" = { submit_order = 2 }
+"core/simulation.py" = { submit_order = 1 }
+"core/simulation_adapter.py" = { cancel_orders = 1, close_all_positions = 1, submit_order = 1 }
+# Default-Strategie: Simulationszweig und Methodenverweis vor der Verzweigung.
+"core/strategies/base.py" = { submit_order = 3 }
+
+# ── 4. Keine Editionsweiche ausserhalb der Composition Root ──────────────────
+# Gezaehlt wird jedes Lesen von DEPLOYMENT_MODE (Umgebung oder Konfiguration) und jeder
+# Aufruf von resolve_edition unter core/. Die Composition Root gibt es als Modul noch
+# nicht; heute entscheiden config.py und config.oss.py die Edition, beide liegen
+# ausserhalb von core/.
+[editionsweiche]
+bereich = "core"
+composition_root = ["core/composition/root.py"]
+
+# Stand 2026-09-18. Darf nicht dadurch schrumpfen, dass eine Weiche in eine
+# Konfigurationsdatei wandert (BORA) — sondern nur, indem der Kern sie nicht mehr braucht.
+[editionsweiche.ausnahmen]
+"core/auth.py" = { K_SERVICE = 1 }
+"core/cloud_logger.py" = { K_SERVICE = 1 }
+"core/diagnostics.py" = { K_SERVICE = 1 }
+"core/engine/simulation_runner.py" = { DEPLOYMENT_MODE = 1 }
+"core/ml/quality_gate.py" = { DEPLOYMENT_MODE = 1 }
+"core/round_table/runner.py" = { DEPLOYMENT_MODE = 1 }
+"core/structured_logging.py" = { K_SERVICE = 1 }
+"core/xai/agent_core.py" = { DEPLOYMENT_MODE = 1, resolve_edition = 1 }
+
+
+# 2026-09-25 (#3668): 197 im Kern — Wanduhr-Zugriffe in Compliance und Clock-Port auf engine_epoch umgestellt.
+[uhr_zugriffe.obergrenzen]
+"core" = 197
+"core/engine/order_executor.py" = 0
+
+
+# ── 6. getattr-Namen gegen das Schema (#3627) ───────────────────────
+# Regel 1 zaehlt die Umgehungen; diese prueft, ob der genannte Name ueberhaupt
+# aufloest. Anders als Regel 1 gilt hier jeder Empfaenger, dessen Ausdruck "config",
+# "cfg" oder "settings" enthaelt — Regel 1 bildet grep nach und verfehlt jedes ``cfg``.
+# Geltungsbereich: das ganze Paket ohne Testdateien.
+[getattr_namen]
+bereiche = ["."]
+
+# ── 7. Rueckfallwert widerspricht dem Schema (#3627, Schritt 2) ─────────────
+# Regel 6 prueft den NAMEN, diese den WERT. Zwei Antworten auf dieselbe Frage sind
+# fuer jeden Leser eine Ratefrage — und kippen lautlos, wenn die Deklaration wegfaellt.
+# Gemessen am 2026-09-25: 76 Paare. Die Liste darf nur SCHRUMPFEN; sinkt eine Zahl,
+# meldet die Regel das und verlangt, dass sie hier mitgesenkt wird.
+[getattr_widersprueche]
+bereiche = ["."]
+
+[getattr_widersprueche.ausnahmen]
+"config.oss.py" = { ALPACA_BASE_URL = 1 }
+"core/analysis/attribution/report.py" = { LSTM_VOTE_USES_CROSS_SECTIONAL_RANK = 1, MOMENTUM_FALLBACK_ABSTAIN_ENABLED = 1, SPECIALIST_ALPHA_WEIGHT = 1 }
+"core/compliance.py" = { COMPLIANCE_ALLOW_RISK_REDUCING_EXITS = 2 }
+"core/decision_capture/capture.py" = { DECISION_CAPTURE_ENABLED = 1, DESKTOP_FEATURE_SNAPSHOT_ENABLED = 1 }
+"core/engine/base.py" = { AUTO_START_STRATEGY = 1, RL_MODEL_VERSION = 1 }
+"core/engine/order_executor.py" = { DECISION_CAPTURE_ENABLED = 1, DEFAULT_EQUITY = 1 }
+"core/engine/portfolio_context.py" = { GATEKEEPER_SYMBOL_CHURN_LIMIT = 1, INTRADAY_TIMING_ENABLED = 1 }
+# #4071 (G-4e): staging_gate (AUTO_START_STRATEGY) und get_entitlement_status
+# (LEMONSQUEEZY_PRICE_DISPLAY) zogen unveraendert in den Admin-Router.
+"core/engine/routes/admin.py" = { AUTO_START_STRATEGY = 1, LEMONSQUEEZY_PRICE_DISPLAY = 1 }
+# #4072 (G-4f): beide Stellen liegen in _serialize_specialist_report, das unveraendert in den
+# Agenten-Router zog.
+"core/engine/routes/agenten.py" = { REPORT_GENERATOR_V2_ENABLED = 1, SPECIALIST_SYNTHESIS_CARD_ENABLED = 1 }
+# #4115 (G-4j): die Fundstelle liegt in _collect_loops, das unveraendert in den Diagnose-Router zog.
+"core/engine/routes/diagnose.py" = { AUTO_START_STRATEGY = 1 }
+"core/engine/trading_loop.py" = { BOOK_CAP_ENFORCEMENT_ENABLED = 1, POSITION_EXIT_HWM_TRAILING_ENABLED = 1, RECONCILIATION_STREAM_ENABLED = 1, REGIME_CONDITIONER_ENABLED = 1, ROUND_TABLE_POSITION_CONTEXT_ENABLED = 1, SMART_EXIT_EXIT_RANK_HYSTERESIS = 1, SMART_EXIT_MIN_HOLD_DAYS = 1, SPECIALIST_COVERAGE_DYNAMIC = 1 }
+"core/implied_vol.py" = { VIXAWARE_IMPLIED_VOL_ENABLED = 1 }
+"core/kill_switch.py" = { ALPACA_BASE_URL = 1 }
+"core/llm/health.py" = { GEMINI_MODEL_NAME = 1 }
+"core/nlp/headlines.py" = { NEWS_SENTIMENT_NLP_ENABLED = 1 }
+"core/orchestration/graph.py" = { DESKTOP_FEATURE_SNAPSHOT_ENABLED = 1 }
+"core/portfolio_manager.py" = { BOOK_CAP_ENFORCEMENT_ENABLED = 1, CLEAN_WEIGHT_SIZING = 2, DISPLACEMENT_MAX_PER_SESSION = 1, DISPLACEMENT_RESPECTS_MIN_HOLD = 1, SMART_EXIT_MIN_HOLD_DAYS = 1 }
+"core/report/lstm_panel_store.py" = { LSTM_PANEL_PERSISTENCE_ENABLED = 1, LSTM_RANK_SMOOTHING_ENABLED = 1 }
+"core/risk_manager.py" = { BULL_EXPOSURE_CALM_SCALER = 1, CASH_AWARE_SLOTS_ENABLED = 1, CLEAN_WEIGHT_SIZING = 1, FULL_UNIVERSE_TRADING_ENABLED = 1, VOL_TARGETING_SIZING_ENABLED = 1 }
+# #4084 (G-6b): die Gewichtshelfer und je ein ROUND_TABLE_DISTINCT_ML_SOURCES-Zugriff zogen mit
+# LSTM-, RL-Confidence- und Specialist-Alpha-Agent unveraendert nach agenten/.
+"core/round_table/agenten/lstm_signal.py" = { ROUND_TABLE_DISTINCT_ML_SOURCES = 1 }
+"core/round_table/agenten/rl_confidence.py" = { RL_CONFIDENCE_WEIGHT = 1, ROUND_TABLE_DISTINCT_ML_SOURCES = 1 }
+"core/round_table/agenten/specialist_alpha.py" = { SPECIALIST_ALPHA_WEIGHT = 1 }
+# #4085 (G-6c): die Flag-Helfer zogen mit Momentum-, Regime- und VIX-Aware-Agent unveraendert
+# nach agenten/.
+"core/round_table/agenten/momentum.py" = { MOMENTUM_FALLBACK_ABSTAIN_ENABLED = 1, MOMENTUM_SCORE_SMOOTH_ENABLED = 1 }
+"core/round_table/agenten/regime.py" = { REGIME_CONDITIONER_ENABLED = 1 }
+"core/round_table/agenten/vix_aware.py" = { VIXAWARE_IMPLIED_VOL_ENABLED = 1 }
+# #4086 (G-6d): _news_sentiment_cfg zog mit dem NewsSentimentAgent unveraendert nach agenten/.
+"core/round_table/agenten/news_sentiment.py" = { NEWS_SENTIMENT_NLP_ENABLED = 1 }
+"core/round_table/consensus.py" = { IMPLIED_VOL_FORECAST_ENABLED = 1, REGIME_CONDITIONER_ENABLED = 1 }
+"core/round_table/gatekeeper.py" = { GATEKEEPER_PDT_FINRA_ACCURATE = 2 }
+"core/round_table/runner.py" = { IMPLIED_VOL_FORECAST_ENABLED = 3, ROUND_TABLE_DISTINCT_ML_SOURCES = 1 }
+"core/sim/clock.py" = { SIM_WINDOW = 1 }
+# #4161 (G-8a2): _fetch_vol_scenario zog unveraendert ins EdgarQuellenMixin (4 → 3 + 1).
+"core/specialist/quellen_edgar.py" = { SPECIALIST_GROUNDING_ENABLED = 1 }
+"core/specialist_registry.py" = { REPORT_CACHE_PERSIST_ENABLED = 1 }
+"core/stock_specialist.py" = { DATA_INTEGRITY_GUARD_ENABLED = 1, REPORT_GENERATOR_V2_ENABLED = 1, SPECIALIST_CARDS_ENABLED = 1, SPECIALIST_GROUNDING_ENABLED = 3, SPECIALIST_PROMPT_V2 = 2 }
+"core/trading_control_seal.py" = { VOL_TARGETING_SIZING_ENABLED = 1 }
+"models/feature_pool.py" = { FEATURE_POOL_ENABLED = 1 }
+"scripts/lstm_panel_replay.py" = { REPORT_GENERATOR_V2_ENABLED = 1 }
+
+
+[schatten_importe]
+bereiche = ["core"]
+
+[schatten_importe.ausnahmen]
+# #3740: Neu eingefroren am 2026-09-28. Die alte Liste konnte nie greifen — der
+# Schluessel der Ratsche war der ganze Befundsatz („Schatten-Import von 'time' in
+# Funktion '_get_secrets'"), im Vertrag steht aber der blosse Name. Damit passte
+# kein einziger Eintrag, jeder Fund galt als neu, und die Ratsche war wirkungslos.
+# Stand jetzt: 48 Stellen in 14 Dateien, gemessen. Die Zahlen duerfen nur sinken.
+"core/cloud_logger.py" = { time = 1 }
+# #4069 (G-4c): die sechs hitl_gate- und der config-Import aus hitl_set_policy zogen in den
+# Steuerungs-Router. Dort liest das Modul beide ueber ``ar``, importiert sie also nicht auf
+# Modulebene — die lokalen Importe ueberschatten nichts mehr und brauchen keinen Eintrag.
+# #4070 (G-4d): die drei funktionslokalen asyncio-Importe (recent-trades, activities,
+# open-orders) zogen in den Portfolio-Lese-Router; api_routes hat keinen mehr.
+# #4071 (G-4e): der datetime/timezone-Import aus _save_iron_dome_policy und der
+# four_eyes_required-Import aus approve_portfolio_constraints zogen in den Admin-Router.
+# #4072 (G-4f): der uuid-Import aus force_cycle zog in den Agenten-Router. Dort gibt es keinen
+# uuid-Import auf Modulebene, der lokale Import ueberschattet also nichts mehr.
+# #4073 (G-4g): drei config- (readiness_check, zweimal health_check) und zwei
+# get_cloud_logger-Importe (health_check, deep_health) zogen in den Health-Router. Dort liest das
+# Modul config ueber ``ar`` und importiert get_cloud_logger nicht auf Modulebene — die lokalen
+# Importe ueberschatten nichts mehr und brauchen keinen Eintrag.
+# #4074 (G-4h): der timezone-Import aus get_benchmark_equity zog in den Benchmark-Router, der
+# logging-Import aus _read_metrics_db_or_fallback nach benchmark_daten. Der config-Import dort
+# ueberschattet nichts mehr, denn benchmark_daten importiert config nicht auf Modulebene.
+# #4075 (G-4i): der timezone-Import aus get_benchmark_equity entfiel bei der Zerlegung, kein
+# Schritt braucht ihn (Modul-Docstring von benchmark_schritte.py). Die lokalen Importe der
+# Schritte und von set_performance_baseline ueberschatten nichts; benchmark.py braucht keinen
+# Eintrag mehr.
+# #4115 (G-4j): die Importe aus _collect_db (RedisClient, get_cloud_logger) und
+# _collect_governance (load_policy) zogen in den Diagnose-Router. Der importiert keinen der drei
+# auf Modulebene — die lokalen Importe ueberschatten nichts mehr; api_routes.py und diagnose.py
+# brauchen keinen Eintrag.
+"core/engine/base.py" = { get_service_version = 1 }
+"core/engine/earnings_guard.py" = { timedelta = 1 }
+"core/engine/order_executor.py" = { CompositionRoot = 1 }
+# #4068 (G-4b): der funktionslokale asyncio-Import in cancel_order zog mit um.
+"core/engine/routes/admin.py" = { datetime = 1, four_eyes_required = 1, timezone = 1 }
+"core/engine/routes/benchmark_daten.py" = { logging = 1 }
+"core/engine/routes/kapitalpfad.py" = { asyncio = 1 }
+"core/engine/routes/portfolio.py" = { asyncio = 3 }
+"core/engine/trading_loop.py" = { CompositionRoot = 1 }
+"core/portfolio_manager.py" = { logging = 1 }
+"core/report/financials_feed.py" = { date = 1 }
+# #4084 (G-6b): die lokalen datetime/timezone-Importe aus LSTMSignalAgent.vote und
+# RLConfidenceAgent.vote zogen mit. Nur lstm_signal.py importiert timezone auf Modulebene
+# (_vote_on_rank) — dort ueberschattet der lokale Import es; rl_confidence.py braucht keinen Eintrag.
+# #4085 (G-6c): die letzten datetime/timezone-Importe (DrawdownGuardAgent.vote,
+# MomentumAgent.vote) zogen mit. drawdown_guard.py und momentum.py importieren beide Namen
+# nicht auf Modulebene — die lokalen Importe ueberschatten nichts; agents.py braucht keinen
+# Eintrag mehr.
+"core/round_table/agenten/lstm_signal.py" = { timezone = 1 }
+"core/round_table/runner.py" = { consensus_exclusions = 1 }
+"core/simulation.py" = { json = 1 }
+"core/stock_specialist.py" = { asyncio = 1 }
+"core/strategies/base.py" = { inspect = 1 }
+"core/telemetry_local.py" = { threading = 1 }
+
+
+# ── 9. Groessen: Datei- und Funktionslaengen (#3817, ARC-E6 G-0) ────────────
+# Erzeugt von scripts/mess_groessen.py --vertrag, nicht von Hand getippt.
+# Gemessener Stand: 2026-10-05. Jede Zahl darf nur SINKEN; faellt eine Stelle
+# unter die Schwelle, ist ihr Eintrag zu streichen. Eine nackte Zahl ist ein
+# Aufraeum-Auftrag, { zeilen = N, begruendung = "..." } eine bewusste Ausnahme.
+# #3839 (G-10): Stufe 2 (1000/200), Modus blockieren. Neu gemessen am Tag des Umschaltens;
+# gestrichen ist, was unter Stufe 2 faellt (10 Dateien, 27 Funktionen), keine Zahl stieg.
+[groessen]
+bereiche = ["."]
+datei_schwelle = 1000
+funktion_schwelle = 200
+# #3835 (G-8): ueber Stufe 1 ist eine nackte Zahl kein Ergebnis — dort bleibt eine Datei
+# nur mit gefuellter begruendung stehen (Epic #3738, Abschnitt 4 und 5).
+stufe_1_datei_schwelle = 2000
+# #4175 (G-8c): Stufe 1 auch fuer Funktionen — ueber 400 Zeilen bleibt eine Funktion
+# nur mit gefuellter begruendung stehen.
+stufe_1_funktion_schwelle = 400
+
+# 14 Dateien ueber 1000 Zeilen.
+[groessen.ausnahmen_dateien]
+"core/cloud_logger.py" = 1194
+"core/data_provider.py" = 1330
+# #4155 (G-0b): einmalig neu eingefroren, Owner 05.10.2026 — gewachsen durch #3992 (G-1a, Signalübergabe) und #4014 (G-1b, Absendung je Mandant).
+"core/engine/base.py" = 1390
+# #4154 (G-8b), vorläufig seit dem Neuzuschnitt 06.10.2026 (Epic §8): fällt mit H-1 (#4183).
+"core/engine/order_executor.py" = { zeilen = 4059, begruendung = "VORLÄUFIG bis H-1 (#4183): Hotspot (41 Commits, 15 Fixes in 60 Tagen); die Datei wird in ARC-E6 zerlegt, je Pfad mit Geld-Gate. Bis dahin Kapitalpfad-Kern: OrderExecutorMixin mit Signalübergabe, Absendung je Mandant, Tor-Aufruf und Nachlauf (G-1a/G-1b zerlegten nur die Funktionen)." }
+# #4154 (G-8b), vorläufig seit dem Neuzuschnitt 06.10.2026 (Epic §8): fällt mit H-2 (#4184).
+"core/engine/trading_loop.py" = { zeilen = 3008, begruendung = "VORLÄUFIG bis H-2 (#4184): Hotspot (42 Commits, 15 Fixes in 60 Tagen); die Datei wird in ARC-E6 zerlegt, mit Geld-Gate und Nahttest. Bis dahin Kapitalpfad-Kern: TradingLoopMixin mit live_trading_loop und den Zyklus-Schritten aus G-2a bis G-2d." }
+# #4155 (G-0b): einmalig neu eingefroren, Owner 05.10.2026 — gewachsen durch #3981 (Nachkauf-Sperre relativ zum Zielgewicht).
+"core/portfolio_manager.py" = 1764
+"core/report/auditor.py" = 1057
+"core/risk_manager.py" = 1931
+"core/round_table/runner.py" = 1358
+"core/specialist/grounding.py" = 1294
+# #3835 (G-8): Entscheidung zerlegen (docs/3738-arc-e6-gestalt/G8_ENTSCHEIDUNG_stock_specialist.md);
+# umgesetzt in #4161 (G-8a2): EDGAR- und Insider-Quellen nach core/specialist/quellen_edgar.py,
+# die Datei liegt unter Stufe 1. Die Zahl bleibt als Ratsche (Arbeitsvorrat unter 1000).
+"core/stock_specialist.py" = 1748
+"gui/gui.py" = 1669
+"scripts/train_v4_lightgbm.py" = 1287
+# #3835 (G-8): bewusste Ausnahme, Vorlage docs/3738-arc-e6-gestalt/G8_ENTSCHEIDUNG_settings.md.
+# #4155 (G-0b): einmalig neu eingefroren, Owner 05.10.2026 — gewachsen durch #4131 (News-Agent mit FinBERT offline).
+"settings.py" = { zeilen = 2727, begruendung = "Ein Thema: das eine Konfigurationsschema RuntimeConfigState (338 Felder, 5 Validatoren, Verschachtelung 3), 55 % Kommentar mit 58 ADR-Bloecken. regeln.schema_felder/schema_defaults und gen_feature_flags.py lesen genau diese Datei und Klasse; eine Zerlegung liesse Felder lautlos verschwinden (fail-open)." }
+
+# 27 Funktionen ueber 200 Zeilen, je Datei.
+[groessen.ausnahmen_funktionen]
+# #4155 (G-0b): einmalig neu eingefroren, Owner 05.10.2026 — gewachsen durch #4144 (G-6e).
+"core/analysis/attribution/replay.py" = { "replay_votes" = 255 }
+"core/data_provider.py" = { "HistoricalDataProvider.get_data" = 263 }
+"core/engine/base.py" = { "BotEngine.start_live_strategy" = 217 }
+"core/engine/monitor_loop.py" = { "MonitorLoopMixin.run_strategy_monitor_loop" = 342 }
+# #4175 (G-8c), vorläufig seit dem Neuzuschnitt 06.10.2026 (Epic §8): fällt mit H-1 (#4183).
+"core/engine/order_executor.py" = { "OrderExecutorMixin._process_signal_event" = { zeilen = 763, begruendung = "VORLÄUFIG bis H-1 (#4183): Signalübergabe je Signal, von G-1a (#3819) von 1190 auf 763 gesenkt; die weitere Zerlegung unter 150 folgt in ARC-E6 mit Geld-Gate." }, "OrderExecutorMixin._sende_durchs_tor" = 202 }
+"core/engine/portfolio_context.py" = { "build_portfolio_context" = 216 }
+# #4072 (G-4f): _serialize_specialist_report zog unveraendert in den Agenten-Router.
+"core/engine/routes/agenten.py" = { "_serialize_specialist_report" = 242 }
+"core/engine/routes/portfolio.py" = { "get_portfolio_summary" = 203 }
+"core/engine/simulation_runner.py" = { "SimulationRunnerMixin._run_full_simulation_thread" = 266 }
+"core/learning/engine.py" = { "AILearningEngine.run_learning_analysis" = 270 }
+"core/report/auditor.py" = { "audit" = 275 }
+# #4084 (G-6b): LSTMSignalAgent.vote zog unveraendert nach agenten/.
+"core/round_table/agenten/lstm_signal.py" = { "LSTMSignalAgent.vote" = 209 }
+"core/round_table/gatekeeper.py" = { "ComplianceGatekeeper.check" = 219 }
+# #4175 (G-8c), vorläufig seit dem Neuzuschnitt 06.10.2026 (Epic §8): fällt mit H-4 (#4186).
+"core/round_table/runner.py" = { "_score_to_signal" = 245, "run_round_table" = { zeilen = 407, begruendung = "VORLÄUFIG bis H-4 (#4186): Round-Table-Entscheidungspfad, seit #3794 (30.09.) über Stufe 1; die Zerlegung unter 150 folgt in ARC-E6, zuerst mit einem Verhaltensnetz für den Round Table." } }
+"core/sim/runner.py" = { "run_sim" = 205 }
+"core/stock_specialist.py" = { "StockSpecialistAgent._build_report" = 282, "StockSpecialistAgent.research" = 237 }
+"core/strategies/lstm_strategy.py" = { "LSTMDynamicStrategy.run_for_symbol" = 293 }
+"models/torch_model.py" = { "train_model" = 216 }
+"models/trading_environment.py" = { "StockTradingEnv.__init__" = 242 }
+"research/stop_replay.py" = { "main" = 236 }
+"scripts/linkedin_weekly_post.py" = { "main" = 205 }
+"scripts/rtr0_attribution_benchmark.py" = { "main" = 202 }
+"scripts/shorts_generator/video_scene_3.py" = { "render_scene3_frame" = 271 }
+"scripts/train_v4_lightgbm.py" = { "compute_features" = 222 }
+
+
+# ── 10. Doku-Groessen: keine neue Sammel-Datei unter docs/ (#3837, ARC-E6 G-9) ──
+# Dieselbe Ratsche wie Regel 9, fuer jede Markdown-Datei unter docs/. Pfade hier sind
+# relativ zum Repository (nicht zu ai_trading_bot/), gezaehlt wird mit splitlines.
+# Anlass: docs/PR_WALKTHROUGH_HISTORY.md, 15.056 Zeilen nach wc -l (18.955 nach
+# splitlines — die Datei enthaelt Steuerzeichen, die splitlines als Zeilenende nimmt).
+# Sie ist seit #3837 in Teile unter docs/walkthroughs/history/ zerlegt.
+#
+# Schwelle 1000 (Owner-Frage aus dem Plan, Abschnitt 7 — hier vorgeschlagen, nicht
+# entschieden): Am 2026-10-04 lagen von 1390 Markdown-Dateien nur zwei darueber; das
+# naechste Runbook (AGENT_WAY_OF_WORKING.md) hat 933. 800 wie fuer Code haette fuenf
+# lebende Dokumente auf einen Schlag zu Befunden gemacht.
+[doku_groessen]
+bereiche = ["docs"]
+schwelle = 1000
+
+# 2 Dateien ueber 1000 Zeilen, gemessen am 2026-10-04.
+[doku_groessen.ausnahmen]
+# #4155 (G-0b): einmalig neu eingefroren, Owner 05.10.2026 — gewachsen durch #4106 (Merge-Pfad ohne --admin), dazu Ersetzungen in #4064 und #4145.
+"docs/5_engineering_and_devops/DEVOPS-CICD.md" = 1342
+"docs/superpowers/plans/2026-04-16-visual-editor.md" = 1901

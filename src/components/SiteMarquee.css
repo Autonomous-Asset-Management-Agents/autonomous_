@@ -1,0 +1,45 @@
+/* OSS promo ticker — mirrors the landing "lb-risk-banner" / "lb-ticker-*" rules
+ * (src/styles/landing-d.css) so the public LiveDemo runs the SAME marquee. Light default;
+ * .site-marquee--dark for the black demo theme. */
+.site-marquee {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  background: #ffffff;
+  border-bottom: 1px solid #ececec;
+}
+.site-marquee-track {
+  display: inline-flex;
+  animation: siteMarquee 30s linear infinite;
+  will-change: transform;
+}
+.site-marquee-track:hover {
+  animation-play-state: paused;
+}
+.site-marquee-item {
+  display: inline-block;
+  padding: 9px 0;
+  padding-right: 48px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: #0a0a0a;
+}
+@keyframes siteMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Dark variant — the demo's black theme (same #000 as header + console body). */
+.site-marquee--dark {
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.site-marquee--dark .site-marquee-item {
+  color: #f4f4f5;
+}

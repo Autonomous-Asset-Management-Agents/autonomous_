@@ -1,0 +1,57 @@
+{
+  "reports": [
+    {
+      "symbol": "AAPL",
+      "sentiment_score": 42.7,
+      "recommendation": "hold",
+      "confidence": 0.3,
+      "escalate": false,
+      "escalate_reason": "Insider cluster (3 txns) + converged ML/LLM signal",
+      "reasons": [
+        "No data-grounded reason this cycle.",
+        "Cluster insider activity: 3 Form 4 filings"
+      ],
+      "about": "AAPL: company overview unavailable this cycle.",
+      "company_summary": "AAPL: company overview unavailable this cycle.",
+      "edge_signals": [],
+      "investment_thesis": "No variant view this cycle; data is thin.",
+      "bull_case": "none",
+      "bear_case": "none",
+      "news_summary": "No substantive, data-grounded signal this cycle.",
+      "headlines": [
+        "AAPL Stock Quote Price and Forecast - CNN",
+        "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - Yahoo Finance",
+        "Apple stock is coming hot into next week's WWDC. How the company can meet the moment - CNBC",
+        "Apple Stock Nears All-Time High: Where Will It End The Year? - 24/7 Wall St.",
+        "Why Apple Stock Is Sinking Today - The Motley Fool",
+        "Apple's Siri AI Was Finally Announced, So Why Is the Stock Tanking? - MarketBeat",
+        "AAPL stock slides, but is it a reaction to AI announcements? - 9to5Mac",
+        "AAPL Stock Slides Following WWDC, But Analysts Broadly Raise Targets - MacRumors"
+      ],
+      "alternative_signals": "none",
+      "insider_trades_count": 3,
+      "political_trades_count": 0,
+      "material_events_count": 0,
+      "reddit_mentions": 0,
+      "wiki_spike": false,
+      "short_interest_pct": null,
+      "updated_at": "2026-06-12T13:37:22.849675+00:00",
+      "ml_direction": "down",
+      "ml_confidence": 0.322,
+      "ml_base_return_pct": -0.67,
+      "ml_bear_return_pct": -6.09,
+      "ml_bull_return_pct": 4.76,
+      "signal_quality": "iq:abstained",
+      "walkforward_ic": 0.042,
+      "walkforward_sharpe": -0.11,
+      "ml_attention_features": [],
+      "pros": [],
+      "cons": [],
+      "summary": "",
+      "data_quality": 1.0,
+      "degraded": false,
+      "rsi_14": null,
+      "macd_signal": null
+    }
+  ]
+}

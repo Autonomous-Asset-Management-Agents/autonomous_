@@ -1,0 +1,802 @@
+{
+ "etf": {
+  "bericht": {
+   "about": "",
+   "activist_stakes": [],
+   "alternative_signals": "Reddit buzz and a Wikipedia spike point to heavy retail interest.",
+   "bear_case": "No supported bear case from this news cycle yet — updated with the next research round.",
+   "bull_case": "No supported bull case from this news cycle yet — updated with the next research round.",
+   "chg_20d_pct": 11.8721450582,
+   "company_summary": "NVIDIA designs GPUs and AI data-center systems.",
+   "confidence": 0.3,
+   "cons": [],
+   "data_quality": 0.365,
+   "degraded": true,
+   "dist_52w_high_pct": -8.38373293761,
+   "edge_signals": [],
+   "escalate": false,
+   "escalate_reason": "",
+   "forecast_vol": null,
+   "google_trend_score": 52.1428571429,
+   "grounding_ok": false,
+   "headlines": [
+    {
+     "title": "SPY slips as Treasury yields climb before Fed meeting"
+    },
+    {
+     "title": "SPY inflows top $5 billion in September"
+    }
+   ],
+   "insider_trades": [],
+   "insider_trades_total": null,
+   "investment_thesis": "No supported thesis from this news cycle yet — updated with the next research round.",
+   "last_close": 198.449997,
+   "macd_signal": null,
+   "material_events": [],
+   "ml_attention_features": [],
+   "ml_base_return_pct": null,
+   "ml_bear_return_pct": null,
+   "ml_bull_return_pct": null,
+   "ml_confidence": null,
+   "ml_direction": "unavailable",
+   "news_summary": "NVDA data-center revenue hit a record; insiders sold shares.",
+   "political_trades": [],
+   "price_band_high": 217.364398182,
+   "price_band_low": 179.535595818,
+   "pros": [],
+   "reasons": [
+    "Data degraded -- low-quality/insufficient sources",
+    "Record data-center revenue",
+    "Insider selling after the run-up",
+    "Export-curb risk"
+   ],
+   "recommendation": "hold",
+   "reddit_mentions": 2,
+   "report_audit_ok": null,
+   "report_audit_summary": null,
+   "report_markdown": null,
+   "report_recommendation": null,
+   "rsi_14": null,
+   "scenario_basis": "realized_vol_har",
+   "sentiment_score": 68.0,
+   "short_interest_pct": null,
+   "signal_quality": "llm_only",
+   "sources_unavailable": [
+    "congressional_trades"
+   ],
+   "summary": "NVDA data-center revenue hit a record; insiders sold shares.",
+   "symbol": "SPY",
+   "synthesis_citations": [],
+   "synthesis_dropped": [
+    {
+     "claim": "NVDA data-center revenue hit a record as Blackwell ramps.",
+     "kind": "bull",
+     "reason": "entity 'NVDA' not in any source"
+    },
+    {
+     "claim": "The US weighs new export curbs on NVDA AI chips to China.",
+     "kind": "bear",
+     "reason": "entity 'NVDA AI' not in any source"
+    },
+    {
+     "claim": "NVDA stays the AI compute leader while export risk caps upside.",
+     "kind": "thesis",
+     "reason": "entity 'NVDA' not in any source"
+    }
+   ],
+   "vol_band_base_pct": 0.0,
+   "vol_band_high_pct": 9.53106649913,
+   "vol_band_low_pct": -9.53106649913,
+   "vol_band_sigma_pct": 9.53106649913,
+   "walkforward_ic": null,
+   "walkforward_sharpe": null,
+   "wiki_spike": false
+  },
+  "gathered": {
+   "activist_stakes": [],
+   "google_trend_score": 52.1428571429,
+   "insider_trades": [],
+   "material_events": [],
+   "ml_prediction": null,
+   "model_signal_lines": [
+    "SPY model signal: our LSTM ranks this stock #45 of 486 in the tracked universe (scores above 91% of peers)",
+    "SPY model signal: our volatility model expects the stock to trade between $180 and $217 over the next 20 trading days (last close $198, a range call, not a direction call)"
+   ],
+   "political_trades": [],
+   "recent_headlines": [
+    "SPY slips as Treasury yields climb before Fed meeting",
+    "SPY inflows top $5 billion in September"
+   ],
+   "reddit_mentions_24h": 2,
+   "reddit_sentiment": "bearish",
+   "short_interest_pct": null,
+   "sources_unavailable": [
+    "congressional_trades"
+   ],
+   "wiki_spike": false,
+   "wiki_views_7d": 8810
+  },
+  "news_items": [
+   {
+    "published_utc": "2026-09-14T20:10:00Z",
+    "publisher": "Reuters",
+    "title": "SPY slips as Treasury yields climb before Fed meeting",
+    "url": "https://example.test/spy-yields"
+   },
+   {
+    "published_utc": "2026-09-11T12:00:00Z",
+    "publisher": "ETF.com",
+    "title": "SPY inflows top $5 billion in September",
+    "url": "https://example.test/spy-inflows"
+   }
+  ],
+  "prompt": "You are a stock research analyst. Analyse SPY using ONLY the data below.\nDo NOT use external knowledge or search. Synthesise only what is provided.\n\n## RAW DATA FOR SPY\n\n### Recent Headlines\n- [H1] SPY slips as Treasury yields climb before Fed meeting\n- [H2] SPY inflows top $5 billion in September\n\n### Own model signals (this system's quantitative view)\n- [H3] SPY model signal: our LSTM ranks this stock #45 of 486 in the tracked universe (scores above 91% of peers)\n- [H4] SPY model signal: our volatility model expects the stock to trade between $180 and $217 over the next 20 trading days (last close $198, a range call, not a direction call)\n\n### Social Signal\n- Reddit mentions (24h): 2 | Sentiment: bearish\n\n### Alternative Data\n- Google Trends score (7d): 52/100\n\n## YOUR TASK\nBased ONLY on the data above:\n1. Write a 2-sentence news/event summary.\n2. Write a 1-sentence alternative signal summary (insider activity, political trades, social signals).\n3. Give an overall outlook: bullish / neutral / bearish.\n4. Give a sentiment score 0-100 that MATCHES your outlook and the strength of the evidence: bullish evidence -> 60-90, bearish -> 10-40; use ~50 ONLY when the evidence is genuinely mixed. Do NOT default to 50.\n5. List up to 3 key reasons (one line each).\n6. Write a 2-3 sentence company description: what the business does and how it makes money, what its MAIN market/segment is, and roughly how large the company is (qualitative scale like 'one of the largest US banks' — do NOT invent precise figures).\n7. Write the strongest bull case in 2-3 complete sentences, like a senior equity analyst: each sentence names the concrete catalyst from a headline AND the second-order implication an investor cares about — what it means for revenue, margins, pricing power, competitive position, or investor confidence. Do NOT paraphrase the headline; interpret it (e.g. from a failed product launch, infer what it signals about the company's ability to innovate). No fragments, no generic filler. Every sentence MUST end with the [H#] tag of the single headline that supports it.\n8. Write the strongest bear case in 2-3 complete sentences: each names the concrete risk from a headline AND the second-order implication — what it means for future earnings, market share, sentiment, or the company's strategic position. Do NOT paraphrase the headline; interpret it. No fragments, no generic filler. Every sentence MUST end with the [H#] tag of the single headline that supports it.\n9. Write an actionable investment thesis in 2-3 complete sentences. THE SYSTEM'S OWN MODEL SIGNALS ARE THE PRIMARY EVIDENCE — when 'Own model signals' lines are present, START from the quantitative view (ranking, expected price range) and use the news ONLY to support, contextualize, or challenge it; a news story must never be the main argument on its own. If no model signals are present, say plainly that the quantitative view is unavailable this cycle and treat any news-based lean as tentative. State which side the combined evidence favors and why. Every sentence MUST end with the [H#] tag of the single source line that supports it.\nIf no headline supports a bull/bear/thesis case, write exactly NONE for that field. Do NOT invent facts, companies, or numbers not in the data. NEVER repeat or lightly reword a headline as your sentence — every sentence must ADD interpretation the headline itself does not say. The volatility range is a RISK WIDTH with no direction: NEVER cite it as support for a bullish or bearish view ('room for upside' from a symmetric range is a forbidden argument); use it only to describe expected movement size or risk.\n\nFormat your response EXACTLY as:\nSUMMARY: <2 sentences>\nSIGNALS: <1 sentence>\nOUTLOOK: <bullish|neutral|bearish>\nSCORE: <0-100>\nCOMPANY: <1-2 sentence company description>\nBULL: <strongest bull case>\nBEAR: <strongest bear case>\nTHESIS: <actionable investment thesis>\nREASONS:\n- <reason 1>\n- <reason 2>\n- <reason 3>",
+  "synthese_aufgerufen": true,
+  "urls": [
+   "https://api.finra.org/data/group/OTCmarket/name/otcShortInterest?compareFilters=compareFilters%5B0%5D.fieldName%3DissueSymbolIdentifier%26compareFilters%5B0%5D.compareType%3Dequals%26compareFilters%5B0%5D.fieldValue%3DSPY&limit=1&sortFields=sortFields%5B0%5D.fieldName%3DsettlementDate%26sortFields%5B0%5D.sortOrder%3DDESC",
+   "https://api.polygon.io/v2/reference/news?ticker=SPY&limit=10&apiKey=FIXTURE-KEY",
+   "https://api.quiverquant.com/beta/live/congresstrading/SPY",
+   "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/SPY/daily/20260901/20260915",
+   "https://www.reddit.com/search.json?q=SPY%20stock&restrict_sr=false&sort=new&t=day&limit=25"
+  ]
+ },
+ "flags_aus": {
+  "bericht": {
+   "about": "",
+   "activist_stakes": [
+    {
+     "filed": "2026-07-30",
+     "filer": "VANGUARD GROUP INC  (CIK 0000102909)",
+     "form": "SC 13G/A"
+    }
+   ],
+   "alternative_signals": "Reddit buzz and a Wikipedia spike point to heavy retail interest.",
+   "bear_case": "",
+   "bull_case": "",
+   "chg_20d_pct": null,
+   "company_summary": "NVIDIA designs GPUs and AI data-center systems.",
+   "confidence": 0.48,
+   "cons": [],
+   "data_quality": 1.0,
+   "degraded": false,
+   "dist_52w_high_pct": null,
+   "edge_signals": [],
+   "escalate": true,
+   "escalate_reason": "Heavy insider activity (4 filings)",
+   "forecast_vol": null,
+   "google_trend_score": 52.1428571429,
+   "grounding_ok": null,
+   "headlines": [
+    {
+     "title": "NVDA data-center revenue hits record as Blackwell ramps"
+    },
+    {
+     "title": "US weighs new export curbs on NVDA AI chips to China"
+    },
+    {
+     "title": "NVDA insiders sell shares after earnings run-up"
+    },
+    {
+     "title": "NVDA supplier TSMC lifts capex guidance"
+    }
+   ],
+   "insider_trades": [
+    {
+     "filed": "2026-09-10",
+     "filer": "HUANG JEN HSUN  (CIK 0001197649)",
+     "form": "Form 4",
+     "period": "2026-09-08"
+    },
+    {
+     "filed": "2026-09-03",
+     "filer": "KRESS COLETTE  (CIK 0001208323)",
+     "form": "Form 4",
+     "period": "2026-09-01"
+    },
+    {
+     "filed": "2026-08-22",
+     "filer": "PURI AJAY K  (CIK 0001159563)",
+     "form": "Form 4",
+     "period": "2026-08-20"
+    },
+    {
+     "filed": "2026-08-05",
+     "filer": "STEVENS MARK A  (CIK 0001233210)",
+     "form": "Form 4",
+     "period": "2026-08-01"
+    }
+   ],
+   "insider_trades_total": null,
+   "investment_thesis": "",
+   "last_close": null,
+   "macd_signal": null,
+   "material_events": [
+    {
+     "description": "2026-08-27",
+     "entity": "NVIDIA CORP",
+     "filed": "2026-08-27"
+    },
+    {
+     "description": "2026-08-18",
+     "entity": "NVIDIA CORP  (NVDA)  (CIK 0001045810)",
+     "filed": "2026-08-18"
+    }
+   ],
+   "ml_attention_features": [],
+   "ml_base_return_pct": null,
+   "ml_bear_return_pct": null,
+   "ml_bull_return_pct": null,
+   "ml_confidence": null,
+   "ml_direction": "unavailable",
+   "news_summary": "NVDA data-center revenue hit a record; insiders sold shares.",
+   "political_trades": [
+    {
+     "amount": "$1,000,001 - $5,000,000",
+     "date": "2026-08-28",
+     "politician": "Nancy Pelosi",
+     "transaction": "Purchase"
+    },
+    {
+     "amount": "$1,001 - $15,000",
+     "date": "2026-08-12",
+     "politician": "Ro Khanna",
+     "transaction": "Sale"
+    }
+   ],
+   "price_band_high": null,
+   "price_band_low": null,
+   "pros": [
+    "Cluster insider activity: 4 Form 4 filings",
+    "Activist/large investor filing (1 13D/G)",
+    "Congressional trading: 2 transaction(s)",
+    "Wikipedia research spike - unusual public interest",
+    "Recent material events: 2 8-K filing(s)"
+   ],
+   "reasons": [
+    "Record data-center revenue",
+    "Insider selling after the run-up",
+    "Export-curb risk",
+    "Congressional trading: 2 transaction(s)",
+    "Wikipedia research spike — unusual public interest"
+   ],
+   "recommendation": "buy",
+   "reddit_mentions": 4,
+   "report_audit_ok": null,
+   "report_audit_summary": null,
+   "report_markdown": null,
+   "report_recommendation": null,
+   "rsi_14": null,
+   "scenario_basis": "",
+   "sentiment_score": 68.0,
+   "short_interest_pct": 10.8,
+   "signal_quality": "llm_only",
+   "sources_unavailable": [],
+   "summary": "NVDA data-center revenue hit a record; insiders sold shares.",
+   "symbol": "NVDA",
+   "synthesis_citations": [],
+   "synthesis_dropped": [],
+   "vol_band_base_pct": null,
+   "vol_band_high_pct": null,
+   "vol_band_low_pct": null,
+   "vol_band_sigma_pct": null,
+   "walkforward_ic": null,
+   "walkforward_sharpe": null,
+   "wiki_spike": true
+  },
+  "gathered": {
+   "activist_stakes": [
+    {
+     "filed": "2026-07-30",
+     "filer": "VANGUARD GROUP INC  (CIK 0000102909)",
+     "form": "SC 13G/A"
+    }
+   ],
+   "google_trend_score": 52.1428571429,
+   "insider_trades": [
+    {
+     "filed": "2026-09-10",
+     "filer": "HUANG JEN HSUN  (CIK 0001197649)",
+     "form": "Form 4",
+     "period": "2026-09-08"
+    },
+    {
+     "filed": "2026-09-03",
+     "filer": "KRESS COLETTE  (CIK 0001208323)",
+     "form": "Form 4",
+     "period": "2026-09-01"
+    },
+    {
+     "filed": "2026-08-22",
+     "filer": "PURI AJAY K  (CIK 0001159563)",
+     "form": "Form 4",
+     "period": "2026-08-20"
+    },
+    {
+     "filed": "2026-08-05",
+     "filer": "STEVENS MARK A  (CIK 0001233210)",
+     "form": "Form 4",
+     "period": "2026-08-01"
+    }
+   ],
+   "material_events": [
+    {
+     "description": "2026-08-27",
+     "entity": "NVIDIA CORP",
+     "filed": "2026-08-27"
+    },
+    {
+     "description": "2026-08-18",
+     "entity": "NVIDIA CORP  (NVDA)  (CIK 0001045810)",
+     "filed": "2026-08-18"
+    }
+   ],
+   "ml_prediction": null,
+   "political_trades": [
+    {
+     "amount": "$1,000,001 - $5,000,000",
+     "date": "2026-08-28",
+     "politician": "Nancy Pelosi",
+     "transaction": "Purchase"
+    },
+    {
+     "amount": "$1,001 - $15,000",
+     "date": "2026-08-12",
+     "politician": "Ro Khanna",
+     "transaction": "Sale"
+    }
+   ],
+   "recent_headlines": [
+    "NVDA data-center revenue hits record as Blackwell ramps",
+    "US weighs new export curbs on NVDA AI chips to China",
+    "NVDA insiders sell shares after earnings run-up",
+    "NVDA supplier TSMC lifts capex guidance"
+   ],
+   "reddit_mentions_24h": 4,
+   "reddit_sentiment": "bullish",
+   "short_interest_pct": 10.8,
+   "sources_unavailable": [],
+   "wiki_spike": true,
+   "wiki_views_7d": 193100
+  },
+  "news_items": [
+   {
+    "published_utc": "2026-09-14T21:05:00Z",
+    "publisher": "Reuters",
+    "title": "NVDA data-center revenue hits record as Blackwell ramps",
+    "url": "https://example.test/nvda-record"
+   },
+   {
+    "published_utc": "2026-09-12T13:40:00Z",
+    "publisher": "Bloomberg",
+    "title": "US weighs new export curbs on NVDA AI chips to China",
+    "url": "https://example.test/nvda-export"
+   },
+   {
+    "published_utc": "2026-09-11T16:00:00Z",
+    "publisher": "MarketWatch",
+    "title": "NVDA insiders sell shares after earnings run-up",
+    "url": "https://example.test/nvda-insider"
+   }
+  ],
+  "prompt": "You are a stock research analyst. Analyse NVDA using ONLY the data below.\nDo NOT use external knowledge or search. Synthesise only what is provided.\n\n## RAW DATA FOR NVDA\n\n### Recent Headlines\n- NVDA data-center revenue hits record as Blackwell ramps\n- US weighs new export curbs on NVDA AI chips to China\n- NVDA insiders sell shares after earnings run-up\n- NVDA supplier TSMC lifts capex guidance\n\n### Insider Trades (4 filings)\n- 2026-09-10 | HUANG JEN HSUN  (CIK 0001197649) | Form 4\n- 2026-09-03 | KRESS COLETTE  (CIK 0001208323) | Form 4\n- 2026-08-22 | PURI AJAY K  (CIK 0001159563) | Form 4\n- 2026-08-05 | STEVENS MARK A  (CIK 0001233210) | Form 4\n\n### Material Events / 8-K Filings (2)\n- 2026-08-27 | NVIDIA CORP\n- 2026-08-18 | NVIDIA CORP  (NVDA)  (CIK 0001045810)\n\n### Activist/Large Investor Disclosures (1 13D/G filings)\n- 2026-07-30 | VANGUARD GROUP INC  (CIK 0000102909) | SC 13G/A\n\n### Congressional Trading (2 transactions)\n- 2026-08-28 | Nancy Pelosi | Purchase | $1,000,001 - $5,000,000\n- 2026-08-12 | Ro Khanna | Sale | $1,001 - $15,000\n\n### Social Signal\n- Reddit mentions (24h): 4 | Sentiment: bullish\n\n### Alternative Data\n- Wikipedia: SPIKE detected (views 7d: 193,100) - unusual research interest\n- Short interest: 10.8% of volume\n- Google Trends score (7d): 52/100\n\n## YOUR TASK\nBased ONLY on the data above:\n1. Write a 2-sentence news/event summary.\n2. Write a 1-sentence alternative signal summary (insider activity, political trades, social signals).\n3. Give an overall outlook: bullish / neutral / bearish.\n4. Give a sentiment score 0-100 that MATCHES your outlook and the strength of the evidence: bullish evidence -> 60-90, bearish -> 10-40; use ~50 ONLY when the evidence is genuinely mixed. Do NOT default to 50.\n5. List up to 3 key reasons (one line each).\n6. Write a 1-2 sentence company description (what the business does).\n7. Write the strongest bull case in 1-2 sentences.\n8. Write the strongest bear case in 1-2 sentences.\n9. Write a 1-2 sentence actionable investment thesis.\n\nFormat your response EXACTLY as:\nSUMMARY: <2 sentences>\nSIGNALS: <1 sentence>\nOUTLOOK: <bullish|neutral|bearish>\nSCORE: <0-100>\nCOMPANY: <1-2 sentence company description>\nBULL: <strongest bull case>\nBEAR: <strongest bear case>\nTHESIS: <actionable investment thesis>\nREASONS:\n- <reason 1>\n- <reason 2>\n- <reason 3>",
+  "synthese_aufgerufen": true,
+  "urls": [
+   "https://api.finra.org/data/group/OTCmarket/name/otcShortInterest?compareFilters=compareFilters%5B0%5D.fieldName%3DissueSymbolIdentifier%26compareFilters%5B0%5D.compareType%3Dequals%26compareFilters%5B0%5D.fieldValue%3DNVDA&limit=1&sortFields=sortFields%5B0%5D.fieldName%3DsettlementDate%26sortFields%5B0%5D.sortOrder%3DDESC",
+   "https://api.polygon.io/v2/reference/news?ticker=NVDA&limit=10&apiKey=FIXTURE-KEY",
+   "https://api.quiverquant.com/beta/live/congresstrading/NVDA",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=4&ciks=0001045810&dateRange=custom&startdt=2026-08-01&enddt=2026-09-15",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=8-K&ciks=0001045810&dateRange=custom&startdt=2026-08-16&enddt=2026-09-15",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=SC+13D,SC+13G&ciks=0001045810&dateRange=custom&startdt=2026-06-17&enddt=2026-09-15",
+   "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/NVDA/daily/20260901/20260915",
+   "https://www.reddit.com/search.json?q=NVDA%20stock&restrict_sr=false&sort=new&t=day&limit=25"
+  ]
+ },
+ "quellen_fallen_aus": {
+  "bericht": {
+   "about": "",
+   "activist_stakes": [],
+   "alternative_signals": "",
+   "bear_case": "No supported bear case from this news cycle yet — updated with the next research round.",
+   "bull_case": "No supported bull case from this news cycle yet — updated with the next research round.",
+   "chg_20d_pct": 11.8721450582,
+   "company_summary": "",
+   "confidence": 0.3,
+   "cons": [],
+   "data_quality": 0.15,
+   "degraded": true,
+   "dist_52w_high_pct": -8.38373293761,
+   "edge_signals": [],
+   "escalate": false,
+   "escalate_reason": "",
+   "forecast_vol": null,
+   "google_trend_score": null,
+   "grounding_ok": true,
+   "headlines": [],
+   "insider_trades": [],
+   "insider_trades_total": null,
+   "investment_thesis": "No supported thesis from this news cycle yet — updated with the next research round.",
+   "last_close": 198.449997,
+   "macd_signal": null,
+   "material_events": [],
+   "ml_attention_features": [],
+   "ml_base_return_pct": null,
+   "ml_bear_return_pct": null,
+   "ml_bull_return_pct": null,
+   "ml_confidence": null,
+   "ml_direction": "unavailable",
+   "news_summary": "",
+   "political_trades": [],
+   "price_band_high": 217.364398182,
+   "price_band_low": 179.535595818,
+   "pros": [],
+   "reasons": [
+    "Data degraded -- low-quality/insufficient sources",
+    "Insufficient data this cycle - abstaining",
+    "Insufficient data for analysis"
+   ],
+   "recommendation": "hold",
+   "reddit_mentions": 0,
+   "report_audit_ok": null,
+   "report_audit_summary": null,
+   "report_markdown": null,
+   "report_recommendation": null,
+   "rsi_14": null,
+   "scenario_basis": "realized_vol_har",
+   "sentiment_score": 50.0,
+   "short_interest_pct": null,
+   "signal_quality": "llm_only",
+   "sources_unavailable": [
+    "congressional_trades",
+    "reddit_mentions"
+   ],
+   "summary": "No new headline or alternative-signal activity this cycle.",
+   "symbol": "NVDA",
+   "synthesis_citations": [],
+   "synthesis_dropped": [],
+   "vol_band_base_pct": 0.0,
+   "vol_band_high_pct": 9.53106649913,
+   "vol_band_low_pct": -9.53106649913,
+   "vol_band_sigma_pct": 9.53106649913,
+   "walkforward_ic": null,
+   "walkforward_sharpe": null,
+   "wiki_spike": false
+  },
+  "gathered": {
+   "activist_stakes": [],
+   "google_trend_score": null,
+   "insider_trades": [],
+   "material_events": [],
+   "ml_prediction": null,
+   "model_signal_lines": [
+    "NVDA model signal: our LSTM ranks this stock #21 of 486 in the tracked universe (scores above 96% of peers)",
+    "NVDA model signal: our volatility model expects the stock to trade between $180 and $217 over the next 20 trading days (last close $198, a range call, not a direction call)"
+   ],
+   "political_trades": [],
+   "recent_headlines": [],
+   "reddit_mentions_24h": 0,
+   "reddit_sentiment": "neutral",
+   "short_interest_pct": null,
+   "sources_unavailable": [
+    "congressional_trades",
+    "reddit_mentions"
+   ],
+   "wiki_spike": false,
+   "wiki_views_7d": 0
+  },
+  "news_items": null,
+  "prompt": null,
+  "synthese_aufgerufen": false,
+  "urls": [
+   "https://api.finra.org/data/group/OTCmarket/name/otcShortInterest?compareFilters=compareFilters%5B0%5D.fieldName%3DissueSymbolIdentifier%26compareFilters%5B0%5D.compareType%3Dequals%26compareFilters%5B0%5D.fieldValue%3DNVDA&limit=1&sortFields=sortFields%5B0%5D.fieldName%3DsettlementDate%26sortFields%5B0%5D.sortOrder%3DDESC",
+   "https://api.polygon.io/v2/reference/news?ticker=NVDA&limit=10&apiKey=FIXTURE-KEY",
+   "https://api.quiverquant.com/beta/live/congresstrading/NVDA",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=4&ciks=0001045810&dateRange=custom&startdt=2026-08-01&enddt=2026-09-15",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=8-K&ciks=0001045810&dateRange=custom&startdt=2026-08-16&enddt=2026-09-15",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=SC+13D,SC+13G&ciks=0001045810&dateRange=custom&startdt=2026-06-17&enddt=2026-09-15",
+   "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/NVDA/daily/20260901/20260915",
+   "https://www.reddit.com/search.json?q=NVDA%20stock&restrict_sr=false&sort=new&t=day&limit=25"
+  ]
+ },
+ "vollbild": {
+  "bericht": {
+   "about": "",
+   "activist_stakes": [
+    {
+     "filed": "2026-07-30",
+     "filer": "VANGUARD GROUP INC  (CIK 0000102909)",
+     "form": "SC 13G/A"
+    }
+   ],
+   "alternative_signals": "Reddit buzz and a Wikipedia spike point to heavy retail interest.",
+   "bear_case": "No supported bear case from this news cycle yet — updated with the next research round.",
+   "bull_case": "NVDA data-center revenue hit a record as Blackwell ramps.",
+   "chg_20d_pct": 11.8721450582,
+   "company_summary": "NVIDIA designs GPUs and AI data-center systems.",
+   "confidence": 0.8,
+   "cons": [],
+   "data_quality": 1.0,
+   "degraded": false,
+   "dist_52w_high_pct": -8.38373293761,
+   "edge_signals": [],
+   "escalate": true,
+   "escalate_reason": "Heavy insider activity (4 filings)",
+   "forecast_vol": 0.0213121125901,
+   "google_trend_score": 52.1428571429,
+   "grounding_ok": false,
+   "headlines": [
+    {
+     "title": "NVDA stock jumps after record quarter & upbeat guidance"
+    },
+    {
+     "title": "US weighs new export curbs on NVDA AI chips to China"
+    },
+    {
+     "title": "Analysts raise NVDA price targets to $250"
+    },
+    {
+     "title": "NVDA data-center revenue hits record as Blackwell ramps"
+    },
+    {
+     "title": "NVDA insiders sell shares after earnings run-up"
+    },
+    {
+     "title": "NVDA supplier TSMC lifts capex guidance"
+    }
+   ],
+   "insider_trades": [
+    {
+     "direction": "sell",
+     "filed": "2026-09-10",
+     "filer": "HUANG JEN HSUN  (CIK 0001197649)",
+     "form": "Form 4",
+     "period": "2026-09-08"
+    },
+    {
+     "direction": "buy",
+     "filed": "2026-09-03",
+     "filer": "KRESS COLETTE  (CIK 0001208323)",
+     "form": "Form 4",
+     "period": "2026-09-01"
+    },
+    {
+     "direction": "neutral",
+     "filed": "2026-08-22",
+     "filer": "PURI AJAY K  (CIK 0001159563)",
+     "form": "Form 4",
+     "period": "2026-08-20"
+    },
+    {
+     "direction": "mixed",
+     "filed": "2026-08-05",
+     "filer": "STEVENS MARK A  (CIK 0001233210)",
+     "form": "Form 4",
+     "period": "2026-08-01"
+    }
+   ],
+   "insider_trades_total": null,
+   "investment_thesis": "NVDA stays the AI compute leader while export risk caps upside.",
+   "last_close": 198.449997,
+   "macd_signal": null,
+   "material_events": [
+    {
+     "description": "2026-08-27",
+     "entity": "NVIDIA CORP",
+     "filed": "2026-08-27"
+    },
+    {
+     "description": "2026-08-18",
+     "entity": "NVIDIA CORP  (NVDA)  (CIK 0001045810)",
+     "filed": "2026-08-18"
+    }
+   ],
+   "ml_attention_features": [],
+   "ml_base_return_pct": 1.4,
+   "ml_bear_return_pct": -2.1,
+   "ml_bull_return_pct": 4.8,
+   "ml_confidence": 0.62,
+   "ml_direction": "up",
+   "news_summary": "NVDA data-center revenue hit a record; insiders sold shares.",
+   "political_trades": [
+    {
+     "amount": "$1,000,001 - $5,000,000",
+     "date": "2026-08-28",
+     "politician": "Nancy Pelosi",
+     "transaction": "Purchase"
+    },
+    {
+     "amount": "$1,001 - $15,000",
+     "date": "2026-08-12",
+     "politician": "Ro Khanna",
+     "transaction": "Sale"
+    }
+   ],
+   "price_band_high": 217.364398182,
+   "price_band_low": 179.535595818,
+   "pros": [
+    "Cluster insider activity: 4 Form 4 filings",
+    "Activist/large investor filing (1 13D/G)",
+    "Congressional trading: 2 transaction(s)",
+    "Wikipedia research spike - unusual public interest",
+    "Recent material events: 2 8-K filing(s)"
+   ],
+   "reasons": [
+    "Record data-center revenue",
+    "Insider selling after the run-up",
+    "Export-curb risk",
+    "Congressional trading: 2 transaction(s)",
+    "Wikipedia research spike — unusual public interest"
+   ],
+   "recommendation": "buy",
+   "reddit_mentions": 4,
+   "report_audit_ok": null,
+   "report_audit_summary": null,
+   "report_markdown": null,
+   "report_recommendation": null,
+   "rsi_14": null,
+   "scenario_basis": "realized_vol_har",
+   "sentiment_score": 68.0,
+   "short_interest_pct": 10.8,
+   "signal_quality": "llm_only",
+   "sources_unavailable": [],
+   "summary": "NVDA data-center revenue hit a record; insiders sold shares.",
+   "symbol": "NVDA",
+   "synthesis_citations": [
+    {
+     "claim": "NVDA data-center revenue hit a record as Blackwell ramps.",
+     "headline_index": 1,
+     "headline_text": "NVDA stock jumps after record quarter & upbeat guidance",
+     "kind": "bull"
+    },
+    {
+     "claim": "NVDA stays the AI compute leader while export risk caps upside.",
+     "headline_index": 2,
+     "headline_text": "US weighs new export curbs on NVDA AI chips to China",
+     "kind": "thesis"
+    }
+   ],
+   "synthesis_dropped": [
+    {
+     "claim": "The US weighs new export curbs on NVDA AI chips to China.",
+     "kind": "bear",
+     "reason": "headline echo (adds no analysis)"
+    }
+   ],
+   "vol_band_base_pct": 0.0,
+   "vol_band_high_pct": 9.53106649913,
+   "vol_band_low_pct": -9.53106649913,
+   "vol_band_sigma_pct": 9.53106649913,
+   "walkforward_ic": null,
+   "walkforward_sharpe": null,
+   "wiki_spike": true
+  },
+  "gathered": {
+   "activist_stakes": [
+    {
+     "filed": "2026-07-30",
+     "filer": "VANGUARD GROUP INC  (CIK 0000102909)",
+     "form": "SC 13G/A"
+    }
+   ],
+   "google_trend_score": 52.1428571429,
+   "insider_trades": [
+    {
+     "direction": "sell",
+     "filed": "2026-09-10",
+     "filer": "HUANG JEN HSUN  (CIK 0001197649)",
+     "form": "Form 4",
+     "period": "2026-09-08"
+    },
+    {
+     "direction": "buy",
+     "filed": "2026-09-03",
+     "filer": "KRESS COLETTE  (CIK 0001208323)",
+     "form": "Form 4",
+     "period": "2026-09-01"
+    },
+    {
+     "direction": "neutral",
+     "filed": "2026-08-22",
+     "filer": "PURI AJAY K  (CIK 0001159563)",
+     "form": "Form 4",
+     "period": "2026-08-20"
+    },
+    {
+     "direction": "mixed",
+     "filed": "2026-08-05",
+     "filer": "STEVENS MARK A  (CIK 0001233210)",
+     "form": "Form 4",
+     "period": "2026-08-01"
+    }
+   ],
+   "material_events": [
+    {
+     "description": "2026-08-27",
+     "entity": "NVIDIA CORP",
+     "filed": "2026-08-27"
+    },
+    {
+     "description": "2026-08-18",
+     "entity": "NVIDIA CORP  (NVDA)  (CIK 0001045810)",
+     "filed": "2026-08-18"
+    }
+   ],
+   "ml_prediction": {
+    "base_return_pct": 1.4,
+    "bear_return_pct": -2.1,
+    "bull_return_pct": 4.8,
+    "confidence": 0.62,
+    "direction": "up",
+    "forecast_vol": 0.0213121125901
+   },
+   "model_signal_lines": [
+    "NVDA model signal: our LSTM ranks this stock #21 of 486 in the tracked universe (scores above 96% of peers)",
+    "NVDA model signal: our volatility model expects the stock to trade between $180 and $217 over the next 20 trading days (last close $198, a range call, not a direction call)"
+   ],
+   "political_trades": [
+    {
+     "amount": "$1,000,001 - $5,000,000",
+     "date": "2026-08-28",
+     "politician": "Nancy Pelosi",
+     "transaction": "Purchase"
+    },
+    {
+     "amount": "$1,001 - $15,000",
+     "date": "2026-08-12",
+     "politician": "Ro Khanna",
+     "transaction": "Sale"
+    }
+   ],
+   "recent_headlines": [
+    "NVDA stock jumps after record quarter & upbeat guidance",
+    "US weighs new export curbs on NVDA AI chips to China",
+    "Analysts raise NVDA price targets to $250",
+    "NVDA data-center revenue hits record as Blackwell ramps",
+    "NVDA insiders sell shares after earnings run-up",
+    "NVDA supplier TSMC lifts capex guidance"
+   ],
+   "reddit_mentions_24h": 4,
+   "reddit_sentiment": "bullish",
+   "short_interest_pct": 10.8,
+   "sources_unavailable": [],
+   "wiki_spike": true,
+   "wiki_views_7d": 193100
+  },
+  "news_items": [
+   {
+    "published_utc": "2026-09-14T21:05:00Z",
+    "publisher": "Reuters",
+    "title": "NVDA data-center revenue hits record as Blackwell ramps",
+    "url": "https://example.test/nvda-record"
+   },
+   {
+    "published_utc": "2026-09-12T13:40:00Z",
+    "publisher": "Bloomberg",
+    "title": "US weighs new export curbs on NVDA AI chips to China",
+    "url": "https://example.test/nvda-export"
+   },
+   {
+    "published_utc": "2026-09-11T16:00:00Z",
+    "publisher": "MarketWatch",
+    "title": "NVDA insiders sell shares after earnings run-up",
+    "url": "https://example.test/nvda-insider"
+   }
+  ],
+  "prompt": "You are a stock research analyst. Analyse NVDA using ONLY the data below.\nDo NOT use external knowledge or search. Synthesise only what is provided.\n\n## RAW DATA FOR NVDA\n\n### Recent Headlines\n- [H1] NVDA stock jumps after record quarter & upbeat guidance\n- [H2] US weighs new export curbs on NVDA AI chips to China\n- [H3] Analysts raise NVDA price targets to $250\n- [H4] NVDA data-center revenue hits record as Blackwell ramps\n- [H5] NVDA insiders sell shares after earnings run-up\n- [H6] NVDA supplier TSMC lifts capex guidance\n\n### Own model signals (this system's quantitative view)\n- [H7] NVDA model signal: our LSTM ranks this stock #21 of 486 in the tracked universe (scores above 96% of peers)\n- [H8] NVDA model signal: our volatility model expects the stock to trade between $180 and $217 over the next 20 trading days (last close $198, a range call, not a direction call)\n\n### Insider Trades (4 filings)\n- 2026-09-10 | HUANG JEN HSUN  (CIK 0001197649) | Form 4 | sell\n- 2026-09-03 | KRESS COLETTE  (CIK 0001208323) | Form 4 | buy\n- 2026-08-22 | PURI AJAY K  (CIK 0001159563) | Form 4 | neutral\n- 2026-08-05 | STEVENS MARK A  (CIK 0001233210) | Form 4 | mixed\n\n### Material Events / 8-K Filings (2)\n- 2026-08-27 | NVIDIA CORP\n- 2026-08-18 | NVIDIA CORP  (NVDA)  (CIK 0001045810)\n\n### Activist/Large Investor Disclosures (1 13D/G filings)\n- 2026-07-30 | VANGUARD GROUP INC  (CIK 0000102909) | SC 13G/A\n\n### Congressional Trading (2 transactions)\n- 2026-08-28 | Nancy Pelosi | Purchase | $1,000,001 - $5,000,000\n- 2026-08-12 | Ro Khanna | Sale | $1,001 - $15,000\n\n### Social Signal\n- Reddit mentions (24h): 4 | Sentiment: bullish\n\n### Alternative Data\n- Wikipedia: SPIKE detected (views 7d: 193,100) - unusual research interest\n- Short interest: 10.8% of volume\n- Google Trends score (7d): 52/100\n\n## YOUR TASK\nBased ONLY on the data above:\n1. Write a 2-sentence news/event summary.\n2. Write a 1-sentence alternative signal summary (insider activity, political trades, social signals).\n3. Give an overall outlook: bullish / neutral / bearish.\n4. Give a sentiment score 0-100 that MATCHES your outlook and the strength of the evidence: bullish evidence -> 60-90, bearish -> 10-40; use ~50 ONLY when the evidence is genuinely mixed. Do NOT default to 50.\n5. List up to 3 key reasons (one line each).\n6. Write a 2-3 sentence company description: what the business does and how it makes money, what its MAIN market/segment is, and roughly how large the company is (qualitative scale like 'one of the largest US banks' — do NOT invent precise figures).\n7. Write the strongest bull case in 2-3 complete sentences, like a senior equity analyst: each sentence names the concrete catalyst from a headline AND the second-order implication an investor cares about — what it means for revenue, margins, pricing power, competitive position, or investor confidence. Do NOT paraphrase the headline; interpret it (e.g. from a failed product launch, infer what it signals about the company's ability to innovate). No fragments, no generic filler. Every sentence MUST end with the [H#] tag of the single headline that supports it.\n8. Write the strongest bear case in 2-3 complete sentences: each names the concrete risk from a headline AND the second-order implication — what it means for future earnings, market share, sentiment, or the company's strategic position. Do NOT paraphrase the headline; interpret it. No fragments, no generic filler. Every sentence MUST end with the [H#] tag of the single headline that supports it.\n9. Write an actionable investment thesis in 2-3 complete sentences. THE SYSTEM'S OWN MODEL SIGNALS ARE THE PRIMARY EVIDENCE — when 'Own model signals' lines are present, START from the quantitative view (ranking, expected price range) and use the news ONLY to support, contextualize, or challenge it; a news story must never be the main argument on its own. If no model signals are present, say plainly that the quantitative view is unavailable this cycle and treat any news-based lean as tentative. State which side the combined evidence favors and why. Every sentence MUST end with the [H#] tag of the single source line that supports it.\nIf no headline supports a bull/bear/thesis case, write exactly NONE for that field. Do NOT invent facts, companies, or numbers not in the data. NEVER repeat or lightly reword a headline as your sentence — every sentence must ADD interpretation the headline itself does not say. The volatility range is a RISK WIDTH with no direction: NEVER cite it as support for a bullish or bearish view ('room for upside' from a symmetric range is a forbidden argument); use it only to describe expected movement size or risk.\n\nFormat your response EXACTLY as:\nSUMMARY: <2 sentences>\nSIGNALS: <1 sentence>\nOUTLOOK: <bullish|neutral|bearish>\nSCORE: <0-100>\nCOMPANY: <1-2 sentence company description>\nBULL: <strongest bull case>\nBEAR: <strongest bear case>\nTHESIS: <actionable investment thesis>\nREASONS:\n- <reason 1>\n- <reason 2>\n- <reason 3>",
+  "synthese_aufgerufen": true,
+  "urls": [
+   "https://api.finra.org/data/group/OTCmarket/name/otcShortInterest?compareFilters=compareFilters%5B0%5D.fieldName%3DissueSymbolIdentifier%26compareFilters%5B0%5D.compareType%3Dequals%26compareFilters%5B0%5D.fieldValue%3DNVDA&limit=1&sortFields=sortFields%5B0%5D.fieldName%3DsettlementDate%26sortFields%5B0%5D.sortOrder%3DDESC",
+   "https://api.polygon.io/v2/reference/news?ticker=NVDA&limit=10&apiKey=FIXTURE-KEY",
+   "https://api.quiverquant.com/beta/live/congresstrading/NVDA",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=4&ciks=0001045810&dateRange=custom&startdt=2026-08-01&enddt=2026-09-15",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=8-K&ciks=0001045810&dateRange=custom&startdt=2026-08-16&enddt=2026-09-15",
+   "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=SC+13D,SC+13G&ciks=0001045810&dateRange=custom&startdt=2026-06-17&enddt=2026-09-15",
+   "https://news.google.com/rss/search?q=NVDA%20stock&hl=en-US&gl=US&ceid=US:en",
+   "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/NVDA/daily/20260901/20260915",
+   "https://www.reddit.com/search.json?q=NVDA%20stock&restrict_sr=false&sort=new&t=day&limit=25",
+   "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000185/form4.xml",
+   "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000190/form4.xml",
+   "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000198/form4.xml",
+   "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000201/form4.xml"
+  ]
+ }
+}
