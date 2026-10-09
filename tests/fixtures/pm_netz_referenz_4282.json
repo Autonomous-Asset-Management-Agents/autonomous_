@@ -1,0 +1,1999 @@
+{
+  "bericht_staerkste_schwaechste": {
+    "gelaufen": {
+      "get_strongest_position": 2,
+      "get_weakest_position": 2,
+      "refresh_positions": 2
+    },
+    "schritte": [
+      {
+        "aufruf": "refresh_positions()",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          "AAPL",
+          "MSFT",
+          "XOM"
+        ],
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "get_strongest_position()",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": {
+          "age_known": false,
+          "avg_entry": 100.0,
+          "conviction_score": 50.0,
+          "current_price": 110.0,
+          "days_held": 0,
+          "holding_period_score": 30.0,
+          "market_value": 1100.0,
+          "momentum_score": 100,
+          "qty": 10.0,
+          "risk_adjusted_score": 100,
+          "symbol": "AAPL",
+          "total_score": 76.0,
+          "unrealized_pnl": 100.0,
+          "unrealized_pnl_pct": 10.0
+        },
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "get_weakest_position()",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": {
+          "age_known": false,
+          "avg_entry": 50.0,
+          "conviction_score": 50.0,
+          "current_price": 46.0,
+          "days_held": 0,
+          "holding_period_score": 30.0,
+          "market_value": 920.0,
+          "momentum_score": 10.0,
+          "qty": 20.0,
+          "risk_adjusted_score": 0,
+          "symbol": "XOM",
+          "total_score": 19.5,
+          "unrealized_pnl": -80.0,
+          "unrealized_pnl_pct": -8.0
+        },
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "Broker-Bestand geleert",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "refresh_positions()",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": [],
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "get_strongest_position()",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "get_weakest_position()",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "bericht_summary": {
+    "gelaufen": {
+      "get_portfolio_summary": 2,
+      "get_strongest_position": 1,
+      "get_weakest_position": 1,
+      "refresh_positions": 2
+    },
+    "schritte": [
+      {
+        "aufruf": "get_portfolio_summary()",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": {
+          "average_score": 52.5,
+          "max_positions": 3,
+          "num_positions": 3,
+          "strongest": {
+            "pnl_pct": 10.0,
+            "score": 76.0,
+            "symbol": "AAPL"
+          },
+          "total_pnl": 40.0,
+          "total_pnl_pct": 1.333333,
+          "total_value": 3040.0,
+          "weakest": {
+            "pnl_pct": -8.0,
+            "score": 19.5,
+            "symbol": "XOM"
+          }
+        },
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "Broker-Bestand geleert",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "get_portfolio_summary()",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": {
+          "average_score": 0,
+          "max_positions": 3,
+          "num_positions": 0,
+          "strongest": null,
+          "total_pnl": 0,
+          "total_pnl_pct": 0,
+          "total_value": 0,
+          "weakest": null
+        },
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "gesamtkapital": {
+    "gelaufen": {
+      "refresh_positions": 1,
+      "update_total_capital": 3
+    },
+    "schritte": [
+      {
+        "aufruf": "update_total_capital(12345.0)",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 12345.0
+      },
+      {
+        "aufruf": "update_total_capital(0)",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 12345.0
+      },
+      {
+        "aufruf": "update_total_capital(None)",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 12345.0
+      },
+      {
+        "aufruf": "refresh_positions()",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          "AAPL",
+          "MSFT",
+          "XOM"
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "nachkauf_im_totband": {
+    "gelaufen": {
+      "_can_trade_symbol_when_room": 1,
+      "_clean_weight_target_pct": 2,
+      "_slot_hold_reason": 1,
+      "_topup_dead_band_reason": 1,
+      "_within_order_cooldown": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(AAPL, 60.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "AAPL within top-up dead-band (held 22.0% vs clean-weight target 20.0%, band 25% of target)",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "refresh_gescheitert_buchdeckel": {
+    "gelaufen": {
+      "_within_order_cooldown": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 80.0)",
+        "bestand": [],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "slot_unverified: broker position state unavailable — new BUYs fail closed (#2886)",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "slot_frei_kauf": {
+    "gelaufen": {
+      "_can_trade_symbol_when_room": 1,
+      "_slot_hold_reason": 1,
+      "_topup_dead_band_reason": 1,
+      "_within_order_cooldown": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 60.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          true,
+          "Room for new position (have 3/5)",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "slot_frei_score_zu_niedrig": {
+    "gelaufen": {
+      "_can_trade_symbol_when_room": 1,
+      "_slot_hold_reason": 1,
+      "_within_order_cooldown": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 20.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "Opportunity score too low (20/100)",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "slot_frei_tageslimit": {
+    "gelaufen": {
+      "_can_trade_symbol_when_room": 1,
+      "_slot_hold_reason": 1,
+      "_within_order_cooldown": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 60.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "NVDA at daily trade limit",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "verdraengung_aus": {
+    "gelaufen": {
+      "_can_trade_symbol": 1,
+      "_slot_hold_reason": 1,
+      "_topup_dead_band_reason": 1,
+      "_within_order_cooldown": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 80.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "displacement disabled — book full, waiting for a slot to free (consensus SELL or risk exit)",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "verkaufssignale": {
+    "gelaufen": {
+      "can_sell_position": 3,
+      "clear_sell_signals_after_sale": 1,
+      "record_sell_signal": 4,
+      "refresh_positions": 1,
+      "reset_sell_signals": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "refresh_positions()",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          "AAPL",
+          "MSFT",
+          "XOM"
+        ],
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "record_sell_signal(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": 1,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "record_sell_signal(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": 2,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "can_sell_position(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "Minimum hold period not met (0.5/1 hours) - need 6 more SELL signals to bypass"
+        ],
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "reset_sell_signals(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "can_sell_position(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "Minimum hold period not met (0.5/1 hours) - need 8 more SELL signals to bypass"
+        ],
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "record_sell_signal(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": 1,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "clear_sell_signals_after_sale(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": null,
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "can_sell_position(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "Minimum hold period not met (0.5/1 hours) - need 8 more SELL signals to bypass"
+        ],
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "record_sell_signal(AAPL)",
+        "bestand": [
+          {
+            "age_known": true,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": 1,
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "voll_cooldown": {
+    "gelaufen": {
+      "_can_trade_symbol": 1,
+      "_slot_hold_reason": 1,
+      "_topup_dead_band_reason": 1,
+      "_within_order_cooldown": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 80.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "NVDA in cooldown - traded too recently",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "voll_debatte_gewonnen": {
+    "gelaufen": {
+      "_can_trade_symbol": 3,
+      "_displacement_session_budget_ok": 1,
+      "_note_displacement": 1,
+      "_slot_hold_reason": 1,
+      "_topup_dead_band_reason": 1,
+      "_within_order_cooldown": 1,
+      "consensus_retention_veto": 1,
+      "debate_position_swap": 1,
+      "get_weakest_position": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 40.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [
+          {
+            "arguments_against_swap": [
+              "XOM held less than 1 day - give it time"
+            ],
+            "arguments_for_swap": [
+              "New opportunity scores 20.5 points higher",
+              "XOM is down -8.0%"
+            ],
+            "decision": "SWAP",
+            "new_opportunity": "NVDA",
+            "opportunity_score": 40.0,
+            "position_score": 19.5,
+            "reasoning": "Strong upgrade: NVDA (score 40) >> XOM (score 20)",
+            "timestamp": "iso",
+            "weakest_position": "XOM"
+          }
+        ],
+        "ergebnis": [
+          true,
+          "Strong upgrade: NVDA (score 40) >> XOM (score 20)",
+          "XOM"
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "voll_debatte_verloren": {
+    "gelaufen": {
+      "_can_trade_symbol": 3,
+      "_displacement_session_budget_ok": 1,
+      "_slot_hold_reason": 1,
+      "_topup_dead_band_reason": 1,
+      "_within_order_cooldown": 1,
+      "consensus_retention_veto": 1,
+      "debate_position_swap": 1,
+      "get_weakest_position": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 25.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [
+          {
+            "arguments_against_swap": [
+              "Score difference only 5.5 points - not compelling",
+              "XOM held less than 1 day - give it time"
+            ],
+            "arguments_for_swap": [
+              "XOM is down -8.0%"
+            ],
+            "decision": "HOLD",
+            "new_opportunity": "NVDA",
+            "opportunity_score": 25.0,
+            "position_score": 19.5,
+            "reasoning": "Keeping XOM: Score difference only 5.5 points - not compelling",
+            "timestamp": "iso",
+            "weakest_position": "XOM"
+          }
+        ],
+        "ergebnis": [
+          false,
+          "Keeping XOM: Score difference only 5.5 points - not compelling",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "voll_mindesthaltedauer": {
+    "gelaufen": {
+      "_can_trade_symbol": 1,
+      "_displacement_session_budget_ok": 1,
+      "_slot_hold_reason": 1,
+      "_topup_dead_band_reason": 1,
+      "_within_order_cooldown": 1,
+      "debate_position_swap": 1,
+      "get_weakest_position": 1,
+      "refresh_positions": 1,
+      "should_open_new_position": 1
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 80.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": true,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 2,
+            "holding_period_score": 50.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 23.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [
+          {
+            "arguments_against_swap": [
+              "Keeping XOM: minimum holding period not met (2/20 days) — displacement is opportunity-driven and waits; risk exits are unaffected"
+            ],
+            "arguments_for_swap": [],
+            "decision": "HOLD",
+            "new_opportunity": "NVDA",
+            "opportunity_score": 80.0,
+            "position_score": 23.5,
+            "reasoning": "Keeping XOM: minimum holding period not met (2/20 days) — displacement is opportunity-driven and waits; risk exits are unaffected",
+            "timestamp": "iso",
+            "weakest_position": "XOM"
+          }
+        ],
+        "ergebnis": [
+          false,
+          "Keeping XOM: minimum holding period not met (2/20 days) — displacement is opportunity-driven and waits; risk exits are unaffected",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  },
+  "voll_sitzungsdeckel": {
+    "gelaufen": {
+      "_can_trade_symbol": 4,
+      "_displacement_session_budget_ok": 2,
+      "_note_displacement": 1,
+      "_slot_hold_reason": 2,
+      "_topup_dead_band_reason": 2,
+      "_within_order_cooldown": 2,
+      "consensus_retention_veto": 1,
+      "debate_position_swap": 1,
+      "get_weakest_position": 1,
+      "refresh_positions": 2,
+      "should_open_new_position": 2
+    },
+    "schritte": [
+      {
+        "aufruf": "should_open_new_position(NVDA, 80.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [
+          {
+            "arguments_against_swap": [
+              "XOM held less than 1 day - give it time"
+            ],
+            "arguments_for_swap": [
+              "New opportunity scores 60.5 points higher",
+              "XOM is down -8.0%"
+            ],
+            "decision": "SWAP",
+            "new_opportunity": "NVDA",
+            "opportunity_score": 80.0,
+            "position_score": 19.5,
+            "reasoning": "Strong upgrade: NVDA (score 80) >> XOM (score 20)",
+            "timestamp": "iso",
+            "weakest_position": "XOM"
+          }
+        ],
+        "ergebnis": [
+          true,
+          "Strong upgrade: NVDA (score 80) >> XOM (score 20)",
+          "XOM"
+        ],
+        "total_capital": 5000.0
+      },
+      {
+        "aufruf": "should_open_new_position(AMD, 80.0)",
+        "bestand": [
+          {
+            "age_known": false,
+            "avg_entry": 100.0,
+            "conviction_score": 50.0,
+            "current_price": 110.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1100.0,
+            "momentum_score": 100,
+            "qty": 10.0,
+            "risk_adjusted_score": 100,
+            "symbol": "AAPL",
+            "total_score": 76.0,
+            "unrealized_pnl": 100.0,
+            "unrealized_pnl_pct": 10.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 200.0,
+            "conviction_score": 50.0,
+            "current_price": 204.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 1020.0,
+            "momentum_score": 60.0,
+            "qty": 5.0,
+            "risk_adjusted_score": 100,
+            "symbol": "MSFT",
+            "total_score": 62.0,
+            "unrealized_pnl": 20.0,
+            "unrealized_pnl_pct": 2.0
+          },
+          {
+            "age_known": false,
+            "avg_entry": 50.0,
+            "conviction_score": 50.0,
+            "current_price": 46.0,
+            "days_held": 0,
+            "holding_period_score": 30.0,
+            "market_value": 920.0,
+            "momentum_score": 10.0,
+            "qty": 20.0,
+            "risk_adjusted_score": 0,
+            "symbol": "XOM",
+            "total_score": 19.5,
+            "unrealized_pnl": -80.0,
+            "unrealized_pnl_pct": -8.0
+          }
+        ],
+        "debatte": [],
+        "ergebnis": [
+          false,
+          "displacement session cap reached (1/1 today) — the book waits for a slot to free via a consensus SELL or a risk exit; protective exits are unaffected",
+          null
+        ],
+        "total_capital": 5000.0
+      }
+    ]
+  }
+}

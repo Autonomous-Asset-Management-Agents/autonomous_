@@ -1,0 +1,6 @@
+{
+  "https://news.google.com/rss/search?q=NVDA%20stock&hl=en-US&gl=US&ceid=US:en": {
+    "status": 200,
+    "text": "<rss><channel><title>NVDA stock - Google News</title><item><title>NVDA stock jumps after record quarter &amp; upbeat guidance</title><link>https://example.test/g1</link></item><item><title>US weighs new export curbs on NVDA AI chips to China</title><link>https://example.test/g2</link></item><item><title>Analysts raise NVDA price targets to $250</title><link>https://example.test/g3</link></item></channel></rss>"
+  }
+}

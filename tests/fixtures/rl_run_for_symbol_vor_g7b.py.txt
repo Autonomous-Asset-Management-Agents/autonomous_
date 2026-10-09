@@ -1,0 +1,430 @@
+async def _run_for_symbol_impl(  # noqa: C901
+    self,
+    symbol: str,
+    ohlc_data: Dict[str, float],
+    market_data: Dict[str, Any],
+    current_time: datetime,
+):
+    """Trading-Entscheidungslogik für ein Symbol (orchestriert alle 8 Teilschritte).
+
+    Cyclomatic Complexity dieses Wrappers: ~8 (war vorher ~130).
+    """
+    from core.simulation_adapter import SimulationAdapter
+
+    # ── 1. State aufbauen ────────────────────────────────────────
+    inputs = await self._gather_market_inputs(symbol, current_time, market_data)
+    state, features, pred = inputs["state"], inputs["features"], inputs["pred"]
+
+    if features is None or features.empty:
+        self._generate_thought(symbol, 0, None, 0.0, market_data)
+        return
+
+    # ── 2. Positionsstatus ────────────────────────────────────────
+    pos_info = self._check_position_state(symbol)
+    in_pos, qty, avg = pos_info["in_position"], pos_info["qty"], pos_info["avg"]
+    curr = ohlc_data["close"]
+
+    # ── 3. Signal ableiten ────────────────────────────────────────
+    sig_info = await self._evaluate_signal(
+        symbol, state, features, pred, in_pos, market_data
+    )
+    signal, raw_rl_action, rl_action = (
+        sig_info["signal"],
+        sig_info["raw_rl_action"],
+        sig_info["rl_action"],
+    )
+
+    # -- 4. Exit-Autoritaet pruefen (#3632: ein Regelwerk) --------------------
+    exit_info = self._check_exit(
+        symbol, in_pos, qty, avg, curr, current_time, features, pred
+    )
+    triggered_exit = exit_info["triggered"]
+    if triggered_exit:
+        signal = "SELL"
+
+    # ── #3180 Consensus Retention Gate ────────────────────────────
+    # An OPINION exit — the model SELL (LSTM pred<-0.35 bypassing the round table)
+    # or an intelligent-exit OPINION tier (momentum-fade / weighted-composite) — is
+    # SUPPRESSED when the live round-table blend-consensus still rates the held name
+    # highly. RISK tiers (hard stop / trailing / loss-cut, and the legacy fallback)
+    # are NEVER gated. Default OFF (threshold<=0) ⇒ byte-identical; fail-open.
+    if signal == "SELL" and in_pos:
+        from core.consensus_retention import consensus_retention_veto
+
+        _exit_kind = exit_info.get("tier", "risk") if triggered_exit else "model"
+        if consensus_retention_veto(
+            symbol, _exit_kind, getattr(self, "portfolio_manager", None)
+        ):
+            self.log_thought(
+                f"[{symbol}] 🛑 SELL RETAINED — live round-table consensus still "
+                f"rates the name (#3180 gate, kind={_exit_kind})"
+            )
+            signal = "HOLD"
+            triggered_exit = False
+
+    if signal == "SELL":
+        self.high_water_marks.pop(symbol, None)
+        self._entry_time.pop(symbol, None)
+    elif not in_pos:
+        self.high_water_marks.pop(symbol, None)
+        self._entry_time.pop(symbol, None)
+
+    # ── HOLD: Portfolio-Manager reset + return ────────────────────
+    if signal == "HOLD" and not triggered_exit:
+        if self.portfolio_manager and not isinstance(
+            self.client, SimulationAdapter
+        ):
+            self.portfolio_manager.reset_sell_signals(symbol)
+        conviction = 0.0
+        return self._log_decision_trace(
+            symbol,
+            "HOLD",
+            pred,
+            raw_rl_action,
+            rl_action,
+            conviction,
+            curr,
+            in_pos,
+            qty,
+            avg,
+            False,
+            features,
+            market_data,
+            0.0,
+        )
+
+    if signal == "BUY" and in_pos:
+        self.log_thought(f"[{symbol}] Already in position. Skipping BUY signal.")
+        return
+
+    # ── 5. Trade Intelligence (BUY) ───────────────────────────────
+    if signal == "BUY" and not in_pos:
+        ti_info = self._check_trade_intelligence(
+            symbol, pred, features, market_data
+        )
+        if not ti_info["allowed"]:
+            return self._log_decision_trace(
+                symbol,
+                "HOLD",
+                pred,
+                raw_rl_action,
+                rl_action,
+                0.0,
+                curr,
+                in_pos,
+                qty,
+                avg,
+                False,
+                features,
+                market_data,
+                0.0,
+            )
+
+    # ── 6. Portfolio Manager (BUY) ────────────────────────────────
+    symbol_to_close = None
+    if signal == "BUY" and not in_pos:
+        pm_info = self._check_portfolio_manager(
+            symbol, curr, rl_action, pred, features
+        )
+        if not pm_info["allowed"]:
+            return self._log_decision_trace(
+                symbol,
+                "HOLD",
+                pred,
+                raw_rl_action,
+                rl_action,
+                0.0,
+                curr,
+                in_pos,
+                qty,
+                avg,
+                False,
+                features,
+                market_data,
+                0.0,
+            )
+        symbol_to_close = pm_info["symbol_to_close"]
+
+    # ── SELL Consecutive-Signal-Count ─────────────────────────────
+    if (
+        signal == "SELL"
+        and in_pos
+        and self.portfolio_manager
+        and not isinstance(self.client, SimulationAdapter)
+    ):
+        sell_count = self.portfolio_manager.record_sell_signal(symbol)
+        logging.debug("[%s] Consecutive SELL signals: %s/5", symbol, sell_count)
+    if (
+        signal == "BUY"
+        and self.portfolio_manager
+        and not isinstance(self.client, SimulationAdapter)
+    ):
+        self.portfolio_manager.reset_sell_signals(symbol)
+
+    # ── 7. Risk Filter ────────────────────────────────────────────
+    risk_info = self._apply_risk_filters(symbol, signal, market_data)
+    if not risk_info["allowed"]:
+        return self._log_decision_trace(
+            symbol,
+            "HOLD",
+            pred,
+            raw_rl_action,
+            rl_action,
+            0.0,
+            curr,
+            in_pos,
+            qty,
+            avg,
+            False,
+            features,
+            market_data,
+            0.0,
+        )
+    mods = risk_info["mods"]
+
+    # ── 8a. Swap Execution (Pre-Fetch) ────────────────────────────
+    if (
+        signal == "BUY"
+        and not in_pos
+        and symbol_to_close
+        and self.portfolio_manager
+    ):
+        try:
+            old_pos = self.client.get_open_position(symbol_to_close)
+            if old_pos:
+                old_qty = (
+                    float(old_pos.qty)
+                    if hasattr(old_pos, "qty")
+                    else float(old_pos.get("qty", 0))
+                )
+                old_price = (
+                    float(old_pos.current_price)
+                    if hasattr(old_pos, "current_price")
+                    else float(old_pos.get("current_price", 0))
+                )
+                if old_qty > 0:
+                    self.log_thought(
+                        f"[{symbol_to_close}] 🔄 CLOSING for portfolio swap"
+                    )
+                    await self._submit_order_safe(
+                        symbol_to_close,
+                        old_qty,
+                        "sell",
+                        current_price=old_price,
+                        # ADR-C04-EXIT: old_qty IS the held position (swap-close
+                        # path), so this is a risk-reducing exit. The guardian's
+                        # predicate is fail-closed — omit this and the daily cap
+                        # blocks the close.
+                        held_qty=old_qty,
+                    )
+                    self.portfolio_manager.record_trade(symbol_to_close, "sell")
+                    if self.trade_intelligence:
+                        self.trade_intelligence.record_exit(
+                            symbol_to_close, old_price, exit_reason="swap"
+                        )
+                    await asyncio.sleep(1.0)
+        except Exception as e:
+            is_404 = False
+            if isinstance(e, APIError) and (
+                e.status_code == 404 or getattr(e, "code", None) == 40410000
+            ):
+                is_404 = True
+
+            if is_404:
+                self.log_thought(
+                    f"[{symbol_to_close}] ℹ️ No position open at broker to close for swap."
+                )
+            else:
+                self.log_thought(
+                    f"[{symbol_to_close}] ⚠️ Critical swap API failure: {e}. Gracefully skipping swap."
+                )
+                # Instead of raising e, we gracefully abort the current strategy run for this symbol.
+                return
+
+    # ── Buying Power + Position Size ──────────────────────────────
+    size = 0.0
+    conviction = 0.0
+    if signal == "BUY" and not in_pos:
+        try:
+            account = self.client.get_account()
+            dt_bp = float(getattr(account, "daytrading_buying_power", None) or 0)
+            reg_bp = float(getattr(account, "buying_power", None) or 0)
+            reg_cash = float(getattr(account, "cash", 0) or 0)
+            if self.portfolio_manager and not isinstance(
+                self.client, SimulationAdapter
+            ):
+                live_equity = float(account.equity or 0)
+                if live_equity > 0:
+                    self.portfolio_manager.update_total_capital(live_equity)
+            if reg_cash <= 0 and (reg_bp or 0) <= 0:
+                self.log_thought(f"[{symbol}] ⚠️ BLOCKED - Invalid account state.")
+                return
+            import config as _cfg
+
+            use_cash_only = getattr(_cfg, "USE_CASH_ONLY", True)
+            cash = (
+                reg_cash
+                if use_cash_only
+                else (reg_bp if dt_bp == 0 else max(dt_bp, reg_bp))
+            )
+            if cash == 0:
+                cash = reg_cash
+            if cash <= 0:
+                self.log_thought(
+                    f"[{symbol}] ⚠️ BLOCKED - No buying power available."
+                )
+                return
+        except Exception as e:
+            logging.warning("[%s] Could not get account: %s", symbol, e)
+            cash = 0.0
+
+        conviction = self._calculate_conviction_score(
+            features.iloc[0] if features is not None else None, pred, market_data
+        )
+        size = self.risk_manager.calculate_position_size(
+            mods.get("sl_multiplier", 3.0),
+            (
+                features.iloc[0].get("atr_14d", curr * 0.05)
+                if features is not None
+                else curr * 0.05
+            ),
+            "high",
+            mods.get("size_scaler", 1.0),
+            market_data,
+            # #2153: book-cap slots, not the strategy's scan-universe size
+            # (len(self.symbols)) — the old divisor under-sized every order.
+            # O3 (CASH_AWARE_SLOTS_ENABLED): divide by the REMAINING free slots
+            # (cap − held), not the fixed cap, so a mostly-invested round-table book
+            # funds proper-sized buys. RLStrategy is the DEFAULT active strategy
+            # (ACTIVE_STRATEGY="RLAgent", round-table host) → this is a LIVE sizing
+            # path. Held = the strategy's own PM positions (no new broker call);
+            # None/empty PM → 0 → cap (byte-identical); unconfirmed/stale refresh → cap.
+            effective_free_slots(
+                len(
+                    getattr(
+                        getattr(self, "portfolio_manager", None),
+                        "_position_scores",
+                        {},
+                    )
+                    or {}
+                ),
+                positions_confirmed=getattr(
+                    getattr(self, "portfolio_manager", None),
+                    "_last_refresh_ok",
+                    True,
+                ),
+            ),
+            curr,
+            cash,
+            allow_fractional=True,
+            conviction_score=conviction,
+        )
+
+        if size == 0:
+            self.log_thought(
+                f"[{symbol}] ⚠️ Position size is 0 – insufficient cash!"
+            )
+            return
+
+    # ── 8c. Anti-churn check ──────────────────────────────────────
+    if signal == "SELL" and in_pos and self.portfolio_manager:
+        can_sell, reason = self.portfolio_manager.can_sell_position(symbol)
+        if not can_sell:
+            self.log_thought(f"[{symbol}] 📊 SELL blocked by anti-churn: {reason}")
+            signal = "HOLD"
+
+    # ── 8b. Order ausführen (BUY) ─────────────────────────────────
+    if signal == "BUY" and not in_pos and size > 0:
+        order_cost = size * curr
+        self.log_thought(
+            f"[{symbol}] 💰 EXECUTING BUY ORDER: {size:.6f} shares @ ${curr:.2f}"
+        )
+        self.high_water_marks[symbol] = curr
+        order_success = await self._submit_order_safe(
+            symbol, size, "buy", expected_cost=order_cost, current_price=curr
+        )
+
+        if order_success:
+            self._entry_time[symbol] = current_time
+            if self.portfolio_manager:
+                self.portfolio_manager.record_trade(symbol, "buy")
+                self.portfolio_manager.update_position_conviction(
+                    symbol, conviction
+                )
+            from core.simulation_adapter import SimulationAdapter
+
+            if self.trade_intelligence and not isinstance(
+                self.client, SimulationAdapter
+            ):
+                features_dict = (
+                    features.iloc[0].to_dict() if features is not None else {}
+                )
+                self.trade_intelligence.record_entry(
+                    symbol=symbol,
+                    entry_price=curr,
+                    qty=size,
+                    confidence=pred,
+                    features=features_dict,
+                    market_data=market_data,
+                )
+
+    elif signal == "SELL" and in_pos:
+        self.log_thought(
+            f"[{symbol}] 💸 EXECUTING SELL ORDER: {qty} shares @ ${curr:.2f}"
+        )
+        self.high_water_marks.pop(symbol, None)
+        self._entry_time.pop(symbol, None)
+        order_success = await self._submit_order_safe(
+            symbol,
+            qty,
+            "sell",
+            current_price=curr,
+            # ADR-C04-EXIT: reached only under `elif signal == "SELL" and in_pos`,
+            # so qty IS the held position. This is the DEFAULT strategy's stop-loss
+            # path (ACTIVE_STRATEGY="RLAgent") — without held_qty the exemption never
+            # fires here and the stop stays blocked by the daily cap, which is the
+            # whole defect this fixes.
+            held_qty=qty,
+            # #3380/#3466: ein Risiko-Ausstieg passiert auch einen Halt.
+            is_protective_exit=ist_schutz_exit(triggered_exit, exit_info),
+        )
+        if order_success:
+            if self.portfolio_manager:
+                self.portfolio_manager.record_trade(symbol, "sell")
+                self.portfolio_manager.clear_sell_signals_after_sale(symbol)
+            from core.simulation_adapter import SimulationAdapter
+
+            if self.trade_intelligence and not isinstance(
+                self.client, SimulationAdapter
+            ):
+                exit_reason = (
+                    "trailing_stop"
+                    if triggered_exit and "TRAILING" in str(triggered_exit)
+                    else "stop_loss" if triggered_exit else "signal"
+                )
+                self.trade_intelligence.record_exit(
+                    symbol=symbol, exit_price=curr, exit_reason=exit_reason
+                )
+
+    # ── 8. Decision Trace ─────────────────────────────────────────
+    suggested_qty = (
+        float(size)
+        if signal == "BUY" and not in_pos
+        else float(qty) if signal == "SELL" and in_pos else 0.0
+    )
+    return self._log_decision_trace(
+        symbol,
+        signal,
+        pred,
+        raw_rl_action,
+        rl_action,
+        conviction,
+        curr,
+        in_pos,
+        qty,
+        avg,
+        triggered_exit,
+        features,
+        market_data,
+        suggested_qty,
+    )

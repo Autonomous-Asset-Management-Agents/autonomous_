@@ -1,0 +1,711 @@
+{
+  "routen": {
+    "GET /api/hitl/pending": [
+      "HitlPendingResponse"
+    ],
+    "GET /api/hitl/policy": [
+      "HitlPolicyDTO"
+    ],
+    "POST /api/admin/portfolio-constraints/approve": [
+      "PortfolioConstraintsApproveRequest"
+    ],
+    "POST /api/admin/portfolio-constraints/propose": [
+      "PortfolioConstraintsProposeRequest"
+    ],
+    "POST /api/entitlement/activate": [
+      "ActivateRequest"
+    ],
+    "POST /api/entitlement/checkout": [
+      "CheckoutRequest"
+    ],
+    "POST /api/hitl/approve": [
+      "HitlActionResponse",
+      "HitlApproveRequest"
+    ],
+    "POST /api/hitl/policy": [
+      "HitlPolicyDTO",
+      "HitlPolicyUpdateDTO"
+    ],
+    "POST /api/hitl/reject": [
+      "HitlActionResponse",
+      "HitlRejectRequest"
+    ],
+    "POST /api/live/disable": [
+      "LiveEnableRequest",
+      "LiveEnableResponse"
+    ],
+    "POST /api/live/enable": [
+      "LiveEnableRequest",
+      "LiveEnableResponse"
+    ],
+    "POST /api/portfolio-shape": [
+      "PortfolioShapeRequest",
+      "PortfolioShapeResponse"
+    ],
+    "POST /api/reconciliation/release": [
+      "ReconciliationReleaseRequest"
+    ],
+    "POST /api/settings-deviation-ack": [
+      "SettingsDeviationAckRequest",
+      "SettingsDeviationAckResponse"
+    ],
+    "POST /api/strategy/swap": [
+      "SwapRequest"
+    ],
+    "POST /api/telemetry/switch-reconcile": [
+      "SwitchReconcileRequest"
+    ],
+    "POST /api/trading-settings": [
+      "TradingSettingsRequest",
+      "TradingSettingsResponse"
+    ]
+  },
+  "schemas": {
+    "ActivateRequest": {
+      "properties": {
+        "token": {
+          "title": "Token",
+          "type": "string"
+        }
+      },
+      "required": [
+        "token"
+      ],
+      "title": "ActivateRequest",
+      "type": "object"
+    },
+    "CheckoutRequest": {
+      "properties": {
+        "tier": {
+          "title": "Tier",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tier"
+      ],
+      "title": "CheckoutRequest",
+      "type": "object"
+    },
+    "HitlActionResponse": {
+      "properties": {
+        "approval_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Approval Id"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Detail"
+        },
+        "success": {
+          "title": "Success",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "success"
+      ],
+      "title": "HitlActionResponse",
+      "type": "object"
+    },
+    "HitlApproveRequest": {
+      "properties": {
+        "approval_id": {
+          "title": "Approval Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "approval_id"
+      ],
+      "title": "HitlApproveRequest",
+      "type": "object"
+    },
+    "HitlPendingResponse": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/components/schemas/HitlQueueItemDTO"
+          },
+          "title": "Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "title": "HitlPendingResponse",
+      "type": "object"
+    },
+    "HitlPolicyDTO": {
+      "description": "The full HITL policy (GET response). ``HITL_ENABLED`` is shown read-only.",
+      "properties": {
+        "HITL_ALWAYS_ALLOW_RISK_REDUCING_SELLS": {
+          "title": "Hitl Always Allow Risk Reducing Sells",
+          "type": "boolean"
+        },
+        "HITL_AUTONOMOUS_UNLIMITED": {
+          "title": "Hitl Autonomous Unlimited",
+          "type": "boolean"
+        },
+        "HITL_ENABLED": {
+          "title": "Hitl Enabled",
+          "type": "boolean"
+        },
+        "HITL_EXPIRY_SECONDS": {
+          "title": "Hitl Expiry Seconds",
+          "type": "integer"
+        },
+        "HITL_MAX_VALUE_PER_DAY": {
+          "title": "Hitl Max Value Per Day",
+          "type": "number"
+        },
+        "HITL_MAX_VALUE_PER_TRADE": {
+          "title": "Hitl Max Value Per Trade",
+          "type": "number"
+        }
+      },
+      "required": [
+        "HITL_ENABLED",
+        "HITL_MAX_VALUE_PER_TRADE",
+        "HITL_MAX_VALUE_PER_DAY",
+        "HITL_AUTONOMOUS_UNLIMITED",
+        "HITL_ALWAYS_ALLOW_RISK_REDUCING_SELLS",
+        "HITL_EXPIRY_SECONDS"
+      ],
+      "title": "HitlPolicyDTO",
+      "type": "object"
+    },
+    "HitlPolicyUpdateDTO": {
+      "additionalProperties": false,
+      "description": "The runtime-adjustable limits (POST body). ``extra=\"forbid\"`` ⇒ a POST that includes  # noqa: E501\n``HITL_ENABLED`` (or any unknown key) is rejected with HTTP 422 — enabling HITL is the  # noqa: E501\nenv+redeploy step (C2/M5), never an API toggle, so the flag is structurally unsettable.  # noqa: E501",
+      "properties": {
+        "HITL_ALWAYS_ALLOW_RISK_REDUCING_SELLS": {
+          "title": "Hitl Always Allow Risk Reducing Sells",
+          "type": "boolean"
+        },
+        "HITL_AUTONOMOUS_UNLIMITED": {
+          "title": "Hitl Autonomous Unlimited",
+          "type": "boolean"
+        },
+        "HITL_EXPIRY_SECONDS": {
+          "maximum": 86400.0,
+          "minimum": 1.0,
+          "title": "Hitl Expiry Seconds",
+          "type": "integer"
+        },
+        "HITL_MAX_VALUE_PER_DAY": {
+          "minimum": 0.0,
+          "title": "Hitl Max Value Per Day",
+          "type": "number"
+        },
+        "HITL_MAX_VALUE_PER_TRADE": {
+          "minimum": 0.0,
+          "title": "Hitl Max Value Per Trade",
+          "type": "number"
+        }
+      },
+      "required": [
+        "HITL_MAX_VALUE_PER_TRADE",
+        "HITL_MAX_VALUE_PER_DAY",
+        "HITL_AUTONOMOUS_UNLIMITED",
+        "HITL_ALWAYS_ALLOW_RISK_REDUCING_SELLS",
+        "HITL_EXPIRY_SECONDS"
+      ],
+      "title": "HitlPolicyUpdateDTO",
+      "type": "object"
+    },
+    "HitlQueueItemDTO": {
+      "description": "One order awaiting human approval (the pending-queue item the UI renders).",
+      "properties": {
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "approval_id": {
+          "title": "Approval Id",
+          "type": "string"
+        },
+        "conviction": {
+          "title": "Conviction",
+          "type": "number"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "price": {
+          "title": "Price",
+          "type": "number"
+        },
+        "qty": {
+          "title": "Qty",
+          "type": "number"
+        },
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "target_weight": {
+          "title": "Target Weight",
+          "type": "number"
+        },
+        "user_id": {
+          "title": "User Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "approval_id",
+        "user_id",
+        "symbol",
+        "action",
+        "qty",
+        "price",
+        "conviction",
+        "target_weight",
+        "created_at"
+      ],
+      "title": "HitlQueueItemDTO",
+      "type": "object"
+    },
+    "HitlRejectRequest": {
+      "properties": {
+        "approval_id": {
+          "title": "Approval Id",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "approval_id"
+      ],
+      "title": "HitlRejectRequest",
+      "type": "object"
+    },
+    "LiveEnableRequest": {
+      "description": "Operator's deliberate Art.-14 acknowledgement + a unique nonce (replay-distinct).",
+      "properties": {
+        "acknowledgment": {
+          "minLength": 1,
+          "title": "Acknowledgment",
+          "type": "string"
+        },
+        "nonce": {
+          "minLength": 1,
+          "title": "Nonce",
+          "type": "string"
+        }
+      },
+      "required": [
+        "acknowledgment",
+        "nonce"
+      ],
+      "title": "LiveEnableRequest",
+      "type": "object"
+    },
+    "LiveEnableResponse": {
+      "properties": {
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Detail"
+        },
+        "success": {
+          "title": "Success",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "success",
+        "action"
+      ],
+      "title": "LiveEnableResponse",
+      "type": "object"
+    },
+    "PortfolioConstraintsApproveRequest": {
+      "properties": {
+        "approver": {
+          "minLength": 1,
+          "title": "Approver",
+          "type": "string"
+        },
+        "token": {
+          "minLength": 1,
+          "title": "Token",
+          "type": "string"
+        }
+      },
+      "required": [
+        "token",
+        "approver"
+      ],
+      "title": "PortfolioConstraintsApproveRequest",
+      "type": "object"
+    },
+    "PortfolioConstraintsProposeRequest": {
+      "description": "Manual propose path (the EOD assessment of #2652 stages its own pending).",
+      "properties": {
+        "actor": {
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "caps": {
+          "additionalProperties": true,
+          "title": "Caps",
+          "type": "object"
+        }
+      },
+      "required": [
+        "caps",
+        "actor"
+      ],
+      "title": "PortfolioConstraintsProposeRequest",
+      "type": "object"
+    },
+    "PortfolioShapeRequest": {
+      "description": "#3132 — a deliberate portfolio-structure change plus the operator's acknowledgement.\n\nValues are CLAMPED server-side, never rejected: a value outside the range is an\noperating question, not an attack. The console's sliders are convenience — a direct API\ncall must see the same bounds (``core.portfolio_shape``).",
+      "properties": {
+        "acknowledgment": {
+          "minLength": 1,
+          "title": "Acknowledgment",
+          "type": "string"
+        },
+        "hold_days": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Hold Days"
+        },
+        "nonce": {
+          "minLength": 1,
+          "title": "Nonce",
+          "type": "string"
+        },
+        "positions": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Positions"
+        },
+        "vol_target": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Vol Target"
+        }
+      },
+      "required": [
+        "acknowledgment",
+        "nonce"
+      ],
+      "title": "PortfolioShapeRequest",
+      "type": "object"
+    },
+    "PortfolioShapeResponse": {
+      "properties": {
+        "applied": {
+          "additionalProperties": true,
+          "title": "Applied",
+          "type": "object"
+        },
+        "changes": {
+          "items": {},
+          "title": "Changes",
+          "type": "array"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "success": {
+          "title": "Success",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "success",
+        "applied",
+        "changes",
+        "detail"
+      ],
+      "title": "PortfolioShapeResponse",
+      "type": "object"
+    },
+    "ReconciliationReleaseRequest": {
+      "additionalProperties": false,
+      "description": "Koerper der Aufhebung. Nur ein Grund — der Urheber kommt nie aus dem Koerper.",
+      "properties": {
+        "reason": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "title": "ReconciliationReleaseRequest",
+      "type": "object"
+    },
+    "SettingsDeviationAckRequest": {
+      "description": "#3156 (UXC-1 S3) — the operator's keep/reset decision at the live switch.",
+      "properties": {
+        "decision": {
+          "minLength": 1,
+          "title": "Decision",
+          "type": "string"
+        },
+        "deviations": {
+          "items": {
+            "$ref": "#/components/schemas/SettingsDeviationItem"
+          },
+          "title": "Deviations",
+          "type": "array"
+        },
+        "nonce": {
+          "minLength": 1,
+          "title": "Nonce",
+          "type": "string"
+        },
+        "switch_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Switch Id"
+        }
+      },
+      "required": [
+        "decision",
+        "nonce"
+      ],
+      "title": "SettingsDeviationAckRequest",
+      "type": "object"
+    },
+    "SettingsDeviationAckResponse": {
+      "properties": {
+        "decision": {
+          "title": "Decision",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "success": {
+          "title": "Success",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "success",
+        "decision",
+        "detail"
+      ],
+      "title": "SettingsDeviationAckResponse",
+      "type": "object"
+    },
+    "SettingsDeviationItem": {
+      "description": "One default-deviation the operator decided about — str-only (WORM verbatim).",
+      "properties": {
+        "current": {
+          "title": "Current",
+          "type": "string"
+        },
+        "default": {
+          "title": "Default",
+          "type": "string"
+        },
+        "key": {
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "current",
+        "default"
+      ],
+      "title": "SettingsDeviationItem",
+      "type": "object"
+    },
+    "SwapRequest": {
+      "properties": {
+        "force": {
+          "default": false,
+          "title": "Force",
+          "type": "boolean"
+        },
+        "shadow_mode": {
+          "default": false,
+          "title": "Shadow Mode",
+          "type": "boolean"
+        },
+        "strategy_name": {
+          "title": "Strategy Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "strategy_name"
+      ],
+      "title": "SwapRequest",
+      "type": "object"
+    },
+    "SwitchReconcileRequest": {
+      "description": "#2277 INC-3 (§4b R4): the console's post-switch reconcile telemetry — turned into a\n``health_reconcile`` span so a failed Live⇄Paper reconcile is reconstructable from the export.\n\nEvery field is optional so the fail-open frontend post never 422s (a telemetry post must never\nblock the switch).",
+      "properties": {
+        "attempts": {
+          "default": 0,
+          "title": "Attempts",
+          "type": "integer"
+        },
+        "paper_trading": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Paper Trading"
+        },
+        "settled_status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Settled Status"
+        },
+        "switch_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Switch Id"
+        }
+      },
+      "title": "SwitchReconcileRequest",
+      "type": "object"
+    },
+    "TradingSettingsRequest": {
+      "description": "#3155 (UXC-1 S2) — a deliberate settings change plus the operator's acknowledgement.\n\n``settings`` holds partial registry keys (``core.trading_settings.REGISTRY``).\nValues are CLAMPED server-side, never rejected — but an UNKNOWN key (incl. any\ncompliance guardrail like ``HARD_STOP_LOSS_PCT``) is a 422, never silently ignored.",
+      "properties": {
+        "acknowledgment": {
+          "minLength": 1,
+          "title": "Acknowledgment",
+          "type": "string"
+        },
+        "nonce": {
+          "minLength": 1,
+          "title": "Nonce",
+          "type": "string"
+        },
+        "settings": {
+          "additionalProperties": true,
+          "title": "Settings",
+          "type": "object"
+        }
+      },
+      "required": [
+        "acknowledgment",
+        "nonce"
+      ],
+      "title": "TradingSettingsRequest",
+      "type": "object"
+    },
+    "TradingSettingsResponse": {
+      "properties": {
+        "applied": {
+          "additionalProperties": true,
+          "title": "Applied",
+          "type": "object"
+        },
+        "changes": {
+          "items": {},
+          "title": "Changes",
+          "type": "array"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "success": {
+          "title": "Success",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "success",
+        "applied",
+        "changes",
+        "detail"
+      ],
+      "title": "TradingSettingsResponse",
+      "type": "object"
+    }
+  }
+}

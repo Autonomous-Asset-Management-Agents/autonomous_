@@ -1,0 +1,1737 @@
+{
+  "operationen": {
+    "GET /activities": {
+      "operationId": "get_activities_activities_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "max_orders",
+          "ort": "query",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/admin/portfolio-constraints/pending": {
+      "operationId": "get_portfolio_constraints_pending_api_admin_portfolio_constraints_pending_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/entitlement/license": {
+      "operationId": "entitlement_license_lookup_api_entitlement_license_get",
+      "parameter": [
+        {
+          "name": "order_identifier",
+          "ort": "query",
+          "pflicht": true
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/entitlement/status": {
+      "operationId": "get_entitlement_status_api_entitlement_status_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/hitl/pending": {
+      "operationId": "hitl_pending_api_hitl_pending_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/hitl/policy": {
+      "operationId": "hitl_get_policy_api_hitl_policy_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/performance-baseline": {
+      "operationId": "get_performance_baseline_api_performance_baseline_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/reconciliation/block": {
+      "operationId": "reconciliation_block_api_reconciliation_block_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/regime-preview": {
+      "operationId": "regime_preview_get_api_regime_preview_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/trading-settings": {
+      "operationId": "trading_settings_get_api_trading_settings_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /api/v2/universe": {
+      "operationId": "get_symbol_universe_api_v2_universe_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /benchmark-equity": {
+      "operationId": "get_benchmark_equity_benchmark_equity_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /compliance-status": {
+      "operationId": "get_compliance_status_compliance_status_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /diagnostics": {
+      "operationId": "diagnostics_diagnostics_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /engine-diagnostics": {
+      "operationId": "engine_diagnostics_engine_diagnostics_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /health": {
+      "operationId": "health_check_health_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /health/deep": {
+      "operationId": "deep_health_health_deep_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /health/readiness": {
+      "operationId": "readiness_check_health_readiness_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /market-regime": {
+      "operationId": "get_market_regime_market_regime_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /open-orders": {
+      "operationId": "get_open_orders_open_orders_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /portfolio-intraday": {
+      "operationId": "get_portfolio_intraday_portfolio_intraday_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "range",
+          "ort": "query",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /portfolio-summary": {
+      "operationId": "get_portfolio_summary_portfolio_summary_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /ready": {
+      "operationId": "ready_check_ready_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /recent-news": {
+      "operationId": "get_recent_news_recent_news_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /recent-trades": {
+      "operationId": "get_recent_trades_recent_trades_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "limit",
+          "ort": "query",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /risk-limits": {
+      "operationId": "get_risk_limits_risk_limits_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /round-table-decisions": {
+      "operationId": "get_round_table_decisions_route_round_table_decisions_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /round-table/{symbol}": {
+      "operationId": "get_round_table_for_symbol_round_table__symbol__get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "symbol",
+          "ort": "path",
+          "pflicht": true
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /simulation-result": {
+      "operationId": "simulation_result_simulation_result_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /specialist-report/{symbol}": {
+      "operationId": "get_specialist_report_specialist_report__symbol__get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "symbol",
+          "ort": "path",
+          "pflicht": true
+        },
+        {
+          "name": "fields",
+          "ort": "query",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /specialist-reports": {
+      "operationId": "get_specialist_reports_specialist_reports_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /staging-gate": {
+      "operationId": "staging_gate_staging_gate_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /stock-history": {
+      "operationId": "get_stock_history_stock_history_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "period",
+          "ort": "query",
+          "pflicht": false
+        },
+        {
+          "name": "symbol",
+          "ort": "query",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /strategy": {
+      "operationId": "get_strategy_strategy_get",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "GET /system-health": {
+      "operationId": "system_health_system_health_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "GET /top-picks": {
+      "operationId": "get_top_picks_top_picks_get",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/admin/iron-dome-policy": {
+      "operationId": "set_iron_dome_policy_api_admin_iron_dome_policy_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Iron-Dome-Admin-Token",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/admin/iron-dome-policy/approve": {
+      "operationId": "approve_iron_dome_policy_api_admin_iron_dome_policy_approve_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Iron-Dome-Admin-Token",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/admin/iron-dome-policy/propose": {
+      "operationId": "propose_iron_dome_policy_api_admin_iron_dome_policy_propose_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Iron-Dome-Admin-Token",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/admin/portfolio-constraints/approve": {
+      "operationId": "approve_portfolio_constraints_api_admin_portfolio_constraints_approve_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "PortfolioConstraintsApproveRequest"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/admin/portfolio-constraints/propose": {
+      "operationId": "propose_portfolio_constraints_api_admin_portfolio_constraints_propose_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "PortfolioConstraintsProposeRequest"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/entitlement/activate": {
+      "operationId": "entitlement_activate_api_entitlement_activate_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "ActivateRequest"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/entitlement/checkout": {
+      "operationId": "entitlement_checkout_api_entitlement_checkout_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "CheckoutRequest"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/entitlement/lemonsqueezy-webhook": {
+      "operationId": "entitlement_lemonsqueezy_webhook_api_entitlement_lemonsqueezy_webhook_post",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "POST /api/entitlement/webhook": {
+      "operationId": "entitlement_webhook_api_entitlement_webhook_post",
+      "parameter": [],
+      "body": null,
+      "antworten": [
+        "200"
+      ]
+    },
+    "POST /api/hitl/approve": {
+      "operationId": "hitl_approve_api_hitl_approve_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "HitlApproveRequest"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/hitl/policy": {
+      "operationId": "hitl_set_policy_api_hitl_policy_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "HitlPolicyUpdateDTO"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/hitl/reject": {
+      "operationId": "hitl_reject_api_hitl_reject_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "HitlRejectRequest"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/live/disable": {
+      "operationId": "live_disable_api_live_disable_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "LiveEnableRequest"
+        }
+      },
+      "antworten": [
+        "201",
+        "422"
+      ]
+    },
+    "POST /api/live/enable": {
+      "operationId": "live_enable_api_live_enable_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "LiveEnableRequest"
+        }
+      },
+      "antworten": [
+        "201",
+        "422"
+      ]
+    },
+    "POST /api/performance-baseline": {
+      "operationId": "set_performance_baseline_api_performance_baseline_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/portfolio-shape": {
+      "operationId": "portfolio_shape_api_portfolio_shape_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "PortfolioShapeRequest"
+        }
+      },
+      "antworten": [
+        "201",
+        "422"
+      ]
+    },
+    "POST /api/reconciliation/release": {
+      "operationId": "reconciliation_release_api_reconciliation_release_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": false,
+        "inhalt": {
+          "application/json": "ReconciliationReleaseRequest | null"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/settings-deviation-ack": {
+      "operationId": "settings_deviation_ack_api_settings_deviation_ack_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "SettingsDeviationAckRequest"
+        }
+      },
+      "antworten": [
+        "201",
+        "422"
+      ]
+    },
+    "POST /api/strategy/swap": {
+      "operationId": "strategy_swap_api_strategy_swap_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "SwapRequest"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /api/telemetry/switch-reconcile": {
+      "operationId": "telemetry_switch_reconcile_api_telemetry_switch_reconcile_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "SwitchReconcileRequest"
+        }
+      },
+      "antworten": [
+        "202",
+        "422"
+      ]
+    },
+    "POST /api/trading-settings": {
+      "operationId": "trading_settings_post_api_trading_settings_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "TradingSettingsRequest"
+        }
+      },
+      "antworten": [
+        "201",
+        "422"
+      ]
+    },
+    "POST /api/v1/engine/force-cycle": {
+      "operationId": "force_cycle_api_v1_engine_force_cycle_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /cancel-order": {
+      "operationId": "cancel_order_cancel_order_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /chat": {
+      "operationId": "chat_chat_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Sig",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-User-Id-Ts",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /panic-sell": {
+      "operationId": "panic_sell_panic_sell_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /reset-kill-switch": {
+      "operationId": "reset_kill_switch_reset_kill_switch_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /run-benchmark": {
+      "operationId": "run_benchmark_run_benchmark_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": false,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /run-learning": {
+      "operationId": "run_learn_run_learning_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /run-simulation": {
+      "operationId": "run_sim_run_simulation_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /set-strategy": {
+      "operationId": "set_strategy_set_strategy_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": {
+        "pflicht": true,
+        "inhalt": {
+          "application/json": "object"
+        }
+      },
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /start-live": {
+      "operationId": "start_live_start_live_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    },
+    "POST /stop": {
+      "operationId": "stop_stop_post",
+      "parameter": [
+        {
+          "name": "X-Bot-Api-Key",
+          "ort": "header",
+          "pflicht": false
+        },
+        {
+          "name": "X-Engine-Key",
+          "ort": "header",
+          "pflicht": false
+        }
+      ],
+      "body": null,
+      "antworten": [
+        "200",
+        "422"
+      ]
+    }
+  },
+  "websockets": [
+    "/ws/updates"
+  ]
+}

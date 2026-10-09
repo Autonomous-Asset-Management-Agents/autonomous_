@@ -1,0 +1,13 @@
+# aaagents.de — public marketing landing + legal pages
+# Authenticated console paths (/login, /auth/) are noindex — they exist but
+# should not show up in search results. Console UI lives on console.aaagents.de
+# which has its own robots (all disallowed) in the console deploy target.
+
+User-agent: *
+Allow: /
+Allow: /legal/
+
+Disallow: /login
+Disallow: /auth/
+
+Sitemap: https://aaagents.de/sitemap.xml

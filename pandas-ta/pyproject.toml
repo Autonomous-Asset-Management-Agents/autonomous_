@@ -1,0 +1,149 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm>=8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pandas-ta-classic"
+dynamic = ["version"]  # Version is dynamically determined from git tags
+description = "Technical Analysis Indicators - Pandas TA Classic is an easy to use Python 3 Pandas Extension with a comprehensive collection of indicators and TA-Lib patterns."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "xgboosted"}
+]
+maintainers = [
+    {name = "xgboosted"}
+]
+keywords = ["technical analysis", "trading", "python3", "pandas"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Operating System :: OS Independent",
+    "Natural Language :: English",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    # Python version classifiers below are PLACEHOLDERS
+    # Replaced dynamically by CI/CD during release based on generate-matrix job
+    # Format: LATEST_PYTHON_VERSION and 4 preceding minor versions
+    "Programming Language :: Python :: {{LATEST-4}}",
+    "Programming Language :: Python :: {{LATEST-3}}",
+    "Programming Language :: Python :: {{LATEST-2}}",
+    "Programming Language :: Python :: {{LATEST-1}}",
+    "Programming Language :: Python :: {{LATEST}}",
+]
+requires-python = ">=3.9"  # Minimum Python version - dynamically updated by CI/CD during release
+dependencies = [
+    "numpy>=2.0.0",
+    "pandas>=2.0.0",
+    "python-dateutil>=2.8.1",
+    "pytz>=2021.1",
+    "six>=1.16.0"
+]
+
+[project.optional-dependencies]
+# Core optional runtime dependencies
+optional = [
+    "scipy",
+    "sklearn",
+    "statsmodels",
+    "stochastic",
+    "talib",
+    "tqdm",
+]
+
+# Development tools (code quality, linting, building)
+dev = [
+    # Include testing dependencies
+    "pandas-ta-classic[test]",
+
+    # Include documentation dependencies
+    "pandas-ta-classic[docs]",
+
+    # Type checking and linting
+    "mypy>=1.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "isort>=5.0.0",
+
+    # Build tools
+    "build>=0.10.0",
+    "twine>=4.0.0",
+
+    # Pre-commit hooks
+    "pre-commit>=3.0.0",
+]
+
+# Testing framework
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-benchmark>=4.0.0",
+    "hypothesis>=6.0.0"
+]
+
+# Documentation building
+docs = [
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+    "myst-parser>=2.0.0",
+    "matplotlib",
+    "mplfinance"
+]
+
+# Performance optimization
+performance = [
+    "numba>=0.58.0",
+    "cython>=3.0.0"
+]
+
+# Data sources and external integrations
+integration = [
+    "vectorbt",
+    "backtrader",
+    "yfinance",
+    "alphaVantage-api"
+]
+
+# Complete environment with all features
+all = [
+    "pandas-ta-classic[optional,dev,test,docs,performance,integration]"
+]
+
+[project.urls]
+Homepage = "https://github.com/xgboosted/pandas-ta-classic"
+Repository = "https://github.com/xgboosted/pandas-ta-classic.git"
+Documentation = "https://xgboosted.github.io/pandas-ta-classic/"
+"Bug Tracker" = "https://github.com/xgboosted/pandas-ta-classic/issues"
+
+[tool.setuptools]
+packages = [
+    "pandas_ta_classic",
+    "pandas_ta_classic.candles",
+    "pandas_ta_classic.cycles",
+    "pandas_ta_classic.momentum",
+    "pandas_ta_classic.overlap",
+    "pandas_ta_classic.performance",
+    "pandas_ta_classic.statistics",
+    "pandas_ta_classic.trend",
+    "pandas_ta_classic.utils",
+    "pandas_ta_classic.utils.data",
+    "pandas_ta_classic.volatility",
+    "pandas_ta_classic.volume"
+]
+
+[tool.setuptools.package-data]
+"*" = ["data/*.csv"]
+
+[tool.setuptools_scm]
+# Automatically determine version from git tags
+# Tagged releases: X.Y.Z (e.g., 0.3.34)
+# Commits after tag: X.Y.(Z+1).devN (e.g., 0.3.35.dev1, 0.3.35.dev2)
+# This avoids .post0 on tagged commits while still tracking development versions
+write_to = "pandas_ta_classic/_version.py"
+# Default scheme: gives clean version on tags, next minor .devN after tags
+local_scheme = "no-local-version"  # Omit local version for clean releases
+fallback_version = "0.0.0"  # Fallback if not in a git repository
