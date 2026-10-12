@@ -1,0 +1,301 @@
+{
+  "header": {
+    "liveDemo": "DEMO ANSEHEN",
+    "download": "Herunterladen",
+    "language": "Sprache",
+    "downloadAria": "Herunterladen — Edition wählen",
+    "liveDemoAria": "Live-Demo ansehen"
+  },
+  "appliance": {
+    "eyebrow": "autonomous_ tower — limitierte first edition · nur 100 exemplare · lieferung 12·2026",
+    "hero": {
+      "h1": "Autonomous\ntower",
+      "subline": "Lautlos. Verlässlich. Immer an.",
+      "bodyLead": "ist die dedizierte Hardware für das",
+      "bodyMid": "Trading System. Auspacken, anschließen, einmalig mit dem Smartphone verbinden — von da an handelt",
+      "bodyTail": "nach Ihrer Trading-Strategie. Ohne Unterbrechung, sieben Tage die Woche. Lautlos und verlässlich. Von Ihrem Zuhause aus.",
+      "imgNote": "Abb. ähnlich",
+      "price": "Price on request",
+      "priceSuffix": "",
+      "ctaJoin": "Jetzt vormerken",
+      "ctaHow": "So funktioniert es",
+      "micro": "Keine Anzahlung erforderlich — wir kontaktieren Sie, sobald Ihr Exemplar bereitsteht."
+    },
+    "story": {
+      "h2": "Immer da. Jeden Tag, jede Stunde, jeden Augenblick.",
+      "silentTitle": "Jeden Tag im Markt",
+      "silentBody": "Der autonomous_ tower ist 24 Stunden aktiv, an sieben Tagen die Woche. Lautlos und still, aber immer da. Damit Ihr Portfolio und der Markt nie unbeobachtet bleiben.",
+      "materialsTitle": "Ihre private Installation",
+      "materialsBody": "Der autonomous_ tower ist optimiert für Ihre eigene, lokale KI. Sie benötigen keine Cloud-Lösung, kein Abo. Ihre Strategie, Ihre Daten und Ihr Broker-Zugang bleiben bei Ihnen zuhause.",
+      "tradesTitle": "Sofort einsatzbereit",
+      "tradesBody": "autonomous_ ist vorinstalliert und startet im Paper-Modus, wie jede Installation. Sie bestimmen die Regeln."
+    },
+    "how": {
+      "h2": "In zwei Minuten einsatzbereit.",
+      "step1Title": "Auspacken und anschließen",
+      "step1Body": "Ein Kabel, mehr braucht es nicht. Der autonomous_ tower startet selbstständig in den Einrichtungsmodus.",
+      "step2Title": "Per Smartphone verbinden",
+      "step2Body": "Der tower öffnet ein eigenes WLAN. Ihr Smartphone führt durch die Einrichtung: Heimnetz und Broker-Zugang.",
+      "step3Title": "Von überall erreichbar",
+      "step3BodyBefore": "Ihr Dashboard ist erreichbar unter",
+      "step3BodyAfter": "— im Büro, unterwegs, weltweit. Ohne Konfiguration."
+    },
+    "specs": {
+      "h2": "Das Datenblatt.",
+      "finish": "Ausführung",
+      "finishV": "Massives Walnussholz · CNC-Aluminium",
+      "acoustics": "Akustik",
+      "acousticsV": "0 dB — lüfterlos, keine beweglichen Teile",
+      "memory": "Speicher",
+      "memoryV": "32 GB · 500 GB NVMe",
+      "connectivity": "Konnektivität",
+      "connectivityV": "WLAN · Gigabit-Ethernet",
+      "software": "Software",
+      "softwareV": "autonomous OSS, vorinstalliert · Updates over the air",
+      "inTheBox": "Lieferumfang",
+      "inTheBoxV": "Gerät · Netzteil · Quick-Start-Karte",
+      "price": "Preis",
+      "priceV": "Price on request",
+      "note": "Die Konfiguration kann sich bis zur Auslieferung ändern."
+    },
+    "wait": {
+      "h2": "Sichern Sie sich Ihr Exemplar.",
+      "lead": "Die First Edition ist auf 100 Exemplare limitiert. Tragen Sie sich ein — bestätigen Sie per E-Mail, dann steht Ihre Position fest.",
+      "emailPlaceholder": "ihre.adresse@beispiel.de",
+      "join": "Jetzt vormerken",
+      "joining": "Wird vorgemerkt…",
+      "pendingHint": "Prüfen Sie Ihr Postfach — bestätigen Sie den Link, dann ist Ihr Platz gesichert.",
+      "error": "Der Eintrag ist fehlgeschlagen — der Wartelisten-Dienst hat nicht geantwortet. Ihr Eintrag wurde nicht gespeichert; bitte versuchen Sie es erneut.",
+      "inviteSuffix": "— jede bestätigte Anmeldung über Ihren Link verbessert Ihre Position",
+      "micro": "Der Eintrag ist kostenlos und stellt keinen Kauf dar. Sie können die Liste jederzeit verlassen."
+    },
+    "faq": {
+      "h2": "Fragen.",
+      "q1": "Wann wird geliefert?",
+      "a1": "Die First Edition ist für Dezember 2026 geplant. Ihr Platz auf der Warteliste bestimmt die Lieferreihenfolge.",
+      "q2": "Zahle ich jetzt bereits?",
+      "a2": "Nein. Die Warteliste ist kostenlos. Wir kontaktieren Sie mit einem Bestell-Link, sobald Ihr Exemplar versandbereit ist.",
+      "q3": "Was wird benötigt?",
+      "a3": "Ein Broker-Konto und Ihr Heim-WLAN. Kein Monitor, keine Tastatur, keine technische Einrichtung.",
+      "q4": "Ist die Software enthalten?",
+      "a4": "Ja. Ihr Gerät wird mit vorinstalliertem autonomous ausgeliefert und erhält Updates over the air."
+    },
+    "footer": {
+      "risk": "autonomous ist ein reines Ausführungswerkzeug (Execution-only). Der Handel mit Finanzinstrumenten ist mit erheblichen Risiken verbunden, bis hin zum Totalverlust. Die Wertentwicklung der Vergangenheit ist kein verlässlicher Indikator für zukünftige Ergebnisse.",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "riskDisclosure": "Risikohinweise",
+      "terms": "AGB"
+    }
+  },
+  "landing": {
+    "hero": {
+      "h1a": "autonomous",
+      "h1b": "trading",
+      "sub": "Sie bestimmen die Regeln.",
+      "body": "macht aus Ihrer Strategie professionelles algorithmisches Trading. Steuern Sie Ihre 14 Agenten, KI-basiert und deterministisch. Lassen Sie sie den Markt rund um die Uhr beobachten und nur innerhalb Ihrer Leitplanken handeln.",
+      "ctaDemo": "LIVE-DEMO",
+      "ctaDownload": "DOWNLOAD",
+      "rot1": "führt effizient aus.",
+      "rot2": "Auf Desktop, Server oder in der Cloud.",
+      "rot3": "Mit algorithmischer Präzision.",
+      "flagKicker": "Neue Hardware · Preis auf Anfrage",
+      "flagName": "autonomous_ tower",
+      "exp": {
+        "positioning": {
+          "h1a": "Ihre Strategie.",
+          "h1b": "Regeltreu ausgeführt."
+        }
+      }
+    },
+    "profit": {
+      "h2": "Ihre Regeln.",
+      "intro": "übernimmt das Handeln. Sie entwerfen die Strategie. Legen Sie die Regeln für seine Agenten und den Iron Dome fest: Aktienauswahl, Risikomanagement, Limits. Sie bestimmen die Regeln.",
+      "p1": {
+        "lead": "Über 60 Parameter.",
+        "text": "Anzahl der Positionen, Ordergröße, Einstiegsschwellen, Stopps, Exposure, Trades pro Tag. Dazu gewichten Sie die 14 Agenten."
+      },
+      "p2": {
+        "lead": "Risikoprüfung bei jeder Order.",
+        "text": "Ordergröße, Exposure und Ihre eigenen Limits werden geprüft, bevor etwas gesendet wird. Sie setzt Ihre Limits durch, Verluste verhindern kann sie nicht."
+      },
+      "p3": {
+        "lead": "Not-Aus.",
+        "text": "Stoppen Sie den gesamten Handel jederzeit mit einem Klick, auf Wunsch mit Verkauf aller Positionen."
+      },
+      "p4": {
+        "lead": "Zuerst Paper-Modus.",
+        "text": "Jede Installation startet mit Spielgeld und Live-Marktdaten. Echtes Geld bewegt sich erst nach Ihrer ausdrücklichen Freigabe."
+      }
+    },
+    "audit": {
+      "h2": "Open Source.",
+      "intro": "ist Open Source unter der Lizenz Apache 2.0. Lesen Sie den Code, prüfen Sie jede Entscheidung, erweitern Sie ihn um Ihre eigene Logik.",
+      "p1": {
+        "lead": "Eine Begründung je Stimme.",
+        "text": "Jeder Agent nennt sein Argument im Klartext. Sie sehen, wer abgestimmt hat, wie stark und warum."
+      },
+      "p2": {
+        "lead": "Hash-verkettetes Audit-Log.",
+        "text": "Entscheidungen werden in ein hash-verkettetes Log geschrieben. Jede spätere Änderung an einem Eintrag wird sichtbar."
+      },
+      "p3": {
+        "lead": "Apache 2.0.",
+        "text": "Der Kern steht unter der Lizenz Apache 2.0. Lesen Sie nach, was er tut, Zeile für Zeile."
+      },
+      "p4": {
+        "lead": "Prüfen, anpassen, wiederholen.",
+        "text": "Vergleichen Sie Entscheidungen mit Ergebnissen, passen Sie eine Regel an und lassen Sie sie erneut im Paper-Modus laufen. Ihre Strategie wird an Belegen besser, nicht an Erinnerungen."
+      }
+    },
+    "safe": {
+      "h2": "Ihre Daten.",
+      "intro": "lässt Ihre Daten bei Ihnen. Ihre Broker-Schlüssel, Ihre Strategie und Ihr Handelsverlauf bleiben auf Ihrem eigenen Rechner oder Server, nicht bei uns.",
+      "p1": {
+        "lead": "Schlüssel im Schlüsselbund.",
+        "text": "Broker-API-Schlüssel liegen verschlüsselt im Schlüsselbund Ihres Betriebssystems."
+      },
+      "p2": {
+        "lead": "Lokale KI.",
+        "text": "Auf dem Desktop läuft das KI-Modell standardmäßig lokal. Keine Abhängigkeit von einem Cloud-KI-Anbieter."
+      },
+      "p3": {
+        "lead": "Telemetrie aus.",
+        "text": "Keine Nutzungsdaten verlassen Ihren Rechner, solange Sie das nicht einschalten."
+      },
+      "p4": {
+        "lead": "Keine Auszahlungen.",
+        "text": "Die Software hat keine Funktion für Auszahlungen oder Überweisungen. Ihr Geld bleibt bei Ihrem Broker."
+      }
+    },
+    "editions": {
+      "h2": "Editions",
+      "towerKicker": "neu · hardware",
+      "towerH3a": "Entdecken Sie den",
+      "towerNew": "neuen",
+      "towerH3b": "tower: Ihre Regeln, immer an.",
+      "learnMore": "Mehr erfahren",
+      "inclVat": "zzgl. MwSt.",
+      "metaDesktop": "· limitierte Erstauflage · 100 Stück · Lieferung 12·2026",
+      "metaMobile": "limitierte Erstauflage · 100 Stück · Lieferung 12·2026",
+      "foot": "Ein Open-Source-Kern (Apache 2.0) auf Ihrem Desktop, Ihrem Server oder in Ihrer Cloud. Paper-Trading ist immer kostenlos. Live-Handel auf dem Desktop kostet 1 € im Monat inkl. MwSt., kostenlos bis 31. Dezember 2026.",
+      "tile1": {
+        "title": "Immer an",
+        "body": "Der autonomous_ tower läuft rund um die Uhr, lautlos, auf Ihrem Schreibtisch. Die Überwachung endet nie; Orders folgen den US-Börsenzeiten."
+      },
+      "tile2": {
+        "title": "Lokale KI, keine Cloud",
+        "body": "Gebaut für lokale KI. Ihre Strategie, Ihre Daten und Ihre Broker-Schlüssel bleiben bei Ihnen zu Hause."
+      },
+      "tile3": {
+        "title": "Startklar ab Tag eins",
+        "body": "autonomous_ ist vorinstalliert und startet im Paper-Modus, wie jede Installation. Sie bestimmen die Regeln."
+      }
+    },
+    "footer": {
+      "help": "Hilfe",
+      "legal": "Rechtliches",
+      "support": "Support",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "risk": "Risikohinweis",
+      "tagline": "autonomous_ trading. Sie bestimmen die Regeln.",
+      "riskNote": "Trading ist mit Risiken verbunden. Der Wert Ihrer Anlagen kann fallen und steigen, und Sie können das eingesetzte Kapital verlieren. Automatisierte Ausführung und Limits beseitigen dieses Risiko nicht. Frühere Ergebnisse, real oder simuliert, sind keine Garantie für künftige Ergebnisse.",
+      "copyright": "© aaagents · Entwickelt in Europa"
+    },
+    "about": {
+      "roleGeorg": "Gründer, CEO",
+      "roleAndreas": "Mitgründer, KI-Architekt",
+      "h2": "Über uns",
+      "p1": "wird von AAAgents entwickelt, einem Softwareunternehmen aus Deutschland. Wir entwickeln Software für algorithmisches Trading. Wir verwalten kein Geld für andere, und autonomous_ ist weder Robo-Advisor noch Altersvorsorgeprodukt.",
+      "p2": "Wir betreiben autonomous_ mit eigenem Kapital. Heute testen es 25 Beta-Nutzer, 11 davon mit echtem Geld. Der Kern ist Open Source, Sie können also alles prüfen, was wir hier schreiben.",
+      "disclaimer": "Hinweis: Die Informationen auf dieser Website sind keine Anlageberatung, keine Finanzvermittlung und kein Angebot zum Kauf oder Verkauf von Wertpapieren. Wir sind ein Technologieunternehmen, kein Finanzdienstleister. Alle Inhalte geben ausschließlich unsere eigenen Handelsaktivitäten und unternehmerischen Entscheidungen wieder."
+    },
+    "pricing": {
+      "private": {
+        "junior": {
+          "eyebrow": "Desktop · Windows & macOS",
+          "name": "Private",
+          "tag": "Paper-Trading auf Ihrem eigenen PC, dauerhaft kostenlos. Algorithmisches Trading für Ihre eigene Strategie, mit einem Klick installiert.",
+          "price": "0,00 €",
+          "priceSub": "/ dauerhaft",
+          "f1": {
+            "title": "Paper-Modus",
+            "desc": "Testen Sie Ihre Regeln mit Spielgeld und Live-Marktdaten, bevor echtes Geld fließt."
+          },
+          "f2": {
+            "title": "14 Agenten auf Ihrem Desktop",
+            "desc": "Alle Agenten laufen auf Ihrem PC, standardmäßig mit einem lokalen KI-Modell."
+          },
+          "f3": {
+            "title": "Ihre Daten bleiben lokal",
+            "desc": "Keine Telemetrie, solange Sie sie nicht einschalten. Ihre Schlüssel bleiben im Schlüsselbund Ihres Systems."
+          }
+        },
+        "senior": {
+          "eyebrow": "Desktop · Windows & macOS",
+          "name": "Private",
+          "tag": "Alles aus Private, dazu Live-Handel mit Ihrem Broker, sobald Sie ihn freigeben.",
+          "price": "1,00 €",
+          "priceSub": "/ Monat inkl. MwSt.",
+          "priceMeta": "oder 12,00 € / Jahr · kostenlos bis 31.12.2026",
+          "f1": {
+            "title": "Live-Handel",
+            "desc": "Verbinden Sie Ihr Alpaca-Konto. Jede Order durchläuft zuerst die Risikoprüfung."
+          },
+          "f2": {
+            "title": "Tägliche Zusammenfassungen",
+            "desc": "Automatische Portfolio-Zusammenfassungen in Ihre eigenen Kanäle, etwa Slack oder Telegram."
+          },
+          "f3": {
+            "title": "Bevorzugter Support",
+            "desc": "Schneller E-Mail-Support, während Sie live handeln."
+          }
+        }
+      },
+      "professional": {
+        "eyebrow": "Open Source · Docker",
+        "name": "Developer",
+        "tag": "Derselbe Kern für Ihren eigenen Server oder Ihre Cloud. Apache 2.0, läuft ohne Oberfläche, einmal gebaut und überall lauffähig.",
+        "price": "0,00 €",
+        "priceSub": "/ dauerhaft",
+        "f1": {
+          "title": "Docker-Stack",
+          "desc": "Vorkonfigurierte Container für Ihren eigenen Server, AWS, GCP oder Bare Metal."
+        },
+        "f2": {
+          "title": "Ohne Oberfläche, rund um die Uhr",
+          "desc": "Läuft als Hintergrunddienst mit geringem Ressourcenbedarf."
+        },
+        "f3": {
+          "title": "Abfragbare Logs",
+          "desc": "Audit-Log und Kennzahlen über die Kommandozeile oder Ihre eigenen Dashboards."
+        }
+      },
+      "institutional": {
+        "eyebrow": "Cloud Native",
+        "name": "Institutional",
+        "tag": "Für professionelle Teams: derselbe Kern in Ihrer Cloud, mit manipulationserkennbarer Audit-Speicherung und Betrieb mehrerer Konten.",
+        "price": "Individuell",
+        "priceMeta": "Angebot anfragen",
+        "f1": {
+          "title": "Audit-fähiges Logging",
+          "desc": "Hash-verkettete, manipulationserkennbare Logs, gespeichert in Ihrer eigenen Cloud."
+        },
+        "f2": {
+          "title": "Governance über mehrere Konten",
+          "desc": "Zentrale Regeln und Limits für mehrere Konten, strikt getrennt."
+        },
+        "f3": {
+          "title": "Direkte Partnerschaft",
+          "desc": "Ein fester Ansprechpartner und Engineering-Support für Ihr Setup."
+        }
+      }
+    },
+    "agents": {
+      "h1a": "KI unterstützt.",
+      "h1b": "Ihre Regeln entscheiden.",
+      "lede": "14 Agenten betrachten den Markt aus verschiedenen Blickwinkeln, KI-basiert und deterministisch. Jeder gibt eine gewichtete Stimme mit schriftlicher Begründung ab. Die KI hat keinen direkten Draht zu Ihrem Broker: Ihre Stimmen fließen in deterministische Regeln ein, und diese Regeln entscheiden innerhalb Ihrer Limits, ob und wie viel gehandelt wird. Sie wählen, welche Agenten abstimmen und wie stark jede Stimme zählt."
+    }
+  }
+}

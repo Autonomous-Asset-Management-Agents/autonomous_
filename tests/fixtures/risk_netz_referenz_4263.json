@@ -1,0 +1,1254 @@
+{
+  "erholung_frei": {
+    "gelaufen": {
+      "_liquidate_through_gateway": 1,
+      "liquidate_positions": 1,
+      "submit_with_result": 2,
+      "update_account_equity": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(80000.0, True) +0h",
+        "broker": [
+          {
+            "args": [],
+            "methode": "get_all_positions"
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 10.0,
+              "side": "sell",
+              "symbol": "AAPL",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 4.0,
+              "side": "sell",
+              "symbol": "MSFT",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          }
+        ],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          },
+          {
+            "event_type": "circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 20.00% - Reducing position sizes to 50%"
+          ],
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Daily drawdown limit exceeded (20.00%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 CIRCUIT BREAKER #1 TRIGGERED - Halting new trades"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "   Drawdown: $20,000.00 (20.00%) > Limit $17,500.00"
+          ],
+          [
+            "WARNING",
+            "liquidate_positions",
+            "[Liquidation breaker] 2 Position(en) geschlossen (decision_id=breaker-<uuid4>)"
+          ]
+        ],
+        "spans": [],
+        "tor": [
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          },
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          }
+        ],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "update_account_equity(95000.0, True) +0h",
+        "broker": [],
+        "eigener_halt": false,
+        "ereignisse": [
+          {
+            "event_type": "unlock",
+            "severity": "info"
+          }
+        ],
+        "ergebnis": null,
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": false,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "erholung_gesperrt": {
+    "gelaufen": {
+      "_liquidate_through_gateway": 1,
+      "liquidate_positions": 1,
+      "submit_with_result": 2,
+      "update_account_equity": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(80000.0, True) +0h",
+        "broker": [
+          {
+            "args": [],
+            "methode": "get_all_positions"
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 10.0,
+              "side": "sell",
+              "symbol": "AAPL",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 4.0,
+              "side": "sell",
+              "symbol": "MSFT",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          }
+        ],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          },
+          {
+            "event_type": "circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 20.00% - Reducing position sizes to 50%"
+          ],
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Daily drawdown limit exceeded (20.00%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 CIRCUIT BREAKER #1 TRIGGERED - Halting new trades"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "   Drawdown: $20,000.00 (20.00%) > Limit $17,500.00"
+          ],
+          [
+            "WARNING",
+            "liquidate_positions",
+            "[Liquidation breaker] 2 Position(en) geschlossen (decision_id=breaker-<uuid4>)"
+          ]
+        ],
+        "spans": [],
+        "tor": [
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          },
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          }
+        ],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "update_account_equity(95000.0, False) +0h",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [],
+        "ergebnis": null,
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "erholung_nach_3h": {
+    "gelaufen": {
+      "_liquidate_through_gateway": 1,
+      "liquidate_positions": 1,
+      "submit_with_result": 2,
+      "update_account_equity": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(80000.0, True) +0h",
+        "broker": [
+          {
+            "args": [],
+            "methode": "get_all_positions"
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 10.0,
+              "side": "sell",
+              "symbol": "AAPL",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 4.0,
+              "side": "sell",
+              "symbol": "MSFT",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          }
+        ],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          },
+          {
+            "event_type": "circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 20.00% - Reducing position sizes to 50%"
+          ],
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Daily drawdown limit exceeded (20.00%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 CIRCUIT BREAKER #1 TRIGGERED - Halting new trades"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "   Drawdown: $20,000.00 (20.00%) > Limit $17,500.00"
+          ],
+          [
+            "WARNING",
+            "liquidate_positions",
+            "[Liquidation breaker] 2 Position(en) geschlossen (decision_id=breaker-<uuid4>)"
+          ]
+        ],
+        "spans": [],
+        "tor": [
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          },
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          }
+        ],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "update_account_equity(93000.0, True) +3h",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [],
+        "ergebnis": null,
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.3
+        }
+      }
+    ]
+  },
+  "erholung_nach_5h": {
+    "gelaufen": {
+      "_liquidate_through_gateway": 1,
+      "liquidate_positions": 1,
+      "submit_with_result": 2,
+      "update_account_equity": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(80000.0, True) +0h",
+        "broker": [
+          {
+            "args": [],
+            "methode": "get_all_positions"
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 10.0,
+              "side": "sell",
+              "symbol": "AAPL",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 4.0,
+              "side": "sell",
+              "symbol": "MSFT",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          }
+        ],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          },
+          {
+            "event_type": "circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 20.00% - Reducing position sizes to 50%"
+          ],
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Daily drawdown limit exceeded (20.00%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 CIRCUIT BREAKER #1 TRIGGERED - Halting new trades"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "   Drawdown: $20,000.00 (20.00%) > Limit $17,500.00"
+          ],
+          [
+            "WARNING",
+            "liquidate_positions",
+            "[Liquidation breaker] 2 Position(en) geschlossen (decision_id=breaker-<uuid4>)"
+          ]
+        ],
+        "spans": [],
+        "tor": [
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          },
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          }
+        ],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "update_account_equity(95000.0, True) +5h",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [],
+        "ergebnis": null,
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.2
+        }
+      }
+    ]
+  },
+  "erholung_nach_portfolio_stop": {
+    "gelaufen": {
+      "update_account_equity": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(90000.0, True) +0h",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "portfolio_stop_loss",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Portfolio stop loss (10.0%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 PORTFOLIO STOP LOSS - Max loss from session start reached. Equity $90,000.00 is 10.0% below session start $100,000.00 (limit 7%). Halting new trades."
+          ]
+        ],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": true,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": true,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "update_account_equity(100000.0, True) +0h",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [],
+        "ergebnis": null,
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": true,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": true,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "halt_ausgang": {
+    "gelaufen": {
+      "evaluate_new_trade": 1
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "evaluate_new_trade(AAPL, buy, {'vix': 20.0})",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [],
+        "ergebnis": [
+          false,
+          "System or User HALTED by Kill Switch / Risk Manager",
+          {}
+        ],
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": false,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "ki_regel_blockiert": {
+    "gelaufen": {
+      "evaluate_new_trade": 2,
+      "resolve_vix": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "evaluate_new_trade(AAPL, buy, {'vix': 20.0})",
+        "broker": [],
+        "eigener_halt": false,
+        "ereignisse": [],
+        "ergebnis": [
+          false,
+          "Blocked by AI Rule: Netz H-3a",
+          {}
+        ],
+        "log": [],
+        "spans": [
+          {
+            "attribute": {
+              "risk.approved": false,
+              "risk.reason": "Blocked by AI Rule: Netz H-3a",
+              "symbol": "AAPL",
+              "trade.side": "buy"
+            },
+            "name": "risk.evaluate_trade"
+          }
+        ],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": false,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "evaluate_new_trade(AAPL, sell, {'vix': 20.0})",
+        "broker": [],
+        "eigener_halt": false,
+        "ereignisse": [],
+        "ergebnis": [
+          true,
+          "Approved",
+          {
+            "size_scaler": 1.0,
+            "sl_multiplier": 3.0
+          }
+        ],
+        "log": [],
+        "spans": [
+          {
+            "attribute": {
+              "risk.approved": true,
+              "symbol": "AAPL",
+              "trade.side": "sell"
+            },
+            "name": "risk.evaluate_trade"
+          }
+        ],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": false,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "portfolio_stop": {
+    "gelaufen": {
+      "update_account_equity": 1
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(90000.0, True) +0h",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "portfolio_stop_loss",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Portfolio stop loss (10.0%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 PORTFOLIO STOP LOSS - Max loss from session start reached. Equity $90,000.00 is 10.0% below session start $100,000.00 (limit 7%). Halting new trades."
+          ]
+        ],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": true,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": true,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "reset_daily_limit": {
+    "gelaufen": {
+      "_liquidate_through_gateway": 1,
+      "liquidate_positions": 1,
+      "reset_daily_limit": 2,
+      "submit_with_result": 2,
+      "update_account_equity": 1
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(80000.0, True) +0h",
+        "broker": [
+          {
+            "args": [],
+            "methode": "get_all_positions"
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 10.0,
+              "side": "sell",
+              "symbol": "AAPL",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 4.0,
+              "side": "sell",
+              "symbol": "MSFT",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          }
+        ],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          },
+          {
+            "event_type": "circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 20.00% - Reducing position sizes to 50%"
+          ],
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Daily drawdown limit exceeded (20.00%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 CIRCUIT BREAKER #1 TRIGGERED - Halting new trades"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "   Drawdown: $20,000.00 (20.00%) > Limit $17,500.00"
+          ],
+          [
+            "WARNING",
+            "liquidate_positions",
+            "[Liquidation breaker] 2 Position(en) geschlossen (decision_id=breaker-<uuid4>)"
+          ]
+        ],
+        "spans": [],
+        "tor": [
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          },
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          }
+        ],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "reset_daily_limit(90000.0)",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [],
+        "ergebnis": null,
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 15750.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": false,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "reset_daily_limit(None)",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "reset_daily_limit",
+            "RiskManager.reset_daily_limit: current_equity is None → 0.0 safe default (fail-closed) (§5.6)."
+          ]
+        ],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 0.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": false,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "tages_limit": {
+    "gelaufen": {
+      "_liquidate_through_gateway": 1,
+      "liquidate_positions": 1,
+      "submit_with_result": 2,
+      "update_account_equity": 1
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(80000.0, True) +0h",
+        "broker": [
+          {
+            "args": [],
+            "methode": "get_all_positions"
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 10.0,
+              "side": "sell",
+              "symbol": "AAPL",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          },
+          {
+            "methode": "submit_order",
+            "order": {
+              "art": "MarketOrderRequest",
+              "client_order_id": "abgeleitet",
+              "qty": 4.0,
+              "side": "sell",
+              "symbol": "MSFT",
+              "time_in_force": "day",
+              "type": "market"
+            }
+          }
+        ],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          },
+          {
+            "event_type": "circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 20.00% - Reducing position sizes to 50%"
+          ],
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Daily drawdown limit exceeded (20.00%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 CIRCUIT BREAKER #1 TRIGGERED - Halting new trades"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "   Drawdown: $20,000.00 (20.00%) > Limit $17,500.00"
+          ],
+          [
+            "WARNING",
+            "liquidate_positions",
+            "[Liquidation breaker] 2 Position(en) geschlossen (decision_id=breaker-<uuid4>)"
+          ]
+        ],
+        "spans": [],
+        "tor": [
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          },
+          {
+            "decision_id": "breaker-<uuid4>",
+            "freigegeben": true,
+            "gehalten": false,
+            "grund": "breaker"
+          }
+        ],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "tages_limit_ohne_positionsabfrage": {
+    "gelaufen": {
+      "_liquidate_through_gateway": 1,
+      "update_account_equity": 1
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(80000.0, True) +0h",
+        "broker": [],
+        "eigener_halt": true,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          },
+          {
+            "event_type": "circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 20.00% - Reducing position sizes to 50%"
+          ],
+          [
+            "WARNING",
+            "trip",
+            "Lokaler Halt (Simulation) ausgeloest fuer netz: Daily drawdown limit exceeded (20.00%)"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "🔴 CIRCUIT BREAKER #1 TRIGGERED - Halting new trades"
+          ],
+          [
+            "CRITICAL",
+            "update_account_equity",
+            "   Drawdown: $20,000.00 (20.00%) > Limit $17,500.00"
+          ],
+          [
+            "ERROR",
+            "_liquidate_through_gateway",
+            "   Breaker-Liquidation: Broker kennt get_all_positions nicht — es wird NICHTS geschlossen. Der Halt steht, der Bestand bleibt."
+          ]
+        ],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 1,
+          "last_halt_time": "2026-10-06T14:00:00",
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": true,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "vix_unbestaetigt": {
+    "gelaufen": {
+      "evaluate_new_trade": 2,
+      "resolve_vix": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "evaluate_new_trade(AAPL, buy, {})",
+        "broker": [],
+        "eigener_halt": false,
+        "ereignisse": [],
+        "ergebnis": [
+          false,
+          "Blocked (fail-closed, §5.6): VIX unconfirmed — new buys blocked",
+          {}
+        ],
+        "log": [
+          [
+            "WARNING",
+            "resolve_vix",
+            "[VIX] resolve_vix: VIX missing — FAIL-CLOSED (max de-risk / block new buys). Consumers must treat volatility as UNKNOWN, not calm (§5.6)."
+          ],
+          [
+            "WARNING",
+            "evaluate_new_trade",
+            "[VIX] evaluate_new_trade(AAPL): VIX unconfirmed — new BUY blocked (fail-closed §5.6). SELL / de-risk unaffected."
+          ]
+        ],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": false,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "evaluate_new_trade(AAPL, sell, {})",
+        "broker": [],
+        "eigener_halt": false,
+        "ereignisse": [],
+        "ergebnis": [
+          true,
+          "Approved",
+          {
+            "size_scaler": 1.0,
+            "sl_multiplier": 3.0
+          }
+        ],
+        "log": [
+          [
+            "WARNING",
+            "resolve_vix",
+            "[VIX] resolve_vix: VIX missing — FAIL-CLOSED (max de-risk / block new buys). Consumers must treat volatility as UNKNOWN, not calm (§5.6)."
+          ]
+        ],
+        "spans": [
+          {
+            "attribute": {
+              "risk.approved": true,
+              "symbol": "AAPL",
+              "trade.side": "sell"
+            },
+            "name": "risk.evaluate_trade"
+          }
+        ],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.07,
+          "trading_halted": false,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  },
+  "warnstufe": {
+    "gelaufen": {
+      "update_account_equity": 2
+    },
+    "globaler_halt": {
+      "resets": 0,
+      "trips": 0
+    },
+    "schritte": [
+      {
+        "aufruf": "update_account_equity(88000.0, True) +0h",
+        "broker": [],
+        "eigener_halt": false,
+        "ereignisse": [
+          {
+            "event_type": "warning",
+            "severity": "warning"
+          }
+        ],
+        "ergebnis": null,
+        "log": [
+          [
+            "WARNING",
+            "update_account_equity",
+            "⚠️  WARNING PHASE: Drawdown at 12.00% - Reducing position sizes to 50%"
+          ]
+        ],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": false,
+          "trading_reduced": true,
+          "unlock_recovery_percent": 0.5
+        }
+      },
+      {
+        "aufruf": "update_account_equity(92000.0, True) +0h",
+        "broker": [],
+        "eigener_halt": false,
+        "ereignisse": [
+          {
+            "event_type": "recovery",
+            "severity": "info"
+          }
+        ],
+        "ergebnis": null,
+        "log": [],
+        "spans": [],
+        "tor": [],
+        "zustand": {
+          "_portfolio_stop_triggered": false,
+          "daily_drawdown_limit": 17500.0,
+          "halt_trigger_count": 0,
+          "last_halt_time": null,
+          "portfolio_stop_loss_pct": 0.0,
+          "trading_halted": false,
+          "trading_reduced": false,
+          "unlock_recovery_percent": 0.5
+        }
+      }
+    ]
+  }
+}

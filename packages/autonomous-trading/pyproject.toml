@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autonomous-trading"
+version = "0.0.1"
+description = "Brand namespace placeholder for the autonomous_ open-source developer tooling - NOT a trading product, service, or investment advice."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Autonomous Asset Management Agents UG", email = "support@aaagents.de" }]
+keywords = ["autonomous", "namespace", "placeholder", "reserved"]
+dependencies = []
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://aaagents.de"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["autonomous_trading*"]

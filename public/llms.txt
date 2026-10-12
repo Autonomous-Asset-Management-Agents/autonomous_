@@ -1,0 +1,35 @@
+# AAAgents
+
+> AAAgents is an open source execution framework for rules-based trading. Users define their own strategy from deterministic rules, quant analytics and machine learning; the software executes it automatically, auditable and bounded by hard risk limits. Paper mode (simulated trading) is the default; live trading requires a deliberate, separately confirmed switch. AAAgents is a software tool: it gives no investment advice, does not pick investments and does not manage portfolios on behalf of its users.
+
+Key facts:
+
+- Licence: Apache-2.0, source code on GitHub.
+- Editions: a free desktop version (Windows, macOS) for paper trading and a hardware tower edition; same trading core and risk engine.
+- Decisions: 14 agents, 8 of them cast a directional vote; one sized signal comes out of the weighted vote; every action is written to a tamper-evident audit log.
+- Broker: Alpaca (user's own account); paper mode is the default.
+- Desktop installer available (Releases, see Download below).
+- Broker access runs directly from the user's own installation to the user's own broker account; no third party holds the user's funds.
+- Developed by AAAgents, Germany. The maintainers do not hold a BaFin authorisation; see the risk disclosure below.
+
+## Docs
+
+- [README](https://github.com/Autonomous-Asset-Management-Agents/autonomous_#readme): overview, installation and configuration of the open source edition
+- [Source code](https://github.com/Autonomous-Asset-Management-Agents/autonomous_): repository of the execution framework
+- [Website](https://aaagents.de/): product overview
+
+## Download
+
+- [Releases](https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases): desktop installers for Windows and macOS
+
+## Legal
+
+- [Risk disclosure](https://aaagents.de/legal/risk-disclosure): trading risks and the limits of the software
+- [Legal notice](https://aaagents.de/legal/notice): copyright, licence and software attributions
+- [Terms](https://aaagents.de/legal/terms): terms of use
+- [Imprint](https://aaagents.de/legal/imprint): provider information
+- [Privacy](https://aaagents.de/legal/privacy): data protection
+
+## Optional
+
+- [Live demo](https://aaagents.de/live-demo): the agent on a fictitious paper-trading demo account

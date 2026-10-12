@@ -1,0 +1,18 @@
+{
+  "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000201/form4.xml": {
+    "status": 200,
+    "text": "<ownershipDocument><nonDerivativeTransaction><transactionCoding><transactionCode>S</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>120,000</value></transactionShares></transactionAmounts></nonDerivativeTransaction><nonDerivativeTransaction><transactionCoding><transactionCode>S</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>30,000</value></transactionShares></transactionAmounts></nonDerivativeTransaction></ownershipDocument>"
+  },
+  "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000198/form4.xml": {
+    "status": 200,
+    "text": "<ownershipDocument><nonDerivativeTransaction><transactionCoding><transactionCode>P</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>5,000</value></transactionShares></transactionAmounts></nonDerivativeTransaction><nonDerivativeTransaction><transactionCoding><transactionCode>S</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>1,000</value></transactionShares></transactionAmounts></nonDerivativeTransaction></ownershipDocument>"
+  },
+  "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000190/form4.xml": {
+    "status": 200,
+    "text": "<ownershipDocument><nonDerivativeTransaction><transactionCoding><transactionCode>A</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>40,000</value></transactionShares></transactionAmounts></nonDerivativeTransaction><nonDerivativeTransaction><transactionCoding><transactionCode>F</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>12,000</value></transactionShares></transactionAmounts></nonDerivativeTransaction></ownershipDocument>"
+  },
+  "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000185/form4.xml": {
+    "status": 200,
+    "text": "<ownershipDocument><nonDerivativeTransaction><transactionCoding><transactionCode>P</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>2,500</value></transactionShares></transactionAmounts></nonDerivativeTransaction><nonDerivativeTransaction><transactionCoding><transactionCode>S</transactionCode></transactionCoding><transactionAmounts><transactionShares><value>2,500</value></transactionShares></transactionAmounts></nonDerivativeTransaction></ownershipDocument>"
+  }
+}

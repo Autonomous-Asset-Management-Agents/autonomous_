@@ -1,0 +1,172 @@
+{
+  "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=4&ciks=0001045810&dateRange=custom&startdt=2026-08-01&enddt=2026-09-15": {
+    "status": 200,
+    "json": {
+      "hits": {
+        "total": {
+          "value": 6
+        },
+        "hits": [
+          {
+            "_id": "0001045810-26-000201:form4.xml",
+            "_source": {
+              "ciks": [
+                "0001045810",
+                "0001197649"
+              ],
+              "file_date": "2026-09-10",
+              "display_names": [
+                "HUANG JEN HSUN  (CIK 0001197649)",
+                "NVIDIA CORP  (NVDA)  (CIK 0001045810)"
+              ],
+              "form_type": "4",
+              "period_of_report": "2026-09-08"
+            }
+          },
+          {
+            "_id": "0001045810-26-000198:form4.xml",
+            "_source": {
+              "ciks": [
+                "0001045810",
+                "0001208323"
+              ],
+              "file_date": "2026-09-03",
+              "display_names": [
+                "KRESS COLETTE  (CIK 0001208323)"
+              ],
+              "form_type": "4",
+              "period_of_report": "2026-09-01"
+            }
+          },
+          {
+            "_id": "0009999999-26-000011:form4.xml",
+            "_source": {
+              "ciks": [
+                "0009999999"
+              ],
+              "file_date": "2026-09-05",
+              "display_names": [
+                "NVDA HOLDINGS LP  (CIK 0009999999)"
+              ],
+              "form_type": "4",
+              "period_of_report": "2026-09-04"
+            }
+          },
+          {
+            "_id": "0001045810-26-000190:form4.xml",
+            "_source": {
+              "ciks": [
+                "0001045810",
+                "0001159563"
+              ],
+              "file_date": "2026-08-22",
+              "display_names": [
+                "PURI AJAY K  (CIK 0001159563)"
+              ],
+              "form_type": "4",
+              "period_of_report": "2026-08-20"
+            }
+          },
+          {
+            "_id": "0001045810-26-000150:form4.xml",
+            "_source": {
+              "ciks": [
+                "0001045810",
+                "0001197649"
+              ],
+              "file_date": "2026-07-14",
+              "display_names": [
+                "HUANG JEN HSUN  (CIK 0001197649)"
+              ],
+              "form_type": "4",
+              "period_of_report": "2026-07-10"
+            }
+          },
+          {
+            "_id": "0001045810-26-000185:form4.xml",
+            "_source": {
+              "ciks": [
+                "1045810",
+                "0001233210"
+              ],
+              "file_date": "2026-08-05",
+              "display_names": [
+                "STEVENS MARK A  (CIK 0001233210)"
+              ],
+              "form_type": "4",
+              "period_of_report": "2026-08-01"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=8-K&ciks=0001045810&dateRange=custom&startdt=2026-08-16&enddt=2026-09-15": {
+    "status": 200,
+    "json": {
+      "hits": {
+        "total": {
+          "value": 2
+        },
+        "hits": [
+          {
+            "_id": "0001045810-26-000196:nvda-8k_20260827.htm",
+            "_source": {
+              "ciks": [
+                "0001045810"
+              ],
+              "file_date": "2026-08-27",
+              "display_names": [
+                "NVIDIA CORP  (NVDA)  (CIK 0001045810)"
+              ],
+              "form_type": "8-K",
+              "period_of_report": "2026-08-27",
+              "entity_name": "NVIDIA CORP"
+            }
+          },
+          {
+            "_id": "0001045810-26-000176:nvda-8k_20260818.htm",
+            "_source": {
+              "ciks": [
+                "0001045810"
+              ],
+              "file_date": "2026-08-18",
+              "display_names": [
+                "NVIDIA CORP  (NVDA)  (CIK 0001045810)"
+              ],
+              "form_type": "8-K",
+              "period_of_report": "2026-08-18"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "https://efts.sec.gov/LATEST/search-index?q=%22NVDA%22&forms=SC+13D,SC+13G&ciks=0001045810&dateRange=custom&startdt=2026-06-17&enddt=2026-09-15": {
+    "status": 200,
+    "json": {
+      "hits": {
+        "total": {
+          "value": 1
+        },
+        "hits": [
+          {
+            "_id": "0000102909-26-004411:sc13g.htm",
+            "_source": {
+              "ciks": [
+                "0001045810",
+                "0000102909"
+              ],
+              "file_date": "2026-07-30",
+              "display_names": [
+                "VANGUARD GROUP INC  (CIK 0000102909)"
+              ],
+              "form_type": "SC 13G/A",
+              "period_of_report": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

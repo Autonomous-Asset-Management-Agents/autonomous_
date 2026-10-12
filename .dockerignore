@@ -1,0 +1,38 @@
+# Local secrets - never bake into image layers. Setup scripts emit
+# .env.oss with cryptographically generated postgres / redis / proxy
+# secrets; without these lines the public-api Dockerfile's
+# `COPY [".", "."]` step would copy them into a publishable layer.
+.env
+.env.oss
+.env.local
+.env.*.local
+
+# VCS / metadata
+.git
+.github
+.gitignore
+.dockerignore
+
+# Python build artefacts
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Tests / dev-only directories (not needed at runtime)
+tests/
+.ipynb_checkpoints
+
+# Local runtime / data state
+data/
+venv/
+venv_new/
+
+# Bulk artefacts that bloat the build context
+*.csv
+*.zip
+*.pth
+*.bak
+*.log

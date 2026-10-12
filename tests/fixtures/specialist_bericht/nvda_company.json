@@ -1,0 +1,16 @@
+{
+  "symbol": "NVDA",
+  "source": "polygon v3 /v3/reference/tickers/{ticker}",
+  "fetched_at": "2026-09-01T00:00:00+00:00",
+  "results": {
+    "ticker": "NVDA",
+    "name": "NVIDIA Corporation",
+    "market": "stocks",
+    "locale": "us",
+    "primary_exchange": "XNAS",
+    "type": "CS",
+    "active": true,
+    "currency_name": "usd",
+    "cik": "0001045810"
+  }
+}
