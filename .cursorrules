@@ -1,0 +1,26 @@
+# Agent Rules (BORA Open Source Edition)
+
+## 1. Documentation Update Mandate
+**After completing any significant code change (Feature, Refactor, Infrastructure change), you MUST update the relevant documentation:**
+- `README.md`
+- `docs/oss/ARCHITECTURE.md` (if structural changes occurred)
+- `docs/oss/TROUBLESHOOTING.md` (if new common errors were discovered)
+
+## 2. Pull Request Automation
+**When preparing a Pull Request:**
+1. Ensure your commits are descriptive and follow conventional commit standards.
+2. Generate a meaningful PR description explaining the rationale, the changes made, and how to test them.
+
+## 3. Code Quality Enforcement (Pre-Commit)
+**Before executing ANY `git commit` that modifies Python backend files, you MUST run local code quality checks:**
+1. Execute `python -m black .` (or target specific modified files) to format code.
+2. Execute `python -m flake8 .` (or target specific modified files) to catch linting errors.
+3. Fix ALL errors raised by `flake8`.
+**Under no circumstances should you push code to a PR branch that has not passed these local formatting and linting checks.**
+
+## 4. Test-Driven Development (TDD)
+**Red → Green → Refactor. Write the failing test FIRST. No exceptions.**
+All tests belong in `tests/unit/` or `tests/regression/`. Ensure high test coverage for new business logic.
+
+## 5. Docker-First Environment
+The application is designed to run exclusively via Docker Compose (`docker-compose.oss.yml`). Do not rely on native host installations of PostgreSQL or Redis. All tests requiring infrastructure must be executed within the Docker network context.

@@ -1,0 +1,25 @@
+{
+  "https://api.quiverquant.com/beta/live/congresstrading/NVDA": {
+    "status": 200,
+    "json": [
+      {
+        "Representative": "Nancy Pelosi",
+        "Transaction": "Purchase",
+        "Amount": "$1,000,001 - $5,000,000",
+        "TransactionDate": "2026-08-28"
+      },
+      {
+        "Representative": "Ro Khanna",
+        "Transaction": "Sale",
+        "Amount": "$1,001 - $15,000",
+        "TransactionDate": "2026-08-12"
+      }
+    ]
+  },
+  "https://api.quiverquant.com/beta/live/congresstrading/SPY": {
+    "status": 404,
+    "json": {
+      "detail": "Not found."
+    }
+  }
+}

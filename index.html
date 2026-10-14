@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- #2804: paint the document dark BEFORE any external CSS/JS loads. The first renderer
+         paint happens before the bundled stylesheet applies, and Electron shows the window on
+         exactly that paint (ready-to-show) - without this the window flashes white on cold
+         machines. Product theme is pure black everywhere (landing + console). -->
+    <style>html,body{background-color:#000}</style>
+
+    <!-- Google Consent Mode v2 Default Settings (Must be first) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+        gtag('set', 'url_passthrough', true);
+    </script>
+    <!-- NOTE: Insert Consent Management Provider (CMP) Script here (e.g. Cookiebot or Usercentrics) -->
+    <!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="YOUR-ID" type="text/javascript" async></script> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://autonomous-trading.de/" />
+    <title>autonomous_ trading - open source execution framework for your trading strategy</title>
+    <meta name="description" content="AAAgents is an execution framework: you define your own strategy from deterministic rules, quant analytics and machine learning — the software executes it rules-based, auditable and in paper mode by default. Software tool; no investment advice, no portfolio management." />
+    <meta name="author" content="AAAgents" />
+    <meta name="theme-color" content="#000000" />
+    <!-- #4459: no robots meta here — this index.html also serves the landing, which must be
+         indexable. The console and the credential-entry paths (/login, /auth/**, /console/**)
+         get "X-Robots-Tag: noindex, nofollow" from firebase.json per hosting target. -->
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="AAAgents" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://autonomous-trading.de/" />
+    <meta property="og:title" content="autonomous_ trading - open source execution framework for your trading strategy" />
+    <meta property="og:description" content="An execution framework for your own trading strategy — rules-based, auditable, bounded, paper mode by default. Software tool; no investment advice." />
+    <meta property="og:image" content="https://autonomous-trading.de/og-image.png" />
+    <meta property="og:image:width" content="3748" />
+    <meta property="og:image:height" content="1369" />
+    <meta property="og:image:alt" content="AAAgents — execution framework for rules-based trading" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aaagents_de" />
+    <meta name="twitter:title" content="autonomous_ trading - open source execution framework for your trading strategy" />
+    <meta name="twitter:description" content="An execution framework for your own strategy. Your rules. Auditable. Bounded. Paper mode by default." />
+    <meta name="twitter:image" content="https://autonomous-trading.de/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://autonomous-trading.de/#organization",
+          "name": "AAAgents",
+          "url": "https://autonomous-trading.de",
+          "logo": "https://autonomous-trading.de/favicon.svg"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://autonomous-trading.de/#software",
+          "name": "autonomous_ trading",
+          "alternateName": ["autonomous trading", "AAAgents"],
+          "url": "https://autonomous-trading.de/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows, macOS",
+          "license": "https://www.apache.org/licenses/LICENSE-2.0",
+          "isAccessibleForFree": true,
+          "publisher": { "@id": "https://autonomous-trading.de/#organization" },
+          "description": "Execution framework for rules-based trading: users define their own strategy from deterministic rules, quant analytics and machine learning; the software executes it auditable and in paper mode by default. Software tool; no investment advice, no portfolio management."
+        }
+      ]
+    }
+    </script>
+    <!-- Stitch Variant Fonts: Manrope + Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

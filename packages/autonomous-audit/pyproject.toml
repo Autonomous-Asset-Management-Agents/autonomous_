@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autonomous-audit"
+version = "0.1.0"
+description = "Tamper-evident SHA-256 hash-chain audit log + human-readable report for AI agent decisions - a stdlib-only integrity & traceability tool (not explainability, not a compliance control, not investment advice)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Autonomous Asset Management Agents UG", email = "support@aaagents.de" }]
+keywords = ["autonomous", "audit", "hash-chain", "tamper-evident", "agent", "alpaca", "trading", "sha256"]
+dependencies = []  # stdlib-only by design — no supply-chain surface, nothing to hallucinate
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+autonomous-audit = "autonomous_audit.cli:main"
+
+[project.urls]
+Homepage = "https://aaagents.de"
+Repository = "https://github.com/Autonomous-Asset-Management-Agents/autonomous_"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["autonomous_audit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

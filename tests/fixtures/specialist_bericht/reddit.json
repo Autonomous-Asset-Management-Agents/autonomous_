@@ -1,0 +1,62 @@
+{
+  "https://www.reddit.com/search.json?q=NVDA%20stock&restrict_sr=false&sort=new&t=day&limit=25": {
+    "status": 200,
+    "json": {
+      "data": {
+        "children": [
+          {
+            "data": {
+              "title": "NVDA calls printing, breakout incoming",
+              "selftext": ""
+            }
+          },
+          {
+            "data": {
+              "title": "Is NVDA undervalued after the dip? buy?",
+              "selftext": ""
+            }
+          },
+          {
+            "data": {
+              "title": "Loading more NVDA calls, moon soon",
+              "selftext": ""
+            }
+          },
+          {
+            "data": {
+              "title": "NVDA overvalued, buying puts",
+              "selftext": ""
+            }
+          },
+          {
+            "data": {
+              "title": "Weekly market thread",
+              "selftext": "nothing about the ticker"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "https://www.reddit.com/search.json?q=SPY%20stock&restrict_sr=false&sort=new&t=day&limit=25": {
+    "status": 200,
+    "json": {
+      "data": {
+        "children": [
+          {
+            "data": {
+              "title": "SPY puts before FOMC?",
+              "selftext": ""
+            }
+          },
+          {
+            "data": {
+              "title": "SPY at all-time high, sell or hold",
+              "selftext": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

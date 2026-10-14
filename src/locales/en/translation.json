@@ -1,0 +1,356 @@
+{
+  "header": {
+    "liveDemo": "LIVE DEMO",
+    "download": "Download",
+    "language": "Language",
+    "downloadAria": "Download — choose your edition",
+    "liveDemoAria": "View live demo"
+  },
+  "appliance": {
+    "eyebrow": "autonomous_ tower — limited first edition · only 100 units · ships 12·2026",
+    "hero": {
+      "h1": "Autonomous\ntower",
+      "subline": "Silent. Reliable. Always on.",
+      "bodyLead": "is the dedicated hardware for the",
+      "bodyMid": "trading system. Unbox it, plug it in, connect once with your phone — from then on",
+      "bodyTail": "trades according to your strategy. Without interruption, seven days a week. Silent and reliable. From your home.",
+      "imgNote": "Image similar",
+      "price": "Price on request",
+      "priceSuffix": "",
+      "ctaJoin": "Join the waitlist",
+      "ctaHow": "How it works",
+      "micro": "No payment now — we contact you when your unit is ready."
+    },
+    "story": {
+      "h2": "Always on. Every day, every hour, every moment.",
+      "silentTitle": "In the market every day",
+      "silentBody": "The autonomous_ tower is active 24 hours a day, seven days a week. Silent and still, but always there. So your portfolio and the market are never unwatched.",
+      "materialsTitle": "Your private installation",
+      "materialsBody": "The autonomous_ tower is optimized for your own local AI. No cloud solution, no subscription. Your strategy, your data and your broker access stay with you at home.",
+      "tradesTitle": "Ready from day one",
+      "tradesBody": "autonomous_ comes pre-installed and starts in paper mode, like every installation. You set the rules."
+    },
+    "how": {
+      "h2": "Running in two minutes.",
+      "step1Title": "Unbox and plug in",
+      "step1Body": "One cable, nothing more. The autonomous_ tower boots into setup mode all by itself.",
+      "step2Title": "Connect with your phone",
+      "step2Body": "The tower opens its own Wi-Fi. Your phone walks you through setup: home network and broker access.",
+      "step3Title": "Access from anywhere",
+      "step3BodyBefore": "Your dashboard is available at",
+      "step3BodyAfter": "— at the office, on the road, worldwide. No configuration."
+    },
+    "specs": {
+      "h2": "The sheet.",
+      "finish": "Finish",
+      "finishV": "Solid walnut · CNC aluminium",
+      "acoustics": "Acoustics",
+      "acousticsV": "0 dB — fanless, no moving parts",
+      "memory": "Memory / Storage",
+      "memoryV": "32 GB · 500 GB NVMe",
+      "connectivity": "Connectivity",
+      "connectivityV": "Wi-Fi · Gigabit Ethernet",
+      "software": "Software",
+      "softwareV": "autonomous OSS, pre-installed · updates over the air",
+      "inTheBox": "In the box",
+      "inTheBoxV": "Device · power supply · quick-start card",
+      "price": "Price",
+      "priceV": "Price on request",
+      "note": "Configuration subject to change before shipping."
+    },
+    "wait": {
+      "h2": "Reserve your unit.",
+      "lead": "The First Edition is limited to 100 units. Join the waitlist — confirm by email and your position is fixed.",
+      "emailPlaceholder": "you@example.com",
+      "join": "Join the waitlist",
+      "joining": "Joining…",
+      "pendingHint": "Check your inbox — confirm the link and your spot is secured.",
+      "error": "Joining failed — the waitlist service didn't answer. Your entry was not saved; please try again.",
+      "inviteSuffix": "— every confirmed signup moves you up",
+      "micro": "Joining the waitlist is free and not a purchase. You can leave the list at any time."
+    },
+    "faq": {
+      "h2": "Questions.",
+      "q1": "When does it ship?",
+      "a1": "The First Edition targets December 2026. Your waitlist position decides your delivery order.",
+      "q2": "Do I pay now?",
+      "a2": "No. The waitlist is free. We contact you with an order link when your unit is ready to ship.",
+      "q3": "What do I need?",
+      "a3": "A brokerage account and your home Wi-Fi. No monitor, no keyboard, no technical setup.",
+      "q4": "Is the software included?",
+      "a4": "Yes. Your appliance ships with autonomous pre-installed and receives updates over the air."
+    },
+    "footer": {
+      "risk": "autonomous is an execution-only tool. Trading involves risk, including the possible loss of your entire investment. Past performance is not a reliable indicator of future results.",
+      "imprint": "Imprint",
+      "privacy": "Privacy",
+      "riskDisclosure": "Risk disclosure",
+      "terms": "Terms"
+    }
+  },
+  "landing": {
+    "hero": {
+      "h1a": "autonomous",
+      "h1b": "trading",
+      "sub": "You set the rules.",
+      "body": "turns your strategy into professional algorithmic trading. Manage your 14 agents, AI-based and deterministic. Let them watch the market 24/7 and act only within your guardrails.",
+      "ctaDemo": "LIVE DEMO",
+      "ctaDownload": "DOWNLOAD",
+      "rot1": "executes efficiently.",
+      "rot2": "On your desktop, server or cloud.",
+      "rot3": "With algorithmic precision.",
+      "flagKicker": "New hardware · price on request",
+      "flagName": "autonomous_ tower",
+      "exp": {
+        "positioning": {
+          "h1a": "Your strategy.",
+          "h1b": "Executed by rules."
+        }
+      },
+      "ctaCode": "View the code",
+      "ctaDemoAria": "View live demo",
+      "ctaDownloadAria": "Download — choose your edition",
+      "flagAria": "autonomous_ tower — new hardware, First Edition",
+      "console": {
+        "kpi": {
+          "positions": "Open positions",
+          "positionsHint": "max {{count}}",
+          "agents": "Agents active",
+          "agentsHint": "AI-based and deterministic",
+          "voting": "Voting",
+          "votingHint": "by default",
+          "cash": "Cash",
+          "cashHint": "settled cash"
+        }
+      }
+    },
+    "profit": {
+      "h2": "Your rules.",
+      "intro": "You design the strategy. Set the rules for the agents and the Iron Dome: stock selection, risk management, limits. autonomous_ executes.",
+      "p1": {
+        "lead": "Over 60 parameters.",
+        "text": "Number of positions, order size, entry thresholds, stops, exposure, trades per day. And you weight the 14 agents."
+      },
+      "p2": {
+        "lead": "Risk check on every order.",
+        "text": "Order size, exposure and your own limits are checked before anything is sent. It enforces your limits; it cannot prevent losses."
+      },
+      "p3": {
+        "lead": "Emergency stop.",
+        "text": "Stop all trading at any time with one click, and sell all positions if you choose."
+      },
+      "p4": {
+        "lead": "Paper mode first.",
+        "text": "Every installation starts with play money and live market data. Real money only moves after your explicit approval."
+      },
+      "example": {
+        "rulesTitle": "Your rules · Example",
+        "weightsTitle": "Agent weights · Example",
+        "maxPositions": "Maximum positions",
+        "volSizing": "Volatility sizing",
+        "on": "on",
+        "dailyVol": "Daily vol target",
+        "minHold": "Minimum holding period",
+        "days": "{{count}} days"
+      }
+    },
+    "audit": {
+      "h2": "Open source.",
+      "intro": "Read the code, check every decision, extend it with your own logic. autonomous_ is open source under the Apache 2.0 licence.",
+      "p1": {
+        "lead": "A reason for every vote.",
+        "text": "Each agent states its argument in plain text. You see who voted, how strongly and why."
+      },
+      "p2": {
+        "lead": "Hash-chained audit log.",
+        "text": "Decisions are written to a hash-chained log. Any later change to an entry becomes visible."
+      },
+      "p3": {
+        "lead": "Apache 2.0.",
+        "text": "The core is published under the Apache 2.0 licence. Read what it does, line by line."
+      },
+      "p4": {
+        "lead": "Review, refine, repeat.",
+        "text": "Compare decisions with outcomes, adjust a rule, run it again in paper mode. Your strategy improves on evidence, not on memory."
+      },
+      "graphic": {
+        "sink2": "Database · local"
+      }
+    },
+    "safe": {
+      "h2": "Your data.",
+      "intro": "Your broker keys, your strategy and your trading history stay on your own computer or server, not with us. autonomous_ keeps your data with you.",
+      "p1": {
+        "lead": "Keys in your keychain.",
+        "text": "Broker API keys are stored encrypted in your operating system's keychain."
+      },
+      "p2": {
+        "lead": "Local AI.",
+        "text": "On the desktop, the AI model runs locally by default. No dependence on a cloud AI provider."
+      },
+      "p3": {
+        "lead": "Telemetry off.",
+        "text": "No usage data leaves your computer unless you switch it on."
+      },
+      "p4": {
+        "lead": "No withdrawals.",
+        "text": "The software has no function for withdrawals or transfers. Your money stays at your broker."
+      },
+      "pipeline": {
+        "votingName": "Voting ensemble",
+        "votingTag": "14 agents · 8 voting by default",
+        "votingTitle": "14 agents, AI-based and deterministic; 8 of them vote by default, each with the weight you set."
+      }
+    },
+    "editions": {
+      "h2": "Editions",
+      "towerKicker": "new · hardware",
+      "towerH3a": "Discover the",
+      "towerNew": "new",
+      "towerH3b": "tower: your rules, always on.",
+      "learnMore": "Learn More",
+      "inclVat": "+ VAT",
+      "metaDesktop": "· limited first edition · 100 units · ships 12·2026",
+      "metaMobile": "limited first edition · 100 units · ships 12·2026",
+      "foot": "One open-source core (Apache 2.0) on your desktop, your server or your cloud. Paper trading is always free. Live trading on the desktop costs 1 € a month incl. VAT, free until 31 December 2026.",
+      "tile1": {
+        "title": "Always on",
+        "body": "The autonomous_ tower runs around the clock, silently, on your desk. Monitoring never stops; orders follow US market hours."
+      },
+      "tile2": {
+        "title": "Local AI, no cloud",
+        "body": "Built for local AI. Your strategy, your data and your broker keys stay in your home."
+      },
+      "tile3": {
+        "title": "Ready from day one",
+        "body": "autonomous_ comes pre-installed and starts in paper mode, like every installation. You set the rules."
+      },
+      "towerAria": "autonomous_ tower — limited first edition"
+    },
+    "footer": {
+      "help": "Help",
+      "legal": "Legal",
+      "support": "Support",
+      "imprint": "Imprint",
+      "privacy": "Privacy",
+      "risk": "Risk disclosure",
+      "tagline": "autonomous_ trading. You set the rules.",
+      "riskNote": "Trading involves risk. The value of your investments can fall as well as rise, and you may lose the capital you invest. Automated execution and limits do not remove this risk. Past performance, real or simulated, is no guarantee of future results.",
+      "copyright": "© aaagents · Built in Europe"
+    },
+    "about": {
+      "roleGeorg": "Founder, CEO",
+      "roleAndreas": "Co-Founder, AI Architect",
+      "h2": "About",
+      "p1": "is built by AAAgents, a software company from Germany. We build software for algorithmic trading. We do not manage money for others, and autonomous_ is not a robo-advisor or a pension product.",
+      "p2": "We run autonomous_ with our own capital. Today 25 beta users test it, 11 of them with real money. The core is open source, so you can check everything we write here.",
+      "disclaimer": "Disclaimer: The information shared on this site does not constitute investment advice, financial brokerage, or an offer to buy or sell securities. We are a technology company, not a financial services provider. All content exclusively reflects our own proprietary trading activities and entrepreneurial decisions."
+    },
+    "pricing": {
+      "private": {
+        "junior": {
+          "eyebrow": "Desktop · Windows & macOS",
+          "name": "Private",
+          "tag": "Paper trading on your own PC, free forever. Algorithmic trading for your own strategy, installed in one click.",
+          "price": "0.00 €",
+          "priceSub": "/ forever",
+          "f1": {
+            "title": "Paper mode",
+            "desc": "Test your rules with paper money and live market data before any real money moves."
+          },
+          "f2": {
+            "title": "14 agents on your desktop",
+            "desc": "All agents run on your PC, with a local AI model by default."
+          },
+          "f3": {
+            "title": "Your data stays local",
+            "desc": "No telemetry unless you switch it on. Your keys stay in your system keychain."
+          }
+        },
+        "senior": {
+          "eyebrow": "Desktop · Windows & macOS",
+          "name": "Private",
+          "tag": "Everything in Private, plus live trading with your broker once you approve it.",
+          "price": "1.00 €",
+          "priceSub": "/ month incl. VAT",
+          "priceMeta": "or 12.00 € / year · free until 31 Dec 2026",
+          "f1": {
+            "title": "Live trading",
+            "desc": "Connect your Alpaca account. Every order passes the risk check first."
+          },
+          "f2": {
+            "title": "Daily summaries",
+            "desc": "Automated portfolio summaries to your own channels, such as Slack or Telegram."
+          },
+          "f3": {
+            "title": "Priority support",
+            "desc": "Fast email support while you trade live."
+          }
+        }
+      },
+      "professional": {
+        "eyebrow": "Open source · Docker",
+        "name": "Developer",
+        "tag": "The same core for your own server or cloud. Apache 2.0, runs headless, built once and run anywhere.",
+        "price": "0.00 €",
+        "priceSub": "/ forever",
+        "f1": {
+          "title": "Docker stack",
+          "desc": "Pre-configured containers for your own server, AWS, GCP or bare metal."
+        },
+        "f2": {
+          "title": "Headless, around the clock",
+          "desc": "Runs as a background service with a small footprint."
+        },
+        "f3": {
+          "title": "Logs you can query",
+          "desc": "Audit log and metrics via the command line or your own dashboards."
+        }
+      },
+      "institutional": {
+        "eyebrow": "Cloud native",
+        "name": "Institutional",
+        "tag": "For professional teams: the same core in your cloud, with tamper-evident audit storage and multi-account operation.",
+        "price": "Custom",
+        "priceMeta": "Request a quote",
+        "f1": {
+          "title": "Audit-ready logging",
+          "desc": "Hash-chained, tamper-evident logs, stored in your own cloud."
+        },
+        "f2": {
+          "title": "Multi-account governance",
+          "desc": "Central rules and limits across several accounts, kept strictly separate."
+        },
+        "f3": {
+          "title": "Direct partnership",
+          "desc": "A named contact and engineering support for your setup."
+        }
+      }
+    },
+    "agents": {
+      "h1a": "AI supports.",
+      "h1b": "Your rules decide.",
+      "lede": "14 agents look at the market from different angles, AI-based and deterministic. Each casts a weighted vote with a written reason. The AI has no direct line to your broker: its votes feed into deterministic rules, and those rules decide whether and how much to trade, inside your limits. You choose which agents vote and how much each vote counts."
+    },
+    "ticker": "autonomous_ tower — limited first edition · only 100 units · ships 12·2026",
+    "nav": {
+      "linkedinAria": "Follow us on LinkedIn",
+      "githubAria": "View on GitHub",
+      "demo": "LIVE DEMO",
+      "demoAria": "View live demo",
+      "toEnglish": "Switch to English",
+      "toGerman": "Zu Deutsch wechseln"
+    },
+    "pricingCard": {
+      "beta": "BETA",
+      "junior": "Junior",
+      "senior": "Senior",
+      "contact": "Contact Us",
+      "github": "Download on GitHub",
+      "windows": "Windows",
+      "windowsAria": "Download for Windows",
+      "mac": "macOS",
+      "macAria": "Download for macOS"
+    }
+  }
+}

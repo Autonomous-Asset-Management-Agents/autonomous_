@@ -1,0 +1,80 @@
+========================================================================
+LEGAL NOTICE & SOFTWARE ATTRIBUTIONS (NOTICE)
+========================================================================
+Software Product:    autonomous_trading solution
+Distributed as:      AAAgents Community Edition
+Current Version:     2.4.0
+Official Websites:   https://aaagents.de | http://autonomous-trading.de
+Copyright Holders:   Andreas Apeldorn, Georg Apeldorn
+Corporate Entity:    Autonomous Asset Management Agents UG (haftungsbeschränkt)
+
+Copyright 2026 Andreas Apeldorn, Georg Apeldorn / Autonomous Asset
+Management Agents UG (haftungsbeschränkt). All rights reserved.
+
+This software product includes code originally developed by the copyright
+holders and Autonomous Asset Management Agents UG, distributed and licensed
+under the terms of the Apache License, Version 2.0 (the "License"). You may
+not use this software except in compliance with the License. You may obtain
+a structural copy of the License within the accompanying LICENSE file or
+online at: http://www.apache.org/licenses/LICENSE-2.0
+
+1. STRICT PROTECTION OF CORPORATE DESIGNATIONS, NAMES, AND TRADEMARKS
+------------------------------------------------------------------------
+Your authorization to use the software under the Apache 2.0 License is
+strictly confined to the source code and does NOT grant you any legal
+right, title, or interest to utilize the trade names, commercial
+trademarks, service marks, corporate logos, or product designations of the
+copyright holders or Autonomous Asset Management Agents UG, except as
+necessary for customary and reasonable descriptive use in identifying the
+technical origin of the Work.
+
+The business designations "autonomous_trading solution", "AAAgents",
+"Iron Dome", "Round Table V2", and "ConsensusEngine", alongside all
+accompanying visual logos and design assets, represent protected
+commercial designations and proprietary names owned exclusively by the
+copyright holders and/or the UG under § 12 of the German Civil Code (BGB)
+and § 5 of the German Trademark Act (MarkenG).
+
+Any unauthorized commercial deployment of these designations for third-party
+products, systems, or standalone services—most notably within the
+regulated fields of financial services, quantitative investment brokerage,
+proprietary trading, or discretionary asset management—is strictly
+prohibited without explicit, prior written authorization from the UG.
+Any modified downstream variants (forks) of this repository must be
+comprehensively renamed and must not be commercialized or distributed
+under any of the protected designations enumerated above.
+
+2. ABSOLUTE EXCLUSION OF PROPRIETARY FINTECH CORE COMPONENTS
+------------------------------------------------------------------------
+This open-source repository represents solely the standalone, fully
+decentralized Community Edition.
+
+PLEASE NOTE: The following advanced proprietary core modules, backend
+cloud systems, and institutional streaming infrastructures are expressly
+NOT part of this open-source package, are NOT hosted or operated by the
+UG for public use, and are NOT licensed under the Apache License 2.0:
+- Encrypted Firebase Authentication Layers (FirebaseAuth)
+- Cloud Secret Manager Integration Systems (GCP Secret Manager)
+- Cloud Database Archival Infrastructure (SenateProtocol via Cloud SQL)
+- Automated Cloud Training Pipelines & Architecture (Vertex AI / Cloud Run Jobs)
+- Real-time API interface connectivity to aggregated SIP market data feeds
+- RTS 22 / MiFID II Automated Compliance Export Engine APIs
+
+These proprietary modules, advanced machine-learning weights, and
+cloud-native services remain under the exclusive, closed-source proprietary
+license of Autonomous Asset Management Agents UG. They are designed to be
+accessible exclusively via separate, independent B2B deployments under
+explicit commercial licensing terms and separate enterprise software licensing agreements.
+The UG does not operate as a centralized hosting provider or data distributor
+for public open-source instances.
+
+3. DOWNSTREAM OPEN-SOURCE ATTRIBUTIONS (THIRD-PARTY COMPONENTS)
+------------------------------------------------------------------------
+This product utilizes or interacts with third-party open-source libraries.
+The copyright holders express their gratitude to the open-source community:
+
+* pandas-ta (Licensed under the MIT License)
+  Copyright (c) 2020 Kevin Johnson.
+  The structural license text is maintained natively within the respective
+  code sub-directories.
+========================================================================
