@@ -1,0 +1,4690 @@
+{
+  "agent_veto_buy": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": null,
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.200 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "INFO ComplianceGatekeeper: VETO für NVDA — Agent VETO (DrawdownGuardAgent): DrawdownGuardAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.807 approved=False signal=NONE votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.8068,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.8068,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.840888889
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.2,
+          "signal": "SELL",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-1>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.8068,
+        "decision_id": null,
+        "escalations": null,
+        "gatekeeper_approved": false,
+        "gatekeeper_reason": "Agent VETO (DrawdownGuardAgent): DrawdownGuardAgent: Fixture-Begruendung",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-1>",
+        "signal_action": null,
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.2,
+            "signal": "SELL",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": null,
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 1,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "agent_veto_sell_geht_durch": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "SELL",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.164444444,
+      "consensus_undamped": null,
+      "conviction_score": 0.164444444,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.164: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent [VETO]: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": null,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.2,
+          "signal": "SELL",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.15,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.3,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.1,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.2,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.25,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.200 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.500 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.150 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.300 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.100 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.200 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.250 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.164 approved=True signal=SELL votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.164444444,
+      "error": null,
+      "regime_conditioning": null,
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.2,
+          "signal": "SELL",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.15,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.3,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.1,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.2,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.25,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.164444444,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "SELL",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.2,
+            "signal": "SELL",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.5,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.15,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.3,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.1,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.2,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.25,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "SELL",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 0,
+        "sell": 1
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "agenten_ausnahme": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.824486486,
+      "consensus_undamped": 0.860540541,
+      "conviction_score": 0.824486486,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.824: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": 0.9,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 3.125
+    },
+    "log": [
+      "WARNING run_round_table: Agent NewsSentimentAgent warf Exception für NVDA: Nachrichtenquelle ausgefallen (Fixture)",
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.824 approved=True signal=BUY votes=6/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.824486486,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.824486486,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.860540541
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.824486486,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.2
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {
+        "NewsSentimentAgent": 1
+      },
+      "consensus_outcomes": {
+        "buy": 1,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "alle_ausgefallen": {
+    "anzeige_aufgezeichnet": false,
+    "decision_context": null,
+    "log": [
+      "WARNING run_round_table: Agent DrawdownGuardAgent warf Exception für NVDA: Ausfall (Fixture)",
+      "WARNING run_round_table: Agent RegimeDetectionAgent warf Exception für NVDA: Ausfall (Fixture)",
+      "WARNING run_round_table: Agent MomentumAgent warf Exception für NVDA: Ausfall (Fixture)",
+      "WARNING run_round_table: Agent VIXAwareRiskAgent warf Exception für NVDA: Ausfall (Fixture)",
+      "WARNING run_round_table: Agent LSTMSignalAgent warf Exception für NVDA: Ausfall (Fixture)",
+      "WARNING run_round_table: Agent RLConfidenceAgent warf Exception für NVDA: Ausfall (Fixture)",
+      "WARNING run_round_table: Agent NewsSentimentAgent warf Exception für NVDA: Ausfall (Fixture)",
+      "ERROR run_round_table: Alle Agents fehlgeschlagen für NVDA"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": null,
+      "error": "Alle Voting-Agents fehlgeschlagen",
+      "regime_conditioning": null,
+      "round_table_scores": null,
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "round_table_scores",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": null
+    },
+    "senate": [],
+    "signal": null,
+    "watchdog": [
+      [
+        "record_error",
+        "LSTMSignalAgent",
+        "RuntimeError"
+      ],
+      [
+        "record_error",
+        "RLConfidenceAgent",
+        "RuntimeError"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {
+        "DrawdownGuardAgent": 1,
+        "LSTMSignalAgent": 1,
+        "MomentumAgent": 1,
+        "NewsSentimentAgent": 1,
+        "RLConfidenceAgent": 1,
+        "RegimeDetectionAgent": 1,
+        "VIXAwareRiskAgent": 1
+      },
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "beobachtung_wirft": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.8068,
+      "consensus_undamped": 0.840888889,
+      "conviction_score": 0.8068,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.807: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": 0.9,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.807 approved=True signal=BUY votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.8068,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.8068,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.840888889
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.8068,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": null,
+      "round_tables_run": 0
+    }
+  },
+  "beobachtung_wirft_bei_ausfall": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.842,
+      "consensus_undamped": 0.88,
+      "conviction_score": 0.842,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK | StrictML: RL abstained — RL not required (flag)",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.842: LSTMSignalAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung | DrawdownGuardAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": 0.9,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 3.125
+    },
+    "log": [
+      "WARNING MIFID_AUDIT[NVDA] agent=RLConfidenceAgent TIMEOUT after 60s — vote excluded",
+      "WARNING run_round_table: Agent NewsSentimentAgent warf Exception für NVDA: Nachrichtenquelle ausgefallen (Fixture)",
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.842 approved=True signal=BUY votes=5/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.842,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.842,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.88
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.842,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK | StrictML: RL abstained — RL not required (flag)",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.5
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_error",
+        "RLConfidenceAgent",
+        "TimeoutError"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": null,
+      "round_tables_run": 0
+    }
+  },
+  "buy": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.8068,
+      "consensus_undamped": 0.840888889,
+      "conviction_score": 0.8068,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.807: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": 0.9,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.807 approved=True signal=BUY votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.8068,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.8068,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.840888889
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.8068,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 1,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "fehlender_boot": {
+    "anzeige_aufgezeichnet": false,
+    "decision_context": null,
+    "log": [
+      "ERROR run_round_table: boot_engine() was never called. Cannot execute."
+    ],
+    "rueckgabe": {
+      "consensus_ranking": null,
+      "error": "Round Table not initialized. Call boot_engine() first.",
+      "regime_conditioning": null,
+      "round_table_scores": null,
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "round_table_scores",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": null
+    },
+    "senate": [],
+    "signal": null,
+    "watchdog": [],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": null,
+      "round_tables_run": 0
+    }
+  },
+  "hold": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "HOLD",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.52,
+      "consensus_undamped": null,
+      "conviction_score": 0.52,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.520: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": null,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.55,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.55,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.6,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.45,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.800 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.550 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.500 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.550 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.600 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.450 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.500 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.520 approved=True signal=HOLD votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.52,
+      "error": null,
+      "regime_conditioning": null,
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.55,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.55,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.6,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.45,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.52,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "HOLD",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.55,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.5,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.55,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.6,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.45,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.5,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "HOLD",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 1,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "integritaetswarnung": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.85,
+      "consensus_undamped": null,
+      "conviction_score": 0.85,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.850: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": null,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "WARNING AI_SECURITY[runner]: Signal integrity check FAILED for NVDA. Reason: HIGH_CORRELATION: std_dev=0.0000 < 0.03 mean=0.8500 n=7 (BUY_THRESH=0.73 SELL_THRESH=0.35) — suspiciously uniform agent votes in extreme territory. Possible correlated data poisoning.. Alert-only — no hard block (Phase A deployment, ADR-SEC-01). Escalation to hard-HOLD gate planned after 2-week observation.",
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.850 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.850 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.850 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.850 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.850 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.850 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.850 approved=True signal=BUY votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.85,
+      "error": null,
+      "regime_conditioning": null,
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.85,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 1,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "lstm_abgeschaltet": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.7802,
+      "consensus_undamped": 0.811333333,
+      "conviction_score": 0.7802,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK | StrictML: LSTM disabled by operator (flag) — no LSTM vote required",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.780: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: Fixture-Begruendung",
+      "reasoning_trace": "RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung | LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung",
+      "regime_damp_factor": 0.9,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": null,
+          "signal": "ABSTAIN",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 2.769230769
+    },
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=ABSTAIN weight=0.00 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.780 approved=True signal=BUY votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.7802,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.7802,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.811333333
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": null,
+          "signal": "ABSTAIN",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.7802,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK | StrictML: LSTM disabled by operator (flag) — no LSTM vote required",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": null,
+            "signal": "ABSTAIN",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 1,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "meta_label_downgrade": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": null,
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "INFO ComplianceGatekeeper: VETO für NVDA — MetaLabel: p=0.31 < 0.55 (no edge net-of-cost)",
+      "WARNING RoundTable[NVDA]: score=0.807 approved=False signal=NONE votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.8068,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.8068,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.840888889
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-1>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.8068,
+        "decision_id": null,
+        "escalations": null,
+        "gatekeeper_approved": false,
+        "gatekeeper_reason": "MetaLabel: p=0.31 < 0.55 (no edge net-of-cost)",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-1>",
+        "signal_action": null,
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": null,
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 1,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "none_stimme": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.8068,
+      "consensus_undamped": 0.840888889,
+      "conviction_score": 0.8068,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.807: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung",
+      "regime_damp_factor": 0.9,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "WARNING run_round_table: Agent VIXAwareRiskAgent returned None for NVDA — vote excluded",
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.807 approved=True signal=BUY votes=6/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.8068,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.8068,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.840888889
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.8068,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 1,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "sell": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "SELL",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.164444444,
+      "consensus_undamped": null,
+      "conviction_score": 0.164444444,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.164: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | RLConfidenceAgent: RLConfidenceAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": null,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.15,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.3,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.1,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.2,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.25,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.800 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.500 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.150 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.300 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.100 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.200 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.250 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.164 approved=True signal=SELL votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.164444444,
+      "error": null,
+      "regime_conditioning": null,
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.15,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.3,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.1,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.2,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.25,
+          "signal": "SELL",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.164444444,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "SELL",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.5,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.15,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.3,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.1,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.2,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.25,
+            "signal": "SELL",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "SELL",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 0,
+        "sell": 1
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "strict_ml_block": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": null,
+    "log": [
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.500 weight=0.00 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RLConfidenceAgent score=0.820 weight=1.20 reasoning=RLConfidenceAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "INFO ComplianceGatekeeper: VETO für NVDA — Missing core ML votes (LSTM/RL failed or excluded)",
+      "WARNING RoundTable[NVDA]: score=0.780 approved=False signal=NONE votes=7/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.7802,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.7802,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.811333333
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.5,
+          "signal": "HOLD",
+          "vetoed": true,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RLConfidenceAgent",
+          "name": "RLConfidenceAgent",
+          "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.82,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 1.2
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": true,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-1>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.7802,
+        "decision_id": null,
+        "escalations": null,
+        "gatekeeper_approved": false,
+        "gatekeeper_reason": "Missing core ML votes (LSTM/RL failed or excluded)",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-1>",
+        "signal_action": null,
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.5,
+            "signal": "HOLD",
+            "vetoed": true,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RLConfidenceAgent",
+            "name": "RLConfidenceAgent",
+            "reasoning": "RLConfidenceAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.82,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 1.2
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": true,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": null,
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_success",
+        "RLConfidenceAgent"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {},
+      "consensus_outcomes": {
+        "buy": 0,
+        "no_trade": 1,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  },
+  "timeout_ml_stimme": {
+    "anzeige_aufgezeichnet": true,
+    "decision_context": {
+      "action": "BUY",
+      "action_executed": false,
+      "adx_14": null,
+      "alpaca_order_id": null,
+      "atr_14d": 0.0,
+      "bb_pct": 0.5,
+      "client_order_id": "entry-0-<id-1>",
+      "consensus_score": 0.813636364,
+      "consensus_undamped": 0.848484848,
+      "conviction_score": 0.813636364,
+      "current_price": 120.4,
+      "cycle_close": 120.4,
+      "cycle_high": 121.5,
+      "cycle_low": 117.2,
+      "cycle_open": 118.0,
+      "decision_id": "<id-1>",
+      "execution_price": 0.0,
+      "execution_qty": 0.0,
+      "forecast_vol": 0.022489,
+      "gatekeeper_approved": true,
+      "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK | StrictML: RL abstained — RL not required (flag)",
+      "in_position": true,
+      "inference_latency_ms": 0.0,
+      "intelligence_approved": true,
+      "intelligence_reason": "",
+      "is_simulation": false,
+      "lstm_prediction": 0.0,
+      "macd": 0.0,
+      "macd_signal": 0.0,
+      "market_regime": "normal",
+      "model_version_id": "unknown",
+      "portfolio_approved": true,
+      "portfolio_max_slots": 10,
+      "portfolio_reason": "",
+      "portfolio_slot_used": 0,
+      "position_avg_price": 112.0,
+      "position_context_confirmed": true,
+      "position_qty": 10.0,
+      "reasoning_summary": "RoundTableV2 consensus=0.814: LSTMSignalAgent: Fixture-Begruendung | MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: Fixture-Begruendung",
+      "reasoning_trace": "LSTMSignalAgent: LSTMSignalAgent: Fixture-Begruendung | MomentumAgent: MomentumAgent: Fixture-Begruendung | NewsSentimentAgent: NewsSentimentAgent: Fixture-Begruendung | DrawdownGuardAgent: DrawdownGuardAgent: Fixture-Begruendung | RegimeDetectionAgent: RegimeDetectionAgent: Fixture-Begruendung | VIXAwareRiskAgent: VIXAwareRiskAgent: Fixture-Begruendung",
+      "regime_damp_factor": 0.9,
+      "risk_approved": true,
+      "risk_reason": "",
+      "risk_size_scaler": 1.0,
+      "risk_sl_multiplier": 3.0,
+      "rl_raw_action": 0,
+      "rl_stabilized_action": 0,
+      "round_table_votes": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "rsi_14": 50.0,
+      "session_id": "<id-2>",
+      "sizing_binding_limit": null,
+      "sizing_cap_value": null,
+      "sizing_mode": null,
+      "sizing_target_weight": null,
+      "skew_percentile": null,
+      "stop_type": "",
+      "symbol": "NVDA",
+      "symbol_to_close": "",
+      "trade_id": "",
+      "triggered_by_stop": false,
+      "unrealized_pnl": 84.0,
+      "unrealized_pnl_pct": 0.0,
+      "vix_confirmed": true,
+      "vix_level": 18.5,
+      "volatility_20d": null,
+      "volume_ratio": 1.0,
+      "vote_coverage": 4.125
+    },
+    "log": [
+      "WARNING MIFID_AUDIT[NVDA] agent=RLConfidenceAgent TIMEOUT after 60s — vote excluded",
+      "INFO VOTE[NVDA] agent=DrawdownGuardAgent score=0.900 weight=0.60 reasoning=DrawdownGuardAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=RegimeDetectionAgent score=0.400 weight=0.50 reasoning=RegimeDetectionAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=MomentumAgent score=0.850 weight=1.00 reasoning=MomentumAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=VIXAwareRiskAgent score=0.800 weight=0.45 reasoning=VIXAwareRiskAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=LSTMSignalAgent score=0.900 weight=1.50 reasoning=LSTMSignalAgent: Fixture-Begruendung",
+      "INFO VOTE[NVDA] agent=NewsSentimentAgent score=0.750 weight=0.80 reasoning=NewsSentimentAgent: Fixture-Begruendung",
+      "WARNING RoundTable[NVDA]: score=0.814 approved=True signal=BUY votes=6/7"
+    ],
+    "rueckgabe": {
+      "consensus_ranking": 0.813636364,
+      "error": null,
+      "regime_conditioning": {
+        "consensus": 0.813636364,
+        "factor": 0.9,
+        "severity": 0.2,
+        "undamped_consensus": 0.848484848
+      },
+      "round_table_scores": [
+        {
+          "agent_name": "DrawdownGuardAgent",
+          "name": "DrawdownGuardAgent",
+          "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+          "role": "veto_guard",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "RegimeDetectionAgent",
+          "name": "RegimeDetectionAgent",
+          "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+          "role": "conditioner",
+          "score": 0.4,
+          "signal": "HOLD",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "MomentumAgent",
+          "name": "MomentumAgent",
+          "reasoning": "MomentumAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.85,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.0
+        },
+        {
+          "agent_name": "VIXAwareRiskAgent",
+          "name": "VIXAwareRiskAgent",
+          "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+          "role": "sizer",
+          "score": 0.8,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.0
+        },
+        {
+          "agent_name": "LSTMSignalAgent",
+          "name": "LSTMSignalAgent",
+          "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.9,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 1.5
+        },
+        {
+          "agent_name": "NewsSentimentAgent",
+          "name": "NewsSentimentAgent",
+          "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+          "role": "directional",
+          "score": 0.75,
+          "signal": "BUY",
+          "vetoed": false,
+          "weight": 0.8
+        }
+      ],
+      "schluessel": [
+        "consensus_ranking",
+        "current_time",
+        "error",
+        "implied_vol",
+        "in_position",
+        "ohlc",
+        "position_avg_price",
+        "position_context_confirmed",
+        "position_qty",
+        "regime",
+        "regime_conditioning",
+        "round_table_scores",
+        "session_id",
+        "signal",
+        "symbol",
+        "unrealized_pnl",
+        "vix"
+      ],
+      "session_id": "<id-2>"
+    },
+    "senate": [
+      {
+        "consensus_score": 0.813636364,
+        "decision_id": "<id-1>",
+        "escalations": null,
+        "gatekeeper_approved": true,
+        "gatekeeper_reason": "AllChecksPassed: PDT, concentration and daily limit OK | StrictML: RL abstained — RL not required (flag)",
+        "market_regime": null,
+        "ml_scores": null,
+        "session_id": "<id-2>",
+        "signal_action": "BUY",
+        "specialist_summaries": null,
+        "symbol": "NVDA",
+        "timestamp": "2026-10-06T14:30:00+00:00",
+        "votes": [
+          {
+            "agent_name": "DrawdownGuardAgent",
+            "name": "DrawdownGuardAgent",
+            "reasoning": "DrawdownGuardAgent: Fixture-Begruendung",
+            "role": "veto_guard",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "RegimeDetectionAgent",
+            "name": "RegimeDetectionAgent",
+            "reasoning": "RegimeDetectionAgent: Fixture-Begruendung",
+            "role": "conditioner",
+            "score": 0.4,
+            "signal": "HOLD",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "MomentumAgent",
+            "name": "MomentumAgent",
+            "reasoning": "MomentumAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.85,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.0
+          },
+          {
+            "agent_name": "VIXAwareRiskAgent",
+            "name": "VIXAwareRiskAgent",
+            "reasoning": "VIXAwareRiskAgent: Fixture-Begruendung",
+            "role": "sizer",
+            "score": 0.8,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.0
+          },
+          {
+            "agent_name": "LSTMSignalAgent",
+            "name": "LSTMSignalAgent",
+            "reasoning": "LSTMSignalAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.9,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 1.5
+          },
+          {
+            "agent_name": "NewsSentimentAgent",
+            "name": "NewsSentimentAgent",
+            "reasoning": "NewsSentimentAgent: Fixture-Begruendung",
+            "role": "directional",
+            "score": 0.75,
+            "signal": "BUY",
+            "vetoed": false,
+            "weight": 0.8
+          }
+        ]
+      }
+    ],
+    "signal": {
+      "action": "BUY",
+      "is_simulation": false,
+      "suggested_quantity": 0.0,
+      "symbol": "NVDA"
+    },
+    "watchdog": [
+      [
+        "record_success",
+        "LSTMSignalAgent"
+      ],
+      [
+        "record_error",
+        "RLConfidenceAgent",
+        "TimeoutError"
+      ]
+    ],
+    "zaehler": {
+      "agent_vote_failures": {
+        "RLConfidenceAgent": 1
+      },
+      "consensus_outcomes": {
+        "buy": 1,
+        "no_trade": 0,
+        "sell": 0
+      },
+      "last_consensus_ts": 1791297000.0,
+      "round_tables_run": 1
+    }
+  }
+}
