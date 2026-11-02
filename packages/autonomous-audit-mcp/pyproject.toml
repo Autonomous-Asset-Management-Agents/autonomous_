@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autonomous-audit-mcp"
+version = "0.1.0"
+description = "MCP server exposing autonomous-audit's tamper-evident decision log (record/verify/report/anchor) as agent-callable tools - integrity & traceability for AI trading agents (not investment advice)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Autonomous Asset Management Agents UG", email = "support@aaagents.de" }]
+keywords = ["mcp", "model-context-protocol", "autonomous", "audit", "hash-chain", "tamper-evident", "agent", "trading"]
+# autonomous-audit is stdlib-only; fastmcp is the MCP server runtime. The audit CORE stays
+# dependency-free — this thin wrapper is the only place that pulls in a third-party runtime.
+dependencies = ["autonomous-audit>=0.1.0", "fastmcp>=3.2"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Office/Business :: Financial",
+  "Topic :: Software Development :: Libraries",
+]
+
+[project.urls]
+Homepage = "https://aaagents.de"
+Repository = "https://github.com/Autonomous-Asset-Management-Agents/autonomous_"
+
+[project.scripts]
+autonomous-audit-mcp = "autonomous_audit_mcp.server:main"
+
+[tool.setuptools.packages.find]
+include = ["autonomous_audit_mcp*"]

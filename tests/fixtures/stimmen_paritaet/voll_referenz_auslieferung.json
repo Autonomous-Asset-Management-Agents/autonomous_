@@ -1,0 +1,1883 @@
+{
+ "_kopf": {
+  "bis": "2026-02-06",
+  "commit": "d85405300e73",
+  "kommando": "python -m research.run_signal_replay --store tests/fixtures/stimmen_paritaet --corpus tests/fixtures/stimmen_paritaet/korpus --date 2025-12-29 --days 30 --window \"15:45-15:50 ET\" --cadence 15m --out tests/fixtures/stimmen_paritaet/voll_referenz_auslieferung.json --set FULL_UNIVERSE_MAX_POSITIONS=20 --set GATEKEEPER_STRICT_ML_REQUIRES_RL=False --set GLOBAL_BUY_COOLDOWN_MINUTES=30 --set INTRADAY_TIMING_ENABLED=True --set MATERIAL_ENTRY_MIN_PCT_OF_TARGET=0.0 --set MAX_BUYS_PER_HOUR=2",
+  "setzungen": [
+   "FULL_UNIVERSE_MAX_POSITIONS=20",
+   "GATEKEEPER_STRICT_ML_REQUIRES_RL=False",
+   "GLOBAL_BUY_COOLDOWN_MINUTES=30",
+   "INTRADAY_TIMING_ENABLED=True",
+   "MATERIAL_ENTRY_MIN_PCT_OF_TARGET=0.0",
+   "MAX_BUYS_PER_HOUR=2"
+  ],
+  "store_erzeugung": "python -c \"from pathlib import Path; from tests.unit.test_4862_stimmen_paritaet_stichprobe import baue_mini_store; baue_mini_store(Path('tests/fixtures/stimmen_paritaet'))\" \u2014 *.parquet ist gitignoriert, der Store wird nicht eingecheckt",
+  "store_sha256": "bd558f08346ffe4a7a6cf625490967fc21a9b4248a164da6bc8a2a248c774ba0",
+  "strategie": "strategie_auslieferung.json",
+  "von": "2025-12-29"
+ },
+ "cadence": "15m",
+ "daily_equity": [
+  {
+   "cash": 90250.0975039117,
+   "date": "2025-12-29",
+   "equity": 100000.0,
+   "n_positions": 2
+  },
+  {
+   "cash": 90250.0975039117,
+   "date": "2025-12-30",
+   "equity": 100045.1176568152,
+   "n_positions": 2
+  },
+  {
+   "cash": 90250.0975039117,
+   "date": "2025-12-31",
+   "equity": 100092.9189436751,
+   "n_positions": 2
+  },
+  {
+   "cash": 85250.0975297572,
+   "date": "2026-01-01",
+   "equity": 100140.9784085346,
+   "n_positions": 3
+  },
+  {
+   "cash": 85250.0975297572,
+   "date": "2026-01-02",
+   "equity": 100232.7733072909,
+   "n_positions": 3
+  },
+  {
+   "cash": 90014.1496971796,
+   "date": "2026-01-05",
+   "equity": 100315.1070510752,
+   "n_positions": 2
+  },
+  {
+   "cash": 90519.7160867849,
+   "date": "2026-01-06",
+   "equity": 100404.5636881088,
+   "n_positions": 2
+  },
+  {
+   "cash": 90519.7160867849,
+   "date": "2026-01-07",
+   "equity": 100423.0074794641,
+   "n_positions": 2
+  },
+  {
+   "cash": 90519.7160867849,
+   "date": "2026-01-08",
+   "equity": 100422.50357617771,
+   "n_positions": 2
+  },
+  {
+   "cash": 90898.96048247331,
+   "date": "2026-01-09",
+   "equity": 100403.59593730871,
+   "n_positions": 2
+  },
+  {
+   "cash": 86114.8573259933,
+   "date": "2026-01-12",
+   "equity": 100343.68813385,
+   "n_positions": 3
+  },
+  {
+   "cash": 86114.8573259933,
+   "date": "2026-01-13",
+   "equity": 100297.41777096079,
+   "n_positions": 3
+  },
+  {
+   "cash": 90741.2980707165,
+   "date": "2026-01-14",
+   "equity": 100243.3116970451,
+   "n_positions": 2
+  },
+  {
+   "cash": 86204.283189635,
+   "date": "2026-01-15",
+   "equity": 100218.5094738001,
+   "n_positions": 3
+  },
+  {
+   "cash": 86204.283189635,
+   "date": "2026-01-16",
+   "equity": 100157.6524033859,
+   "n_positions": 3
+  },
+  {
+   "cash": 90876.561993135,
+   "date": "2026-01-19",
+   "equity": 100094.89282732109,
+   "n_positions": 2
+  },
+  {
+   "cash": 90813.67128550929,
+   "date": "2026-01-20",
+   "equity": 100026.6286584526,
+   "n_positions": 2
+  },
+  {
+   "cash": 90813.67128550929,
+   "date": "2026-01-21",
+   "equity": 99984.73502302739,
+   "n_positions": 2
+  },
+  {
+   "cash": 90813.67128550929,
+   "date": "2026-01-22",
+   "equity": 99957.7822042241,
+   "n_positions": 2
+  },
+  {
+   "cash": 90411.94415153339,
+   "date": "2026-01-23",
+   "equity": 99947.94358326089,
+   "n_positions": 2
+  },
+  {
+   "cash": 85653.47340742499,
+   "date": "2026-01-26",
+   "equity": 100002.8086193091,
+   "n_positions": 3
+  },
+  {
+   "cash": 85653.47340742499,
+   "date": "2026-01-27",
+   "equity": 100038.1646868397,
+   "n_positions": 3
+  },
+  {
+   "cash": 90511.59953051318,
+   "date": "2026-01-28",
+   "equity": 100089.87099421477,
+   "n_positions": 2
+  },
+  {
+   "cash": 85986.06954354778,
+   "date": "2026-01-29",
+   "equity": 100115.59756930088,
+   "n_positions": 3
+  },
+  {
+   "cash": 85986.06954354778,
+   "date": "2026-01-30",
+   "equity": 100176.88267208228,
+   "n_positions": 3
+  },
+  {
+   "cash": 90959.84469605389,
+   "date": "2026-02-02",
+   "equity": 100251.5296702056,
+   "n_positions": 2
+  },
+  {
+   "cash": 90900.2316886503,
+   "date": "2026-02-03",
+   "equity": 100314.38415574661,
+   "n_positions": 2
+  },
+  {
+   "cash": 90900.2316886503,
+   "date": "2026-02-04",
+   "equity": 100394.29189809179,
+   "n_positions": 2
+  },
+  {
+   "cash": 90900.2316886503,
+   "date": "2026-02-05",
+   "equity": 100468.9256025595,
+   "n_positions": 2
+  },
+  {
+   "cash": 90878.89936925379,
+   "date": "2026-02-06",
+   "equity": 100534.1317009638,
+   "n_positions": 2
+  }
+ ],
+ "end_positions": {
+  "CCC": 37.885204,
+  "DDD": 34.499864
+ },
+ "ending_equity": 100534.1317009638,
+ "halt_reason": "",
+ "halted": false,
+ "n_cycles": 30,
+ "orders": [
+  {
+   "blocked_reason": null,
+   "fill_price": 98.1643,
+   "filled_at": "2025-12-29T15:45:00-05:00",
+   "qty": 50.934505,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2025-12-29T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 135.2923,
+   "filled_at": "2025-12-29T15:45:00-05:00",
+   "qty": 35.108816,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2025-12-29T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 50.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-29T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.934505,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-29T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 35.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-29T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.108816,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-29T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.934505,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-30T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.108816,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-30T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.934505,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-31T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.108816,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2025-12-31T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.934505,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-01T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.108816,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-01T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 113.1605,
+   "filled_at": "2026-01-01T15:45:00-05:00",
+   "qty": 44.185029,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-01T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.934505,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-02T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.108816,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-02T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 44.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-02T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.185029,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-02T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.934505,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-05T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.108816,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-05T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.185029,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-05T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 135.6939,
+   "filled_at": "2026-01-05T15:45:00-05:00",
+   "qty": 35.108816,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-05T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.934505,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-06T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.185029,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-06T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 103.4605,
+   "filled_at": "2026-01-06T15:45:00-05:00",
+   "qty": 50.934505,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-06T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 126.5574,
+   "filled_at": "2026-01-06T15:45:00-05:00",
+   "qty": 37.644128,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-06T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.185029,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-07T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 37.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-07T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.644128,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-07T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.185029,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-08T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.644128,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-08T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.185029,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-09T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.644128,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-09T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 116.8574,
+   "filled_at": "2026-01-09T15:45:00-05:00",
+   "qty": 44.185029,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-09T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 132.5994,
+   "filled_at": "2026-01-09T15:45:00-05:00",
+   "qty": 36.079373,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-09T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.644128,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-12T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 36.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-12T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.079373,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-12T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 106.752,
+   "filled_at": "2026-01-12T15:45:00-05:00",
+   "qty": 44.815115,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-12T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.644128,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-13T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.079373,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-13T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 44.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-13T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.815115,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-13T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.644128,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-14T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.079373,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-14T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.815115,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-14T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 122.8994,
+   "filled_at": "2026-01-14T15:45:00-05:00",
+   "qty": 37.644128,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-14T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.079373,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-15T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.815115,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-15T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 114.9485,
+   "filled_at": "2026-01-15T15:45:00-05:00",
+   "qty": 39.469979,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-15T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.079373,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-16T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.815115,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-16T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 39.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-16T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.469979,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-16T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.079373,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-19T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.815115,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-19T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.469979,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-19T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 129.5,
+   "filled_at": "2026-01-19T15:45:00-05:00",
+   "qty": 36.079373,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-19T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.815115,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-20T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.469979,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-20T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 105.2485,
+   "filled_at": "2026-01-20T15:45:00-05:00",
+   "qty": 44.815115,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-20T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 120.0812,
+   "filled_at": "2026-01-20T15:45:00-05:00",
+   "qty": 39.803186,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-20T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.469979,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-21T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 39.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-21T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.803186,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-21T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.469979,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-22T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.803186,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-22T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.469979,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-23T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.803186,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-23T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 110.3812,
+   "filled_at": "2026-01-23T15:45:00-05:00",
+   "qty": 39.469979,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-23T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 131.7537,
+   "filled_at": "2026-01-23T15:45:00-05:00",
+   "qty": 36.116411,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-23T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.803186,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-26T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 36.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-26T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.116411,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-26T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 101.8239,
+   "filled_at": "2026-01-26T15:45:00-05:00",
+   "qty": 46.732356,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-26T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.803186,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-27T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.116411,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-27T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 46.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-27T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.732356,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-27T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.803186,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-28T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.116411,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-28T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.732356,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-28T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 122.0537,
+   "filled_at": "2026-01-28T15:45:00-05:00",
+   "qty": 39.803186,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-01-28T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.116411,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-29T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.732356,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-29T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 110.7982,
+   "filled_at": "2026-01-29T15:45:00-05:00",
+   "qty": 40.844797,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-01-29T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.116411,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-30T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.732356,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-30T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 40.0,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-30T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.844797,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-01-30T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.116411,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-02T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.732356,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-02T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.844797,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-02T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 137.7151,
+   "filled_at": "2026-02-02T15:45:00-05:00",
+   "qty": 36.116411,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-02-02T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.732356,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-03T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.844797,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-03T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 101.0982,
+   "filled_at": "2026-02-03T15:45:00-05:00",
+   "qty": 46.732356,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-02-03T15:45:00-05:00",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 126.2807,
+   "filled_at": "2026-02-03T15:45:00-05:00",
+   "qty": 37.885204,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-02-03T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.844797,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-04T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 37.0,
+   "side": "SELL",
+   "status": "accepted",
+   "submitted_at": "2026-02-04T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.885204,
+   "side": "SELL",
+   "status": "accepted",
+   "submitted_at": "2026-02-04T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.844797,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-05T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.885204,
+   "side": "SELL",
+   "status": "accepted",
+   "submitted_at": "2026-02-05T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.844797,
+   "side": "SELL",
+   "status": "canceled",
+   "submitted_at": "2026-02-06T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": null,
+   "filled_at": null,
+   "qty": 0.885204,
+   "side": "SELL",
+   "status": "accepted",
+   "submitted_at": "2026-02-06T15:45:00-05:00",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 116.5807,
+   "filled_at": "2026-02-06T15:45:00-05:00",
+   "qty": 40.844797,
+   "side": "SELL",
+   "status": "filled",
+   "submitted_at": "2026-02-06T15:45:00-05:00",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": null,
+   "fill_price": 138.6396,
+   "filled_at": "2026-02-06T15:45:00-05:00",
+   "qty": 34.499864,
+   "side": "BUY",
+   "status": "filled",
+   "submitted_at": "2026-02-06T15:45:00-05:00",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:churn \u2014 AAA in order cooldown (< 900s since last trade)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:churn \u2014 DDD in order cooldown (< 900s since last trade)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 AAA within top-up dead-band (held 5.0% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 DDD within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 DDD within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 BBB within top-up dead-band (held 5.0% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-07T20:45, no re-buy before 2026-01-08",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 CCC within top-up dead-band (held 4.7% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-08T20:45, no re-buy before 2026-01-09",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 CCC within top-up dead-band (held 4.7% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 DDD within top-up dead-band (held 4.7% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-13T20:45, no re-buy before 2026-01-14",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 AAA within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 DDD within top-up dead-band (held 4.7% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 AAA within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-16T20:45, no re-buy before 2026-01-19",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 BBB within top-up dead-band (held 4.5% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 BBB within top-up dead-band (held 4.5% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-21T20:45, no re-buy before 2026-01-22",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 CCC within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-22T20:45, no re-buy before 2026-01-23",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 CCC within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 DDD within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-27T20:45, no re-buy before 2026-01-28",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 AAA within top-up dead-band (held 4.7% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 DDD within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 AAA within top-up dead-band (held 4.7% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-01-30T20:45, no re-buy before 2026-02-02",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 BBB within top-up dead-band (held 4.5% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 BBB within top-up dead-band (held 4.6% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "BBB"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-02-04T20:45, no re-buy before 2026-02-05",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "DDD"
+  },
+  {
+   "blocked_reason": "no open position \u2014 already flat",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "closed",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 CCC within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:reentry_lockout \u2014 fully exited 2026-02-05T20:45, no re-buy before 2026-02-06",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "AAA"
+  },
+  {
+   "blocked_reason": "blocked:portfolio \u2014 CCC within top-up dead-band (held 4.8% vs clean-weight target 5.0%, band 25% of target)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  },
+  {
+   "blocked_reason": "blocked:risk \u2014 position size resolved to 0 (risk/cash)",
+   "fill_price": null,
+   "qty": null,
+   "side": null,
+   "status": "blocked",
+   "symbol": "CCC"
+  }
+ ],
+ "sim_date": "2025-12-29",
+ "starting_equity": 100000.0,
+ "symbols": [
+  "AAA",
+  "BBB",
+  "CCC",
+  "DDD"
+ ],
+ "timed_out": false,
+ "wall_time_s": 46.2,
+ "window": "15:45-15:50 ET"
+}

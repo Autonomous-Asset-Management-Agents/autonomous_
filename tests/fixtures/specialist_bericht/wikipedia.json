@@ -1,0 +1,136 @@
+{
+  "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/NVDA/daily/20260901/20260915": {
+    "status": 200,
+    "json": {
+      "items": [
+        {
+          "timestamp": "2026090100",
+          "views": 9100
+        },
+        {
+          "timestamp": "2026090200",
+          "views": 8800
+        },
+        {
+          "timestamp": "2026090300",
+          "views": 9400
+        },
+        {
+          "timestamp": "2026090400",
+          "views": 9900
+        },
+        {
+          "timestamp": "2026090500",
+          "views": 9300
+        },
+        {
+          "timestamp": "2026090600",
+          "views": 8700
+        },
+        {
+          "timestamp": "2026090700",
+          "views": 9000
+        },
+        {
+          "timestamp": "2026090800",
+          "views": 9200
+        },
+        {
+          "timestamp": "2026090900",
+          "views": 31000
+        },
+        {
+          "timestamp": "2026091000",
+          "views": 28500
+        },
+        {
+          "timestamp": "2026091100",
+          "views": 26000
+        },
+        {
+          "timestamp": "2026091200",
+          "views": 24500
+        },
+        {
+          "timestamp": "2026091300",
+          "views": 30100
+        },
+        {
+          "timestamp": "2026091400",
+          "views": 27800
+        },
+        {
+          "timestamp": "2026091500",
+          "views": 25200
+        }
+      ]
+    }
+  },
+  "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/SPY/daily/20260901/20260915": {
+    "status": 200,
+    "json": {
+      "items": [
+        {
+          "timestamp": "2026090100",
+          "views": 1200
+        },
+        {
+          "timestamp": "2026090200",
+          "views": 1150
+        },
+        {
+          "timestamp": "2026090300",
+          "views": 1300
+        },
+        {
+          "timestamp": "2026090400",
+          "views": 1250
+        },
+        {
+          "timestamp": "2026090500",
+          "views": 1180
+        },
+        {
+          "timestamp": "2026090600",
+          "views": 1210
+        },
+        {
+          "timestamp": "2026090700",
+          "views": 1240
+        },
+        {
+          "timestamp": "2026090800",
+          "views": 1190
+        },
+        {
+          "timestamp": "2026090900",
+          "views": 1260
+        },
+        {
+          "timestamp": "2026091000",
+          "views": 1230
+        },
+        {
+          "timestamp": "2026091100",
+          "views": 1300
+        },
+        {
+          "timestamp": "2026091200",
+          "views": 1280
+        },
+        {
+          "timestamp": "2026091300",
+          "views": 1220
+        },
+        {
+          "timestamp": "2026091400",
+          "views": 1270
+        },
+        {
+          "timestamp": "2026091500",
+          "views": 1250
+        }
+      ]
+    }
+  }
+}

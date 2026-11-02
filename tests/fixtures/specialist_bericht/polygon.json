@@ -1,0 +1,65 @@
+{
+  "https://api.polygon.io/v2/reference/news?ticker=NVDA&limit=10&apiKey=FIXTURE-KEY": {
+    "status": 200,
+    "json": {
+      "status": "OK",
+      "results": [
+        {
+          "title": "NVDA data-center revenue hits record as Blackwell ramps",
+          "published_utc": "2026-09-14T21:05:00Z",
+          "publisher": {
+            "name": "Reuters"
+          },
+          "article_url": "https://example.test/nvda-record"
+        },
+        {
+          "title": "US weighs new export curbs on NVDA AI chips to China",
+          "published_utc": "2026-09-12T13:40:00Z",
+          "publisher": {
+            "name": "Bloomberg"
+          },
+          "article_url": "https://example.test/nvda-export"
+        },
+        {
+          "title": "NVDA insiders sell shares after earnings run-up",
+          "published_utc": "2026-09-11T16:00:00Z",
+          "publisher": {
+            "name": "MarketWatch"
+          },
+          "article_url": "https://example.test/nvda-insider"
+        },
+        {
+          "title": "NVDA supplier TSMC lifts capex guidance",
+          "published_utc": "2026-09-10T08:15:00Z",
+          "publisher": {
+            "name": "Nikkei"
+          }
+        }
+      ]
+    }
+  },
+  "https://api.polygon.io/v2/reference/news?ticker=SPY&limit=10&apiKey=FIXTURE-KEY": {
+    "status": 200,
+    "json": {
+      "status": "OK",
+      "results": [
+        {
+          "title": "SPY slips as Treasury yields climb before Fed meeting",
+          "published_utc": "2026-09-14T20:10:00Z",
+          "publisher": {
+            "name": "Reuters"
+          },
+          "article_url": "https://example.test/spy-yields"
+        },
+        {
+          "title": "SPY inflows top $5 billion in September",
+          "published_utc": "2026-09-11T12:00:00Z",
+          "publisher": {
+            "name": "ETF.com"
+          },
+          "article_url": "https://example.test/spy-inflows"
+        }
+      ]
+    }
+  }
+}

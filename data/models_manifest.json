@@ -1,0 +1,49 @@
+{
+  "release_tag": "models-v1.0",
+  "release_url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/tag/models-v1.0",
+  "schema_version": 1,
+  "models": [
+    {
+      "filename": "lstm_model.pth",
+      "url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/download/models-v1.0/lstm_model.pth",
+      "sha256": "eaf3f3040b192585e5410c19a4132b08d829ed2cd3e2bb0794ad6ca1a54644b6",
+      "size_bytes": 623906,
+      "purpose": "LSTM 5-day return predictor (legacy name); consumed by LSTMSignalAgent"
+    },
+    {
+      "filename": "scaler_x.pkl",
+      "url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/download/models-v1.0/scaler_x.pkl",
+      "sha256": "f70d2bb494359982a351127c3ff908f45ce4831a35a012a455875346568fc552",
+      "size_bytes": 1119,
+      "purpose": "StandardScaler for the LSTM input features (legacy name)"
+    },
+    {
+      "filename": "scaler_y.pkl",
+      "url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/download/models-v1.0/scaler_y.pkl",
+      "sha256": "5ee6215b7375b2399198bc241234e87aaa64b496ef69ae842a01b753774fb0dc",
+      "size_bytes": 591,
+      "purpose": "StandardScaler for the LSTM target (legacy name)"
+    },
+    {
+      "filename": "model_metadata.json",
+      "url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/download/models-v1.0/model_metadata.json",
+      "sha256": "ddda02f27f52a83d5cc963b98c40c149aedfeb9fa85add2e4ca4233ecb11a5fc",
+      "size_bytes": 1568,
+      "purpose": "LSTM hyper-parameters + feature list (legacy name)"
+    },
+    {
+      "filename": "rl_agent_v3_dsr.zip",
+      "url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/download/models-v1.0/rl_agent_v3_dsr.zip",
+      "sha256": "35a2311580aa2be9a66433cae82e37d42a4db6777c23991948f09f0350dd8fce",
+      "size_bytes": 7170053,
+      "purpose": "RecurrentPPO RL agent with DSR reward (legacy name); consumed by RLConfidenceAgent"
+    },
+    {
+      "filename": "rl_agent_v3_dsr_stats.pkl",
+      "url": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases/download/models-v1.0/rl_agent_v3_dsr_stats.pkl",
+      "sha256": "45e7eea74ac514bfaa3e308b1dec6bd7ca943fc0b3b1632d7a0c2c005d188ba8",
+      "size_bytes": 1663,
+      "purpose": "VecNormalize observation stats for the v3-DSR RL agent (legacy name)"
+    }
+  ]
+}
