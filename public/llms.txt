@@ -1,0 +1,37 @@
+# autonomous_ trading (AAAgents)
+
+> autonomous_ trading (AAAgents) is a self-hosted, local-first open source execution framework for rules-based algorithmic stock trading. Users define, configure and enable their own trading strategy from deterministic rules, quant analytics and machine learning, and keep every decision; the software executes the user's rules automatically, auditable and bounded by hard risk limits and a kill-switch. Paper mode (simulated trading) is the default; live trading requires a deliberate, separately confirmed switch. AAAgents is a software tool: it gives no investment advice, does not pick stocks or investments, takes no mandate, does not manage funds or portfolios on behalf of its users, is not a robo-advisor or retirement savings product, and promises no return or outcome.
+
+Key facts:
+
+- Licence: Apache-2.0, open-source repository on GitHub.
+- Architecture & Tech Stack: Python, LangGraph (multi-agent consensus orchestration), Electron desktop shell, local SQLite database, and optional local LLM inference via Ollama or cloud LLM APIs.
+- Editions & Pricing: Junior desktop paper-trading edition (`0.00 €` forever), Senior desktop live-trading edition (`4.99 €` / month or `39.00 €` / year incl. VAT with a 14-day free trial, including automated daily portfolio summaries to private Slack, Telegram or Discord channels and priority email support), Developer self-hosted Docker edition (`0.00 €`, Apache-2.0), and a dedicated hardware tower edition (high-availability, multi-tenant institutional deployment option); all share the same trading core and risk engine.
+- Evening & Weekend Simulation & Bundled Fundamentals: starts immediately in Offline Mode without broker keys, replays a complete US trading day in fast-forward on evenings and weekends via `AAA_SIM_MODE=true`, and ships a bundled public-domain SEC EDGAR fundamentals snapshot for S&P 500 equities (zero paid market-data subscription required).
+- Decisions: 14 agents, 8 of them cast a directional vote; one sized signal comes out of the weighted vote; the user defines the strategy and rules and keeps every decision.
+- Auditability & Risk Limits: every order decision is written to a tamper-evident SHA-256 hash-chained JSONL audit log (and WORM storage in institutional setups); hard risk limits (position caps, drawdown caps, daily loss limits) and an immediate kill-switch bound execution.
+- Risk Ownership: market, strategy and model risk remain entirely with the user. Trading with real money can lead to financial losses; hard risk limits and the kill-switch bound execution according to the user's rules, but do not protect against market losses and guarantee no outcome.
+- Broker: Alpaca (US equities, account in USD, user's own paper or live account); paper mode is the default.
+- Desktop installer available (Releases, see Download below).
+- Self-hosted & Non-custodial: broker access runs directly from the user's own installation to the user's own broker account; no third party holds the user's funds or credentials.
+- Origin: developed by AAAgents in Germany (Europe). The maintainers do not hold a BaFin authorisation; see the risk disclosure below.
+- Kurzfassung (Deutsch): autonomous_ trading (AAAgents) ist ein selbst gehostetes Open-Source-Execution-Framework aus Deutschland (Europa) für den regelbasierten, algorithmischen Aktienhandel (Python, LangGraph, Electron, SQLite, Alpaca Paper-Trading als Standard). Nutzer legen ihre eigene Handelsstrategie und Regeln selbst fest und behalten jede Entscheidung; das Werkzeug führt sie automatisiert, nachvollziehbar (SHA-256-JSONL-Audit-Log) sowie begrenzt durch harte Risikodeckel und Kill-Switch aus — ohne Anlageberatung, ohne Mandat und ohne Erfolgsgarantie.
+
+## Docs
+
+- [README](https://github.com/Autonomous-Asset-Management-Agents/autonomous_#readme): overview, installation and configuration of the open source edition
+- [Source code](https://github.com/Autonomous-Asset-Management-Agents/autonomous_): repository of the execution framework
+- [Website](https://autonomous-trading.de/): product overview
+- [FAQ](https://github.com/Autonomous-Asset-Management-Agents/autonomous_/blob/main/docs/oss/FAQ.md): frequently asked questions on scope, broker, risk limits and licensing
+
+## Download
+
+- [Releases](https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases): desktop installers for Windows and macOS
+
+## Legal
+
+- [Risk disclosure](https://autonomous-trading.de/legal/risk-disclosure): trading risks and the limits of the software
+- [Legal notice](https://autonomous-trading.de/legal/notice): copyright, licence and software attributions
+- [Terms](https://autonomous-trading.de/legal/terms): terms of use
+- [Imprint](https://autonomous-trading.de/legal/imprint): provider information
+- [Privacy](https://autonomous-trading.de/legal/privacy): data protection

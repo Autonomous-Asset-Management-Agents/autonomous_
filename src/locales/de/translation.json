@@ -1,0 +1,678 @@
+{
+  "header": {
+    "liveDemo": "DEMO ANSEHEN",
+    "download": "Herunterladen",
+    "language": "Sprache",
+    "downloadAria": "Herunterladen — Edition wählen",
+    "liveDemoAria": "Live-Demo ansehen"
+  },
+  "appliance": {
+    "eyebrow": "autonomous_ tower — limitierte first edition · nur 100 exemplare · lieferung 12·2026",
+    "hero": {
+      "h1": "Autonomous\ntower",
+      "subline": "Lautlos. Verlässlich. Immer an.",
+      "bodyLead": "ist die dedizierte Hardware für das",
+      "bodyMid": "Trading System. Auspacken, anschließen, einmalig mit dem Smartphone verbinden — von da an handelt",
+      "bodyTail": "nach Ihrer Trading-Strategie. Ohne Unterbrechung, sieben Tage die Woche. Lautlos und verlässlich. Von Ihrem Zuhause aus.",
+      "imgNote": "Abb. ähnlich",
+      "price": "Price on request",
+      "priceSuffix": "",
+      "ctaJoin": "Jetzt vormerken",
+      "ctaHow": "So funktioniert es",
+      "micro": "Keine Anzahlung erforderlich — wir kontaktieren Sie, sobald Ihr Exemplar bereitsteht."
+    },
+    "story": {
+      "h2": "Immer da. Jeden Tag, jede Stunde, jeden Augenblick.",
+      "silentTitle": "Jeden Tag im Markt",
+      "silentBody": "Der autonomous_ tower ist 24 Stunden aktiv, an sieben Tagen die Woche. Lautlos und still, aber immer da. Damit Ihr Portfolio und der Markt nie unbeobachtet bleiben.",
+      "materialsTitle": "Ihre private Installation",
+      "materialsBody": "Der autonomous_ tower ist optimiert für Ihre eigene, lokale KI. Sie benötigen keine Cloud-Lösung, kein Abo. Ihre Strategie, Ihre Daten und Ihr Broker-Zugang bleiben bei Ihnen zuhause.",
+      "tradesTitle": "Sofort einsatzbereit",
+      "tradesBody": "autonomous_ ist vorinstalliert und startet im Paper-Modus, wie jede Installation. Sie bestimmen die Regeln."
+    },
+    "how": {
+      "h2": "In zwei Minuten einsatzbereit.",
+      "step1Title": "Auspacken und anschließen",
+      "step1Body": "Ein Kabel, mehr braucht es nicht. Der autonomous_ tower startet selbstständig in den Einrichtungsmodus.",
+      "step2Title": "Per Smartphone verbinden",
+      "step2Body": "Der tower öffnet ein eigenes WLAN. Ihr Smartphone führt durch die Einrichtung: Heimnetz und Broker-Zugang.",
+      "step3Title": "Von überall erreichbar",
+      "step3BodyBefore": "Ihr Dashboard ist erreichbar unter",
+      "step3BodyAfter": "— im Büro, unterwegs, weltweit. Ohne Konfiguration."
+    },
+    "specs": {
+      "h2": "Das Datenblatt.",
+      "finish": "Ausführung",
+      "finishV": "Massives Walnussholz · CNC-Aluminium",
+      "acoustics": "Akustik",
+      "acousticsV": "0 dB — lüfterlos, keine beweglichen Teile",
+      "memory": "Speicher",
+      "memoryV": "32 GB · 500 GB NVMe",
+      "connectivity": "Konnektivität",
+      "connectivityV": "WLAN · Gigabit-Ethernet",
+      "software": "Software",
+      "softwareV": "autonomous OSS, vorinstalliert · Updates over the air",
+      "inTheBox": "Lieferumfang",
+      "inTheBoxV": "Gerät · Netzteil · Quick-Start-Karte",
+      "price": "Preis",
+      "priceV": "Price on request",
+      "note": "Die Konfiguration kann sich bis zur Auslieferung ändern."
+    },
+    "wait": {
+      "h2": "Sichern Sie sich Ihr Exemplar.",
+      "lead": "Die First Edition ist auf 100 Exemplare limitiert. Tragen Sie sich ein — bestätigen Sie per E-Mail, dann steht Ihre Position fest.",
+      "emailPlaceholder": "ihre.adresse@beispiel.de",
+      "join": "Jetzt vormerken",
+      "joining": "Wird vorgemerkt…",
+      "pendingHint": "Prüfen Sie Ihr Postfach — bestätigen Sie den Link, dann ist Ihr Platz gesichert.",
+      "error": "Der Eintrag ist fehlgeschlagen — der Wartelisten-Dienst hat nicht geantwortet. Ihr Eintrag wurde nicht gespeichert; bitte versuchen Sie es erneut.",
+      "inviteSuffix": "— jede bestätigte Anmeldung über Ihren Link verbessert Ihre Position",
+      "micro": "Der Eintrag ist kostenlos und stellt keinen Kauf dar. Sie können die Liste jederzeit verlassen."
+    },
+    "faq": {
+      "h2": "Fragen.",
+      "q1": "Wann wird geliefert?",
+      "a1": "Die First Edition ist für Dezember 2026 geplant. Ihr Platz auf der Warteliste bestimmt die Lieferreihenfolge.",
+      "q2": "Zahle ich jetzt bereits?",
+      "a2": "Nein. Die Warteliste ist kostenlos. Wir kontaktieren Sie mit einem Bestell-Link, sobald Ihr Exemplar versandbereit ist.",
+      "q3": "Was wird benötigt?",
+      "a3": "Ein Broker-Konto und Ihr Heim-WLAN. Kein Monitor, keine Tastatur, keine technische Einrichtung.",
+      "q4": "Ist die Software enthalten?",
+      "a4": "Ja. Ihr Gerät wird mit vorinstalliertem autonomous ausgeliefert und erhält Updates over the air."
+    },
+    "footer": {
+      "risk": "autonomous ist ein reines Ausführungswerkzeug (Execution-only). Der Handel mit Finanzinstrumenten ist mit erheblichen Risiken verbunden, bis hin zum Totalverlust. Die Wertentwicklung der Vergangenheit ist kein verlässlicher Indikator für zukünftige Ergebnisse.",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "riskDisclosure": "Risikohinweise",
+      "terms": "AGB"
+    }
+  },
+  "landing": {
+    "hero": {
+      "h1a": "autonomous",
+      "h1b": "trading",
+      "sub": "Sie bestimmen die Regeln.",
+      "body": "ist ein Human-on-the-Loop-System (HOTL), das aus Ihrer Strategie professionelles algorithmisches Trading macht. Steuern Sie 14 KI-basierte und deterministische Agenten. Lassen Sie sie den Markt rund um die Uhr beobachten und innerhalb Ihrer Leitplanken handeln.",
+      "ctaDemo": "LIVE-DEMO",
+      "ctaDownload": "DOWNLOAD",
+      "rot1": "führt effizient aus.",
+      "rot2": "Auf Desktop, Server oder in der Cloud.",
+      "rot3": "Mit algorithmischer Präzision.",
+      "flagKicker": "Neue Hardware · Preis auf Anfrage",
+      "flagName": "autonomous_ tower",
+      "exp": {
+        "positioning": {
+          "h1a": "Ihre Strategie.",
+          "h1b": "Regeltreu ausgeführt."
+        },
+        "transparency": {
+          "h1a": "KI schlägt vor.",
+          "h1b": "Ihre Regeln entscheiden.",
+          "sub": "Quant-Agenten prüfen. Jede Auswahl. 24/7.",
+          "body": "ist Software, kein Dienst. Sie schreiben Ihren eigenen Prompt für ein lokales Modell oder Google Gemini; die Antwort ist nur eine Vorauswahl. 14 Quant-Agenten, jeder eine Software mit einer Disziplin, bewerten jede Auswahl nach den Gewichten und Schwellen, die Sie festlegen. Der deterministische Iron Dome wendet zuletzt Ihre Risikogrenzen an. Die KI erteilt nie eine Order. Sie starten im Paper-Konto, Entscheidungen und Risiko bleiben bei Ihnen. Keine Anlageberatung.",
+          "rot1": "prüft jede KI-Auswahl.",
+          "rot2": "Mit 14 Agenten.",
+          "rot3": "Streng nach Ihren Regeln."
+        }
+      },
+      "ctaCode": "View the code",
+      "ctaDemoAria": "View live demo",
+      "ctaDownloadAria": "Download — choose your edition",
+      "flagAria": "autonomous_ tower — new hardware, First Edition",
+      "console": {
+        "kpi": {
+          "positions": "Open positions",
+          "positionsHint": "max {{count}}",
+          "agents": "Agents active",
+          "agentsHint": "AI-based and deterministic",
+          "voting": "Voting",
+          "votingHint": "by default",
+          "cash": "Cash",
+          "cashHint": "settled cash"
+        }
+      }
+    },
+    "profit": {
+      "h2": "Ihre Regeln.",
+      "intro": "Sie entwerfen die Strategie. Legen Sie die Regeln für die Agenten und den Iron Dome fest: Aktienauswahl, Risikomanagement, Limits. autonomous_ führt aus.",
+      "p1": {
+        "lead": "Über 60 Parameter.",
+        "text": "Anzahl der Positionen, Ordergröße, Einstiegsschwellen, Stopps, Exposure, Trades pro Tag. Dazu gewichten Sie die 14 Agenten."
+      },
+      "p2": {
+        "lead": "Risikoprüfung bei jeder Order.",
+        "text": "Ordergröße, Exposure und Ihre eigenen Limits werden geprüft, bevor etwas gesendet wird. Sie setzt Ihre Limits durch, Verluste verhindern kann sie nicht."
+      },
+      "p3": {
+        "lead": "Not-Aus.",
+        "text": "Stoppen Sie den gesamten Handel jederzeit mit einem Klick, auf Wunsch mit Verkauf aller Positionen."
+      },
+      "p4": {
+        "lead": "Zuerst Paper-Modus.",
+        "text": "Jede Installation startet mit Spielgeld und Live-Marktdaten. Echtes Geld bewegt sich erst nach Ihrer ausdrücklichen Freigabe."
+      },
+      "example": {
+        "rulesTitle": "Your rules · Example",
+        "weightsTitle": "Agent weights · Example",
+        "maxPositions": "Maximum positions",
+        "volSizing": "Volatility sizing",
+        "on": "on",
+        "dailyVol": "Daily vol target",
+        "minHold": "Minimum holding period",
+        "days": "{{count}} days"
+      }
+    },
+    "audit": {
+      "h2": "Open Source.",
+      "intro": "Lesen Sie den Code, prüfen Sie jede Entscheidung, erweitern Sie ihn um Ihre eigene Logik. autonomous_ ist Open Source unter der Lizenz Apache 2.0.",
+      "p1": {
+        "lead": "Eine Begründung je Stimme.",
+        "text": "Jeder Agent nennt sein Argument im Klartext. Sie sehen, wer abgestimmt hat, wie stark und warum."
+      },
+      "p2": {
+        "lead": "Hash-verkettetes Audit-Log.",
+        "text": "Entscheidungen werden in ein hash-verkettetes Log geschrieben. Jede spätere Änderung an einem Eintrag wird sichtbar."
+      },
+      "p3": {
+        "lead": "Apache 2.0.",
+        "text": "Der Kern steht unter der Lizenz Apache 2.0. Lesen Sie nach, was er tut, Zeile für Zeile."
+      },
+      "p4": {
+        "lead": "Prüfen, anpassen, wiederholen.",
+        "text": "Vergleichen Sie Entscheidungen mit Ergebnissen, passen Sie eine Regel an und lassen Sie sie erneut im Paper-Modus laufen. Ihre Strategie wird an Belegen besser, nicht an Erinnerungen."
+      },
+      "graphic": {
+        "sink2": "Database · local"
+      }
+    },
+    "safe": {
+      "h2": "Ihre Daten.",
+      "intro": "Ihre Broker-Schlüssel, Ihre Strategie und Ihr Handelsverlauf bleiben auf Ihrem eigenen Rechner oder Server, nicht bei uns. autonomous_ lässt Ihre Daten bei Ihnen.",
+      "p1": {
+        "lead": "Schlüssel im Schlüsselbund.",
+        "text": "Broker-API-Schlüssel liegen verschlüsselt im Schlüsselbund Ihres Betriebssystems."
+      },
+      "p2": {
+        "lead": "Lokale KI.",
+        "text": "Auf dem Desktop läuft das KI-Modell standardmäßig lokal. Keine Abhängigkeit von einem Cloud-KI-Anbieter."
+      },
+      "p3": {
+        "lead": "Telemetrie aus.",
+        "text": "Keine Nutzungsdaten verlassen Ihren Rechner, solange Sie das nicht einschalten."
+      },
+      "p4": {
+        "lead": "Keine Auszahlungen.",
+        "text": "Die Software hat keine Funktion für Auszahlungen oder Überweisungen. Ihr Geld bleibt bei Ihrem Broker."
+      },
+      "pipeline": {
+        "votingName": "Voting ensemble",
+        "votingTag": "14 agents · 8 voting by default",
+        "votingTitle": "14 agents, AI-based and deterministic; 8 of them vote by default, each with the weight you set."
+      }
+    },
+    "editions": {
+      "h2": "Editions",
+      "towerKicker": "neu · hardware",
+      "towerH3a": "Entdecken Sie den",
+      "towerNew": "neuen",
+      "towerH3b": "tower: Ihre Regeln, immer an.",
+      "learnMore": "Mehr erfahren",
+      "inclVat": "zzgl. MwSt.",
+      "metaDesktop": "· limitierte Erstauflage · 100 Stück · Lieferung 12·2026",
+      "metaMobile": "limitierte Erstauflage · 100 Stück · Lieferung 12·2026",
+      "foot": "Ein Open-Source-Kern (Apache 2.0) auf Ihrem Desktop, Ihrem Server oder in Ihrer Cloud. Paper-Trading ist immer kostenlos. Live-Handel auf dem Desktop kostet 4,99 € im Monat oder 39,00 € im Jahr inkl. MwSt., 14 Tage kostenlos testen.",
+      "tile1": {
+        "title": "Immer an",
+        "body": "Der autonomous_ tower läuft rund um die Uhr, lautlos, auf Ihrem Schreibtisch. Die Überwachung endet nie; Orders folgen den US-Börsenzeiten."
+      },
+      "tile2": {
+        "title": "Lokale KI, keine Cloud",
+        "body": "Gebaut für lokale KI. Ihre Strategie, Ihre Daten und Ihre Broker-Schlüssel bleiben bei Ihnen zu Hause."
+      },
+      "tile3": {
+        "title": "Startklar ab Tag eins",
+        "body": "autonomous_ ist vorinstalliert und startet im Paper-Modus, wie jede Installation. Sie bestimmen die Regeln."
+      },
+      "towerAria": "autonomous_ tower — limited first edition"
+    },
+    "footer": {
+      "help": "Hilfe",
+      "legal": "Rechtliches",
+      "support": "Support",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "risk": "Risikohinweis",
+      "terms": "AGB",
+      "inducements": "Zuwendungen",
+      "tagline": "autonomous_ trading. Sie bestimmen die Regeln.",
+      "riskNote": "Trading ist mit Risiken verbunden. Der Wert Ihrer Anlagen kann fallen und steigen, und Sie können das eingesetzte Kapital verlieren. Automatisierte Ausführung und Limits beseitigen dieses Risiko nicht. Frühere Ergebnisse, real oder simuliert, sind keine Garantie für künftige Ergebnisse.",
+      "copyright": "© aaagents · Entwickelt in Europa"
+    },
+    "about": {
+      "roleGeorg": "Gründer, CEO",
+      "roleAndreas": "Mitgründer, KI-Architekt",
+      "h2": "Über uns",
+      "p1": "wird von AAAgents entwickelt, einem Softwareunternehmen aus Deutschland. Wir entwickeln Software für algorithmisches Trading. Wir verwalten kein Geld für andere, und autonomous_ ist weder Robo-Advisor noch Altersvorsorgeprodukt.",
+      "p2": "Wir betreiben autonomous_ mit eigenem Kapital. Heute testen es 25 Beta-Nutzer, 11 davon mit echtem Geld. Der Kern ist Open Source, Sie können also alles prüfen, was wir hier schreiben.",
+      "disclaimer": "Hinweis: Die Informationen auf dieser Website sind keine Anlageberatung, keine Finanzvermittlung und kein Angebot zum Kauf oder Verkauf von Wertpapieren. Wir sind ein Technologieunternehmen, kein Finanzdienstleister. Alle Inhalte geben ausschließlich unsere eigenen Handelsaktivitäten und unternehmerischen Entscheidungen wieder."
+    },
+    "pricing": {
+      "private": {
+        "junior": {
+          "eyebrow": "Desktop · Windows & macOS",
+          "name": "Private",
+          "tag": "Paper-Trading auf Ihrem eigenen PC, dauerhaft kostenlos. Algorithmisches Trading für Ihre eigene Strategie, mit einem Klick installiert.",
+          "price": "0,00 €",
+          "priceSub": "/ dauerhaft",
+          "f1": {
+            "title": "Paper-Modus",
+            "desc": "Testen Sie Ihre Regeln mit Spielgeld und Live-Marktdaten, bevor echtes Geld fließt."
+          },
+          "f2": {
+            "title": "14 Agenten auf Ihrem Desktop",
+            "desc": "Alle Agenten laufen auf Ihrem PC, standardmäßig mit einem lokalen KI-Modell."
+          },
+          "f3": {
+            "title": "Ihre Daten bleiben lokal",
+            "desc": "Keine Telemetrie, solange Sie sie nicht einschalten. Ihre Schlüssel bleiben im Schlüsselbund Ihres Systems."
+          }
+        },
+        "senior": {
+          "eyebrow": "Desktop · Windows & macOS",
+          "name": "Private",
+          "tag": "Alles aus Private, dazu Live-Handel mit Ihrem Broker, sobald Sie ihn freigeben.",
+          "price": "4,99 €",
+          "priceSub": "/ Monat inkl. MwSt.",
+          "priceMeta": "oder 39,00 € / Jahr · 14 Tage kostenlos testen",
+          "f1": {
+            "title": "Live-Handel",
+            "desc": "Verbinden Sie Ihr Alpaca-Konto. Jede Order durchläuft zuerst die Risikoprüfung."
+          },
+          "f2": {
+            "title": "Tägliche Zusammenfassungen",
+            "desc": "Automatische Portfolio-Zusammenfassungen in Ihre eigenen Kanäle, etwa Slack oder Telegram."
+          },
+          "f3": {
+            "title": "Bevorzugter Support",
+            "desc": "Schneller E-Mail-Support, während Sie live handeln."
+          }
+        }
+      },
+      "professional": {
+        "eyebrow": "Open Source · Docker",
+        "name": "Developer",
+        "tag": "Derselbe Kern für Ihren eigenen Server oder Ihre Cloud. Apache 2.0, läuft ohne Oberfläche, einmal gebaut und überall lauffähig.",
+        "price": "0,00 €",
+        "priceSub": "/ dauerhaft",
+        "f1": {
+          "title": "Docker-Stack",
+          "desc": "Vorkonfigurierte Container für Ihren eigenen Server, AWS, GCP oder Bare Metal."
+        },
+        "f2": {
+          "title": "Ohne Oberfläche, rund um die Uhr",
+          "desc": "Läuft als Hintergrunddienst mit geringem Ressourcenbedarf."
+        },
+        "f3": {
+          "title": "Abfragbare Logs",
+          "desc": "Audit-Log und Kennzahlen über die Kommandozeile oder Ihre eigenen Dashboards."
+        }
+      },
+      "institutional": {
+        "eyebrow": "Cloud Native",
+        "name": "Institutional",
+        "tag": "Für professionelle Teams: derselbe Kern in Ihrer Cloud, mit manipulationserkennbarer Audit-Speicherung und Betrieb mehrerer Konten.",
+        "price": "Individuell",
+        "priceMeta": "Angebot anfragen",
+        "f1": {
+          "title": "Audit-fähiges Logging",
+          "desc": "Hash-verkettete, manipulationserkennbare Logs, gespeichert in Ihrer eigenen Cloud."
+        },
+        "f2": {
+          "title": "Governance über mehrere Konten",
+          "desc": "Zentrale Regeln und Limits für mehrere Konten, strikt getrennt."
+        },
+        "f3": {
+          "title": "Direkte Partnerschaft",
+          "desc": "Ein fester Ansprechpartner und Engineering-Support für Ihr Setup."
+        }
+      }
+    },
+    "agents": {
+      "h1a": "KI unterstützt.",
+      "h1b": "Ihre Regeln entscheiden.",
+      "lede": "14 Agenten betrachten den Markt aus verschiedenen Blickwinkeln, KI-basiert und deterministisch. Jeder gibt eine gewichtete Stimme mit schriftlicher Begründung ab. Die KI hat keinen direkten Draht zu Ihrem Broker: Ihre Stimmen fließen in deterministische Regeln ein, und diese Regeln entscheiden innerhalb Ihrer Limits, ob und wie viel gehandelt wird. Sie wählen, welche Agenten abstimmen und wie stark jede Stimme zählt."
+    },
+    "ticker": "autonomous_ tower — limited first edition · only 100 units · ships 12·2026",
+    "nav": {
+      "linkedinAria": "Follow us on LinkedIn",
+      "githubAria": "View on GitHub",
+      "demo": "LIVE DEMO",
+      "demoAria": "View live demo",
+      "toEnglish": "Switch to English",
+      "toGerman": "Zu Deutsch wechseln"
+    },
+    "pricingCard": {
+      "beta": "BETA",
+      "junior": "Junior",
+      "senior": "Senior",
+      "contact": "Contact Us",
+      "github": "Download on GitHub",
+      "windows": "Windows",
+      "windowsAria": "Download for Windows",
+      "mac": "macOS",
+      "macAria": "Download for macOS"
+    },
+    "quant": {
+      "h2": "14 Agenten.",
+      "intro": "Ihre KI schlägt Aktien vor. 14 Quant-Agenten, KI-gestützte und deterministische Software, bewerten jeden Vorschlag nach Ihren Regeln: welche Agenten abstimmen, wie viel jede Stimme zählt und welche Schwellen eine Auswahl erreichen muss. Sie wenden Ihre Regeln an. Ihr Geld verwalten sie nicht.",
+      "p1": {
+        "lead": "Spezialisten statt einer Meinung.",
+        "text": "Fundamentaldaten aus SEC-EDGAR-Meldungen, Bewertung, Qualität, Momentum, Trend, Volumen, Marktregime, VIX, Nachrichten-Sentiment, Drawdown. Jeder Agent prüft eine Sache und sagt, was er findet."
+      },
+      "p2": {
+        "lead": "Ihre Gewichtung.",
+        "text": "Sie legen fest, wie viel jeder Agent zählt und ob er überhaupt abstimmt."
+      },
+      "p3": {
+        "lead": "Ihre Schwellen.",
+        "text": "Eine Auswahl kommt nur durch, wenn sie Ihre Grenzen einhält: Konsens, Bewertung, Volatilität, Positionsgröße."
+      },
+      "p4": {
+        "lead": "Die KI stimmt nicht mit.",
+        "text": "Ihr Prompt entscheidet, welche Aktien an den Tisch kommen. Ob eine gekauft wird, folgt aus Ihren Regeln, angewendet von den Agenten und dem Iron Dome, nie aus dem Sprachmodell."
+      },
+      "graphic": {
+        "label": "QUANT-PANEL · BEISPIEL",
+        "count": "Quant-Agenten am Tisch",
+        "n1": {
+          "name": "Ihr Prompt",
+          "tag": "KI schlägt Ticker vor"
+        },
+        "n2": {
+          "name": "Vorauswahl",
+          "tag": "ungültige Symbole entfernt"
+        },
+        "n3": {
+          "name": "Quant-Agenten",
+          "tag": "bewerten nach Ihren Regeln"
+        },
+        "n4": {
+          "name": "Iron Dome",
+          "tag": "deterministische Endprüfung"
+        },
+        "store1": "Ollama lokal oder Google Gemini",
+        "store2": "Regeln und Gewichte: von Ihnen",
+        "expertsTitle": "AM TISCH · JE EINE DISZIPLIN",
+        "experts": [
+          "Fundamental Analyst",
+          "Valuation Analyst",
+          "Quality Analyst",
+          "Equity Research Analyst",
+          "News Sentiment Analyst",
+          "Momentum Analyst",
+          "Trend Analyst",
+          "Volume Analyst",
+          "Volatility Analyst",
+          "Market Regime Analyst",
+          "Options Skew Analyst",
+          "Forecast Model Analyst",
+          "RL Signal Analyst",
+          "Drawdown Analyst"
+        ]
+      }
+    },
+    "trail": {
+      "h2": "Volle Transparenz.",
+      "intro": "Keine Blackbox. Zu jedem Lauf sehen Sie, welches Modell geantwortet hat, welche Version Ihres Prompts es nutzte, wie jeder Quant-Agent jede Auswahl bewertet hat und warum sie durchkam oder scheiterte.",
+      "p1": {
+        "lead": "Jede Stimme begründet.",
+        "text": "Jeder Agent nennt sein Argument im Klartext. Sie sehen, wer abgestimmt hat, wie stark und warum."
+      },
+      "p2": {
+        "lead": "Jeder Lauf protokolliert.",
+        "text": "Zeit, Prompt-Version, Modell und Anbieter, vorgeschlagene und verworfene Ticker."
+      },
+      "p3": {
+        "lead": "Versiegelte Änderungen.",
+        "text": "Jede Änderung an Ihrem Prompt oder Ihren Regeln wird ins hash-verkettete Protokoll geschrieben, bevor sie gilt."
+      },
+      "p4": {
+        "lead": "Erst offline testen.",
+        "text": "Testen Sie Ihren Prompt gegen den mitgelieferten SEC-EDGAR-Snapshot. Vergangene Zeiträume werden markiert, weil ein Sprachmodell diese Geschichte schon kennt."
+      },
+      "example": {
+        "runTitle": "Lauf · Illustration",
+        "model": {
+          "k": "Modell",
+          "v": "Ollama · lokal"
+        },
+        "prompt": {
+          "k": "Prompt",
+          "v": "v3 · 9f2c…e41"
+        },
+        "schedule": {
+          "k": "Rhythmus",
+          "v": "täglich, vor Börsenöffnung"
+        },
+        "suggested": {
+          "k": "Vorgeschlagen",
+          "v": "5 Ticker"
+        },
+        "verdictTitle": "Urteile · Illustration",
+        "s1": {
+          "k": "SYM-01",
+          "v": "nicht in Ihrem Universum"
+        },
+        "s2": {
+          "k": "SYM-02",
+          "v": "Bewertung über Ihrer Grenze"
+        },
+        "s3": {
+          "k": "SYM-03",
+          "v": "kein Konsens · 5 von 14"
+        },
+        "s4": {
+          "k": "SYM-04",
+          "v": "Iron Dome · Positionsdeckel"
+        },
+        "s5": {
+          "k": "SYM-05",
+          "v": "bestanden · Ihre Regeln"
+        }
+      }
+    }
+  },
+  "console": {
+    "strategyWorkshop": {
+      "T01": "Strategies",
+      "T02": "New strategy",
+      "T03": "From current settings",
+      "T04": "Duplicate",
+      "T05": "Strategy name",
+      "T06": "Save strategy",
+      "T07": "Fixed for all strategies",
+      "T08": "You have three strategies. Delete one to create another.",
+      "T09": "Strategy saved. The change is recorded in the audit chain.",
+      "T10": "Paper accounts",
+      "fleet": {
+        "sentence": "Run up to three paper accounts side by side. Each one gets its own engine and its own data folder on this computer."
+      },
+      "T11": "API key ID",
+      "T12": "Secret key",
+      "T13": "Connect",
+      "T14": "Strategy for this account",
+      "T15": "Disconnect",
+      "T16": "Simulate",
+      "T17": "Period",
+      "T18": "Starting capital (USD)",
+      "T19": "Run simulation",
+      "T20": "Delivery state (no strategy)",
+      "T21": "Simulation data for this period is not on this computer yet. It is loaded once with your own Alpaca keys and can take several hours the first time.",
+      "T26": "Simulation result",
+      "T27": "Simulated or past performance is not a reliable indicator of future results.",
+      "T28": "Uncertainty: one historical path. Another period can give very different results. This is not a forecast.",
+      "T29": "Not modelled: news, LLM agents, intraday stops. Costs are estimates only.",
+      "T30": "Restore creation order",
+      "T31": "Show chart",
+      "T32": "Results stay on this computer.",
+      "T33": "Change setup",
+      "T34": "Live and paper accounts",
+      "T35": "Cash-flow adjusted, from account activities.",
+      "T36": "Adjust in Settings",
+      "T37": "Unavailable",
+      "T38": "Live account strategy",
+      "T39": "Strategy for the live account",
+      "T40": "Review changes",
+      "T41": "Assign strategy to the live account?",
+      "T42": "No setting values change. The assignment is still recorded in the audit chain.",
+      "T43": "Live assignment requires human approval of orders to be on.",
+      "T44": "Delete",
+      "T45": "Edit",
+      "T46": "Delete this strategy?",
+      "T47": "The deletion is recorded in the audit chain.",
+      "T48": "This strategy is assigned to an account. Assign another strategy to that account first.",
+      "state": {
+        "empty": {
+          "text": {
+            "1": "No strategies yet. Create one from your current settings.",
+            "6": "No paper account connected."
+          },
+          "action": {
+            "1": "Create strategy",
+            "6": "Connect paper account"
+          }
+        },
+        "loading": {
+          "text": "Loading…"
+        },
+        "error": {
+          "text": "Could not load the data.",
+          "action": "Retry"
+        },
+        "engine-off": {
+          "text": "The engine for this account is not running.",
+          "action": "Start engine"
+        },
+        "no-keys": {
+          "text": "No Alpaca keys for this account. Simulation data is loaded with your own keys.",
+          "action": "Connect keys"
+        },
+        "edition-limit": {
+          "text": "Your edition allows simulation periods of up to 12 months.",
+          "action": "Shorten period"
+        },
+        "duplicate-account": {
+          "text": "This Alpaca account is already connected in another slot. Each slot needs its own account.",
+          "action": "Use other keys"
+        },
+        "low-memory": {
+          "text": "This computer may not have enough memory for another engine.",
+          "action": "Start anyway"
+        }
+      },
+      "prompt": {
+        "localModelHint": "Local model: no web search. Answers are based on the model's training data and may be out of date.",
+        "cloudCostHint": "Web search requests may be billed by this provider above its free quota."
+      },
+      "deviation": {
+        "assigned": "Assigned:",
+        "assignToPaperAccount": "Assign strategy to this paper account?",
+        "noCommonPeriod": "These accounts have no common period yet.",
+        "source": "Source",
+        "versions": "Versions",
+        "close": "Close",
+        "start": "Start",
+        "end": "End",
+        "strategies": "Strategies",
+        "notModelled": {
+          "survivorship": "The universe consists of today's listings; removed or delisted stocks are missing.",
+          "quelle": "Prices come from the Alpaca IEX feed, not the consolidated tape.",
+          "missingPrices": "Without price data:",
+          "missingFundamentals": "Without fundamental data:",
+          "settings": "settings not simulated",
+          "agents": "agents not simulated",
+          "noLstm": "This simulation runs without the LSTM: it does not vote and does not pre-select stocks. Every stock in the universe is evaluated."
+        },
+        "fixedLimits": {
+          "hardStopLoss": {
+            "label": "Hard stop loss",
+            "desc": "The engine-fixed backstop for every position."
+          },
+          "humanApproval": {
+            "label": "Human approval of orders",
+            "desc": "Whether orders wait for a person's approval is set for the engine, not per strategy."
+          },
+          "noLeverage": {
+            "label": "No leverage",
+            "desc": "Orders never use borrowed money."
+          },
+          "patternDayTrading": {
+            "label": "Pattern day trading rule",
+            "desc": "The pattern day trading checks before each order apply unchanged."
+          }
+        },
+        "disconnectConfirmation": "Are you sure you want to disconnect this paper account?",
+        "connectFailed": "Could not connect this account.",
+        "actionFailed": "The action did not complete.",
+        "selectStrategy": "Select a strategy",
+        "changesOnConfirm": "Changes on confirm",
+        "onlyThisAccount": "Only this account's setup.json is written. The live account is not touched."
+      },
+      "extra": {
+        "name": "Name",
+        "assignedTo": "Assigned to",
+        "actions": "Actions",
+        "cancel": "Cancel",
+        "account": "Account",
+        "strategy": "Strategy",
+        "liveAccount": "Live",
+        "paperAccount": "Paper account",
+        "period": "Period:",
+        "twr": "TWR",
+        "maxDrawdown": "Max drawdown",
+        "spySamePeriod": "SPY (same period)",
+        "saveFailed": "Could not save the strategy.",
+        "noChange": "no change — nothing recorded",
+        "slotCheckSkipped": "The engine did not report its position count, so the checks against it are skipped here. The engine still enforces them.",
+        "violation": {
+          "aboveSizingCap": "Maximum position size must stay at or below the sizing cap.",
+          "minNotBelowMax": "Minimum position size must stay below the maximum position size.",
+          "minAboveSlot": "Minimum position size does not fit the equal-weight slot of {positions} positions (1/{positions}).",
+          "candidatesNotAbovePositions": "Round-table candidates must stay above the configured position count ({positions}).",
+          "sellNotBelowBuy": "The sell threshold must stay below the buy threshold."
+        },
+        "engineStatus": {
+          "stopped": "Stopped",
+          "starting": "Starting",
+          "running": "Running",
+          "stopping": "Stopping",
+          "restarting": "Restarting",
+          "error": "Error",
+          "unavailable": "Unavailable"
+        }
+      },
+      "errors": {
+        "strategy_name_length": "The strategy name has an invalid length.",
+        "guardrail_in_strategy": "Compliance guardrails are never part of a strategy.",
+        "strategy_limit_reached": "You have three strategies. Delete one to create another.",
+        "unknown_setting": "A setting is not adjustable here.",
+        "setting_value_not_allowed": "A setting value is not allowed.",
+        "setting_value_type": "A setting value has the wrong type.",
+        "setting_value_out_of_range": "A setting value is outside the allowed range.",
+        "setting_text_too_long": "A setting text exceeds the maximum length.",
+        "ranking_prompt_missing": "The selected candidate source needs a prompt.",
+        "ranking_list_missing": "The candidate list needs at least one valid S&P 500 symbol.",
+        "request_invalid": "Invalid request.",
+        "strategy_not_found": "Strategy not found.",
+        "nonce_reused": "This request was already sent once. Nothing was recorded.",
+        "hitl_required": "Live assignment requires human approval of orders to be on.",
+        "strategy_assigned": "This strategy is assigned to an account. Assign another strategy to that account first.",
+        "sizing_change_unconfirmed": "Changing the live sizing method needs its own confirmation. Nothing was recorded.",
+        "audit_write_failed": "The audit trail could not be written. Nothing was recorded.",
+        "strategy_store_unreadable": "The strategies could not be read.",
+        "audit_chain_unreadable": "The audit chain could not be read."
+      }
+    }
+  }
+}

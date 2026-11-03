@@ -1,0 +1,19 @@
+{
+  "https://api.finra.org/data/group/OTCmarket/name/otcShortInterest?compareFilters=compareFilters%5B0%5D.fieldName%3DissueSymbolIdentifier%26compareFilters%5B0%5D.compareType%3Dequals%26compareFilters%5B0%5D.fieldValue%3DNVDA&limit=1&sortFields=sortFields%5B0%5D.fieldName%3DsettlementDate%26sortFields%5B0%5D.sortOrder%3DDESC": {
+    "status": 200,
+    "json": [
+      {
+        "issueSymbolIdentifier": "NVDA",
+        "settlementDate": "2026-08-29",
+        "shortInterestQty": 262500000,
+        "totalVolume": 2430000000
+      }
+    ]
+  },
+  "https://api.finra.org/data/group/OTCmarket/name/otcShortInterest?compareFilters=compareFilters%5B0%5D.fieldName%3DissueSymbolIdentifier%26compareFilters%5B0%5D.compareType%3Dequals%26compareFilters%5B0%5D.fieldValue%3DSPY&limit=1&sortFields=sortFields%5B0%5D.fieldName%3DsettlementDate%26sortFields%5B0%5D.sortOrder%3DDESC": {
+    "status": 404,
+    "json": {
+      "message": "Not Found"
+    }
+  }
+}

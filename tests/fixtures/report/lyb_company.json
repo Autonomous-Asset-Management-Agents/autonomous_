@@ -1,0 +1,39 @@
+{
+  "symbol": "LYB",
+  "source": "polygon v3 /v3/reference/tickers/{ticker}",
+  "fetched_at": "2026-07-17T00:00:00+00:00",
+  "results": {
+    "ticker": "LYB",
+    "name": "LyondellBasell Industries N.V. Class A",
+    "market": "stocks",
+    "locale": "us",
+    "primary_exchange": "XNYS",
+    "type": "CS",
+    "active": true,
+    "currency_name": "usd",
+    "cik": "0001489393",
+    "market_cap": 18721516834.0,
+    "phone_number": "713-309-7200",
+    "address": {
+      "address1": "2800 POST OAK BLVD",
+      "address2": "SUITE 5100",
+      "city": "HOUSTON",
+      "state": "TX",
+      "postal_code": "77056"
+    },
+    "description": "LyondellBasell is a petrochemical producer with operations in the United States, Europe, and Asia. The company is the world's largest producer of polypropylene and also a major producer of polyethylene and propylene oxide. Its chemicals are used in various consumer and industrial end products. Well over half of LyondellBasell's production comes from its North American operations.",
+    "sic_code": "2860",
+    "sic_description": "INDUSTRIAL ORGANIC CHEMICALS",
+    "ticker_root": "LYB",
+    "homepage_url": "https://www.lyondellbasell.com",
+    "total_employees": 18970,
+    "list_date": "2010-04-28",
+    "branding": {
+      "logo_url": "https://api.polygon.io/v1/reference/company-branding/bHlvbmRlbGxiYXNlbGwuY29t/images/2026-06-01_logo.svg",
+      "icon_url": "https://api.polygon.io/v1/reference/company-branding/bHlvbmRlbGxiYXNlbGwuY29t/images/2026-06-01_icon.jpeg"
+    },
+    "share_class_shares_outstanding": 322784773,
+    "weighted_shares_outstanding": 322784773,
+    "round_lot": 100
+  }
+}
