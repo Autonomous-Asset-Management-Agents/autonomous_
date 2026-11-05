@@ -1,0 +1,120 @@
+{
+ "_doc": "#4567 — aufgezeichnete Ausschnitte aus SEC companyfacts (data.sec.gov/api/xbrl/companyfacts/CIK<cik>.json). Public Domain, frei weitergebbar. Reduziert auf die Synonymlisten fuer revenues und net_income_loss und auf Punkte mit fp=FY und Jahresform; Quartalsdauern sind absichtlich enthalten, weil der Dauerfilter sie abweisen muss. Werte sind NICHT handgeaendert. Erzeugt mit scratchpad/baue_fixtures.py.",
+ "geholt_am": "2026-10-12",
+ "quelle": "https://data.sec.gov/api/xbrl/companyfacts/",
+ "klassen": {
+  "A": "NEE, MS, CVS, O, BA, TER, FIX, PNC — Gewinner-Kennzeichen endete 2012-2021",
+  "B": "XEL — kein abgebildetes Synonym reichte bis 2025"
+ },
+ "titel": {
+  "NEE": {
+   "cik": 753308,
+   "entityName": "NEXTERA ENERGY INC",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "ProfitLoss",
+    "RegulatedAndUnregulatedOperatingRevenue",
+    "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 366
+  },
+  "MS": {
+   "cik": 895421,
+   "entityName": "MORGAN STANLEY",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "Revenues",
+    "RevenuesNetOfInterestExpense"
+   ],
+   "jahrespunkte": 564
+  },
+  "CVS": {
+   "cik": 64803,
+   "entityName": "CVS HEALTH CORPORATION",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 353
+  },
+  "O": {
+   "cik": 726728,
+   "entityName": "REALTY INCOME CORPORATION",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 213
+  },
+  "BA": {
+   "cik": 12927,
+   "entityName": "THE BOEING COMPANY",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 341
+  },
+  "TER": {
+   "cik": 97210,
+   "entityName": "TERADYNE, INC.",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 270
+  },
+  "FIX": {
+   "cik": 1035983,
+   "entityName": "COMFORT SYSTEMS USA, INC.",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet"
+   ],
+   "jahrespunkte": 332
+  },
+  "PNC": {
+   "cik": 713676,
+   "entityName": "PNC Financial Services Group, Inc.",
+   "kennzeichen": [
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 159
+  },
+  "XEL": {
+   "cik": 72903,
+   "entityName": "Xcel Energy Inc.",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RegulatedAndUnregulatedOperatingRevenue",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 348
+  }
+ }
+}

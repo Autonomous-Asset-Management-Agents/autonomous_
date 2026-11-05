@@ -1,0 +1,545 @@
+# Kopie von get_benchmark_equity vor G-4i (#4075), wortgleich aus
+# ai_trading_bot/core/engine/routes/benchmark.py (Stand G-4h, Commit 5011ab987, Zeilen 35-576).
+# Referenz fuer test_benchmark_kurve_wortgleich.py — nicht aendern.
+@router.get(
+    "/benchmark-equity",
+    dependencies=[Depends(require_engine_key), Depends(verify_user_id_sig)],
+)
+async def get_benchmark_equity():
+    try:
+        r = ar.RedisClient.get_sync_redis()
+        # Offload the blocking Redis GET off the event loop (read-only cache read for the chart).
+        data_str = await asyncio.to_thread(r.get, "benchmark_equity_data")
+        _cached = None
+        if data_str:
+            try:
+                _cached = __import__("json").loads(data_str)
+            except Exception:
+                _cached = None
+        # PR-3: current trading mode. is_simulation is BACKTEST-only (a paper account is a REAL
+        # Alpaca paper account -> is_simulation=False for BOTH paper and live), so paper-vs-live is
+        # a SEPARATE discriminator. Fail-safe default = paper (True).
+        cfg_paper = bool(getattr(ar.config, "PAPER_TRADING", True))
+        # PR-3: a cache tagged with the OTHER mode (e.g. the paper curve that persists in Redis/DB
+        # across the paper->live restart) is stale — force a DB rebuild under the current mode so
+        # paper numbers never pollute the live-labelled curve. Legacy caches lack the key ->
+        # default True (paper); in live that mismatches config -> correctly treated as stale.
+        _cache_mode_stale = bool(_cached) and (
+            bool(_cached.get("paper_trading", True)) != cfg_paper
+        )
+        # #3071: the served window depends on the persisted baseline — a cache built under a
+        # DIFFERENT baseline (or before one was set/cleared) is stale and must rebuild.
+        _baseline = await ar._get_performance_baseline()
+        # rc4 R4: fingerprint helper — imported once, used by every branch below.
+        from core.engine.perf_metrics import flows_signature
+
+        _cache_baseline_stale = bool(_cached) and (
+            (_cached.get("baseline_date") or None) != _baseline
+        )
+        # Rebuild fully from the DB when the cache is absent OR "thin" OR wrong-mode (stale).
+        # _append_live_equity_to_benchmark (core/engine/base.py) warms this key every engine cycle
+        # with `points` only (no initial_capital / spy_points), which otherwise pre-empts this
+        # reconstruction — so the handler returned a points-only cache forever: NO S&P line + a
+        # history truncated to base.py's per-cycle appends. A missing initial_capital marks a thin
+        # cache -> rebuild.
+        # #1957 (Archon finding 5 — addressed differently): a legacy cache lacks twr_pct. Rather
+        # than force a rebuild, the cached-return path below recomputes the cash-flow-adjusted KPIs
+        # from `points` on EVERY read, so the response always carries a fresh twr_pct regardless of
+        # what the cache holds — strictly better than a one-time cache invalidation (no stale
+        # window, no cache churn, and it never fights the warm-cache spy self-heal).
+        if (
+            not _cached
+            or not _cached.get("initial_capital")
+            or _cache_mode_stale
+            or _cache_baseline_stale
+        ):
+            # Fallback to database query if Redis cache is empty/cold
+            import json
+            from datetime import timezone
+
+            import sqlalchemy as sa
+
+            from core.database.models import PortfolioSnapshot
+            from core.database.session import AsyncSessionLocal
+
+            # #3054: LIVE (separate Alpaca account) — build the COMPLETE daily curve from Alpaca
+            # portfolio_history (period=all) instead of the sparse local snapshots that starve
+            # Sharpe/drawdown/TWR (14 of ~32 days). PR-3 gated the Alpaca backfill to paper for fear
+            # of paper-era pollution; that does not apply to a SEPARATE live account (owner sign-off
+            # 2026-08-26). Cash-flows (incl. the #3049 FEE) are attached exactly as the snapshot
+            # path. Fail-soft: no Alpaca history -> fall through to the snapshot logic below.
+            if not cfg_paper:
+                _live_inc = await asyncio.to_thread(_bd._get_inception_equity)
+                # #3054: _get_inception_equity returns a (date, equity, backfill) 3-tuple or
+                # None. Guard the shape defensively so an unexpected return can never crash the
+                # endpoint on the live path (fail-soft to the snapshot logic below).
+                if isinstance(_live_inc, (tuple, list)) and len(_live_inc) == 3:
+                    # #3068: jump-aligned attribution (NOT by activity date) — a settlement-
+                    # lagged deposit otherwise strips from the wrong sub-period (the real
+                    # -22.94% inception / -50.91% drawdown on a live account).
+                    from core.engine.perf_metrics import align_cashflows_to_points
+
+                    _inc_date, _inc_eq, _backfill = _live_inc
+                    live_points = [
+                        {"date": p["date"], "equity": p["equity"]} for p in _backfill
+                    ]
+                    # rc5 R7: Alpaca answers period=all for the whole account lifetime — the
+                    # days BEFORE the account was funded come back as zero equity. They are not
+                    # history, and as the curve's base they make the account's own value read
+                    # as market P&L. Trim the leading run (fail-soft, interior zeros kept).
+                    from core.engine.perf_metrics import trim_leading_unfunded
+
+                    live_points = trim_leading_unfunded(live_points)
+                    live_cf = await asyncio.to_thread(ar._get_live_cashflows)
+                    if live_cf:
+                        live_buckets = align_cashflows_to_points(
+                            [p["date"] for p in live_points],
+                            [p["equity"] for p in live_points],
+                            live_cf,
+                        )
+                        for _p, _c in zip(live_points, live_buckets):
+                            if _c:
+                                _p["cashflow"] = round(_c, 2)
+                    # #3071: dual figures — the TRUE-inception TWR is computed on the full
+                    # aligned curve BEFORE slicing (reports/audit always keep both).
+                    from core.engine.perf_metrics import slice_points_to_baseline
+
+                    _live_inception_date = live_points[0]["date"]
+                    _live_full_metrics, _ = await _bd._read_metrics_db_or_fallback(
+                        live_points, "ALL", False, "CH6_READ_METRICS_DB_3391"
+                    )
+                    live_points = slice_points_to_baseline(live_points, _baseline)
+                    _live_initial = live_points[0]["equity"]
+                    live_metrics, _ = await _bd._read_metrics_db_or_fallback(
+                        live_points, _baseline, False, "CH6_READ_METRICS_DB_3394"
+                    )
+                    live_spy, live_spy_first = await asyncio.to_thread(
+                        _bd._reconstruct_spy_points, live_points, _live_initial
+                    )
+                    live_resp = {
+                        "points": live_points,
+                        "spy_points": live_spy,
+                        "spy_first_close": live_spy_first,
+                        "initial_capital": _live_initial,
+                        "start_date": live_points[0]["date"],
+                        "end_date": live_points[-1]["date"],
+                        "strategy": "RLAgent",
+                        "final_equity": live_points[-1]["equity"],
+                        "paper_trading": False,
+                        # #3071: honest labelling + audit — the chosen base and the true
+                        # inception travel with every response.
+                        "baseline_date": _baseline,
+                        "inception_date": _live_inception_date,
+                        "inception_twr_pct": _live_full_metrics["twr_pct"],
+                        # rc4 R4: ledger fingerprint — cached polls compare against a
+                        # fresh fetch and evict on change (late-posting deposits).
+                        "flows_sig": flows_signature(live_cf),
+                        **live_metrics,
+                    }
+                    try:
+                        r.set("benchmark_equity_data", json.dumps(live_resp))
+                    except (
+                        Exception
+                    ) as _r_err:  # noqa: BLE001 — cache write is best-effort
+                        logging.warning(
+                            "Failed to cache live benchmark data: %s", _r_err
+                        )
+                    return live_resp
+
+            # #2588: a failed snapshot query must DEGRADE, never kill the endpoint. The
+            # outer catch used to turn e.g. a local schema drift (``no such column:
+            # portfolio_snapshots.is_sim_day`` after #2544) into ``internal_error`` with
+            # ZERO points — every chart range beyond 1D/1W went "Collecting equity
+            # history…" and the Since-inception/Started/MaxDD KPIs died. With
+            # ``records = []`` the existing no-records path below serves the broker's
+            # full portfolio history in paper (live stays fail-closed: no_live_history).
+            try:
+                async with AsyncSessionLocal() as session:
+                    dialect = session.bind.dialect.name
+                    # PR-3: segregate paper vs live. LIVE -> only REAL live snapshots
+                    # (paper_trading IS False). PAPER -> paper (True) OR legacy NULL rows written
+                    # before this column existed (isnot False = True OR NULL). Applied to BOTH the
+                    # postgres-distinct and the sqlite max-per-day statements so the live curve is
+                    # built ONLY from live snapshots (no paper carryover after a paper->live restart).
+                    mode_filter = (
+                        PortfolioSnapshot.paper_trading.isnot(False)
+                        if cfg_paper
+                        else PortfolioSnapshot.paper_trading.is_(False)
+                    )
+                    if dialect == "postgresql":
+                        stmt = (
+                            sa.select(PortfolioSnapshot)
+                            .where(mode_filter)
+                            .distinct(
+                                sa.func.date_trunc(
+                                    "day", PortfolioSnapshot.timestamp
+                                )  # noqa: E501
+                            )
+                            .order_by(
+                                sa.func.date_trunc(
+                                    "day", PortfolioSnapshot.timestamp
+                                ),  # noqa: E501
+                                PortfolioSnapshot.timestamp.desc(),
+                            )
+                        )
+                        result = await session.execute(stmt)
+                        records = list(result.scalars().all())
+                        records.sort(key=lambda x: x.timestamp)
+                    else:
+                        # SQLite: subquery max(timestamp) grouped by date(timestamp)  # noqa: E501
+                        subq = (
+                            sa.select(
+                                sa.func.date(PortfolioSnapshot.timestamp).label(
+                                    "snapshot_date"
+                                ),
+                                sa.func.max(PortfolioSnapshot.timestamp).label(
+                                    "max_ts"
+                                ),  # noqa: E501
+                            )
+                            .where(mode_filter)
+                            .group_by(sa.func.date(PortfolioSnapshot.timestamp))
+                            .subquery()
+                        )
+                        stmt = (
+                            sa.select(PortfolioSnapshot)
+                            .join(
+                                subq,
+                                sa.and_(
+                                    sa.func.date(PortfolioSnapshot.timestamp)
+                                    == subq.c.snapshot_date,
+                                    PortfolioSnapshot.timestamp == subq.c.max_ts,
+                                ),
+                            )
+                            .where(mode_filter)
+                            .order_by(PortfolioSnapshot.timestamp.asc())
+                        )
+                        result = await session.execute(stmt)
+                        records = list(result.scalars().all())
+            except Exception as db_err:  # noqa: BLE001 — degrade, never a dead chart
+                logging.warning(
+                    "benchmark-equity: DB snapshot query failed (%s) — degrading to "
+                    "the broker's portfolio history so the chart/KPIs stay alive. "
+                    "Likely local schema drift; init_local_db heals it on the next "
+                    "boot. (#2588)",
+                    db_err,
+                    exc_info=True,
+                )
+                records = []
+
+            if not records:
+                if not cfg_paper:
+                    # PR-3 (LIVE, zero live snapshots): show NO live history until real LIVE
+                    # snapshots accumulate. NO paper carryover and NO broker-seeded inception —
+                    # do NOT call _get_inception_equity (no Alpaca period=all backfill), because
+                    # that broker curve/inception would pollute the freshly-live account with its
+                    # pre-live (paper-era) equity. initial_capital is None until a live snapshot
+                    # lands. PAPER is unaffected (the bug is live-only).
+                    return {
+                        "points": [],
+                        "spy_points": [],
+                        "strategy": "RLAgent",
+                        "initial_capital": None,
+                        "message": "no_live_history",
+                    }
+                # PAPER (unchanged): fresh engine / empty DB — no recorded snapshots yet. Still
+                # surface the account's REAL equity history from Alpaca (period=all) so the Console
+                # + demo render the full curve from inception on day one, instead of an empty chart.
+                # Only a truly empty account (no Alpaca history either) returns the "no run yet"
+                # placeholder. (#1790, follow-up to #1782 — the records path below is unchanged.)
+                inception = await asyncio.to_thread(_bd._get_inception_equity)
+                if inception is None:
+                    return {
+                        "points": [],
+                        "spy_points": [],
+                        "strategy": "RLAgent",
+                        "initial_capital": None,
+                        "message": "No benchmark run yet.",
+                    }
+                _, inception_equity, backfill = inception
+                points = list(backfill)
+                spy_points, spy_first_close = await asyncio.to_thread(
+                    _bd._reconstruct_spy_points, points, inception_equity
+                )
+                metrics, _ = await _bd._read_metrics_db_or_fallback(
+                    points, "ALL", cfg_paper, "CH6_READ_METRICS_DB_3542"
+                )
+                alpaca_only = {
+                    "points": points,
+                    "spy_points": spy_points,
+                    "spy_first_close": spy_first_close,
+                    "initial_capital": inception_equity,
+                    "start_date": points[0]["date"],
+                    "end_date": points[-1]["date"],
+                    "strategy": "RLAgent",
+                    "final_equity": points[-1]["equity"],
+                    # PR-3: tag the rebuilt cache with the mode so the next read's stale-check
+                    # (embedded paper_trading vs config.PAPER_TRADING) recognises it as current.
+                    "paper_trading": cfg_paper,
+                    **metrics,  # #1957: twr_pct / net_deposits / pnl_net_of_deposits
+                }
+                try:
+                    r.set("benchmark_equity_data", json.dumps(alpaca_only))
+                except Exception as r_err:
+                    logging.warning(
+                        "Failed to save Alpaca-only benchmark data to Redis: %s",
+                        r_err,  # noqa: E501
+                    )
+                return {
+                    "points": points,
+                    "spy_points": spy_points,
+                    "start_date": points[0]["date"],
+                    "end_date": points[-1]["date"],
+                    "strategy": "RLAgent",
+                    "initial_capital": inception_equity,
+                    "final_equity": points[-1]["equity"],
+                    **metrics,
+                }
+
+            earliest_snap = records[0]
+            initial_capital = earliest_snap.total_equity or 100000.0
+
+            points = []
+            for r_item in records:
+                points.append(
+                    {
+                        "date": r_item.timestamp.strftime("%Y-%m-%d"),
+                        "equity": round(r_item.total_equity or 0.0, 2),
+                    }
+                )
+
+            # #1782: anchor "since inception" to the account's REAL trading start (Alpaca full
+            # portfolio-history), not records[0] (the first RECORDED snapshot = engine boot).
+            # Prepend the pre-snapshot daily equity + use the true inception as initial_capital.
+            # Fail-soft: _get_inception_equity() -> None keeps the records[0] behaviour.
+            #
+            # PR-3: this Alpaca broker-seed is PAPER-ONLY. In LIVE we must NOT prepend the broker
+            # history: period=all would drag in the account's pre-live (paper-era) equity and
+            # pollute the live curve/inception. In live, initial_capital stays the earliest LIVE
+            # snapshot's total_equity (records[0]) and no backfill is prepended.
+            if cfg_paper:
+                inception = await asyncio.to_thread(_bd._get_inception_equity)
+                if inception is not None:
+                    _, inception_equity, backfill = inception
+                    initial_capital = inception_equity
+                    seen = {p["date"] for p in points}
+                    first_recorded = points[0]["date"] if points else None
+                    points = [
+                        p
+                        for p in backfill
+                        if p["date"] not in seen
+                        and (first_recorded is None or p["date"] < first_recorded)
+                    ] + points
+            # #2717: attach the account's real deposit/withdrawal cash-flows (from the
+            # account-activities API — portfolio-history.cashflow is empty in reality) and bucket
+            # each into the first point on/after its date, so a deposit that landed in a SPARSE
+            # snapshot gap (a day the engine was off) still lands in the sub-period that spans it
+            # instead of being dropped — which left the deposit-inflated return on screen. Applies to
+            # BOTH modes (a live account is the reported case; paper simply has no CSD/CSW).
+            acct_cf = await asyncio.to_thread(ar._get_live_cashflows)
+            if acct_cf:
+                # #3068: jump-aligned (not date-based) — see the live block above.
+                from core.engine.perf_metrics import align_cashflows_to_points
+
+                buckets = align_cashflows_to_points(
+                    [p.get("date") for p in points],
+                    [p.get("equity") or 0.0 for p in points],
+                    acct_cf,
+                )
+                for p, cf in zip(points, buckets):
+                    if cf:
+                        p["cashflow"] = round(cf, 2)
+
+            # #3071: slice AFTER the jump-alignment above (a boundary deposit attaches to its
+            # in-window jump exactly once); dual figures — full-curve TWR survives for reports.
+            from core.engine.perf_metrics import slice_points_to_baseline
+
+            _inception_date_str = points[0]["date"] if points else None
+            _full_metrics, _ = await _bd._read_metrics_db_or_fallback(
+                points, "ALL", cfg_paper, "CH6_READ_METRICS_DB_3634"
+            )
+            points = slice_points_to_baseline(points, _baseline)
+            if _baseline and points:
+                initial_capital = points[0].get("equity") or initial_capital
+
+            start_date_str = (
+                points[0]["date"]
+                if points
+                else earliest_snap.timestamp.strftime("%Y-%m-%d")
+            )
+
+            spy_points, spy_first_close = await asyncio.to_thread(
+                _bd._reconstruct_spy_points, points, initial_capital
+            )
+
+            metrics, _ = await _bd._read_metrics_db_or_fallback(
+                points, _baseline, cfg_paper, "CH6_READ_METRICS_DB_3649"
+            )
+            reconstructed_data = {
+                "points": points,
+                "spy_points": spy_points,
+                "spy_first_close": spy_first_close,
+                "initial_capital": initial_capital,
+                "start_date": start_date_str,
+                "end_date": records[-1].timestamp.strftime("%Y-%m-%d"),
+                "strategy": earliest_snap.strategy_name or "RLAgent",
+                "final_equity": records[-1].total_equity,
+                # PR-3: tag the rebuilt cache with the mode so the next read's stale-check
+                # recognises it as current (else live would rebuild on every poll).
+                "paper_trading": cfg_paper,
+                # #3071: baseline echo (cache stale-check key) + true-inception figures.
+                "baseline_date": _baseline,
+                "inception_date": _inception_date_str,
+                "inception_twr_pct": _full_metrics["twr_pct"],
+                # rc4 R4: ledger fingerprint (see live path).
+                "flows_sig": flows_signature(acct_cf),
+                **metrics,  # #1957: twr_pct / net_deposits / pnl_net_of_deposits
+            }
+
+            try:
+                r.set("benchmark_equity_data", json.dumps(reconstructed_data))
+            except Exception as r_err:
+                logging.warning(
+                    "Failed to save reconstructed benchmark data to Redis: %s",
+                    r_err,  # noqa: E501
+                )
+
+            return {
+                "points": points,
+                "spy_points": spy_points,
+                "start_date": start_date_str,
+                "end_date": records[-1].timestamp.strftime("%Y-%m-%d"),
+                "strategy": earliest_snap.strategy_name or "RLAgent",
+                "initial_capital": initial_capital,
+                "final_equity": records[-1].total_equity,
+                **metrics,
+            }
+
+        data = _cached
+        points = list(data.get("points", []))
+        spy_points = list(data.get("spy_points", []))
+        initial_capital = data.get("initial_capital")
+        today_str = date.today().strftime("%Y-%m-%d")
+
+        if ar.engine.api and initial_capital:
+            try:
+                acc = await asyncio.to_thread(ar.engine.api.get_account)
+                live_equity = float(acc.equity or 0)
+                # rc3 R2: a settlement-scale step between the cached tail and the live
+                # equity means a deposit/withdrawal just landed. The append below carries
+                # NO cashflow, so Net deposits / today's tile would stay wrong for hours.
+                # Evict the cache: the NEXT poll (<=60s) does a full rebuild with freshly
+                # aligned flows. This response still serves the cached (stale) numbers.
+                from core.engine.perf_metrics import is_settlement_scale_jump
+
+                # rc4 R4: LEDGER FRESHNESS — refetch the funding flows on every cached
+                # poll and compare fingerprints. A deposit that posts to the activity
+                # ledger AFTER the rebuild (the real 25.08. CSD that stayed invisible:
+                # Net deposits +5.79k vs an 11.9k book, the +95.99% "return") evicts
+                # the cache -> full rebuild with fresh flows on the next poll (<=60s).
+                _fresh_cf = await asyncio.to_thread(ar._get_live_cashflows)
+                if flows_signature(_fresh_cf) != (data.get("flows_sig") or "none"):
+                    try:
+                        r.delete("benchmark_equity_data")
+                        logging.info(
+                            "benchmark: funding-ledger changed (sig %s -> %s) — cache "
+                            "evicted for full rebuild on next poll. (rc4 R4)",
+                            data.get("flows_sig"),
+                            flows_signature(_fresh_cf),
+                        )
+                    except Exception:  # noqa: BLE001 — eviction is best-effort
+                        pass
+                if points and is_settlement_scale_jump(
+                    points[-1].get("equity"), live_equity
+                ):
+                    try:
+                        r.delete("benchmark_equity_data")
+                        logging.info(
+                            "benchmark: settlement-scale live step (%.2f -> %.2f) — "
+                            "cache evicted for full rebuild on next poll. (rc3 R2)",
+                            float(points[-1].get("equity") or 0.0),
+                            live_equity,
+                        )
+                    except Exception:  # noqa: BLE001 — eviction is best-effort
+                        pass
+                if live_equity > 0 and (
+                    not points or points[-1].get("date") != today_str
+                ):
+                    points.append(
+                        {"date": today_str, "equity": round(live_equity, 2)}
+                    )  # noqa: E501
+            except Exception:
+                pass
+
+        spy_first_close = data.get("spy_first_close")
+        if not spy_points and points and initial_capital:
+            # Self-heal a frozen-empty spy_points: it is reconstructed only on a COLD cache,
+            # so an early empty result (SPY data not yet available at the first reconstruction)
+            # stayed empty forever and the S&P line never appeared. Recompute it from the
+            # current points now, and heal the cache so we don't refetch on every poll.
+            spy_points, spy_first_close = await asyncio.to_thread(
+                _bd._reconstruct_spy_points, points, initial_capital
+            )
+            if spy_points:
+                data["spy_points"] = spy_points
+                data["spy_first_close"] = spy_first_close
+                try:
+                    r.set("benchmark_equity_data", __import__("json").dumps(data))
+                except Exception as heal_err:
+                    logging.warning("Failed to heal benchmark cache: %s", heal_err)
+            else:
+                # If reconstruction failed, evict thin warm cache so subsequent polls retry
+                try:
+                    r.delete("benchmark_equity_data")
+                except Exception:
+                    pass
+        elif (
+            spy_points and spy_first_close and initial_capital and spy_first_close > 0
+        ):  # noqa: E501
+            try:
+                end_dt = datetime.now(timezone.utc)
+                spy_df = ar.engine.data_provider.get_data("SPY", end_dt, days=10)
+                if (
+                    spy_df is not None
+                    and not spy_df.empty
+                    and "close" in spy_df.columns
+                ):
+                    last_close = float(spy_df.iloc[-1]["close"])
+                    if (
+                        last_close > 0 and spy_points[-1].get("date") != today_str
+                    ):  # noqa: E501
+                        spy_points.append(
+                            {
+                                "date": today_str,
+                                "equity": round(
+                                    initial_capital * (last_close / spy_first_close),
+                                    2,  # noqa: E501
+                                ),
+                            }
+                        )
+            except Exception:
+                pass
+
+        # #1957: recompute cash-flow-adjusted KPIs from the final points (today's live-equity
+        # append above may have extended the series). Points keep their cached per-day cashflow;
+        # the appended intraday point has none (0) — a same-day deposit surfaces on the next full
+        # rebuild (cache is thin/stale then), which is acceptable at daily granularity.
+        metrics, _ = await _bd._read_metrics_db_or_fallback(
+            points, data.get("baseline_date"), cfg_paper, "CH6_READ_METRICS_DB_3799"
+        )
+        return {
+            "points": points,
+            "spy_points": spy_points,
+            "start_date": data.get("start_date"),
+            "end_date": data.get("end_date"),
+            "strategy": data.get("strategy", "RLAgent"),
+            "initial_capital": initial_capital,
+            "final_equity": data.get("final_equity"),
+            # #3071: cached points are already sliced; pass the labelling fields through.
+            "baseline_date": data.get("baseline_date"),
+            "inception_date": data.get("inception_date"),
+            "inception_twr_pct": data.get("inception_twr_pct"),
+            **metrics,
+        }
+    except Exception as e:
+        logging.error("benchmark_equity failed: %s", e, exc_info=True)
+        return {"points": [], "spy_points": [], "message": "internal_error"}

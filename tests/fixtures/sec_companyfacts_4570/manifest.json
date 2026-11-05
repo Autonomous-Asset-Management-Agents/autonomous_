@@ -1,0 +1,83 @@
+{
+ "_doc": "#4570 — aufgezeichnete Ausschnitte aus SEC companyfacts (data.sec.gov/api/xbrl/companyfacts/CIK<cik>.json). Public Domain, frei weitergebbar. Reduziert auf die Synonymlisten fuer revenues und net_income_loss und auf Punkte mit fp=FY; Quartalsdauern sind absichtlich enthalten, weil der Dauerfilter sie abweisen muss. Werte sind NICHT handgeaendert. Erzeugt mit scratchpad/baue_fixtures_4570.py.",
+ "quelle": "https://data.sec.gov/api/xbrl/companyfacts/",
+ "titel": {
+  "ESS": {
+   "cik": 920522,
+   "entityName": "ESSEX PROPERTY TRUST, INC.",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet"
+   ],
+   "jahrespunkte": 362
+  },
+  "URI": {
+   "cik": 1067701,
+   "entityName": "United Rentals, Inc.",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet"
+   ],
+   "jahrespunkte": 350
+  },
+  "AXP": {
+   "cik": 4962,
+   "entityName": "AMERICAN EXPRESS CO",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "Revenues",
+    "RevenuesNetOfInterestExpense"
+   ],
+   "jahrespunkte": 249
+  },
+  "ETN": {
+   "cik": 1551182,
+   "entityName": "EATON CORPORATION plc",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet"
+   ],
+   "jahrespunkte": 169
+  },
+  "GIS": {
+   "cik": 40704,
+   "entityName": "GENERAL MILLS, INC.",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues"
+   ],
+   "jahrespunkte": 327
+  },
+  "GM": {
+   "cik": 1467858,
+   "entityName": "GENERAL MOTORS COMPANY",
+   "kennzeichen": [
+    "NetIncomeLoss",
+    "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "ProfitLoss",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet"
+   ],
+   "jahrespunkte": 419
+  }
+ }
+}

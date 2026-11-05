@@ -1,0 +1,809 @@
+/**
+ * Desktop (Electron) bridge access for the AAAgents console (G3, #1050).
+ *
+ * "One frontend for all editions": this same console runs in the browser
+ * (cloud) and inside the Electron shell (desktop). The shell exposes a minimal
+ * `window.aaagents` surface (G2 preload). The only thing engine calls need from
+ * it is the per-session connection — the loopback port the shell spawned the
+ * engine on, and the X-Engine-Key the engine requires (`require_engine_key` is
+ * 503-fail-closed). Both arrive via the `engine:get-connection` IPC.
+ *
+ * The connection is cached once at app start (`initDesktopBridge`) so the hot
+ * fetch path stays synchronous; the cloud path is untouched (every getter
+ * returns null in the browser).
+ */
+
+interface EngineConnection {
+  port: number;
+  apiKey: string;
+}
+
+/** Lifecycle state of the engine subprocess (mirrors native-engine-manager).
+ *  "restarting" (LSR R8 #2261) is a BENIGN, expected transient — a deliberate
+ *  disable/Paper → restart() window — rendered neutrally, never as an error. */
+export type EngineStatus =
+  | "stopped"
+  | "starting"
+  | "running"
+  | "stopping"
+  | "restarting"
+  | "error"
+  | "unavailable";
+
+export interface EngineStatusPayload {
+  status: EngineStatus;
+  detail?: string | null;
+}
+
+/** The subset of the preload surface the console reads (see desktop/electron/preload.cjs). */
+interface AAAgentsBridge {
+  isDesktop?: boolean;
+  /** #2744/S5: host OS ("darwin" | "win32" | "linux") from the preload. Absent in the browser. */
+  platform?: string;
+  getVersion?: () => Promise<string>;
+  getUpdateStatus?: () => Promise<UpdateStatus>;
+  checkForUpdatesNow?: () => Promise<UpdateStatus>;
+  getEngineConnection?: () => Promise<unknown>;
+  getEngineFleet?: () => Promise<unknown>;
+  // STW-2b (#4934), shell side STW-6b (#4951): paper-account slots (desktop/electron/paper-slots.cjs).
+  // Absent in the browser and in older shells; the helpers below fail soft.
+  listPaperSlots?: () => Promise<unknown>;
+  connectPaperSlot?: (slot: PaperSlotId, keyId: string, secret: string) => Promise<unknown>;
+  disconnectPaperSlot?: (slot: PaperSlotId) => Promise<unknown>;
+  startPaperSlotEngine?: (slot: PaperSlotId, opts?: { force: true }) => Promise<unknown>;
+  // STW-2c (#4953): the setup.json of one slot; shell side STW-2d (#5117, paper-slots.cjs).
+  getPaperSlotSetup?: (slot: PaperSlotId) => Promise<unknown>;
+  savePaperSlotSetup?: (slot: PaperSlotId, values: Record<string, string>) => Promise<unknown>;
+  restartPaperSlotEngine?: (slot: PaperSlotId) => Promise<unknown>;
+  // STW-6e (#5148): display name of one slot; the shell validates it.
+  renamePaperSlot?: (slot: PaperSlotId, name: string) => Promise<unknown>;
+  // STW-6d (#5142): the fleet decision of this session, an app restart.
+  getFleetSession?: () => Promise<unknown>;
+  relaunchApp?: () => Promise<unknown>;
+  minimizeWindow?: () => void;
+  toggleMaximizeWindow?: () => void;
+  closeWindow?: () => void;
+  readAuditChain?: (maxLines?: number) => Promise<unknown[]>;
+  exportTelemetry?: () => Promise<unknown>;
+  startEngine?: () => Promise<void>;
+  stopEngine?: () => Promise<void>;
+  restartEngine?: (switchId?: string, opts?: { goLive?: boolean }) => Promise<void>;
+  recoverToPaper?: () => Promise<{ ok: boolean }>;
+  getEngineStatus?: () => Promise<{ status: string }>;
+  getEngineLogs?: () => Promise<string[]>;
+  onEngineStatus?: (cb: (payload: EngineStatusPayload) => void) => () => void;
+  onEngineLog?: (cb: (line: string) => void) => () => void;
+  hasKeychain?: () => Promise<boolean>;
+  getKeychainStatus?: () => Promise<Record<string, boolean>>;
+  saveSecret?: (key: string, value: string) => Promise<{ ok: boolean; error: string | null }>;
+  validateAlpaca?: (keyId: string, secret: string, live?: boolean) => Promise<{ ok: boolean; status: number; equity?: number | null }>;
+  saveSetupState?: (partial: Record<string, unknown>) => Promise<unknown>;
+  recordBrokerAuthorization?: (payload: BrokerAuthorizationAnswer) => Promise<{ ok: boolean }>;
+  getSetupState?: () => Promise<Record<string, unknown>>;
+  provisionOllama?: (model?: string) => Promise<OllamaProvisionResult>;
+  onOllamaProgress?: (cb: (p: OllamaProgress) => void) => () => void;
+  listOllamaModels?: () => Promise<OllamaModelsResult>;
+  getRecommendedModel?: () => Promise<RecommendedModel | null>;
+  claimBeta?: () => Promise<unknown>;
+}
+
+/** #2706: the shell's RAM-aware local-model recommendation. The DECISION comes from
+ *  `ollama-manager.recommendedModel()` — the renderer never re-implements the RAM threshold, so
+ *  the two can't drift. `totalBytes` is null when the reading was unusable (then `lowRam` is true:
+ *  a machine we cannot measure must not be steered onto the 7B model). */
+export interface RecommendedModel {
+  model: string;
+  totalBytes: number | null;
+  lowRam: boolean;
+}
+
+/** Result of the free-beta Senior unlock (ADR-GTM-1b). `claimed` → the shell copied
+ *  the bundled offline license into license.json (tier now Senior); `error` → any
+ *  failure/unavailable (incl. the browser build, where there is no shell). The offline
+ *  unlock has no cap, but `cap-reached` stays in the union for forward compatibility:
+ *  the CTA still handles it (flips to the paid price) if a future issuer ever returns it. */
+export interface ClaimBetaResult {
+  status: "claimed" | "cap-reached" | "error";
+  tier?: string;
+  error?: string;
+}
+
+/** Result of a keychain write via the bridge. */
+export interface SaveSecretResult {
+  ok: boolean;
+  error: string | null;
+}
+
+/** #5135: one answer to the Alpaca authorization prompt. `keyMasked` is "••••" + last four only. */
+export interface BrokerAuthorizationAnswer {
+  answer: "allow" | "deny";
+  slot: string;
+  keyMasked: string;
+  text: string;
+  version: string;
+}
+
+/** Result of the live Alpaca key check (status only). */
+export interface AlpacaValidateResult {
+  ok: boolean;
+  status: number;
+  /** #2454: the account equity on success (non-secret), for the 10%-of-equity HITL default. null otherwise. */
+  equity?: number | null;
+}
+
+/** Streaming progress while the shell provisions local Ollama. Without `stage` it is the model
+ *  pull (or a phase status line). `stage: "install-ollama"` marks the darwin auto-install of the
+ *  Ollama runtime itself (ollama-manager.cjs installDarwin: download + unpack of the official
+ *  package), which runs BEFORE the model download and carries its own 0 to 100 percent. */
+export interface OllamaProgress {
+  status: string;
+  percent: number | null;
+  stage?: "install-ollama";
+}
+
+/** Result of the Ollama provisioning flow (install → serve → pull → health). */
+export interface OllamaProvisionResult {
+  ok: boolean;
+  model?: string;
+  baseUrl?: string;
+  needsManual?: boolean;
+  error?: string;
+  /** On `needsManual`: the platform-correct Ollama download page the shell names
+   *  (ollama-manager.cjs OLLAMA_DOWNLOAD_URL — /download/mac on darwin, /download/windows
+   *  elsewhere). Optional: an older shell omits it and the card falls back to the generic page. */
+  downloadUrl?: string;
+  /** B11: the shell already restarted a RUNNING engine because the pulled model differs from
+   *  the one it booted with (main.cjs `ollama:provision` → llmRestartNeeded). The card then must
+   *  not offer a second restart. Absent/false = no shell restart happened. */
+  restarted?: boolean;
+}
+
+/** Installed local models the Ollama daemon reports (GET /api/tags). `reachable=false` means the
+ *  daemon didn't answer (not running / not installed) → treat every local model as not installed. */
+export interface OllamaModelsResult {
+  reachable: boolean;
+  models: string[];
+}
+
+// Type `window.aaagents` globally so every consumer is type-safe and NOBODY
+// has to cast `window` — all Electron IPC goes through this module's helpers.
+declare global {
+  interface Window {
+    aaagents?: AAAgentsBridge;
+  }
+}
+
+function bridge(): AAAgentsBridge | undefined {
+  if (typeof window === "undefined") return undefined;
+  return window.aaagents;
+}
+
+let _conn: EngineConnection | null = null;
+
+/** True only when the Electron IPC bridge (`window.aaagents`) is actually present — i.e. the real
+ *  desktop shell. Use this to gate surfaces that call bridge IPC with no HTTP fallback (the setup
+ *  wizard, keychain probe, engine lifecycle): a plain browser has no bridge, so those must be skipped
+ *  (#2647). Distinct from `isDesktop()`, which also treats a localhost browser as "desktop-styled". */
+export function hasBridge(): boolean {
+  return typeof window !== "undefined" && !!window.aaagents;
+}
+
+/** True when served on a loopback/LAN host in a plain browser (the OSS from-source web console). */
+export function isLocalhost(): boolean {
+  const isTest = typeof process !== "undefined" && (process.env.NODE_ENV === "test" || !!process.env.VITEST);
+  return !isTest && typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.hostname.startsWith("192.168."));
+}
+
+/** True when the console should show desktop-styled controls: the real Electron shell OR a
+ *  localhost browser. Semantics unchanged from before the seam split (`hasBridge() || isLocalhost()`). */
+export function isDesktop(): boolean {
+  return !!bridge()?.isDesktop || isLocalhost();
+}
+
+/** The desktop app version (package.json via Electron app.getVersion()), or null
+ *  in the browser where the bridge is absent (the caller hides the version then). */
+export async function getAppVersion(): Promise<string | null> {
+  return (await bridge()?.getVersion?.()) ?? null;
+}
+
+/** #2744/S5: the host OS ("darwin" | "win32" | "linux"), or null in the browser. Used to hide the
+ *  console's own window controls on macOS (native traffic lights) — never throws. */
+export function getPlatform(): string | null {
+  return bridge()?.platform ?? null;
+}
+
+/** #2744/S5: the canonical list of preload members the renderer relies on. The bridge-parity test
+ *  asserts desktop/electron/preload.cjs exposes a SUPERSET of these, so a renderer call can never hit
+ *  an undefined bridge method after the two drift. Keep in sync with AAAgentsBridge. */
+export const BRIDGE_KEYS: readonly string[] = [
+  "isDesktop",
+  "platform",
+  "getVersion",
+  "getUpdateStatus",
+  "checkForUpdatesNow",
+  "getEngineConnection",
+  "getEngineFleet",
+  "listPaperSlots",
+  "connectPaperSlot",
+  "disconnectPaperSlot",
+  "startPaperSlotEngine",
+  "getPaperSlotSetup",
+  "savePaperSlotSetup",
+  "restartPaperSlotEngine",
+  "renamePaperSlot",
+  "getFleetSession",
+  "relaunchApp",
+  "minimizeWindow",
+  "toggleMaximizeWindow",
+  "closeWindow",
+  "readAuditChain",
+  "exportTelemetry",
+  "startEngine",
+  "stopEngine",
+  "restartEngine",
+  "recoverToPaper",
+  "getEngineStatus",
+  "getEngineLogs",
+  "onEngineStatus",
+  "onEngineLog",
+  "hasKeychain",
+  "getKeychainStatus",
+  "saveSecret",
+  "validateAlpaca",
+  "saveSetupState",
+  "recordBrokerAuthorization",
+  "getSetupState",
+  "provisionOllama",
+  "onOllamaProgress",
+  "listOllamaModels",
+  "getRecommendedModel",
+  "claimBeta",
+];
+
+/** #2077 notify-only update status from the shell. `updateAvailable` is false in the browser
+ *  (no bridge) and whenever the check hasn't run or failed — fully fail-safe. */
+export interface UpdateStatus {
+  updateAvailable: boolean;
+  latestVersion: string | null;
+  downloadUrl: string | null;
+  changelog: string | null;
+  checkedAt: string | null;
+}
+
+const NO_UPDATE: UpdateStatus = {
+  updateAvailable: false,
+  latestVersion: null,
+  downloadUrl: null,
+  changelog: null,
+  checkedAt: null,
+};
+
+/** Strict `latest > installed` semver compare (#2739/S2). Returns:
+ *  - `true`  latest is a strictly newer release than installed → a real update,
+ *  - `false` latest is equal to or older than installed → NOT an update (suppress the banner),
+ *  - `null`  either version is absent or unparseable → caller must FAIL-OPEN (keep the shell's flag).
+ *  Prerelease suffixes (`-beta`, `-mac-demo`) are ignored for the numeric compare; a value with no
+ *  `major.minor.patch` core (e.g. `"0.4.0-mac-demo"` with junk) parses to its numeric core, and a
+ *  fully unparseable string yields `null` so we never silently hide a genuine update. */
+export function semverGt(
+  latest: string | null | undefined,
+  installed: string | null | undefined,
+): boolean | null {
+  const core = (v: string | null | undefined): [number, number, number] | null => {
+    if (typeof v !== "string") return null;
+    const m = v.trim().replace(/^v/, "").match(/^(\d+)\.(\d+)\.(\d+)/);
+    return m ? [Number(m[1]), Number(m[2]), Number(m[3])] : null;
+  };
+  const a = core(latest);
+  const b = core(installed);
+  if (!a || !b) return null; // fail-open
+  for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return a[i] > b[i];
+  return false; // equal → not an update
+}
+
+/** Apply the fail-open semver guard to a raw shell status: a shell that reports
+ *  `updateAvailable` for a `latest <= installed` (GitHub `releases/latest` can resolve to an OLDER
+ *  non-prerelease) is corrected to `false`; an unparseable/absent version is left untouched. */
+async function guardUpdate(raw: UpdateStatus): Promise<UpdateStatus> {
+  if (!raw.updateAvailable) return raw;
+  // Installed = the shell's app.getVersion() via getAppVersion(); null in the browser → semverGt
+  // yields null → fail-open (the shell's flag stands). Never reference a bare getVersion() here —
+  // the module has none, vite does not type-check, and a ReferenceError rejects the banner's path.
+  const installed = await getAppVersion();
+  const gt = semverGt(raw.latestVersion, installed);
+  return gt === false ? { ...raw, updateAvailable: false } : raw; // null → fail-open
+}
+
+/** Last update status the shell evaluated (start + every 6h). Null-safe in the browser. */
+export async function getUpdateStatus(): Promise<UpdateStatus> {
+  return guardUpdate((await bridge()?.getUpdateStatus?.()) ?? NO_UPDATE);
+}
+
+/** Force an update re-check (Settings → System "Check for updates"). Null-safe in the browser. */
+export async function checkForUpdatesNow(): Promise<UpdateStatus> {
+  return guardUpdate((await bridge()?.checkForUpdatesNow?.()) ?? NO_UPDATE);
+}
+
+/**
+ * Resolve and cache the engine connection from the shell. No-op (and never
+ * throws) in the browser or if the IPC fails — the renderer must still load;
+ * engine calls then behave as today (no X-Engine-Key) until re-init.
+ */
+export async function initDesktopBridge(): Promise<void> {
+  const b = bridge();
+  if (!b?.isDesktop || typeof b.getEngineConnection !== "function") return;
+  try {
+    const raw = await b.getEngineConnection();
+    if (
+      raw &&
+      typeof (raw as EngineConnection).port === "number" &&
+      typeof (raw as EngineConnection).apiKey === "string"
+    ) {
+      _conn = { port: (raw as EngineConnection).port, apiKey: (raw as EngineConnection).apiKey };
+    }
+  } catch (err) {
+    console.warn("desktopBridge: getEngineConnection failed — engine calls will lack the key:", err);
+  }
+}
+
+/** STW-6/7 (#4632, #4633): one engine of the shell's profile fleet. */
+export interface FleetEngine {
+  id: string;
+  kind: "live" | "paper";
+  port: number;
+  status?: string;
+}
+
+/**
+ * The shell's profile fleet (engine:get-fleet IPC) in the shell's slot order, or null — in the
+ * browser, without STRATEGY_PROFILES_ENABLED / a valid profile list (the shell runs one engine),
+ * or when the IPC fails. Entries without a usable id, kind or port are dropped.
+ */
+export async function getEngineFleet(): Promise<FleetEngine[] | null> {
+  const b = bridge();
+  if (!b?.isDesktop || typeof b.getEngineFleet !== "function") return null;
+  try {
+    const raw = await b.getEngineFleet();
+    if (!Array.isArray(raw)) return null;
+    return raw.flatMap((e): FleetEngine[] => {
+      const r = e as Partial<FleetEngine> | null;
+      if (!r || typeof r.id !== "string" || (r.kind !== "live" && r.kind !== "paper")) return [];
+      if (typeof r.port !== "number" || !Number.isInteger(r.port)) return [];
+      const out: FleetEngine = { id: r.id, kind: r.kind, port: r.port };
+      if (typeof r.status === "string") out.status = r.status;
+      return [out];
+    });
+  } catch (err) {
+    console.warn("desktopBridge: getEngineFleet failed — no fleet list:", err);
+    return null;
+  }
+}
+
+/** STW-2b (#4934): one paper-account slot of the shell's keychain (`keychain.py::PLAETZE`). */
+export type PaperSlotId = "paper1" | "paper2" | "paper3";
+const PAPER_SLOT_IDS: readonly PaperSlotId[] = ["paper1", "paper2", "paper3"];
+
+export interface PaperSlot {
+  slot: PaperSlotId;
+  /** #5148: the operator's name for this slot, or null (the card shows "Paper account N"). */
+  name: string | null;
+  connected: boolean;
+  /** Masked by the shell; the full account number never reaches the console. */
+  accountMasked: string | null;
+  /** Same values as FleetEngine.status. */
+  engineStatus: string | null;
+  /** #5142: paper1 is the setup wizard's account on the main engine; no connect, no disconnect. */
+  setupAccount: boolean;
+  /** #5142: the main engine trades the live account, so the setup paper account is not running. */
+  mainEngineLive: boolean;
+}
+
+export type ConnectPaperSlotResult =
+  | { ok: true; accountMasked: string; lowMemory?: boolean }
+  | { ok: false; code: "invalid_keys" | "duplicate_account" | "network" | "failed" };
+const CONNECT_CODES = ["invalid_keys", "duplicate_account", "network"] as const;
+
+export type StartPaperSlotResult = { ok: true } | { ok: false; code: "low_memory" | "failed" };
+
+/** True when the shell offers the paper-slot surface (STW-6b). Lets a caller hide an action
+ *  that would lead to "Paper accounts" while that section cannot render. */
+export function hasPaperSlots(): boolean {
+  const b = bridge();
+  return !!b?.isDesktop && typeof b.listPaperSlots === "function";
+}
+
+/**
+ * The paper slots in the fixed order paper1–paper3, or null when the bridge or its member is
+ * absent (browser, shell before STW-6b). An IPC failure or an unusable answer REJECTS, so the
+ * caller can tell "no shell" (render nothing) from "shell could not answer" (error state).
+ */
+export async function listPaperSlots(): Promise<PaperSlot[] | null> {
+  const b = bridge();
+  if (!hasPaperSlots() || !b?.listPaperSlots) return null;
+  const raw = await b.listPaperSlots();
+  if (!Array.isArray(raw)) throw new Error("listPaperSlots: no list");
+  return PAPER_SLOT_IDS.map((slot): PaperSlot => {
+    const r = raw.find((e) => (e as Partial<PaperSlot> | null)?.slot === slot) as Partial<PaperSlot> | undefined;
+    return {
+      slot,
+      name: typeof r?.name === "string" && r.name.trim() !== "" ? r.name : null,
+      connected: r?.connected === true,
+      accountMasked: typeof r?.accountMasked === "string" ? r.accountMasked : null,
+      engineStatus: typeof r?.engineStatus === "string" ? r.engineStatus : null,
+      setupAccount: r?.setupAccount === true,
+      mainEngineLive: r?.mainEngineLive === true,
+    };
+  });
+}
+
+/** #5142: whether the shell built a fleet at start (decided once per session), or null when the
+ *  shell cannot say (browser, older shell, unusable answer); then no restart is offered. */
+export async function getFleetSession(): Promise<{ fleetActive: boolean } | null> {
+  const b = bridge();
+  if (!b?.isDesktop || typeof b.getFleetSession !== "function") return null;
+  try {
+    const r = (await b.getFleetSession()) as { fleetActive?: unknown } | null;
+    return typeof r?.fleetActive === "boolean" ? { fleetActive: r.fleetActive } : null;
+  } catch (err) {
+    console.warn("desktopBridge: getFleetSession failed → no restart offered:", err);
+    return null;
+  }
+}
+
+/** #5142: restart the app through the shell's regular quit path (every engine stops first). */
+export async function relaunchApp(): Promise<void> {
+  const b = bridge();
+  if (!b?.isDesktop || typeof b.relaunchApp !== "function") return;
+  await b.relaunchApp();
+}
+
+/** Connect a slot with Alpaca paper keys. The shell validates against the paper endpoint (a live
+ *  key fails there → `invalid_keys`), checks the account number against the other slots
+ *  (`duplicate_account`: nothing stored) and stores. `lowMemory`: connected, but the engine did
+ *  not start. Never throws: no bridge, an IPC failure or an unknown answer →
+ *  `{ ok:false, code:"failed" }`. */
+export async function connectPaperSlot(slot: PaperSlotId, keyId: string, secret: string): Promise<ConnectPaperSlotResult> {
+  const b = bridge();
+  if (!b?.isDesktop || typeof b.connectPaperSlot !== "function") return { ok: false, code: "failed" };
+  try {
+    const r = (await b.connectPaperSlot(slot, keyId, secret)) as
+      | { ok?: unknown; accountMasked?: unknown; lowMemory?: unknown; code?: unknown }
+      | null;
+    if (r?.ok === true && typeof r.accountMasked === "string") {
+      return { ok: true, accountMasked: r.accountMasked, ...(r.lowMemory === true ? { lowMemory: true } : {}) };
+    }
+    const code = CONNECT_CODES.find((c) => c === r?.code);
+    return { ok: false, code: code ?? "failed" };
+  } catch {
+    // No detail logged: the error of a call that carried keys stays out of the console.
+    return { ok: false, code: "failed" };
+  }
+}
+
+async function slotAction(fn: ((slot: PaperSlotId) => Promise<unknown>) | undefined, slot: PaperSlotId): Promise<{ ok: boolean }> {
+  if (!bridge()?.isDesktop || typeof fn !== "function") return { ok: false };
+  try {
+    const r = (await fn(slot)) as { ok?: unknown } | null;
+    return { ok: r?.ok === true };
+  } catch (err) {
+    console.warn("desktopBridge: paper slot action failed:", err);
+    return { ok: false };
+  }
+}
+
+/** Remove a slot's keys (and its engine) in the shell. Never throws; no bridge → `{ ok:false }`. */
+export async function disconnectPaperSlot(slot: PaperSlotId): Promise<{ ok: boolean }> {
+  const b = bridge();
+  return slotAction(b?.disconnectPaperSlot?.bind(b), slot);
+}
+
+/** Start the engine of this one slot. `low_memory`: the shell held it back, nothing started;
+ *  `force` overrides that ("Start anyway"). Never throws: no bridge, an IPC failure or an unknown
+ *  answer → `{ ok:false, code:"failed" }`. */
+export async function startPaperSlotEngine(slot: PaperSlotId, opts?: { force?: boolean }): Promise<StartPaperSlotResult> {
+  const b = bridge();
+  if (!b?.isDesktop || typeof b.startPaperSlotEngine !== "function") return { ok: false, code: "failed" };
+  try {
+    const answer = opts?.force === true ? b.startPaperSlotEngine(slot, { force: true }) : b.startPaperSlotEngine(slot);
+    const r = (await answer) as { ok?: unknown; code?: unknown } | null;
+    if (r?.ok === true) return { ok: true };
+    return { ok: false, code: r?.code === "low_memory" ? "low_memory" : "failed" };
+  } catch (err) {
+    console.warn("desktopBridge: paper slot start failed:", err);
+    return { ok: false, code: "failed" };
+  }
+}
+
+/** True when the shell offers all three members of a slot's setup (STW-2c #4953): an assignment
+ *  that could be recorded but not saved or restarted must not be offered. */
+export function hasPaperSlotSetup(): boolean {
+  const b = bridge();
+  return (
+    !!b?.isDesktop &&
+    typeof b.getPaperSlotSetup === "function" &&
+    typeof b.savePaperSlotSetup === "function" &&
+    typeof b.restartPaperSlotEngine === "function"
+  );
+}
+
+/** The values of a slot's setup.json as the engine boot reads them (`setup-manager.cjs::setupEnv`):
+ *  as text, blank counts as unset. Also answers for a stopped engine. Never throws: no bridge, an
+ *  IPC failure or an unusable answer → null. */
+export async function getPaperSlotSetup(slot: PaperSlotId): Promise<Record<string, string> | null> {
+  const b = bridge();
+  if (!hasPaperSlotSetup() || !b?.getPaperSlotSetup) return null;
+  try {
+    const raw = await b.getPaperSlotSetup(slot);
+    if (raw === null || typeof raw !== "object" || Array.isArray(raw)) return null;
+    return Object.fromEntries(
+      Object.entries(raw)
+        .filter(([, v]) => v != null && String(v).trim() !== "")
+        .map(([k, v]) => [k, String(v)]),
+    );
+  } catch (err) {
+    console.warn("desktopBridge: paper slot setup failed:", err);
+    return null;
+  }
+}
+
+/** Write values to the setup.json of this slot only; the shell keeps allowed keys only. Never
+ *  throws; no bridge → `{ ok:false }`. */
+export async function savePaperSlotSetup(slot: PaperSlotId, values: Record<string, string>): Promise<{ ok: boolean }> {
+  const b = bridge();
+  return slotAction(b?.savePaperSlotSetup ? (s) => b.savePaperSlotSetup!(s, values) : undefined, slot);
+}
+
+/** Restart the engine of this slot only; `ok` when it is not running, the next start reads the
+ *  file. Never touches the live engine. Never throws; no bridge → `{ ok:false }`. */
+export async function restartPaperSlotEngine(slot: PaperSlotId): Promise<{ ok: boolean }> {
+  const b = bridge();
+  return slotAction(b?.restartPaperSlotEngine?.bind(b), slot);
+}
+
+/** #5148: true when the shell can store a name per slot. */
+export function canRenamePaperSlot(): boolean {
+  const b = bridge();
+  return !!b?.isDesktop && typeof b.renamePaperSlot === "function";
+}
+
+/** #5148: store the display name of one slot. The shell takes 1–40 characters without a line
+ *  break; anything else → `{ ok:false }`. Never throws; no bridge → `{ ok:false }`. */
+export async function renamePaperSlot(slot: PaperSlotId, name: string): Promise<{ ok: boolean }> {
+  const b = bridge();
+  return slotAction(b?.renamePaperSlot ? (s) => b.renamePaperSlot!(s, name) : undefined, slot);
+}
+
+/** Cached engine API key (X-Engine-Key), or null outside the desktop app. */
+export function getEngineKey(): string | null {
+  return _conn?.apiKey ?? null;
+}
+
+/** Cached engine loopback port, or null outside the desktop app. */
+export function getEnginePort(): number | null {
+  return _conn?.port ?? null;
+}
+
+/** Frameless-window controls — the single sanctioned path for these IPC calls.
+ *  No-op in the browser (the bridge is absent). */
+export function minimizeWindow(): void {
+  bridge()?.minimizeWindow?.();
+}
+export function toggleMaximizeWindow(): void {
+  bridge()?.toggleMaximizeWindow?.();
+}
+export function closeWindow(): void {
+  bridge()?.closeWindow?.();
+}
+
+/**
+ * Read the engine's hash-linked audit log (last `maxLines` senate decisions).
+ * Desktop-only: returns the raw entry objects from the local audit_log file.
+ * In the browser the bridge is absent → resolves to [] (cloud has no local
+ * file; that page falls back to a desktop-only note).
+ */
+export async function readAuditChain(maxLines?: number): Promise<unknown[]> {
+  const raw = await bridge()?.readAuditChain?.(maxLines);
+  return Array.isArray(raw) ? raw : [];
+}
+
+/** Result of the user-initiated diagnostics export (INF-13 a, #1372). */
+export interface TelemetryExportResult {
+  ok: boolean;
+  path?: string;
+  records?: number;
+  files?: number;
+  empty?: boolean;
+  canceled?: boolean;
+  error?: string;
+}
+
+/** Export the local, already-scrubbed telemetry store to a user-picked file
+ *  (desktop-only). The user explicitly chooses where to save — there is NO
+ *  background egress. Resolves `{ ok:false, error:"desktop-only" }` in the browser. */
+export async function exportTelemetry(): Promise<TelemetryExportResult> {
+  const r = await bridge()?.exportTelemetry?.();
+  return (r as TelemetryExportResult) ?? { ok: false, error: "desktop-only" };
+}
+
+/** Engine lifecycle — the single sanctioned path for these IPC calls. Each is a
+ *  no-op / unavailable in the browser (the bridge is absent). */
+export async function startEngine(): Promise<void> {
+  await bridge()?.startEngine?.();
+}
+export async function stopEngine(): Promise<void> {
+  await bridge()?.stopEngine?.();
+}
+/** INC-1b (#2215): atomic engine restart (stop → wait-for-port-free → start) in ONE
+ *  IPC call, so callers no longer race stopEngine()+startEngine() into the [Errno 10048]
+ *  bind window. Falls back to stop+start where the bridge predates engine:restart. */
+export async function restartEngine(switchId?: string, opts?: { goLive?: boolean }): Promise<void> {
+  const b = bridge();
+  if (b?.restartEngine) {
+    // #2277 INC-1: forward the per-switch correlation id (the console's nonce) into the engine spawn.
+    // #2465: opts.goLive carries the one-shot consent directive so the fresh boot MAY go live (still
+    // AND-gated with the WORM chain in the shell). Omitted on every non-consent restart → Paper.
+    await b.restartEngine(switchId, opts);
+    return;
+  }
+  await b?.stopEngine?.();
+  await b?.startEngine?.();
+}
+/** INC-3 (#2213): recover a dead/failed LIVE boot onto paper. Forces the NEXT engine
+ *  boot to PAPER_TRADING (one-shot shell flag) and atomically restarts — it NEVER writes
+ *  the WORM chain (Python owns the disable record, issued once the engine is healthy on
+ *  paper). No-op in the browser (the bridge is absent). */
+export async function recoverToPaper(): Promise<void> {
+  await bridge()?.recoverToPaper?.();
+}
+export async function getEngineStatus(): Promise<EngineStatus> {
+  const r = await bridge()?.getEngineStatus?.();
+  return (r?.status as EngineStatus) ?? "unavailable";
+}
+export async function getEngineLogs(): Promise<string[]> {
+  return (await bridge()?.getEngineLogs?.()) ?? [];
+}
+/** Subscribe to engine status pushes; returns an unsubscribe fn (no-op in browser). */
+export function onEngineStatus(cb: (payload: EngineStatusPayload) => void): () => void {
+  return bridge()?.onEngineStatus?.(cb) ?? (() => {});
+}
+/** Subscribe to engine log lines; returns an unsubscribe fn (no-op in browser). */
+export function onEngineLog(cb: (line: string) => void): () => void {
+  return bridge()?.onEngineLog?.(cb) ?? (() => {});
+}
+
+/** First-run keychain check for the setup-wizard gate (G4-1). Desktop-only:
+ *  in the browser the bridge is absent → false (the cloud build skips the
+ *  wizard entirely; see ConsoleApp). */
+export async function hasKeychain(): Promise<boolean> {
+  return (await bridge()?.hasKeychain?.()) ?? false;
+}
+
+/** Per-slot OS-keychain presence for the broker-keys badge (INC-5/F5). Returns a
+ *  `{ MANAGED_KEY: boolean }` map (presence only — NEVER any secret value). Fail-safe:
+ *  no bridge / not desktop / any error → `{}`, so the caller shows no badge and never
+ *  throws. Backed by `python -m core.keychain_cli status --json` via the shell. */
+export async function getKeychainStatus(): Promise<Record<string, boolean>> {
+  try {
+    const r = await bridge()?.getKeychainStatus?.();
+    return r && typeof r === "object" ? r : {};
+  } catch {
+    return {};
+  }
+}
+
+/** Write one OS-keychain secret via the bridge (G4-1). Desktop-only; resolves
+ *  { ok:false } in the browser (no bridge). */
+export async function saveSecret(key: string, value: string): Promise<SaveSecretResult> {
+  const r = await bridge()?.saveSecret?.(key, value);
+  return r ?? { ok: false, error: "desktop-only" };
+}
+
+/** Live Alpaca key check via the main process (G4-2). Desktop-only; resolves
+ *  `{ ok:false, status:0 }` in the browser (no bridge). */
+export async function validateAlpaca(
+  keyId: string,
+  secret: string,
+  live = false,
+): Promise<AlpacaValidateResult> {
+  // `live` selects the Alpaca endpoint the shell validates against: api.alpaca.markets (live) vs
+  // paper-api.alpaca.markets (paper) — a live key only validates on the live API (#1425).
+  const r = await bridge()?.validateAlpaca?.(keyId, secret, live);
+  return r ?? { ok: false, status: 0, equity: null };
+}
+
+/** #5135: write the DENY/ALLOW answer for the WORM seal on the next engine boot. Fail-closed:
+ *  `{ ok:false }` in the browser (no bridge), on an older shell, or on any error — the caller then
+ *  neither validates nor stores a key. */
+export async function recordBrokerAuthorization(payload: BrokerAuthorizationAnswer): Promise<{ ok: boolean }> {
+  try {
+    const r = await bridge()?.recordBrokerAuthorization?.(payload);
+    return { ok: r?.ok === true };
+  } catch {
+    return { ok: false };
+  }
+}
+
+/** Persist the wizard's non-secret state to setup.json (G4-2). No-op in the
+ *  browser. */
+export async function saveSetupState(partial: Record<string, unknown>): Promise<void> {
+  await bridge()?.saveSetupState?.(partial);
+}
+
+/** Read the non-secret setup.json (name + LLM choice). Returns {} in the browser
+ *  or when nothing has been saved yet. Used by the dashboard to greet by name. */
+export async function getSetupState(): Promise<Record<string, unknown>> {
+  return (await bridge()?.getSetupState?.()) ?? {};
+}
+
+/** Provision local Ollama (install → serve → pull → health), streaming progress
+ *  to `onProgress` (G4-3). Desktop-only; resolves `{ ok:false }` in the browser.
+ *  Unsubscribes the progress listener when the flow settles. */
+export async function provisionOllama(
+  onProgress: (p: OllamaProgress) => void,
+  model?: string,
+): Promise<OllamaProvisionResult> {
+  const b = bridge();
+  if (!b?.provisionOllama) return { ok: false, error: "desktop-only" };
+  const unsub = b.onOllamaProgress?.(onProgress) ?? (() => {});
+  try {
+    // `model` selects which Ollama tag to pull. #2706: the card now always passes an explicit tag,
+    // so a tile can never install a model it does not name; the main process's RAM-aware fallback
+    // applies only to callers that pass nothing.
+    return await b.provisionOllama(model);
+  } finally {
+    unsub();
+  }
+}
+
+/** #2706: the shell's RAM-aware model recommendation, for steering the LLM card's badge.
+ *  Fail-safe: no bridge (browser build) / any error → `null`, and the card then shows NO badge and
+ *  behaves exactly as it did before the feature. Never throws. */
+export async function getRecommendedModel(): Promise<RecommendedModel | null> {
+  const b = bridge();
+  if (!b?.getRecommendedModel) return null;
+  try {
+    const r = await b.getRecommendedModel();
+    if (!r || typeof r.model !== "string" || !r.model) return null;
+    const bytes = Number(r.totalBytes);
+    return {
+      model: r.model,
+      totalBytes: Number.isFinite(bytes) && bytes > 0 ? bytes : null,
+      lowRam: !!r.lowRam,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/** List the local models the Ollama daemon has pulled (GET /api/tags via the shell). Fail-safe:
+ *  no bridge / not desktop / any error → `{ reachable:false, models:[] }`, so callers treat every
+ *  local model as not installed and never throw. Used by the LLM card for real install status. */
+export async function listOllamaModels(): Promise<OllamaModelsResult> {
+  const b = bridge();
+  if (!b?.listOllamaModels) return { reachable: false, models: [] };
+  try {
+    const r = await b.listOllamaModels();
+    return {
+      reachable: !!r?.reachable,
+      models: Array.isArray(r?.models) ? r.models.map((m) => String(m)) : [],
+    };
+  } catch {
+    return { reachable: false, models: [] };
+  }
+}
+
+/**
+ * Claim the free-beta Senior unlock (ADR-GTM-1b). Desktop-only and fully OFFLINE:
+ * the shell copies the bundled Ed25519-signed license into license.json (no cloud
+ * call, no login), so the local engine resolves Senior on the next entitlement poll.
+ * Resolves `{ status:"error" }` in the browser (no bridge).
+ */
+export async function claimBeta(): Promise<ClaimBetaResult> {
+  const r = await bridge()?.claimBeta?.();
+  return (r as ClaimBetaResult) ?? { status: "error", error: "desktop-only" };
+}
+
+/** Test hook — clear the cached connection. */
+export function __resetDesktopBridge(): void {
+  _conn = null;
+}

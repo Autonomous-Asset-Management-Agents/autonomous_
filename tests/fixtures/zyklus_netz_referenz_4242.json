@@ -1,0 +1,1675 @@
+{
+  "flag_QUALITY_AGENT_ENABLED": {
+    "aktive_strategie": "ZyklusNetz",
+    "broker": [
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "stop_price": 186.0,
+          "symbol": "AAPL",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "stop_price": 139.5,
+          "symbol": "AMD",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 5.0,
+          "side": "sell",
+          "stop_price": 372.0,
+          "symbol": "MSFT",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 40.0,
+          "side": "sell",
+          "stop_price": 93.0,
+          "symbol": "NVDA",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "args": [
+          "order-2"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "symbol": "AMD",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-1"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "AAPL",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-4"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "NVDA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 7.0,
+          "side": "buy",
+          "symbol": "TSLA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      }
+    ],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_kontext_rang_trichter": 1,
+      "_kontext_snapshots": 1,
+      "_maintain_broker_stops": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_ratchet_entry_times": 1,
+      "_ratchet_high_water_marks": 1,
+      "_rotation_ausstiege": 1,
+      "_rotation_rangverlust": 1,
+      "_rotation_ueberhang": 1,
+      "_round_table_bewerten": 1,
+      "_run_deconcentration_and_rotation_exits": 1,
+      "_run_position_stop_checks": 1,
+      "_schutz_vor_konsens": 1,
+      "_signale_ausfuehren": 1,
+      "_stopout_reentry_locked": 1,
+      "_symbol_zustand": 2,
+      "_symbole_vorbereiten": 1,
+      "_trim_ausstiege": 1,
+      "_update_live_account_equity": 1,
+      "_zyklus_auswerten": 1,
+      "_zyklus_kontext_aufbauen": 1,
+      "_zyklus_vorbereiten": 1,
+      "_zyklusgrenze": 1
+    },
+    "hwm": [
+      {
+        "AAPL": 210.0,
+        "AMD": 135.0,
+        "MSFT": 408.0,
+        "NVDA": 125.0
+      }
+    ],
+    "pm_gebucht": [
+      [
+        "AMD",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "TSLA",
+        "buy"
+      ]
+    ],
+    "rangliste": [
+      [
+        "MSFT",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      60.0
+    ],
+    "uebergeben": [],
+    "zustand": [
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 408.0,
+          "high": 412.08,
+          "low": 399.84,
+          "open": 403.92,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": 0.25,
+        "quality_reference_date": "2026-09-23",
+        "quality_score": 0.22,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "MSFT",
+        "unrealized_pnl": null,
+        "vix": null
+      },
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 250.0,
+          "high": 252.5,
+          "low": 245.0,
+          "open": 247.5,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": 0.25,
+        "quality_reference_date": "2026-09-23",
+        "quality_score": 0.24,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "TSLA",
+        "unrealized_pnl": null,
+        "vix": null
+      }
+    ]
+  },
+  "flag_REGIME_CONDITIONER_ENABLED": {
+    "aktive_strategie": "ZyklusNetz",
+    "broker": [
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "stop_price": 186.0,
+          "symbol": "AAPL",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "stop_price": 139.5,
+          "symbol": "AMD",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 5.0,
+          "side": "sell",
+          "stop_price": 372.0,
+          "symbol": "MSFT",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 40.0,
+          "side": "sell",
+          "stop_price": 93.0,
+          "symbol": "NVDA",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "args": [
+          "order-2"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "symbol": "AMD",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-1"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "AAPL",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-4"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "NVDA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 7.0,
+          "side": "buy",
+          "symbol": "TSLA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      }
+    ],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_kontext_rang_trichter": 1,
+      "_kontext_snapshots": 1,
+      "_maintain_broker_stops": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_ratchet_entry_times": 1,
+      "_ratchet_high_water_marks": 1,
+      "_rotation_ausstiege": 1,
+      "_rotation_rangverlust": 1,
+      "_rotation_ueberhang": 1,
+      "_round_table_bewerten": 1,
+      "_run_deconcentration_and_rotation_exits": 1,
+      "_run_position_stop_checks": 1,
+      "_schutz_vor_konsens": 1,
+      "_signale_ausfuehren": 1,
+      "_stopout_reentry_locked": 1,
+      "_symbol_zustand": 2,
+      "_symbole_vorbereiten": 1,
+      "_trim_ausstiege": 1,
+      "_update_live_account_equity": 1,
+      "_zyklus_auswerten": 1,
+      "_zyklus_kontext_aufbauen": 1,
+      "_zyklus_vorbereiten": 1,
+      "_zyklusgrenze": 1
+    },
+    "hwm": [
+      {
+        "AAPL": 210.0,
+        "AMD": 135.0,
+        "MSFT": 408.0,
+        "NVDA": 125.0
+      }
+    ],
+    "pm_gebucht": [
+      [
+        "AMD",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "TSLA",
+        "buy"
+      ]
+    ],
+    "rangliste": [
+      [
+        "MSFT",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      60.0
+    ],
+    "uebergeben": [],
+    "zustand": [
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 408.0,
+          "high": 412.08,
+          "low": 399.84,
+          "open": 403.92,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": "bull",
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "MSFT",
+        "unrealized_pnl": null,
+        "vix": 18.5
+      },
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 250.0,
+          "high": 252.5,
+          "low": 245.0,
+          "open": 247.5,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": "bull",
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "TSLA",
+        "unrealized_pnl": null,
+        "vix": 18.5
+      }
+    ]
+  },
+  "flag_ROUND_TABLE_POSITION_CONTEXT_ENABLED": {
+    "aktive_strategie": "ZyklusNetz",
+    "broker": [
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "stop_price": 186.0,
+          "symbol": "AAPL",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "stop_price": 139.5,
+          "symbol": "AMD",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 5.0,
+          "side": "sell",
+          "stop_price": 372.0,
+          "symbol": "MSFT",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 40.0,
+          "side": "sell",
+          "stop_price": 93.0,
+          "symbol": "NVDA",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "args": [
+          "order-2"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "symbol": "AMD",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-1"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "AAPL",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-4"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "NVDA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 7.0,
+          "side": "buy",
+          "symbol": "TSLA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      }
+    ],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_kontext_rang_trichter": 1,
+      "_kontext_snapshots": 1,
+      "_maintain_broker_stops": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_ratchet_entry_times": 1,
+      "_ratchet_high_water_marks": 1,
+      "_rotation_ausstiege": 1,
+      "_rotation_rangverlust": 1,
+      "_rotation_ueberhang": 1,
+      "_round_table_bewerten": 1,
+      "_run_deconcentration_and_rotation_exits": 1,
+      "_run_position_stop_checks": 1,
+      "_schutz_vor_konsens": 1,
+      "_signale_ausfuehren": 1,
+      "_stopout_reentry_locked": 1,
+      "_symbol_zustand": 2,
+      "_symbole_vorbereiten": 1,
+      "_trim_ausstiege": 1,
+      "_update_live_account_equity": 1,
+      "_zyklus_auswerten": 1,
+      "_zyklus_kontext_aufbauen": 1,
+      "_zyklus_vorbereiten": 1,
+      "_zyklusgrenze": 1
+    },
+    "hwm": [
+      {
+        "AAPL": 210.0,
+        "AMD": 135.0,
+        "MSFT": 408.0,
+        "NVDA": 125.0
+      }
+    ],
+    "pm_gebucht": [
+      [
+        "AMD",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "TSLA",
+        "buy"
+      ]
+    ],
+    "rangliste": [
+      [
+        "MSFT",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      60.0
+    ],
+    "uebergeben": [],
+    "zustand": [
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": true,
+        "ohlc": {
+          "close": 408.0,
+          "high": 412.08,
+          "low": 399.84,
+          "open": 403.92,
+          "volume": 1000000.0
+        },
+        "position_avg_price": 400.0,
+        "position_context_confirmed": true,
+        "position_qty": 5.0,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "MSFT",
+        "unrealized_pnl": 40.0,
+        "vix": null
+      },
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": false,
+        "ohlc": {
+          "close": 250.0,
+          "high": 252.5,
+          "low": 245.0,
+          "open": 247.5,
+          "volume": 1000000.0
+        },
+        "position_avg_price": 0.0,
+        "position_context_confirmed": true,
+        "position_qty": 0.0,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "TSLA",
+        "unrealized_pnl": 0.0,
+        "vix": null
+      }
+    ]
+  },
+  "flag_UPSIDE_SKEW_AGENT_ENABLED": {
+    "aktive_strategie": "ZyklusNetz",
+    "broker": [
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "stop_price": 186.0,
+          "symbol": "AAPL",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "stop_price": 139.5,
+          "symbol": "AMD",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 5.0,
+          "side": "sell",
+          "stop_price": 372.0,
+          "symbol": "MSFT",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 40.0,
+          "side": "sell",
+          "stop_price": 93.0,
+          "symbol": "NVDA",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "args": [
+          "order-2"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "symbol": "AMD",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-1"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "AAPL",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-4"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "NVDA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 7.0,
+          "side": "buy",
+          "symbol": "TSLA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      }
+    ],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_kontext_rang_trichter": 1,
+      "_kontext_snapshots": 1,
+      "_maintain_broker_stops": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_ratchet_entry_times": 1,
+      "_ratchet_high_water_marks": 1,
+      "_rotation_ausstiege": 1,
+      "_rotation_rangverlust": 1,
+      "_rotation_ueberhang": 1,
+      "_round_table_bewerten": 1,
+      "_run_deconcentration_and_rotation_exits": 1,
+      "_run_position_stop_checks": 1,
+      "_schutz_vor_konsens": 1,
+      "_signale_ausfuehren": 1,
+      "_stopout_reentry_locked": 1,
+      "_symbol_zustand": 2,
+      "_symbole_vorbereiten": 1,
+      "_trim_ausstiege": 1,
+      "_update_live_account_equity": 1,
+      "_zyklus_auswerten": 1,
+      "_zyklus_kontext_aufbauen": 1,
+      "_zyklus_vorbereiten": 1,
+      "_zyklusgrenze": 1
+    },
+    "hwm": [
+      {
+        "AAPL": 210.0,
+        "AMD": 135.0,
+        "MSFT": 408.0,
+        "NVDA": 125.0
+      }
+    ],
+    "pm_gebucht": [
+      [
+        "AMD",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "TSLA",
+        "buy"
+      ]
+    ],
+    "rangliste": [
+      [
+        "MSFT",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      60.0
+    ],
+    "uebergeben": [],
+    "zustand": [
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 408.0,
+          "high": 412.08,
+          "low": 399.84,
+          "open": 403.92,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": 0.22,
+        "risk_reversal_reference": 0.25,
+        "risk_reversal_reference_date": "2026-09-23",
+        "symbol": "MSFT",
+        "unrealized_pnl": null,
+        "vix": null
+      },
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 250.0,
+          "high": 252.5,
+          "low": 245.0,
+          "open": 247.5,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": 0.24,
+        "risk_reversal_reference": 0.25,
+        "risk_reversal_reference_date": "2026-09-23",
+        "symbol": "TSLA",
+        "unrealized_pnl": null,
+        "vix": null
+      }
+    ]
+  },
+  "flag_VIXAWARE_IMPLIED_VOL_ENABLED": {
+    "aktive_strategie": "ZyklusNetz",
+    "broker": [
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "stop_price": 186.0,
+          "symbol": "AAPL",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "stop_price": 139.5,
+          "symbol": "AMD",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 5.0,
+          "side": "sell",
+          "stop_price": 372.0,
+          "symbol": "MSFT",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 40.0,
+          "side": "sell",
+          "stop_price": 93.0,
+          "symbol": "NVDA",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "args": [
+          "order-2"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "symbol": "AMD",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-1"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "AAPL",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-4"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "NVDA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 7.0,
+          "side": "buy",
+          "symbol": "TSLA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      }
+    ],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_kontext_rang_trichter": 1,
+      "_kontext_snapshots": 1,
+      "_maintain_broker_stops": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_ratchet_entry_times": 1,
+      "_ratchet_high_water_marks": 1,
+      "_rotation_ausstiege": 1,
+      "_rotation_rangverlust": 1,
+      "_rotation_ueberhang": 1,
+      "_round_table_bewerten": 1,
+      "_run_deconcentration_and_rotation_exits": 1,
+      "_run_position_stop_checks": 1,
+      "_schutz_vor_konsens": 1,
+      "_signale_ausfuehren": 1,
+      "_stopout_reentry_locked": 1,
+      "_symbol_zustand": 2,
+      "_symbole_vorbereiten": 1,
+      "_trim_ausstiege": 1,
+      "_update_live_account_equity": 1,
+      "_zyklus_auswerten": 1,
+      "_zyklus_kontext_aufbauen": 1,
+      "_zyklus_vorbereiten": 1,
+      "_zyklusgrenze": 1
+    },
+    "hwm": [
+      {
+        "AAPL": 210.0,
+        "AMD": 135.0,
+        "MSFT": 408.0,
+        "NVDA": 125.0
+      }
+    ],
+    "pm_gebucht": [
+      [
+        "AMD",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "TSLA",
+        "buy"
+      ]
+    ],
+    "rangliste": [
+      [
+        "MSFT",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      60.0
+    ],
+    "uebergeben": [],
+    "zustand": [
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": 0.22,
+        "implied_vol_reference": 0.25,
+        "implied_vol_reference_date": "2026-09-23",
+        "in_position": null,
+        "ohlc": {
+          "close": 408.0,
+          "high": 412.08,
+          "low": 399.84,
+          "open": 403.92,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "MSFT",
+        "unrealized_pnl": null,
+        "vix": null
+      },
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": 0.24,
+        "implied_vol_reference": 0.25,
+        "implied_vol_reference_date": "2026-09-23",
+        "in_position": null,
+        "ohlc": {
+          "close": 250.0,
+          "high": 252.5,
+          "low": 245.0,
+          "open": 247.5,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "TSLA",
+        "unrealized_pnl": null,
+        "vix": null
+      }
+    ]
+  },
+  "markt_geschlossen": {
+    "aktive_strategie": "ZyklusNetz",
+    "broker": [],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_run_closed_report_pass": 1,
+      "_zyklus_vorbereiten": 1
+    },
+    "hwm": [],
+    "pm_gebucht": [],
+    "rangliste": [
+      [
+        "AAPL",
+        "AMD",
+        "MSFT",
+        "NVDA",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      300.0
+    ],
+    "uebergeben": [],
+    "zustand": []
+  },
+  "offener_markt_mit_position": {
+    "aktive_strategie": "ZyklusNetz",
+    "broker": [
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "stop_price": 186.0,
+          "symbol": "AAPL",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "stop_price": 139.5,
+          "symbol": "AMD",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 5.0,
+          "side": "sell",
+          "stop_price": 372.0,
+          "symbol": "MSFT",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 40.0,
+          "side": "sell",
+          "stop_price": 93.0,
+          "symbol": "NVDA",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "args": [
+          "order-2"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "symbol": "AMD",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-1"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "AAPL",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-4"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "NVDA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 7.0,
+          "side": "buy",
+          "symbol": "TSLA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      }
+    ],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_kontext_rang_trichter": 1,
+      "_kontext_snapshots": 1,
+      "_maintain_broker_stops": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_ratchet_entry_times": 1,
+      "_ratchet_high_water_marks": 1,
+      "_rotation_ausstiege": 1,
+      "_rotation_rangverlust": 1,
+      "_rotation_ueberhang": 1,
+      "_round_table_bewerten": 1,
+      "_run_deconcentration_and_rotation_exits": 1,
+      "_run_position_stop_checks": 1,
+      "_schutz_vor_konsens": 1,
+      "_signale_ausfuehren": 1,
+      "_stopout_reentry_locked": 1,
+      "_symbol_zustand": 2,
+      "_symbole_vorbereiten": 1,
+      "_trim_ausstiege": 1,
+      "_update_live_account_equity": 1,
+      "_zyklus_auswerten": 1,
+      "_zyklus_kontext_aufbauen": 1,
+      "_zyklus_vorbereiten": 1,
+      "_zyklusgrenze": 1
+    },
+    "hwm": [
+      {
+        "AAPL": 210.0,
+        "AMD": 135.0,
+        "MSFT": 408.0,
+        "NVDA": 125.0
+      }
+    ],
+    "pm_gebucht": [
+      [
+        "AMD",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "TSLA",
+        "buy"
+      ]
+    ],
+    "rangliste": [
+      [
+        "MSFT",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      60.0
+    ],
+    "uebergeben": [],
+    "zustand": [
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 408.0,
+          "high": 412.08,
+          "low": 399.84,
+          "open": 403.92,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "MSFT",
+        "unrealized_pnl": null,
+        "vix": null
+      },
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 250.0,
+          "high": 252.5,
+          "low": 245.0,
+          "open": 247.5,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "TSLA",
+        "unrealized_pnl": null,
+        "vix": null
+      }
+    ]
+  },
+  "shutdown_an_der_zyklusgrenze": {
+    "aktive_strategie": "ZyklusNetzNeu",
+    "broker": [
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "stop_price": 186.0,
+          "symbol": "AAPL",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "stop_price": 139.5,
+          "symbol": "AMD",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 5.0,
+          "side": "sell",
+          "stop_price": 372.0,
+          "symbol": "MSFT",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 40.0,
+          "side": "sell",
+          "stop_price": 93.0,
+          "symbol": "NVDA",
+          "time_in_force": "gtc",
+          "type": "stop"
+        }
+      },
+      {
+        "args": [
+          "order-2"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 20.0,
+          "side": "sell",
+          "symbol": "AMD",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-1"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "AAPL",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "args": [
+          "order-4"
+        ],
+        "methode": "cancel_order_by_id"
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 10.0,
+          "side": "sell",
+          "symbol": "NVDA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      },
+      {
+        "methode": "submit_order",
+        "order": {
+          "qty": 7.0,
+          "side": "buy",
+          "symbol": "TSLA",
+          "time_in_force": "day",
+          "type": "market"
+        }
+      }
+    ],
+    "gelaufen": {
+      "_fetch_snapshots_chunked": 1,
+      "_kontext_rang_trichter": 1,
+      "_kontext_snapshots": 1,
+      "_maintain_broker_stops": 1,
+      "_markt_geschlossen_berichten": 1,
+      "_marktzeit_pruefen": 1,
+      "_perform_graceful_handover": 1,
+      "_ratchet_entry_times": 1,
+      "_ratchet_high_water_marks": 1,
+      "_rotation_ausstiege": 1,
+      "_rotation_rangverlust": 1,
+      "_rotation_ueberhang": 1,
+      "_round_table_bewerten": 1,
+      "_run_deconcentration_and_rotation_exits": 1,
+      "_run_position_stop_checks": 1,
+      "_schutz_vor_konsens": 1,
+      "_signale_ausfuehren": 1,
+      "_stopout_reentry_locked": 1,
+      "_symbol_zustand": 2,
+      "_symbole_vorbereiten": 1,
+      "_trim_ausstiege": 1,
+      "_update_live_account_equity": 1,
+      "_zyklus_auswerten": 1,
+      "_zyklus_kontext_aufbauen": 1,
+      "_zyklus_vorbereiten": 1,
+      "_zyklusgrenze": 1
+    },
+    "hwm": [
+      {
+        "AAPL": 210.0,
+        "AMD": 135.0,
+        "MSFT": 408.0,
+        "NVDA": 125.0
+      }
+    ],
+    "pm_gebucht": [
+      [
+        "AMD",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "AAPL",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "NVDA",
+        "sell"
+      ],
+      [
+        "TSLA",
+        "buy"
+      ]
+    ],
+    "rangliste": [
+      [
+        "MSFT",
+        "TSLA"
+      ]
+    ],
+    "schlaf": [
+      60.0
+    ],
+    "uebergeben": [
+      [
+        "AAPL",
+        "AMD",
+        "MSFT",
+        "NVDA"
+      ]
+    ],
+    "zustand": [
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 408.0,
+          "high": 412.08,
+          "low": 399.84,
+          "open": 403.92,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "MSFT",
+        "unrealized_pnl": null,
+        "vix": null
+      },
+      {
+        "current_time": "2026-09-24T14:30:00+00:00",
+        "implied_vol": null,
+        "implied_vol_reference": null,
+        "implied_vol_reference_date": null,
+        "in_position": null,
+        "ohlc": {
+          "close": 250.0,
+          "high": 252.5,
+          "low": 245.0,
+          "open": 247.5,
+          "volume": 1000000.0
+        },
+        "position_avg_price": null,
+        "position_context_confirmed": null,
+        "position_qty": null,
+        "quality_reference": null,
+        "quality_reference_date": null,
+        "quality_score": null,
+        "regime": null,
+        "risk_reversal": null,
+        "risk_reversal_reference": null,
+        "risk_reversal_reference_date": null,
+        "symbol": "TSLA",
+        "unrealized_pnl": null,
+        "vix": null
+      }
+    ]
+  }
+}
