@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- #2804: paint the document dark BEFORE any external CSS/JS loads. The first renderer
+         paint happens before the bundled stylesheet applies, and Electron shows the window on
+         exactly that paint (ready-to-show) - without this the window flashes white on cold
+         machines. Product theme is pure black everywhere (landing + console). -->
+    <style>html,body{background-color:#000}</style>
+    <!-- Prerender (scripts/prerender-pages.mjs): the `edge` function puts the rendered page into
+         #root for crawlers without JavaScript. Visitors do not see it; src/main.tsx removes it
+         before React mounts, so the page appears exactly as before. -->
+    <style>#root[data-prerendered]{visibility:hidden}</style>
+
+    <!-- Google Consent Mode v2 Default Settings (Must be first) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+        gtag('set', 'url_passthrough', true);
+    </script>
+    <!-- NOTE: Insert Consent Management Provider (CMP) Script here (e.g. Cookiebot or Usercentrics) -->
+    <!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="YOUR-ID" type="text/javascript" async></script> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://autonomous-trading.de/" />
+    <link rel="llms-txt" href="https://autonomous-trading.de/llms.txt" />
+    <title>autonomous_ trading - open source execution framework for your trading strategy</title>
+    <meta name="description" content="AAAgents is an execution framework: you define your own strategy from deterministic rules, quant analytics and machine learning — the software executes it rules-based, auditable and in paper mode by default. Software tool; no investment advice, no portfolio management." />
+    <meta name="author" content="AAAgents" />
+    <meta name="theme-color" content="#000000" />
+    <!-- #4459: no robots meta here — this index.html also serves the landing, which must be
+         indexable. The console and the credential-entry paths (/login, /auth/**, /console/**)
+         get "X-Robots-Tag: noindex, nofollow" from firebase.json per hosting target. -->
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="AAAgents" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://autonomous-trading.de/" />
+    <meta property="og:title" content="autonomous_ trading - open source execution framework for your trading strategy" />
+    <meta property="og:description" content="An execution framework for your own trading strategy — rules-based, auditable, bounded, paper mode by default. Software tool; no investment advice." />
+    <meta property="og:image" content="https://autonomous-trading.de/og-image.png" />
+    <meta property="og:image:width" content="3748" />
+    <meta property="og:image:height" content="1369" />
+    <meta property="og:image:alt" content="AAAgents — execution framework for rules-based trading" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aaagents_de" />
+    <meta name="twitter:title" content="autonomous_ trading - open source execution framework for your trading strategy" />
+    <meta name="twitter:description" content="An execution framework for your own strategy. Your rules. Auditable. Bounded. Paper mode by default." />
+    <meta name="twitter:image" content="https://autonomous-trading.de/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://autonomous-trading.de/#organization",
+          "name": "AAAgents",
+          "url": "https://autonomous-trading.de",
+          "logo": "https://autonomous-trading.de/favicon.svg",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "DE"
+          },
+          "sameAs": [
+            "https://github.com/Autonomous-Asset-Management-Agents/autonomous_"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://autonomous-trading.de/#software",
+          "name": "autonomous_ trading",
+          "alternateName": ["autonomous trading", "AAAgents"],
+          "url": "https://autonomous-trading.de/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows, macOS",
+          "license": "https://www.apache.org/licenses/LICENSE-2.0",
+          "isAccessibleForFree": true,
+          "codeRepository": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_",
+          "downloadUrl": "https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases",
+          "softwareHelp": "https://autonomous-trading.de/llms.txt",
+          "programmingLanguage": ["Python", "TypeScript"],
+          "keywords": "open-source algorithmic trading execution framework, self-hosted trading bot, paper trading on your own brokerage account, Python, LangGraph, Electron, SQLite, hard risk limits, kill-switch, tamper-evident audit log, Germany, Europe",
+          "featureList": [
+            "Self-hosted, local-first execution of user-defined trading rules (Apache-2.0)",
+            "14 agents in total, 8 of them cast a directional vote",
+            "Link your own brokerage account (US equities in USD), paper mode by default",
+            "Hard risk limits, drawdown caps, and immediate kill-switch",
+            "Tamper-evident SHA-256 hash-chained JSONL audit log for every order decision"
+          ],
+          "publisher": { "@id": "https://autonomous-trading.de/#organization" },
+          "description": "Self-hosted open-source execution framework for rules-based trading: users define their own strategy from deterministic rules, quant analytics and machine learning and keep every decision; the software executes it auditable, bounded by hard risk limits and a kill-switch, and in paper mode by default. Software tool developed in Germany; no investment advice, no portfolio management, no promised return."
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <main>
+        <h1>autonomous_ trading (AAAgents) — Open-Source Execution Framework for Your Own Trading Strategy</h1>
+        <p>
+          <strong>autonomous_ trading (AAAgents)</strong> is a self-hosted, local-first open-source (Apache-2.0) execution framework built in Germany (Europe) for rules-based algorithmic stock trading with Python, LangGraph, Electron and SQLite. You define, configure and enable your own trading strategy from deterministic rules, quant analytics and machine learning, and you keep every decision. The software executes your rules automatically, bounded by hard risk limits and an immediate kill-switch, and logs every order decision to a tamper-evident SHA-256 JSONL audit log.
+        </p>
+        <ul>
+          <li><strong>Decisions:</strong> 14 agents in total, 8 of them cast a directional vote; you define the rules and hold every decision.</li>
+          <li><strong>Broker &amp; Default Mode:</strong> your own brokerage account (US equities in USD), linked via API, with paper mode (simulated trading without real money) enabled by default; live trading requires a deliberate, separately confirmed switch.</li>
+          <li><strong>What it is NOT:</strong> AAAgents is a software tool — it gives no investment advice, does not pick stocks or investments, takes no mandate, does not manage portfolios or funds on your behalf, is not a robo-advisor or retirement savings plan, and promises no return or financial outcome.</li>
+          <li><strong>Risk Ownership:</strong> Market, strategy and model risk remain entirely with you. Trading with real money can result in financial losses; hard risk limits and the kill-switch bound execution according to your rules, but do not protect against market losses and guarantee no outcome.</li>
+          <li><strong>Links:</strong> <a href="https://autonomous-trading.de/llms.txt">LLMs.txt Summary</a> · <a href="https://github.com/Autonomous-Asset-Management-Agents/autonomous_">GitHub Source Code</a> · <a href="https://github.com/Autonomous-Asset-Management-Agents/autonomous_/releases">Desktop Installer Releases (Windows &amp; macOS)</a> · <a href="https://autonomous-trading.de/legal/risk-disclosure">Risk Disclosure</a></li>
+        </ul>
+      </main>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
